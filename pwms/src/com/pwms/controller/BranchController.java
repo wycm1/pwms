@@ -33,5 +33,10 @@ public class BranchController extends BaseController {
 		return null;
 	}
 	//搜索支部，根据支部的名称
-	
+	@RequestMapping("/searchbranch")
+	public String searchBranch(HttpSession session,String branchName, Model model)
+	{
+		return null;
+	}
+	//test
 }
