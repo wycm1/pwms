@@ -2,11 +2,12 @@ package com.pwms.controller;
 
 import javax.servlet.http.HttpSession;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Service("branch")
+@Controller
+@RequestMapping("/branch")
 public class BranchController extends BaseController {
 	//显示我的支部信息
 	@RequestMapping("/")
