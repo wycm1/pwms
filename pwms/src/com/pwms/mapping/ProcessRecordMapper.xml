@@ -7,13 +7,14 @@
     <result column="filepath" property="filepath" jdbcType="VARCHAR" />
     <result column="grade" property="grade" jdbcType="INTEGER" />
     <result column="dateline" property="dateline" jdbcType="DATE" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.pwms.pojo.ProcessRecordWithBLOBs" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="com.pwms.pojo.ProcessRecord" extends="BaseResultMap" >
     <result column="explain" property="explain" jdbcType="LONGVARCHAR" />
     <result column="feeling" property="feeling" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, process_id, filepath, grade, dateline
+    id, process_id, filepath, grade, dateline, user_id
   </sql>
   <sql id="Blob_Column_List" >
     explain, feeling
@@ -30,15 +31,15 @@
     delete from process_record
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.pwms.pojo.ProcessRecordWithBLOBs" >
+  <insert id="insert" parameterType="com.pwms.pojo.ProcessRecord" >
     insert into process_record (id, process_id, filepath, 
-      grade, dateline, explain, 
-      feeling)
+      grade, dateline, user_id, 
+      explain, feeling)
     values (#{id,jdbcType=INTEGER}, #{processId,jdbcType=INTEGER}, #{filepath,jdbcType=VARCHAR}, 
-      #{grade,jdbcType=INTEGER}, #{dateline,jdbcType=DATE}, #{explain,jdbcType=LONGVARCHAR}, 
-      #{feeling,jdbcType=LONGVARCHAR})
+      #{grade,jdbcType=INTEGER}, #{dateline,jdbcType=DATE}, #{userId,jdbcType=INTEGER}, 
+      #{explain,jdbcType=LONGVARCHAR}, #{feeling,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pwms.pojo.ProcessRecordWithBLOBs" >
+  <insert id="insertSelective" parameterType="com.pwms.pojo.ProcessRecord" >
     insert into process_record
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -55,6 +56,9 @@
       </if>
       <if test="dateline != null" >
         dateline,
+      </if>
+      <if test="userId != null" >
+        user_id,
       </if>
       <if test="explain != null" >
         explain,
@@ -79,6 +83,9 @@
       <if test="dateline != null" >
         #{dateline,jdbcType=DATE},
       </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
       <if test="explain != null" >
         #{explain,jdbcType=LONGVARCHAR},
       </if>
@@ -87,7 +94,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pwms.pojo.ProcessRecordWithBLOBs" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.pwms.pojo.ProcessRecord" >
     update process_record
     <set >
       <if test="processId != null" >
@@ -102,6 +109,9 @@
       <if test="dateline != null" >
         dateline = #{dateline,jdbcType=DATE},
       </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
       <if test="explain != null" >
         explain = #{explain,jdbcType=LONGVARCHAR},
       </if>
@@ -111,12 +121,13 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.pwms.pojo.ProcessRecordWithBLOBs" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.pwms.pojo.ProcessRecord" >
     update process_record
     set process_id = #{processId,jdbcType=INTEGER},
       filepath = #{filepath,jdbcType=VARCHAR},
       grade = #{grade,jdbcType=INTEGER},
       dateline = #{dateline,jdbcType=DATE},
+      user_id = #{userId,jdbcType=INTEGER},
       explain = #{explain,jdbcType=LONGVARCHAR},
       feeling = #{feeling,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
@@ -126,7 +137,8 @@
     set process_id = #{processId,jdbcType=INTEGER},
       filepath = #{filepath,jdbcType=VARCHAR},
       grade = #{grade,jdbcType=INTEGER},
-      dateline = #{dateline,jdbcType=DATE}
+      dateline = #{dateline,jdbcType=DATE},
+      user_id = #{userId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

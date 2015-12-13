@@ -13,16 +13,13 @@ public class ProcessRecord {
 
     private Date dateline;
 
-    private int UserId;
-    public int getUserId() {
-		return UserId;
-	}
+    private Integer userId;
 
-	public void setUserId(int userId) {
-		UserId = userId;
-	}
+    private String explain;
 
-	public Integer getId() {
+    private String feeling;
+
+    public Integer getId() {
         return id;
     }
 
@@ -60,5 +57,29 @@ public class ProcessRecord {
 
     public void setDateline(Date dateline) {
         this.dateline = dateline;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public String getExplain() {
+        return explain;
+    }
+
+    public void setExplain(String explain) {
+        this.explain = explain == null ? null : explain.trim();
+    }
+
+    public String getFeeling() {
+        return feeling;
+    }
+
+    public void setFeeling(String feeling) {
+        this.feeling = feeling == null ? null : feeling.trim();
     }
 }
