@@ -16,6 +16,14 @@ public class RewardPunishRecordServiceImpl implements
 
 	@Resource
 	private RewardPunishRecordMapper rewardRecordDao;
+	public RewardPunishRecordMapper getRewardRecordDao() {
+		return rewardRecordDao;
+	}
+
+	public void setRewardRecordDao(RewardPunishRecordMapper rewardRecordDao) {
+		this.rewardRecordDao = rewardRecordDao;
+	}
+
 	@Override
 	public RewardPunishRecord getRewardPunishRecord(int id) {
 		// TODO Auto-generated method stub

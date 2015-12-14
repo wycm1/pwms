@@ -21,6 +21,14 @@ public class ProveLetterServiceImpl implements IProveLetterService {
 		this.proveLetterDao.insertSelective(proveletter);
 	}
 
+	public ProveLetterMapper getProveLetterDao() {
+		return proveLetterDao;
+	}
+
+	public void setProveLetterDao(ProveLetterMapper proveLetterDao) {
+		this.proveLetterDao = proveLetterDao;
+	}
+
 	@Override
 	public ProveLetter getProveLetter(int id) {
 		// TODO Auto-generated method stub

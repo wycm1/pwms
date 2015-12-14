@@ -1,7 +1,10 @@
 package com.pwms.service;
 
+import java.util.List;
+
 import com.pwms.pojo.ProcessRecord;
 import com.pwms.pojo.User;
+import com.pwms.pojo.Process;
 
 public interface IProcessService {
 	//获取进度内容
@@ -15,7 +18,7 @@ public interface IProcessService {
 	//获取用户最新记录号
 	public int getLastProcessNum(User user);
 	//获取用户所有的记录
-	public ProcessRecord getUserProcessRecord(User user);
+	public List<ProcessRecord> getUserProcessRecord(User user);
 	//查看是否完成某个进度
 	public boolean isComplete(User user, Process process);
 }

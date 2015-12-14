@@ -1,6 +1,7 @@
 package com.pwms.pojo;
 
 public class BranchMember {
+	
     private Integer id;
 
     private Integer branchId;
@@ -30,4 +31,10 @@ public class BranchMember {
     public void setUserId(Integer userId) {
         this.userId = userId;
     }
+    public BranchMember(){}
+    public BranchMember(int branchId, int userId){
+    	this.branchId=branchId;
+    	this.userId=userId;
+    }
+    
 }

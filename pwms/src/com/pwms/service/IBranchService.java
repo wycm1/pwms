@@ -3,7 +3,7 @@ package com.pwms.service;
 import java.util.List;
 
 import com.pwms.pojo.Branch;
-import com.pwms.pojo.NoticeTheroyContruction;
+//import com.pwms.pojo.NoticeTheroyContruction;
 import com.pwms.pojo.User;
 
 public interface IBranchService {
@@ -16,7 +16,7 @@ public interface IBranchService {
 	//增加成员
 	public void addMember(Branch branch, User user);
     //发布支部公告
-	public void publishNotice(Branch branch, NoticeTheroyContruction notice);
+//	public void publishNotice(Branch branch, NoticeTheroyContruction notice);
 	//获取支部成员
 	public List<User> getBranchMember(Branch branch);
 	//检查是否是支部成员

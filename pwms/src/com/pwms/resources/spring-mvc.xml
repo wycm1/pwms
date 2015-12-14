@@ -20,4 +20,19 @@
         <!--可为空,方便实现自已的依据扩展名来选择视图解释类的逻辑 -->
         <property name="suffix" value=".jsp" />
     </bean>
+<!--   <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/test1" />`
+            <bean class="com.pwms.interceptor.UserVerifyInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>  -->  
+        <!-- 拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/test1" />
+            <bean class="com.pwms.interceptor.UserVerifyInterceptor">
+               
+            </bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
