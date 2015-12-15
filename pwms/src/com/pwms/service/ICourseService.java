@@ -5,7 +5,11 @@ import com.pwms.pojo.Course;
 import com.pwms.pojo.UserCourseRecord;
 
 public interface ICourseService {
-	//获取实体
+	/**
+	 * 国防费
+	 * @param id
+	 * @return
+	 */
 	public Course getCourse(Integer id);
 	//保存对象
 	public void save(Course course);

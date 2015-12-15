@@ -56,5 +56,35 @@ public class User {
 		this.processId = processId;
 	}
 	private Integer type;
-   
+   /**
+    * 验证是否有支部权限
+    * @return
+    */
+	public boolean haveBranchPermission()
+	{
+		if((type&4) == 4)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	  /**
+	    * 验证是否有支部权限
+	    * @return
+	    */
+		public boolean haveHeadPermission()
+		{
+			if((type&8) == 8)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		
 }

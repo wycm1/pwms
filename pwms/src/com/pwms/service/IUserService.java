@@ -3,7 +3,6 @@ package com.pwms.service;
 import javax.servlet.http.HttpSession;
 
 import com.pwms.pojo.User;
-import com.pwms.pojo.Userinfo;
 
 public interface IUserService {
     public User getUserById(int userId);

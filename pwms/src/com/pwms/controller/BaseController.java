@@ -20,5 +20,12 @@ public class BaseController {
 			return false;     
 		}
 	}
+	public String publishmsg(HttpServletRequest request, String msg, String returnView){
+		if(verifyClient(request))
+    	{
+    		return "{\"msg\":\""+msg+"\"}";
+    	}
+		return returnView;
+	}
 
 }

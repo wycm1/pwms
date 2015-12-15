@@ -11,6 +11,8 @@ public interface UserinfoMapper {
 
     Userinfo selectByPrimaryKey(Integer id);
     
+    Userinfo selectByUserid(Integer userId);
+    
     Userinfo selectByStuOrJobId(Integer StuOrJobId);
 
     int updateByPrimaryKeySelective(Userinfo record);

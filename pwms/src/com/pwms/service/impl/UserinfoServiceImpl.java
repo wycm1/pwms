@@ -38,5 +38,11 @@ public class UserinfoServiceImpl implements IUserinfoService {
 		// TODO Auto-generated method stub
 		userinfoDao.insertSelective(userinfo);
 	}
+
+	@Override
+	public Userinfo getUserinfoByUserid(int userId) {
+		// TODO Auto-generated method stub
+		return this.userinfoDao.selectByUserid(userId);
+	}
    
 }
