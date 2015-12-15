@@ -24,7 +24,7 @@ public class UserinfoServiceImpl implements IUserinfoService {
 	@Override
 	public Userinfo getUserinfo(int StuOrJobid) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.userinfoDao.selectByStuOrJobId(StuOrJobid);
 	}
 
 	@Override
@@ -37,6 +37,12 @@ public class UserinfoServiceImpl implements IUserinfoService {
 	public void save(Userinfo userinfo) {
 		// TODO Auto-generated method stub
 		userinfoDao.insertSelective(userinfo);
+	}
+
+	@Override
+	public Userinfo getUserinfoByUserid(int userId) {
+		// TODO Auto-generated method stub
+		return this.userinfoDao.selectByUserid(userId);
 	}
    
 }

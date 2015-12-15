@@ -81,6 +81,7 @@ public class UserServiceImpl implements IUserService {
 		return false;
 	}
 	//×¢Ïú
+	@Override
 	public void logout(HttpSession session)
 	{
 		session.removeAttribute("user");

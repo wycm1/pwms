@@ -3,7 +3,6 @@ package com.pwms.service;
 import javax.servlet.http.HttpSession;
 
 import com.pwms.pojo.User;
-import com.pwms.pojo.Userinfo;
 
 public interface IUserService {
     public User getUserById(int userId);
@@ -13,5 +12,6 @@ public interface IUserService {
     public boolean chkpasswd(String loginfo, String password);
     public boolean login(HttpSession session, String loginfo, String password);
     public boolean register(User user, String identity);
+    public void logout(HttpSession session);
     //public void completeUserinfo(Userinfo userinfo);
 }
