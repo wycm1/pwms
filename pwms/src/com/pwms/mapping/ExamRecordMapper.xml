@@ -16,6 +16,18 @@
     from exam_record
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectByExamidUserid" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from exam_record
+    where exam_id = #{0,jdbcType=INTEGER} and user_id = #{1,jdbcType=INTEGER}
+  </select>
+  <select id="selectByUserid" resultMap="BaseResultMap"  parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from exam_record
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from exam_record
     where id = #{id,jdbcType=INTEGER}

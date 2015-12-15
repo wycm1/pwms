@@ -1,15 +1,20 @@
 package com.pwms.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import com.pwms.dao.ExamMapper;
+import com.pwms.dao.ExamRecordMapper;
 import com.pwms.pojo.Exam;
+import com.pwms.pojo.ExamRecord;
 import com.pwms.pojo.User;
 import com.pwms.service.IExamService;
 
 public class ExamServiceImpl implements IExamService {
 	@Resource
 	private ExamMapper examDao;
+	private ExamRecordMapper examRecordDao;
 //	private ExamRecordMapper examRecordDao;
 	@Override
 	public Exam getExam(Integer id) {
@@ -29,10 +34,36 @@ public class ExamServiceImpl implements IExamService {
 		this.examDao.updateByPrimaryKeySelective(exam);
 	}
 
+	@SuppressWarnings("null")
 	@Override
 	public int getGrade(User user, Exam exam) {
 		// TODO Auto-generated method stub
-		return 0;
+		List<ExamRecord> examRecordList = this.examRecordDao.selectByExamidUserid(exam.getId(), user.getId());
+		if(examRecordList == null){
+			return examRecordList.get(0).getScore();
+		}
+		else{
+		    return -1;
+		}
+	}
+
+	@Override
+	public void addRecord(ExamRecord examRecord) {
+		// TODO Auto-generated method stub
+		this.examRecordDao.insertSelective(examRecord);
+	}
+
+	@Override
+	public List<ExamRecord> getRecord(User user) {
+		// TODO Auto-generated method stub
+		return examRecordDao.selectByUserid(user.getId());
+	}
+
+	@Override
+	public List<ExamRecord> getRecordByUserExam(User user, Exam exam) {
+		// TODO Auto-generated method stub
+//		return examRecordDao.selectByExamidUserid(exam.getId(), user.getId());
+		return this.examRecordDao.selectByExamidUserid(exam.getId(), user.getId());
 	}
 
 }
