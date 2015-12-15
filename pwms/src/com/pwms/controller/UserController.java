@@ -1,6 +1,7 @@
 package com.pwms.controller;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pwms.pojo.User;
 import com.pwms.service.IUserService;
-
+//import java.lang.Integer;
 @Controller
 @RequestMapping("/user")
 public class UserController extends BaseController{
@@ -32,6 +33,7 @@ public class UserController extends BaseController{
     //注销
     @RequestMapping("/logout")
     public String logout(HttpSession session, Model model) {
+    	this.userService.logout(session);
     	return null;
     }
     //查看个人信息

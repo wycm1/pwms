@@ -35,7 +35,7 @@
     from process_record
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <select id="selectByUser" resultMap="ResultMapWithBLOBs" parameterType="om.pwms.pojo.User" >
+  <select id="selectByUser" resultMap="ResultMapWithBLOBs" parameterType="com.pwms.pojo.User" >
     select 
     <include refid="Base_Column_List" />
     ,
@@ -43,7 +43,7 @@
     from process_record
     where user_id = #{id,jdbcType=INTEGER}
   </select>
-  <select id="selectLastByUser" resultMap="java.lang.Integer" parameterType="com.pwms.pojo.User" >
+  <select id="selectLastByUser" resultType="java.lang.Integer" parameterType="com.pwms.pojo.User" >
     select max(process_id)
     from process_record
     where user_id = #{id,jdbcType=INTEGER}

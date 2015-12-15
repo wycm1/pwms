@@ -24,7 +24,7 @@ public class UserinfoServiceImpl implements IUserinfoService {
 	@Override
 	public Userinfo getUserinfo(int StuOrJobid) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.userinfoDao.selectByStuOrJobId(StuOrJobid);
 	}
 
 	@Override

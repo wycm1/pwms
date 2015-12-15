@@ -13,5 +13,6 @@ public interface IUserService {
     public boolean chkpasswd(String loginfo, String password);
     public boolean login(HttpSession session, String loginfo, String password);
     public boolean register(User user, String identity);
+    public void logout(HttpSession session);
     //public void completeUserinfo(Userinfo userinfo);
 }
