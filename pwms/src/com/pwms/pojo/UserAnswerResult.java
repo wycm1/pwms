@@ -50,4 +50,10 @@ public class UserAnswerResult {
     public void setRightFlag(Integer rightFlag) {
         this.rightFlag = rightFlag;
     }
+    public void copyUserAnswerResult(UserAnswerResult userAnswerResult){
+    	this.questionId = userAnswerResult.getQuestionId();
+    	this.rightFlag = userAnswerResult.getRightFlag();
+    	this.userAnswer = userAnswerResult.getUserAnswer();
+    	this.userId = userAnswerResult.getUserId();
+    }
 }

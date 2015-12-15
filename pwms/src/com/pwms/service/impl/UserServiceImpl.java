@@ -9,9 +9,11 @@ import org.springframework.stereotype.Service;
 
 import com.pwms.dao.UserMapper;
 import com.pwms.dao.UserinfoMapper;
+import com.pwms.dao.UserinfoModifyMapper;
 import com.pwms.dao.VerifyUserinfoMapper;
 import com.pwms.pojo.User;
 import com.pwms.pojo.Userinfo;
+import com.pwms.pojo.UserinfoModify;
 import com.pwms.pojo.VerifyUserinfo;
 import com.pwms.service.IUserService;
 import com.pwms.tools.Md5Util;
@@ -20,9 +22,16 @@ import com.pwms.tools.Md5Util;
 public class UserServiceImpl implements IUserService {
     @Resource
     private UserMapper userDao;
-    @Resource
     private VerifyUserinfoMapper verifyuserinfoDao;
     private UserinfoMapper userinfoDao;
+    private UserinfoModifyMapper userinfoModifyDao;
+    
+	public UserinfoModifyMapper getUserinfoModifyDao() {
+		return userinfoModifyDao;
+	}
+	public void setUserinfoModifyDao(UserinfoModifyMapper userinfoModifyDao) {
+		this.userinfoModifyDao = userinfoModifyDao;
+	}
 	public UserinfoMapper getUserinfoDao() {
 		return userinfoDao;
 	}
@@ -101,9 +110,26 @@ public class UserServiceImpl implements IUserService {
 		return true;
 	}
     //用户信息补全
-//	@Override
-//	public void completeUserinfo(Userinfo userinfo)
-//	{
-//		userinfoDao.insertSelective(userinfo);
-//	}
+	@Override
+	public void modifyUserinfo(Userinfo userinfo) {
+		// TODO Auto-generated method stub
+		UserinfoModify userinfoModify = new UserinfoModify();
+		userinfoModify.setUserinfo(userinfo);
+		userinfoModify.setAuditingFlag(0);//0:待审核，1：审核通过 2 审核不通过
+		userinfoModifyDao.insertSelective(userinfoModify);
+	}
+	//审核用户修改信息
+	@Override
+	public boolean auditUserinfo(UserinfoModify userinfoModify, int auditing) {
+		// TODO Auto-generated method stub
+		Userinfo userinfo = userinfoDao.selectByUserid(userinfoModify.getUserId());
+		if(userinfo != null){
+			userinfo.setUserinfoModify(userinfoModify);
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
 }

@@ -10,8 +10,11 @@ public interface UserAnswerResultMapper {
     int insertSelective(UserAnswerResult record);
 
     UserAnswerResult selectByPrimaryKey(Integer id);
+    
+    UserAnswerResult selectByQuestionIdAndUserId(Integer questionid, Integer userid);
 
     int updateByPrimaryKeySelective(UserAnswerResult record);
 
     int updateByPrimaryKey(UserAnswerResult record);
+    
 }

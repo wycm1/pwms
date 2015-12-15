@@ -17,6 +17,12 @@
     from user_answer_result
     where id = #{id,jdbcType=INTEGER}
   </select>
+   <select id="selectByQuestionIdAndUserId" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_answer_result
+    where question_id = #{0,jdbcType=INTEGER} and user_id = #{0,jdbcType=INTEGER} 
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from user_answer_result
     where id = #{id,jdbcType=INTEGER}

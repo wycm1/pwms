@@ -252,4 +252,30 @@ public class Userinfo {
     public void setUserId(Integer userId) {
         this.userId = userId;
     }
+    public void setUserinfoModify(UserinfoModify userinfoModify){
+    	this.activeDate = userinfoModify.getActiveDate();
+    	this.address = userinfoModify.getAddress();
+    	this.birthday = userinfoModify.getBirthday();
+    	this.contacts = userinfoModify.getContacts();
+    	this.dateline = userinfoModify.getDateline();
+    	this.email =userinfoModify.getEmail();
+    	this.formalDate = userinfoModify.getFormalDate();
+    	this.inspect = userinfoModify.getInspect();
+    	this.joinDate= userinfoModify.getJoinDate();
+    	this.name = userinfoModify.getName();
+    	this.nation = userinfoModify.getNation();
+    	this.nativePalce = userinfoModify.getNativePalce();
+    	this.note = userinfoModify.getNote();
+    	this.partyGrade = userinfoModify.getPartyGrade();
+    	this.phone = userinfoModify.getPhone();
+    	this.posttion = userinfoModify.getPosttion();
+    	this.readyPartyDate = userinfoModify.getReadyPartyDate();
+    	this.sex = userinfoModify.getSex();
+    	this.studentId =userinfoModify.getStudentId();
+    	this.trainDate = userinfoModify.getTrainDate();
+    	this.trainEducat = userinfoModify.getTrainEducat();
+    	this.type = userinfoModify.getType();
+    	this.userClass = userinfoModify.getUserClass();
+    	this.userId = userinfoModify.getUserId();
+    }
 }

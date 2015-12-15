@@ -272,4 +272,31 @@ public class UserinfoModify {
     public void setAuditingMsg(String auditingMsg) {
         this.auditingMsg = auditingMsg == null ? null : auditingMsg.trim();
     }
+    
+    public void setUserinfo(Userinfo userinfo){
+    	this.activeDate = userinfo.getActiveDate();
+    	this.address = userinfo.getAddress();
+    	this.birthday = userinfo.getBirthday();
+    	this.contacts = userinfo.getContacts();
+    	this.dateline = userinfo.getDateline();
+    	this.email =userinfo.getEmail();
+    	this.formalDate = userinfo.getFormalDate();
+    	this.inspect = userinfo.getInspect();
+    	this.joinDate= userinfo.getJoinDate();
+    	this.name = userinfo.getName();
+    	this.nation = userinfo.getNation();
+    	this.nativePalce = userinfo.getNativePalce();
+    	this.note = userinfo.getNote();
+    	this.partyGrade = userinfo.getPartyGrade();
+    	this.phone = userinfo.getPhone();
+    	this.posttion = userinfo.getPosttion();
+    	this.readyPartyDate = userinfo.getReadyPartyDate();
+    	this.sex = userinfo.getSex();
+    	this.studentId =userinfo.getStudentId();
+    	this.trainDate = userinfo.getTrainDate();
+    	this.trainEducat = userinfo.getTrainEducat();
+    	this.type = userinfo.getType();
+    	this.userClass = userinfo.getUserClass();
+    	this.userId = userinfo.getUserId();
+    }
 }
