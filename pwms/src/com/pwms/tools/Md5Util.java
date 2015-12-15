@@ -25,7 +25,8 @@ public class Md5Util {
             if (val < 16)  
                 hexValue.append("0");  
             hexValue.append(Integer.toHexString(val));  
-        }  
+        }
+        System.out.println(hexValue);
         return hexValue.toString();  
 	}
 }
