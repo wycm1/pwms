@@ -50,7 +50,7 @@ public class ImportDocServiceImpl implements IImportDocService {
 	@Override
 	public List<ImportDoc> getImportDocList() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.importDocDao.selectAll();
 	}
 
 }
