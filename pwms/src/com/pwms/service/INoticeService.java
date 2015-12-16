@@ -23,8 +23,8 @@ public interface INoticeService {
 	 */
 	public List<NoticeTheroyContruction> getNoticeByType(Integer type);
 	
-	public void modifyNotice(NoticeTheroyContruction notice);
+	public boolean modifyNotice(NoticeTheroyContruction notice);
 	
-	public void deleteNotice(NoticeTheroyContruction notice);
+	public boolean deleteNotice(NoticeTheroyContruction notice);
 	
 }
