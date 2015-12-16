@@ -2,7 +2,6 @@ package com.pwms.pojo;
 
 import java.util.Date;
 
-//此实体数据库有修改
 public class NoticeTheroyContruction {
     private Integer id;
 
@@ -17,18 +16,8 @@ public class NoticeTheroyContruction {
     private Integer type;
 
     private String contents;
-    
-    private Integer level;
 
-    public Integer getLevel() {
-		return level;
-	}
-
-	public void setLevel(Integer level) {
-		this.level = level;
-	}
-
-	public Integer getId() {
+    public Integer getId() {
         return id;
     }
 
