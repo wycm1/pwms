@@ -10,9 +10,9 @@ public class ExamRecord {
     private Integer score;
 
     private Integer userId;
-    
+
     private Date time;
-    
+
     public Integer getId() {
         return id;
     }
@@ -52,5 +52,5 @@ public class ExamRecord {
 	public void setTime(Date time) {
 		this.time = time;
 	}
-    
+  
 }

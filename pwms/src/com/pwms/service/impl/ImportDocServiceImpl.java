@@ -1,5 +1,7 @@
 package com.pwms.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -43,6 +45,12 @@ public class ImportDocServiceImpl implements IImportDocService {
 	public ImportDoc getImportDocById(Integer id) {
 		// TODO Auto-generated method stub
 		return this.importDocDao.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public List<ImportDoc> getImportDocList() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

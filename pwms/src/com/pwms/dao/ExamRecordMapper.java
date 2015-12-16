@@ -14,7 +14,12 @@ public interface ExamRecordMapper {
     ExamRecord selectByPrimaryKey(Integer id);
     
     List<ExamRecord> selectByUserid(Integer userId);
-    
+    /**
+     * 通过用户id和考试id来获取到以时间降序排列的List
+     * @param examId
+     * @param userId
+     * @return
+     */
     List<ExamRecord> selectByExamidUserid(Integer examId, Integer userId);
 
     int updateByPrimaryKeySelective(ExamRecord record);

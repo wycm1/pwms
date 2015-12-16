@@ -1,5 +1,7 @@
 package com.pwms.service;
 
+import java.util.List;
+
 import com.pwms.pojo.ImportDoc;
 
 public interface IImportDocService {
@@ -11,5 +13,11 @@ public interface IImportDocService {
 	public void deleteById(ImportDoc doc);
 	//获取对象
 	public ImportDoc getImportDocById(Integer id);
+	/**
+	 * 获取列表 按时间排序
+	 * @param id
+	 * @return
+	 */
+	public List<ImportDoc> getImportDocList();
 
 }

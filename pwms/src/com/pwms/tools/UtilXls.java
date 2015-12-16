@@ -13,7 +13,8 @@ import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 
 public class UtilXls {
-	public static void WriteXls(File file, Map<String, List> map) {
+	public static File WriteXls(String fileName, Map<String, List> map) {
+		File file = new File(fileName);
 		WritableWorkbook workbook = null;
 		try {
 			workbook = Workbook.createWorkbook(file);
@@ -68,6 +69,7 @@ public class UtilXls {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return file;
 	}
 
 }
