@@ -1,5 +1,7 @@
 package com.pwms.pojo;
 
+import java.util.Date;
+
 public class ExamRecord {
     private Integer id;
 
@@ -8,6 +10,8 @@ public class ExamRecord {
     private Integer score;
 
     private Integer userId;
+
+    private Date time;
 
     public Integer getId() {
         return id;
@@ -39,5 +43,13 @@ public class ExamRecord {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
     }
 }

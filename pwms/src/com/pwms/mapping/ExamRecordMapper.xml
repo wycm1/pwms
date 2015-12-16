@@ -6,9 +6,10 @@
     <result column="exam_id" property="examId" jdbcType="INTEGER" />
     <result column="score" property="score" jdbcType="INTEGER" />
     <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="time" property="time" jdbcType="DATE" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, exam_id, score, user_id
+    id, exam_id, score, user_id, time
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -20,7 +21,7 @@
     select 
     <include refid="Base_Column_List" />
     from exam_record
-    where exam_id = #{0,jdbcType=INTEGER} and user_id = #{1,jdbcType=INTEGER}
+    where exam_id = #{0,jdbcType=INTEGER} and user_id = #{1,jdbcType=INTEGER} order by time desc
   </select>
   <select id="selectByUserid" resultMap="BaseResultMap"  parameterType="java.lang.Integer" >
     select 
@@ -36,7 +37,7 @@
     insert into exam_record (id, exam_id, score, 
       user_id)
     values (#{id,jdbcType=INTEGER}, #{examId,jdbcType=INTEGER}, #{score,jdbcType=INTEGER}, 
-      #{userId,jdbcType=INTEGER})
+      #{userId,jdbcType=INTEGER}, #{time,jdbcType=DATE})
   </insert>
   <insert id="insertSelective" parameterType="com.pwms.pojo.ExamRecord" >
     insert into exam_record
@@ -53,6 +54,9 @@
       <if test="userId != null" >
         user_id,
       </if>
+      <if test="time != null" >
+        time,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -66,6 +70,9 @@
       </if>
       <if test="userId != null" >
         #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="time != null" >
+        #{time,jdbcType=DATE},
       </if>
     </trim>
   </insert>
@@ -81,6 +88,9 @@
       <if test="userId != null" >
         user_id = #{userId,jdbcType=INTEGER},
       </if>
+      <if test="time != null" >
+        time = #{time,jdbcType=DATE},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -88,7 +98,8 @@
     update exam_record
     set exam_id = #{examId,jdbcType=INTEGER},
       score = #{score,jdbcType=INTEGER},
-      user_id = #{userId,jdbcType=INTEGER}
+      user_id = #{userId,jdbcType=INTEGER},
+      time = #{time,jdbcType=DATE}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
