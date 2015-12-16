@@ -80,7 +80,7 @@ public class UtilXls {
 	 * @param workbook
 	 * @return
 	 */
-	public static Map xlsToMap(Workbook workbook) {
+	public static Map<String,String[]> xlsToMap(Workbook workbook) {
 		Sheet sheet = workbook.getSheet(0);
 		String[] heads = new String[sheet.getColumns()];
 		List<String[]> contentsList = new ArrayList();
