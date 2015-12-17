@@ -1,5 +1,7 @@
 package com.pwms.dao;
 
+import java.util.List;
+
 import com.pwms.pojo.NoticeTheroyContruction;
 
 public interface NoticeTheroyContructionMapper {
@@ -10,6 +12,12 @@ public interface NoticeTheroyContructionMapper {
     int insertSelective(NoticeTheroyContruction record);
 
     NoticeTheroyContruction selectByPrimaryKey(Integer id);
+    /**
+     * 根据类型查找文章，根据时间降序排列
+     * @param type
+     * @return
+     */
+    List<NoticeTheroyContruction> selectByType(Integer type);
 
     int updateByPrimaryKeySelective(NoticeTheroyContruction record);
 

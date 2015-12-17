@@ -13,6 +13,14 @@ public class JoinOutRecordServiceImpl implements IJoinOutRecordService {
 
 	@Resource
 	private JoinOutRecordMapper joinOutRecordDao;
+	public JoinOutRecordMapper getJoinOutRecordDao() {
+		return joinOutRecordDao;
+	}
+
+	public void setJoinOutRecordDao(JoinOutRecordMapper joinOutRecordDao) {
+		this.joinOutRecordDao = joinOutRecordDao;
+	}
+
 	@Override
 	public void save(JoinOutRecord joinrecord) {
 		// TODO Auto-generated method stub
