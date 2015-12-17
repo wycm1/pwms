@@ -24,7 +24,7 @@ public class AdminUserController extends BaseController {
 	}
 	//处理修改，通过，或者不通过
 	@RequestMapping("/deal")
-	public String deal(int userid, Model model){
+	public String deal(int modifyid, Model model){
 		return null;
 	}
 	//xls用户信息导出
