@@ -9,6 +9,7 @@ import java.util.Map;
 
 import jxl.Sheet;
 import jxl.Workbook;
+import jxl.read.biff.BiffException;
 import jxl.write.Label;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
@@ -100,5 +101,11 @@ public class UtilXls {
 			map.put(heads[j],contentsList.get(j));
 		}
 		return map;
+	}
+	public static void main(String argv[]) throws Exception{
+		Workbook workbook = Workbook.getWorkbook(new File("D:\\我的文件夹\\2013级软件3班学号和电话.xls"));
+		Map map = xlsToMap(workbook);
+		System.out.println(map.size());
+		System.out.println("执行");
 	}
 }

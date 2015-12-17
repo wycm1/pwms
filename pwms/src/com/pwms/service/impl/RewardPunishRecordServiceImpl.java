@@ -41,11 +41,9 @@ public class RewardPunishRecordServiceImpl implements
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 	@Override
 	public void save(RewardPunishRecord rewardPunish) {
 		// TODO Auto-generated method stub
 		rewardRecordDao.insertSelective(rewardPunish);
 	}
-
 }
