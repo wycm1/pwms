@@ -1,7 +1,11 @@
 package com.pwms.pojo;
 
 import java.util.Date;
-
+/**
+ * auditingFlag 0:表示待审核  1:表示审核通过 2： 表示审核未通过
+ * @author xiaob
+ *
+ */
 public class UserinfoModify {
     private Integer id;
 
@@ -52,7 +56,7 @@ public class UserinfoModify {
     private Integer type;
 
     private Integer userId;
-
+    
     private Integer auditingFlag;
 
     private String auditingMsg;

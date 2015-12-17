@@ -1,11 +1,16 @@
 package com.pwms.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
 import com.pwms.dao.UserinfoMapper;
+import com.pwms.dao.UserinfoModifyMapper;
+import com.pwms.pojo.User;
 import com.pwms.pojo.Userinfo;
+import com.pwms.pojo.UserinfoModify;
 import com.pwms.service.IUserinfoService;
 
 @Service("userinfoService")
@@ -13,6 +18,15 @@ public class UserinfoServiceImpl implements IUserinfoService {
 
 	@Resource
 	private UserinfoMapper userinfoDao;
+	private UserinfoModifyMapper userinfoModifyDao;
+	public UserinfoModifyMapper getUserinfoModifyDao() {
+		return userinfoModifyDao;
+	}
+
+	public void setUserinfoModifyDao(UserinfoModifyMapper userinfoModifyDao) {
+		this.userinfoModifyDao = userinfoModifyDao;
+	}
+
 	public UserinfoMapper getUserinfoDao() {
 		return userinfoDao;
 	}
@@ -43,6 +57,42 @@ public class UserinfoServiceImpl implements IUserinfoService {
 	public Userinfo getUserinfoByUserid(int userId) {
 		// TODO Auto-generated method stub
 		return this.userinfoDao.selectByUserid(userId);
+	}
+	@Override
+	public List<UserinfoModify> getModifyByUserFlag(User user, int flag) {
+		return this.userinfoModifyDao.selectByLeaderFLag(flag, user.getId());
+	}
+	@Override
+	public List<UserinfoModify> getModifyNotEffect(User user) {
+		// TODO Auto-generated method stub
+		if(user.haveBranchPermission()){
+			return this.userinfoModifyDao.selectByLeaderFLag(0, user.getId());
+		}
+		else if(user.haveHeadPermission()){
+			return this.userinfoModifyDao.selectByFlag(0);
+		}
+		return null;
+	}
+
+	@Override
+	public void dealModify(UserinfoModify modify, int flag, String msg) {
+		// TODO Auto-generated method stub
+//		UserinfoModify userinfoModify this.userinfoModifyDao.selectByPrimaryKey(modifyid);
+		modify.setAuditingFlag(flag);
+		modify.setAuditingMsg(msg);
+		userinfoModifyDao.updateByPrimaryKeySelective(modify);
+	}
+
+	@Override
+	public void dealPass(UserinfoModify modify) {
+		// TODO Auto-generated method stub
+		this.dealModify(modify, 1, null);
+	}
+
+	@Override
+	public void dealNotPass(UserinfoModify modify, String msg) {
+		// TODO Auto-generated method stub
+		this.dealModify(modify, 2, msg);
 	}
    
 }

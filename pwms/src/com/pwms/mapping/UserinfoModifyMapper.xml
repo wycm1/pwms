@@ -42,6 +42,18 @@
     from userinfo_modify
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectByFlag" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from userinfo_modify
+    where auditing_flag = #{auditing_flag,jdbcType=INTEGER}
+  </select>
+  <select id="selectByLeaderFLag" resultMap="BaseResultMap">
+    select 
+    userinfo_modify.*
+    from userinfo_modify, pw_user, branch
+    where auditing_flag = #{0,jdbcType=INTEGER} and branch.leader_id = pw_user.id and userinfo_modify.user_id = pw_user.id and pw_user.id = #{1,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from userinfo_modify
     where id = #{id,jdbcType=INTEGER}
