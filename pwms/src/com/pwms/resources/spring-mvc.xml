@@ -13,6 +13,7 @@
     <context:component-scan base-package="com.pwms.controller"></context:component-scan>
     <!-- 默认的注解映射的支持 -->
     <mvc:annotation-driven />
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean" /> 
     <!-- 直接访问 -->
     <mvc:resources mapping="/admin/**" location="/WEB-INF/views/admin/" /> 
     <!-- 视图解释类 -->

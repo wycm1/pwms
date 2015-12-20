@@ -140,10 +140,8 @@
 				<ul>
 					<li><a href="javascript:;" onclick="member_add('验证信息导入','file-add.html','','510')">验证信息导入</a></li> 
 					<li><a _href="reward-punish-list.html" href="javascript:;">奖惩记录管理</a></li>
-					<li><a _href="file-add.html" href="javascript:;">转入转出记录</a></li>
+					<li><a _href="join-out-list.html" href="javascript:;">转入转出记录管理</a></li>
 					<li><a href="user/exportxls">导出用户详细信息</a></li>
-					<li><a href="user/exportout">导出用户转入转出信息</a></li>
-					<li><a href="user/exportXlsReward">导出奖惩登记表</a></li>
 				</ul>
 			</dd>
 		</dl>

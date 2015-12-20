@@ -1,5 +1,7 @@
 package com.pwms.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -37,6 +39,12 @@ public class JoinOutRecordServiceImpl implements IJoinOutRecordService {
 	public JoinOutRecord getJoinOutRecord(int id) {
 		// TODO Auto-generated method stub
 		return this.joinOutRecordDao.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public List<JoinOutRecord> findAll() {
+		// TODO Auto-generated method stub
+		return this.joinOutRecordDao.findAll();
 	}
 
 }

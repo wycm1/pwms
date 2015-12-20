@@ -1,19 +1,13 @@
 package com.pwms.controller;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Date;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.io.FileUtils;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -24,6 +18,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.pwms.pojo.JoinOutRecord;
 import com.pwms.pojo.RewardPunishRecord;
+import com.pwms.service.IJoinOutRecordService;
+import com.pwms.service.IRewardPunishRecordService;
 import com.pwms.tools.FileManage;
 /**
  * 后台用户信息管理
@@ -33,6 +29,10 @@ import com.pwms.tools.FileManage;
 @Controller
 @RequestMapping("/admin/user")
 public class AdminUserController extends BaseController {
+	@Resource
+	private IRewardPunishRecordService rprService;
+	@Resource
+	private IJoinOutRecordService jorService;
 	/**
 	 * 用户验证信息导入
 	 * @param file
@@ -108,7 +108,11 @@ public class AdminUserController extends BaseController {
 	 */
 	@RequestMapping("/addjoinout")
 	public String addJoinOut(JoinOutRecord record, Model model){
-		return null;
+		//System.out.println("姓名：" + record.getName() + "日期：" + record.getOutDate());
+		record.setUserId(1);
+		jorService.save(record);
+		model.addAttribute("msg", "转入转出记录添加成功！");
+        return "admin/notice-msg";
 	}
 	/**
 	 * 奖惩登记表导出
@@ -134,6 +138,9 @@ public class AdminUserController extends BaseController {
 	public String addReward(HttpServletRequest request, RewardPunishRecord record, Model model){
 		System.out.println(record.getExplian());
 		System.out.println(request.getParameter("stuid"));
+		record.setUserId(1);//此处需要一个根据学号查询用户id的方法
+		record.setRewPunDate(new Date());
+		rprService.save(record);
 		model.addAttribute("msg", "奖惩记录添加成功！");
         return "admin/notice-msg"; 
 	}

@@ -9,14 +9,19 @@
     <result column="reason" property="reason" jdbcType="VARCHAR" />
     <result column="office" property="office" jdbcType="VARCHAR" />
     <result column="office_class" property="officeClass" jdbcType="VARCHAR" />
-    <result column="rew_pun_date" property="rewPunDate" jdbcType="DATE" />
+    <result column="rew_pun_date" property="rewPunDate" javaType="java.sql.Date" jdbcType="DATE" />
     <result column="explian" property="explian" jdbcType="VARCHAR" />
-    <result column="undo_date" property="undoDate" jdbcType="DATE" />
+    <result column="undo_date" property="undoDate" javaType="java.sql.Date" jdbcType="DATE" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, name, user_id, rew_pun_name, reason, office, office_class, rew_pun_date, explian, 
     undo_date
   </sql>
+  <select id="findAll" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from reward_punish_record
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
