@@ -2,6 +2,8 @@ package com.pwms.pojo;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class JoinOutRecord {
     private Integer id;
 
@@ -10,7 +12,7 @@ public class JoinOutRecord {
     private String outUnit;
 
     private String joinUnit;
-
+    @DateTimeFormat(pattern="yyyy-MM-dd")  
     private Date outDate;
 
     private String originContactAddress;
@@ -20,7 +22,7 @@ public class JoinOutRecord {
     private String destAgent;
 
     private String destAgentPhone;
-
+    @DateTimeFormat(pattern="yyyy-MM-dd")  
     private Date joinDate;
 
     private Integer userId;

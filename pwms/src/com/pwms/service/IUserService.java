@@ -25,5 +25,6 @@ public interface IUserService {
      */
     public boolean auditUserinfo(UserinfoModify userinfoModify, int auditing);
     
+    public int getUseridByStuid(int stuid);
 //    public boolean importXlsToVerify(File file);
 }

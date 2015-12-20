@@ -6,18 +6,23 @@
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="out_unit" property="outUnit" jdbcType="VARCHAR" />
     <result column="join_unit" property="joinUnit" jdbcType="VARCHAR" />
-    <result column="out_date" property="outDate" jdbcType="DATE" />
+    <result column="out_date" property="outDate" javaType="java.sql.Date" jdbcType="DATE" />
     <result column="origin_contact_address" property="originContactAddress" jdbcType="VARCHAR" />
     <result column="origin_contact_phone" property="originContactPhone" jdbcType="VARCHAR" />
     <result column="dest_agent" property="destAgent" jdbcType="VARCHAR" />
     <result column="dest_agent_phone" property="destAgentPhone" jdbcType="VARCHAR" />
-    <result column="join_date" property="joinDate" jdbcType="DATE" />
+    <result column="join_date" property="joinDate" javaType="java.sql.Date" jdbcType="DATE" />
     <result column="user_id" property="userId" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, name, out_unit, join_unit, out_date, origin_contact_address, origin_contact_phone, 
     dest_agent, dest_agent_phone, join_date, user_id
   </sql>
+  <select id="findAll" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from join_out_record
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

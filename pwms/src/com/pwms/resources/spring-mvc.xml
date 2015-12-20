@@ -13,10 +13,13 @@
     <context:component-scan base-package="com.pwms.controller"></context:component-scan>
     <!-- 默认的注解映射的支持 -->
     <mvc:annotation-driven />
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean" /> 
+    <!-- 直接访问 -->
+    <mvc:resources mapping="/admin/**" location="/WEB-INF/views/admin/" /> 
     <!-- 视图解释类 -->
     <bean
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/Views/" />
+        <property name="prefix" value="/WEB-INF/views/" />
         <!--可为空,方便实现自已的依据扩展名来选择视图解释类的逻辑 -->
         <property name="suffix" value=".jsp" />
     </bean>
@@ -35,4 +38,9 @@
             </bean>
         </mvc:interceptor>
     </mvc:interceptors>
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+        <property name="defaultEncoding" value="utf-8"></property>   
+        <property name="maxUploadSize" value="10485760000"></property>  
+        <property name="maxInMemorySize" value="40960"></property>  
+   </bean>
 </beans>

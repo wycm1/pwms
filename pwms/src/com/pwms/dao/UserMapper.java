@@ -9,4 +9,5 @@ public interface UserMapper {
     User selectByNameOrFid(String loginfo, String password);
     int insert(User user);
     int insertSelective(User user);
+    User selectdByStuid(int stuid);
 }

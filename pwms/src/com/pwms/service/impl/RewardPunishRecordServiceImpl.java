@@ -1,6 +1,7 @@
 package com.pwms.service.impl;
 
 import java.io.File;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -23,6 +24,11 @@ public class RewardPunishRecordServiceImpl implements
 	public void setRewardRecordDao(RewardPunishRecordMapper rewardRecordDao) {
 		this.rewardRecordDao = rewardRecordDao;
 	}
+	@Override
+	public List<RewardPunishRecord> findAll() {
+		// TODO Auto-generated method stub
+		return rewardRecordDao.findAll();
+	}
 
 	@Override
 	public RewardPunishRecord getRewardPunishRecord(int id) {
@@ -41,11 +47,9 @@ public class RewardPunishRecordServiceImpl implements
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 	@Override
 	public void save(RewardPunishRecord rewardPunish) {
 		// TODO Auto-generated method stub
 		rewardRecordDao.insertSelective(rewardPunish);
 	}
-
 }

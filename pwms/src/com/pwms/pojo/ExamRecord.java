@@ -45,11 +45,12 @@ public class ExamRecord {
         this.userId = userId;
     }
 
-    public Date getTime() {
-        return time;
-    }
+	public Date getTime() {
+		return time;
+	}
 
-    public void setTime(Date time) {
-        this.time = time;
-    }
+	public void setTime(Date time) {
+		this.time = time;
+	}
+  
 }
