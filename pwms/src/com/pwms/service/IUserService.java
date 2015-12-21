@@ -1,5 +1,7 @@
 package com.pwms.service;
 
+import java.io.File;
+
 import javax.servlet.http.HttpSession;
 
 import com.pwms.pojo.User;
@@ -22,4 +24,7 @@ public interface IUserService {
      * @return 
      */
     public boolean auditUserinfo(UserinfoModify userinfoModify, int auditing);
+    
+    public int getUseridByStuid(int stuid);
+//    public boolean importXlsToVerify(File file);
 }

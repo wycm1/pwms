@@ -17,6 +17,12 @@
     select 
     <include refid="User_Column_List" />
     from pw_user
+    where f_id = #{stuid,jdbcType=INTEGER}
+  </select>
+  <select id="selectdByStuid" resultMap="UserResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="User_Column_List" />
+    from pw_user
     where id = #{id,jdbcType=INTEGER}
   </select>
   <select id="selectByNameOrFid" resultMap="UserResultMap">

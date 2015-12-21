@@ -19,7 +19,7 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
    <!--　浏览器不支持put,delete等method,由该filter将/blog?_method=delete转换为标准的http　delete方法　-->
-    　 	<filter>
+    <filter>  
 		<filter-name>HiddenHttpMethodFilter</filter-name>
 		<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
 	</filter>
