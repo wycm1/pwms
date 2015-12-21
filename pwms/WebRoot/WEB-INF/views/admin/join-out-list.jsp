@@ -34,7 +34,7 @@
 	</div>
 	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="user/exportout" class="btn btn-primary radius">导出转入转出记录表</a> <a href="javascript:;" onclick="member_add('添加转入转出记录','join-out-add.html','','510')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加转入转出记录</a></span> <span class="r">共有数据：<strong>88</strong> 条</span> </div>
 	<div class="mt-20">
-	<table class="table table-border table-bordered table-hover table-bg table-sort" id="join-out-list">
+	<table class="table table-border table-bordered table-hover table-bg table-sort">
 		<thead>
 			<tr class="text-c">
 				<th width="25"><input type="checkbox" name="" value=""></th>
@@ -53,7 +53,7 @@
 			<tr class="text-c">
 				<td><input type="checkbox" value="1" name=""></td>
 				<td>${item.id}</td>
-				<td><u style="cursor:pointer" class="text-primary" onclick="member_show('${item.name}','user-show/${item.userId}','10001','360','400')">${item.name}</u></td>
+				<td><u style="cursor:pointer" class="text-primary" onclick="member_show('张三','member-show.html','10001','360','400')">${item.name}</u></td>
 				<td>${item.outUnit}</td>
 				<td>${item.joinUnit}</td>
 				<td>${item.outDate}</td>
@@ -62,7 +62,6 @@
 				<td class="td-manage"><a style="text-decoration:none" onClick="member_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a> <a title="编辑" href="javascript:;" onclick="member_edit('编辑','member-add.html','4','','510')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="change_password('修改密码','change-password.html','10001','600','270')" href="javascript:;" title="修改密码"><i class="Hui-iconfont">&#xe63f;</i></a> <a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 			</tr>
 		</c:forEach>
-		
 		</tbody>
 	</table>
 	</div>
@@ -75,22 +74,6 @@
 <script type="text/javascript" src="js/H-ui.js"></script> 
 <script type="text/javascript" src="js/H-ui.admin.js"></script> 
 <script type="text/javascript">
-/* $(document).ready(function(){
-	$('#join-out-list').dataTable({
-		"ajax":"./getJoinOut.json",
-		"columns":[   
-		              {"data" : "id"},  
-		              {"data" : "name"},  
-		              {"data" : "name"},  
-		              {"data" : "name"},  
-		              {"data" : "name"},  
-		              {"data" : "name"},  
-		              {"data" : "name"},  
-		              {"data" : "name"},   
-		              {"data" : "outUnit"}  
-		            ] 
-	});
-}); */
 $(function(){
 	$('.table-sort').dataTable({
 		"aaSorting": [[ 1, "desc" ]],//默认第几个排序

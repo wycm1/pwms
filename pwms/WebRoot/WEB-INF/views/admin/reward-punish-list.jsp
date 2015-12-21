@@ -53,7 +53,7 @@
 			<tr class="text-c">
 				<td><input type="checkbox" value="1" name=""></td>
 				<td>${item.id}</td>
-				<td><u style="cursor:pointer" class="text-primary" onclick="member_show('${item.name}','user-show/${item.userId}','10001','360','400')">${item.name}</u></td>
+				<td><u style="cursor:pointer" class="text-primary" onclick="member_show('张三','member-show.html','10001','360','400')">${item.name}</u></td>
 				<td>${item.rewPunName}</td>
 				<td>${item.office}</td>
 				<td>${item.officeClass}</td>
@@ -132,13 +132,7 @@ function change_password(title,url,id,w,h){
 function member_del(obj,id){
 	layer.confirm('确认要删除吗？',function(index){
 		$(obj).parents("tr").remove();
-        $.ajax({
-            type:"DELETE",
-            url:"user/rewOrPun/" + id,
-            success:function(msg){
-            	layer.msg('已删除!',{icon:1,time:1000});
-            }
-        });
+		layer.msg('已删除!',{icon:1,time:1000});
 	});
 }
 </script> 

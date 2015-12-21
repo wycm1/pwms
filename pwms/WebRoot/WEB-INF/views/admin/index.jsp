@@ -141,7 +141,7 @@
 					<li><a href="javascript:;" onclick="member_add('验证信息导入','file-add.html','','510')">验证信息导入</a></li> 
 					<li><a _href="reward-punish-list.html" href="javascript:;">奖惩记录管理</a></li>
 					<li><a _href="join-out-list.html" href="javascript:;">转入转出记录管理</a></li>
-					<li><a _href="userdetail-modify-list.html" href="javascript:;">用户信息修改管理</a></li>
+					<li><a href="user/exportxls">导出用户详细信息</a></li>
 				</ul>
 			</dd>
 		</dl>
