@@ -123,7 +123,7 @@
       </tr>
 	  <tr>
         <th class="text-r">备注：</th>
-        <td>${userdetailModify.note}</td>
+        <td><font style="color:red">${userdetailModify.note}</font></td>
       </tr>
     </tbody>
   </table>

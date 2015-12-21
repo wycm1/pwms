@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -76,9 +77,15 @@ public class AdminUserController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value="/userdetail-modify/{id}/{flag}")
-	public String deal(@PathVariable int id, @PathVariable int flag){
+	public @ResponseBody String deal(@PathVariable int id, @PathVariable int flag,HttpServletRequest request){
 		UserinfoModify um = userinfoService.getUserinfoModifyByid(id);
-		return "success";
+		String msg = request.getParameter("msg");
+		if(msg == null){
+			msg = "";
+		}
+		System.out.println(id + "  " + flag + "  " + msg);
+		userinfoService.dealModify(um, flag, msg);//有问题
+		return "审核通过";
 	}
 	/**
 	 * 导出详细用户信息

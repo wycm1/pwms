@@ -55,10 +55,10 @@
     where auditing_flag = #{auditing_flag,jdbcType=INTEGER}
   </select>
   <select id="selectByLeaderFLag" resultMap="BaseResultMap">
-    select 
+  	select 
     userinfo_modify.*
-    from userinfo_modify, pw_user, branch
-    where auditing_flag = #{0,jdbcType=INTEGER} and branch.leader_id = pw_user.id and userinfo_modify.user_id = pw_user.id and pw_user.id = #{1,jdbcType=INTEGER}
+    from branch_member, branch, userinfo_modify
+    where userinfo_modify.auditing_flag=#{0,jdbcType=INTEGER} and branch.leader_id = #{1,jdbcType=INTEGER} and branch_member.branch_id = branch.id and userinfo_modify.user_id =branch_member.user_id
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from userinfo_modify

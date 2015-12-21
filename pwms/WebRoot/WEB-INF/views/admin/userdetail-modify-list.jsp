@@ -46,7 +46,7 @@
 				<th width="130">类型</th>
 				<th width="70">状态</th>
 				<th width="200">审核信息</th>
-				<th width="100">详细</th>
+				<th width="100">详细信息</th>
 				<th width="100">操作</th>
 			</tr>
 		</thead>
@@ -81,18 +81,18 @@
 				</span></td>
 				<td>
 					<div class="row cl">
-				      <div class="formControls col-5" style="width:100%;height:50px">
-				        <textarea name="explian" cols="" rows="" class="textarea"  placeholder="说明" dragonfly="true" onKeyUp="textarealength(this,50)"></textarea>
+				      <div class="formControls col-5" style="width:100%">
+				        <textarea style="width:100%;height:50px" name="msg" cols="" rows="" class="textarea"  placeholder="说明" dragonfly="true" onKeyUp="textarealength(this,50)"></textarea>
 				        <p class="textarea-numberbar"><em class="textarea-length">0</em>/50</p>
 				      </div>
 				    </div>
 				</td>
 
-				<td><u style="cursor:pointer" class="text-primary" onclick="member_add('${item.name}','userdetail-modify-show/${item.userId}','500','')">查看详细信息</u></td>
+				<td><u style="cursor:pointer" class="text-primary" onclick="member_add('${item.name}','userdetail-modify-show/${item.id}','500','')">查看详细信息</u></td>
 				<td class="td-manage">
-					<a style="text-decoration:none" onClick="auditing_fail(this,'10001')" href="javascript:;" title="审核不通过"><i class="Hui-iconfont">&#xe6dd;</i></a>
-					<a style="text-decoration:none" onClick="auditing_through(this,'10001')" href="javascript:;" title="审核通过"><i class="Hui-iconfont">&#xe6e1;</i></a>
-					<a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a>
+					<a style="text-decoration:none" onClick="auditing_fail(this,${item.id})" href="javascript:;" title="审核不通过"><i class="Hui-iconfont">&#xe6dd;</i></a>
+					<a style="text-decoration:none" onClick="auditing_through(this,${item.id})" href="javascript:;" title="审核通过"><i class="Hui-iconfont">&#xe6e1;</i></a>
+					<a title="删除" href="javascript:;" onclick="member_del(this,${item.id})" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a>
 				</td>
 			</tr>
 		</c:forEach>
@@ -138,16 +138,30 @@ function member_show(title,url,id,w,h){
 /*审核-不通过*/
 function auditing_fail(obj,id){
 	layer.confirm('确认要拒绝通过吗？',function(index){
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已拒绝通过</span>');
-		layer.msg('已拒绝通过!',{icon: 5,time:1000});
+		var message = $(obj).parents("tr").find("[name='msg']").val();
+		$.ajax({
+			type:"POST",
+			url:"user/userdetail-modify/" +id +"/0?msg=" + message,
+			success:function(msg){
+				layer.msg('已拒绝通过!',{icon: 5,time:1000});
+				$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已拒绝通过</span>');
+            }
+		});
 	});
 }
 
 /*审核-通过*/
 function auditing_through(obj,id){
 	layer.confirm('确认要审核通过吗？',function(index){
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已通过</span>');
-		layer.msg('已通过!',{icon: 6,time:1000});
+		var message = $(obj).parents("tr").find("[name='msg']").val();
+		$.ajax({
+			type:"POST",
+			url:"user/userdetail-modify/" +id +"/1?msg=" + message,
+			success:function(msg){
+				layer.msg('已通过!',{icon: 6,time:1000});
+				$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已通过</span>');
+            }
+		});
 	});
 }
 /*用户-编辑*/
