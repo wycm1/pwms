@@ -24,7 +24,7 @@
 </head>
 <body>
 <div class="pd-20">
-  <form action="user/addjoinout"  method="post" class="form form-horizontal" id="form-join-out-add">
+  <form action="user/joinout"  method="post" class="form form-horizontal" id="form-join-out-add">
     <div class="row cl">
       <label class="form-label col-3"><span class="c-red">*</span>姓名：</label>
       <div class="formControls col-5">

@@ -1,5 +1,6 @@
 package com.pwms.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -18,6 +19,7 @@ public class UserinfoServiceImpl implements IUserinfoService {
 
 	@Resource
 	private UserinfoMapper userinfoDao;
+	@Resource
 	private UserinfoModifyMapper userinfoModifyDao;
 	public UserinfoModifyMapper getUserinfoModifyDao() {
 		return userinfoModifyDao;
@@ -60,7 +62,10 @@ public class UserinfoServiceImpl implements IUserinfoService {
 	}
 	@Override
 	public List<UserinfoModify> getModifyByUserFlag(User user, int flag) {
-		return this.userinfoModifyDao.selectByLeaderFLag(flag, user.getId());
+		List<UserinfoModify> um = new ArrayList<UserinfoModify>();
+		um = this.userinfoModifyDao.selectByLeaderFLag(flag, user.getId());
+		System.out.println(um.size());
+		return um;
 	}
 	@Override
 	public List<UserinfoModify> getModifyNotEffect(User user) {
@@ -93,6 +98,12 @@ public class UserinfoServiceImpl implements IUserinfoService {
 	public void dealNotPass(UserinfoModify modify, String msg) {
 		// TODO Auto-generated method stub
 		this.dealModify(modify, 2, msg);
+	}
+
+	@Override
+	public UserinfoModify getUserinfoModifyByid(int id) {
+		// TODO Auto-generated method stub
+		return userinfoModifyDao.selectByPrimaryKey(id);
 	}
    
 }

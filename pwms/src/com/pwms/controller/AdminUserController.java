@@ -11,15 +11,19 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.pwms.pojo.JoinOutRecord;
 import com.pwms.pojo.RewardPunishRecord;
+import com.pwms.pojo.UserinfoModify;
 import com.pwms.service.IJoinOutRecordService;
 import com.pwms.service.IRewardPunishRecordService;
+import com.pwms.service.IUserinfoService;
 import com.pwms.tools.FileManage;
 /**
  * 后台用户信息管理
@@ -33,6 +37,8 @@ public class AdminUserController extends BaseController {
 	private IRewardPunishRecordService rprService;
 	@Resource
 	private IJoinOutRecordService jorService;
+	@Resource
+	private IUserinfoService userinfoService;
 	/**
 	 * 用户验证信息导入
 	 * @param file
@@ -63,21 +69,22 @@ public class AdminUserController extends BaseController {
         model.addAttribute("msg", "文件导入成功！");
         return "admin/notice-msg";  
     }
-	//查看当前有修改了用户信息，但未生效的用户
-	@RequestMapping("/modifylist")
-	public String modifylist(Model model){
-		return null;
-	}
-	//处理修改，通过，或者不通过
-	@RequestMapping("/deal")
-	public String deal(int modifyid, Model model){
-		return null;
+	/**
+	 * 审核用户信息修改，如果
+	 * @param id 修改信息id
+	 * @param flag 0表示通过，1表示不通过
+	 * @return
+	 */
+	@RequestMapping(value="/userdetail-modify/{id}/{flag}")
+	public String deal(@PathVariable int id, @PathVariable int flag){
+		UserinfoModify um = userinfoService.getUserinfoModifyByid(id);
+		return "success";
 	}
 	/**
 	 * 导出详细用户信息
 	 * @param request
 	 * @param response
-	 * @return
+	 * @return 
 	 * @throws Exception
 	 */
 	@RequestMapping("/exportxls")
@@ -106,7 +113,7 @@ public class AdminUserController extends BaseController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping("/addjoinout")
+	@RequestMapping(value="/joinout",method=RequestMethod.POST)
 	public String addJoinOut(JoinOutRecord record, Model model){
 		//System.out.println("姓名：" + record.getName() + "日期：" + record.getOutDate());
 		record.setUserId(1);
@@ -134,7 +141,7 @@ public class AdminUserController extends BaseController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping("/addrewOrPun")
+	@RequestMapping(value="/rewOrPun",method=RequestMethod.POST)
 	public String addReward(HttpServletRequest request, RewardPunishRecord record, Model model){
 		System.out.println(record.getExplian());
 		System.out.println(request.getParameter("stuid"));
@@ -142,6 +149,19 @@ public class AdminUserController extends BaseController {
 		record.setRewPunDate(new Date());
 		rprService.save(record);
 		model.addAttribute("msg", "奖惩记录添加成功！");
+        return "admin/notice-msg"; 
+	}
+	/**
+	 * 删除奖惩记录
+	 * @param record
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="/rewOrPun/{id}",method=RequestMethod.DELETE)
+	public String delete(@PathVariable int id,HttpServletRequest request, Model model){
+		System.out.println("删除奖惩记录成功！");
+		//rprService.getRewardPunishRecord(id);
+		model.addAttribute("msg", "删除奖惩记录添加成功！");
         return "admin/notice-msg"; 
 	}
 }

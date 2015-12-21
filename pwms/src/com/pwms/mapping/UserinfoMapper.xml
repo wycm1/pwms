@@ -9,19 +9,19 @@
     <result column="sex" jdbcType="VARCHAR" property="sex" />
     <result column="nation" jdbcType="VARCHAR" property="nation" />
     <result column="native_palce" jdbcType="VARCHAR" property="nativePalce" />
-    <result column="birthday" jdbcType="DATE" property="birthday" />
+    <result column="birthday" jdbcType="DATE" property="birthday" javaType="java.sql.Date"/>
     <result column="posttion" jdbcType="VARCHAR" property="posttion" />
-    <result column="dateline" jdbcType="DATE" property="dateline" />
+    <result column="dateline" jdbcType="DATE" property="dateline" javaType="java.sql.Date"/>
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="contacts" jdbcType="VARCHAR" property="contacts" />
     <result column="train_educat" jdbcType="VARCHAR" property="trainEducat" />
     <result column="inspect" jdbcType="VARCHAR" property="inspect" />
-    <result column="train_date" jdbcType="DATE" property="trainDate" />
-    <result column="active_date" jdbcType="DATE" property="activeDate" />
+    <result column="train_date" jdbcType="DATE" property="trainDate" javaType="java.sql.Date"/>
+    <result column="active_date" jdbcType="DATE" property="activeDate" javaType="java.sql.Date"/>
     <result column="party_grade" jdbcType="INTEGER" property="partyGrade" />
-    <result column="formal_date" jdbcType="DATE" property="formalDate" />
-    <result column="join_date" jdbcType="DATE" property="joinDate" />
-    <result column="ready_party_date" jdbcType="DATE" property="readyPartyDate" />
+    <result column="formal_date" jdbcType="DATE" property="formalDate" javaType="java.sql.Date"/>
+    <result column="join_date" jdbcType="DATE" property="joinDate" javaType="java.sql.Date"/>
+    <result column="ready_party_date" jdbcType="DATE" property="readyPartyDate" javaType="java.sql.Date"/>
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="note" jdbcType="VARCHAR" property="note" />

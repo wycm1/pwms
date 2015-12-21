@@ -12,6 +12,7 @@ public interface UserinfoModifyMapper {
     int insertSelective(UserinfoModify record);
 
     UserinfoModify selectByPrimaryKey(Integer id);
+    UserinfoModify selectByUserid(Integer id);
     /**
      * 根据标志查询自己支部的修改个人信息的记录
      * @param auditing_flag 0:未审核 1：通过审核 2： 未通过审核
@@ -29,4 +30,5 @@ public interface UserinfoModifyMapper {
     int updateByPrimaryKeySelective(UserinfoModify record);
 
     int updateByPrimaryKey(UserinfoModify record);
+    
 }

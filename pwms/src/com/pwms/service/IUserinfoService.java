@@ -9,12 +9,18 @@ import com.pwms.pojo.UserinfoModify;
 public interface IUserinfoService {
 	//获取Userinfo
 	public Userinfo getUserinfo(int StuOrJobid);
-/**
- * 通过userid得到userinfo对象
- * @param userId 
- * @return Userinfo对象
- */
+	/**
+	 * 通过userid得到userinfo对象
+	 * @param userId 
+	 * @return Userinfo对象
+	 */
 	public Userinfo getUserinfoByUserid(int userId);
+	/**
+	 * 通过id查询修改记录
+	 * @param id
+	 * @return
+	 */
+	public UserinfoModify getUserinfoModifyByid(int id);
 	//修改信息
 	public void updateUserinfo(Userinfo userinfo);
 	//保存
