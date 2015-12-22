@@ -132,7 +132,7 @@ public class UserServiceImpl implements IUserService {
 		}
 	}
 	@Override
-	public int getUseridByStuid(int stuid) {
+	public int getUseridByStuid(String stuid) {
 		// TODO Auto-generated method stub
 		return this.userDao.selectdByStuid(stuid).getId();
 	}

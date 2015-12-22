@@ -138,10 +138,18 @@
 			<dt><i class="Hui-iconfont">&#xe60d;</i> 用户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a href="javascript:;" onclick="member_add('验证信息导入','file-add.html','','510')">验证信息导入</a></li> 
-					<li><a _href="reward-punish-list.html" href="javascript:;">奖惩记录管理</a></li>
-					<li><a _href="join-out-list.html" href="javascript:;">转入转出记录管理</a></li>
-					<li><a _href="userdetail-modify-list.html" href="javascript:;">用户信息修改管理</a></li>
+					<li><a href="javascript:;" onclick="member_add('验证信息导入','user/file-add.html','','510')">验证信息导入</a></li> 
+					<li><a _href="user/reward-punish-list.html" href="javascript:;">奖惩记录管理</a></li>
+					<li><a _href="user/join-out-list.html" href="javascript:;">转入转出记录管理</a></li>
+					<li><a _href="user/userdetail-modify-list.html" href="javascript:;">用户信息修改管理</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-member">
+			<dt><i class="Hui-iconfont">&#xe611;</i> 支部管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="javascript:;" onclick="member_add('修改支部信息','user/file-add.html','','510')">增加支部</a></li> 
 				</ul>
 			</dd>
 		</dl>

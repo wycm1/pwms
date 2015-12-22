@@ -3,10 +3,12 @@ package com.pwms.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,9 +23,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.pwms.pojo.JoinOutRecord;
 import com.pwms.pojo.RewardPunishRecord;
+import com.pwms.pojo.User;
 import com.pwms.pojo.UserinfoModify;
 import com.pwms.service.IJoinOutRecordService;
 import com.pwms.service.IRewardPunishRecordService;
+import com.pwms.service.IUserService;
 import com.pwms.service.IUserinfoService;
 import com.pwms.tools.FileManage;
 /**
@@ -40,6 +44,86 @@ public class AdminUserController extends BaseController {
 	private IJoinOutRecordService jorService;
 	@Resource
 	private IUserinfoService userinfoService;
+	@Resource
+	private IUserService userService;
+	//负责页面显示
+	@RequestMapping("/reward-punish-add")
+	public String rewardPunishAdd(){
+		return "admin/user/reward-punish-add";
+	}
+	@RequestMapping("/join-out-add")
+	public String joinOutAdd(){
+		return "admin/user/join-out-add";
+	}
+	/**
+	 * 获取所有奖惩记录
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/reward-punish-list")
+	public ModelAndView getAllRPR(){
+		ModelAndView mav = new ModelAndView("admin/user/reward-punish-list");
+		List<RewardPunishRecord> allRPR = rprService.findAll();
+		System.out.println(allRPR.size());
+		System.out.println(allRPR.get(0).getName());
+		mav.addObject("rpList", allRPR);
+        return mav;
+	}
+	/**
+	 * 获取所有转入转出记录
+	 * @param model 
+	 * @return
+	 */
+	@RequestMapping("/join-out-list")
+	public ModelAndView getAllJOR(){
+		ModelAndView mav = new ModelAndView("admin/user/join-out-list");
+		mav.addObject("joList", jorService.findAll());
+        return mav;
+	}
+	@RequestMapping("getJoinOut")
+	public @ResponseBody List getJson(){
+		return jorService.findAll();
+	}
+	/**
+	 * 获取所有用户信息修改记录
+	 * @return
+	 */
+	@RequestMapping("/userdetail-modify-list")
+	public ModelAndView getAllUserinfoModify(HttpServletRequest request){
+		ModelAndView mav = new ModelAndView("admin/user/userdetail-modify-list");
+		User u = new User();
+		u.setId(4);
+		HttpSession session = request.getSession();
+		session.setAttribute("user", u);
+		User user = (User) session.getAttribute("user");
+		mav.addObject("udmList", userinfoService.getModifyByUserFlag(user, 0));
+        return mav;
+	}
+	/**
+	 * 通过用户id获取用户详细信息
+	 * @param userId
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/user-show/{userId}")
+	public String getUserinfo(@PathVariable int userId,Model model){
+		//System.out.println("正在执行~");
+		model.addAttribute("userinfo", userinfoService.getUserinfoByUserid(userId));
+		return "admin/user/user-show";
+	}
+	/**
+	 * 通过信息修改id获取修改记录信息
+	 * @param udmId 修改信息id
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/userdetail-modify-show/{udmId}")
+	public String getUserdetailModify(@PathVariable int udmId,Model model){
+		//System.out.println("正在执行~");
+		model.addAttribute("userdetailModify", userinfoService.getUserinfoModifyByid(udmId));
+		return "admin/user/userdetail-modify-show";
+	}
+	//页面显示介绍
 	/**
 	 * 用户验证信息导入
 	 * @param file
@@ -151,8 +235,9 @@ public class AdminUserController extends BaseController {
 	@RequestMapping(value="/rewOrPun",method=RequestMethod.POST)
 	public String addReward(HttpServletRequest request, RewardPunishRecord record, Model model){
 		System.out.println(record.getExplian());
-		System.out.println(request.getParameter("stuid"));
-		record.setUserId(1);//此处需要一个根据学号查询用户id的方法
+		int userid = userService.getUseridByStuid(request.getParameter("stuid"));
+		System.out.println("userid " + userid );
+		record.setUserId(userid);//此处需要一个根据学号查询用户id的方法
 		record.setRewPunDate(new Date());
 		rprService.save(record);
 		model.addAttribute("msg", "奖惩记录添加成功！");
