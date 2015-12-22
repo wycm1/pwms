@@ -23,4 +23,6 @@ public interface IBranchService {
 	public boolean isMember(Branch branch, User user);
 	//获取用户支部
 	public Branch getUserBranch(User user);
+
+	public List<Branch> findAll();
 }

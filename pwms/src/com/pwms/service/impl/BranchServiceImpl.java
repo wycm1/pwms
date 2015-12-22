@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.stereotype.Service;
+
 import com.pwms.dao.BranchMapper;
 import com.pwms.dao.BranchMemberMapper;
 import com.pwms.dao.UserMapper;
@@ -12,11 +14,13 @@ import com.pwms.pojo.Branch;
 import com.pwms.pojo.BranchMember;
 import com.pwms.pojo.User;
 import com.pwms.service.IBranchService;
-
+@Service("branchService")
 public class BranchServiceImpl implements IBranchService {
 	@Resource
 	private BranchMapper branchDao;
+	@Resource
 	private BranchMemberMapper branchMemberDao;
+	@Resource
 	private UserMapper userDao;
 	public BranchMapper getBranchDao() {
 		return branchDao;
@@ -113,6 +117,12 @@ public class BranchServiceImpl implements IBranchService {
 //		int branchid = bMember.getBranchId();
 		Branch branch = branchDao.selectByPrimaryKey(bMember.getBranchId());
 		return branch;
+	}
+
+	@Override
+	public List<Branch> findAll() {
+		// TODO Auto-generated method stub
+		return branchDao.findAll();
 	}
 
 }

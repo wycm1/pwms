@@ -8,7 +8,7 @@
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="process_id" property="processId" jdbcType="INTEGER" />
     <result column="type" property="type" jdbcType="INTEGER" />
-    <result column="register_time" property="registerTime" jdbcType="DATE" />
+    <result column="register_time" property="registerTime" javaType="java.sql.Timestamp" jdbcType="DATE" />
   </resultMap>
   <sql id="User_Column_List" >
     id, f_id, name, password, process_id, type, register_time
@@ -17,7 +17,7 @@
     select 
     <include refid="User_Column_List" />
     from pw_user
-    where f_id = #{stuid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </select>
   <select id="selectdByStuid" resultMap="UserResultMap" parameterType="java.lang.String" >
     select 

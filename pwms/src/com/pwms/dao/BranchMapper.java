@@ -1,5 +1,7 @@
 package com.pwms.dao;
 
+import java.util.List;
+
 import com.pwms.pojo.Branch;
 
 public interface BranchMapper {
@@ -14,4 +16,6 @@ public interface BranchMapper {
     int updateByPrimaryKeySelective(Branch record);
 
     int updateByPrimaryKey(Branch record);
+    
+    List<Branch> findAll();
 }

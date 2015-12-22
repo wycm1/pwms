@@ -15,6 +15,11 @@
     from branch
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="findAll" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from branch
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from branch
     where id = #{id,jdbcType=INTEGER}

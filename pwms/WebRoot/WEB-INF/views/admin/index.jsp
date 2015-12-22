@@ -149,7 +149,8 @@
 			<dt><i class="Hui-iconfont">&#xe611;</i> 支部管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a href="javascript:;" onclick="member_add('修改支部信息','user/file-add.html','','510')">增加支部</a></li> 
+					<li><a _href="branch/branch-list.html" href="javascript:;">所有支部</a></li> 
+					<li><a _href="branch/branch-member-list.html?branch=1" href="javascript:;">支部成员管理</a></li> 
 				</ul>
 			</dd>
 		</dl>
