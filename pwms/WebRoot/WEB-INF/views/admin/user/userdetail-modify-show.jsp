@@ -59,7 +59,7 @@
       </tr>
       <tr>
         <th class="text-r">籍贯：</th>
-        <td>${userdetailModify.nativePalce}</td>
+        <td>${userdetailModify.nativePlace}</td>
       </tr>
       <tr>
         <th class="text-r">出身日期：</th>

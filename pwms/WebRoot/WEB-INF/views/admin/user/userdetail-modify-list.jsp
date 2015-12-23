@@ -58,7 +58,7 @@
 				<td><u style="cursor:pointer" class="text-primary" onclick="member_show('${item.name}','user-show/${item.userId}','10001','360','400')">${item.name}</u></td>
 				<td>${item.studentId}</td>
 				<td>${item.nation}</td>
-				<td>${item.nativePalce}</td>
+				<td>${item.nativePlace}</td>
 				<td>
 				<c:choose>  
 				   <c:when test="${userinfo.type == 1}">  

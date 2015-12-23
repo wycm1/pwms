@@ -8,7 +8,7 @@
     <result column="user_class" property="userClass" jdbcType="INTEGER" />
     <result column="sex" property="sex" jdbcType="VARCHAR" />
     <result column="nation" property="nation" jdbcType="VARCHAR" />
-    <result column="native_palce" property="nativePalce" jdbcType="VARCHAR" />
+    <result column="native_place" property="nativePlace" jdbcType="VARCHAR" />
     <result column="birthday" property="birthday" jdbcType="DATE" javaType="java.sql.Date" />
     <result column="posttion" property="posttion" jdbcType="VARCHAR" />
     <result column="dateline" property="dateline" jdbcType="DATE" javaType="java.sql.Date" />
@@ -31,7 +31,7 @@
     <result column="auditing_msg" property="auditingMsg" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, name, student_id, user_class, sex, nation, native_palce, birthday, posttion, 
+    id, name, student_id, user_class, sex, nation, native_place, birthday, posttion, 
     dateline, phone, contacts, train_educat, inspect, train_date, active_date, party_grade, 
     formal_date, join_date, ready_party_date, address, email, note, type, user_id, auditing_flag, 
     auditing_msg
@@ -67,7 +67,7 @@
   <insert id="insert" parameterType="com.pwms.pojo.UserinfoModify" >
     insert into userinfo_modify (id, name, student_id, 
       user_class, sex, nation, 
-      native_palce, birthday, posttion, 
+      native_place, birthday, posttion, 
       dateline, phone, contacts, 
       train_educat, inspect, train_date, 
       active_date, party_grade, formal_date, 
@@ -77,7 +77,7 @@
       )
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{studentId,jdbcType=VARCHAR}, 
       #{userClass,jdbcType=INTEGER}, #{sex,jdbcType=VARCHAR}, #{nation,jdbcType=VARCHAR}, 
-      #{nativePalce,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, #{posttion,jdbcType=VARCHAR}, 
+      #{nativePlace,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, #{posttion,jdbcType=VARCHAR}, 
       #{dateline,jdbcType=DATE}, #{phone,jdbcType=VARCHAR}, #{contacts,jdbcType=VARCHAR}, 
       #{trainEducat,jdbcType=VARCHAR}, #{inspect,jdbcType=VARCHAR}, #{trainDate,jdbcType=DATE}, 
       #{activeDate,jdbcType=DATE}, #{partyGrade,jdbcType=INTEGER}, #{formalDate,jdbcType=DATE}, 
@@ -107,8 +107,8 @@
       <if test="nation != null" >
         nation,
       </if>
-      <if test="nativePalce != null" >
-        native_palce,
+      <if test="nativePlace != null" >
+        native_place,
       </if>
       <if test="birthday != null" >
         birthday,
@@ -190,8 +190,8 @@
       <if test="nation != null" >
         #{nation,jdbcType=VARCHAR},
       </if>
-      <if test="nativePalce != null" >
-        #{nativePalce,jdbcType=VARCHAR},
+      <if test="nativePlace != null" >
+        #{nativePlace,jdbcType=VARCHAR},
       </if>
       <if test="birthday != null" >
         #{birthday,jdbcType=DATE},
@@ -273,8 +273,8 @@
       <if test="nation != null" >
         nation = #{nation,jdbcType=VARCHAR},
       </if>
-      <if test="nativePalce != null" >
-        native_palce = #{nativePalce,jdbcType=VARCHAR},
+      <if test="nativePlace != null" >
+        native_place = #{nativePlace,jdbcType=VARCHAR},
       </if>
       <if test="birthday != null" >
         birthday = #{birthday,jdbcType=DATE},
@@ -346,7 +346,7 @@
       user_class = #{userClass,jdbcType=INTEGER},
       sex = #{sex,jdbcType=VARCHAR},
       nation = #{nation,jdbcType=VARCHAR},
-      native_palce = #{nativePalce,jdbcType=VARCHAR},
+      native_place = #{nativePlace,jdbcType=VARCHAR},
       birthday = #{birthday,jdbcType=DATE},
       posttion = #{posttion,jdbcType=VARCHAR},
       dateline = #{dateline,jdbcType=DATE},

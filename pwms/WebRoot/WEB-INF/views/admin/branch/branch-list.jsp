@@ -54,7 +54,7 @@
 				<td><u style="cursor:pointer" class="text-primary" onclick="member_show('王洋','../user/user-show/${item.leaderId}','10001','360','400')">王洋</u></td>
 				<td><u style="cursor:pointer" class="text-primary" onclick="member_add('','userdetail-modify-show/${item.id}','500','')">查看支部详细信息</u></td>
 				<td class="td-manage">
-					<a title="修改支部信息" href="javascript:;" onclick="member_edit('编辑','branch-add.html','4','','510')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+					<a title="修改支部信息" href="javascript:;" onclick="member_edit('支部信息修改','branch-info-modify.html?branch=${item.id}','4','','510')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
 				</td>
 			</tr>
 		</c:forEach>

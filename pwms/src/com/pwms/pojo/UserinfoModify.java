@@ -19,7 +19,7 @@ public class UserinfoModify {
 
     private String nation;
 
-    private String nativePalce;
+    private String nativePlace;
 
     private Date birthday;
 
@@ -109,12 +109,12 @@ public class UserinfoModify {
         this.nation = nation == null ? null : nation.trim();
     }
 
-    public String getNativePalce() {
-        return nativePalce;
+    public String getNativePlace() {
+        return nativePlace;
     }
 
-    public void setNativePalce(String nativePalce) {
-        this.nativePalce = nativePalce == null ? null : nativePalce.trim();
+    public void setNativePlace(String nativePlace) {
+        this.nativePlace = nativePlace == null ? null : nativePlace.trim();
     }
 
     public Date getBirthday() {
@@ -289,7 +289,7 @@ public class UserinfoModify {
     	this.joinDate= userinfo.getJoinDate();
     	this.name = userinfo.getName();
     	this.nation = userinfo.getNation();
-    	this.nativePalce = userinfo.getNativePalce();
+    	this.nativePlace = userinfo.getNativePlace();
     	this.note = userinfo.getNote();
     	this.partyGrade = userinfo.getPartyGrade();
     	this.phone = userinfo.getPhone();
