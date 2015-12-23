@@ -150,7 +150,7 @@
 			<dd>
 				<ul>
 					<li><a _href="branch/branch-list.html" href="javascript:;">所有支部</a></li> 
-					<li><a _href="branch/branch-member-list.html?branch=1" href="javascript:;">支部成员管理</a></li> 
+					<li><a _href="branch/branch-member-list.html?branch=${sessionScope.branch.id}" href="javascript:;">支部成员管理</a></li> 
 				</ul>
 			</dd>
 		</dl>
