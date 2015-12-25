@@ -2,6 +2,7 @@ package com.pwms.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Date;
 import java.util.List;
 
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.baidu.ueditor.ActionEnter;
 import com.pwms.pojo.JoinOutRecord;
 import com.pwms.pojo.RewardPunishRecord;
 import com.pwms.pojo.User;
@@ -65,7 +67,6 @@ public class AdminUserController extends BaseController {
 		ModelAndView mav = new ModelAndView("admin/user/reward-punish-list");
 		List<RewardPunishRecord> allRPR = rprService.findAll();
 		System.out.println(allRPR.size());
-		System.out.println(allRPR.get(0).getName());
 		mav.addObject("rpList", allRPR);
         return mav;
 	}
@@ -134,11 +135,8 @@ public class AdminUserController extends BaseController {
 	 */
 	@RequestMapping("/importuserxls")
 	 public String upload(@RequestParam(value = "file", required = false) MultipartFile file, HttpServletRequest request, ModelMap model) throws IOException {  
-        //System.out.println("¿ªÊ¼");  
-        String path = request.getSession().getServletContext().getRealPath("") + "/WEB-INF/upload/";//
-        //System.out.println(file.getInputStream().available());
+        String path = request.getSession().getServletContext().getRealPath("") + "/upload/";//
         String fileName = file.getOriginalFilename();  
-        //System.out.println(path);  
         File targetFile = new File(path, fileName);  
         if(!targetFile.exists()){  
             targetFile.mkdirs();  

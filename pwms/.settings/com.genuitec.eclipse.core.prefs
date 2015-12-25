@@ -1,4 +1,3 @@
 eclipse.preferences.version=1
-validator.Checked=WebRoot/WEB-INF/views/admin/lib/ueditor,WebRoot/WEB-INF/views/admin/lib/waterfall.min.js
-validator.Revalidate=true
+validator.Checked=WebRoot/res
 validator.Unchecked=

@@ -14,11 +14,11 @@
 <script type="text/javascript" src="lib/respond.min.js"></script>
 <script type="text/javascript" src="lib/PIE_IE678.js"></script>
 <![endif]-->
-<link href="css/H-ui.min.css" rel="stylesheet" type="text/css" />
-<link href="css/H-ui.admin.css" rel="stylesheet" type="text/css" />
-<link href="skin/default/skin.css" rel="stylesheet" type="text/css" id="skin" />
-<link href="lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
-<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="/pwms/res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+<link href="/pwms/res/skin/default/skin.css" rel="stylesheet" type="text/css" id="skin" />
+<link href="/pwms/res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+<link href="/pwms/res/css/style.css" rel="stylesheet" type="text/css" />
 <!--[if IE 6]>
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
@@ -154,6 +154,14 @@
 				</ul>
 			</dd>
 		</dl>
+		<dl id="menu-article">
+			<dt><i class="Hui-iconfont">&#xe616;</i> 文章管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a _href="article/article-list.html" href="javascript:void(0)">文章管理</a></li>
+				</ul>
+			</dd>
+		</dl>
 		<dl id="menu-admin">
 			<dt><i class="Hui-iconfont">&#xe62d;</i> 管理员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
@@ -209,10 +217,10 @@
 		</div>
 	</div>
 </section>
-<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
-<script type="text/javascript" src="lib/layer/1.9.3/layer.js"></script> 
-<script type="text/javascript" src="js/H-ui.js"></script> 
-<script type="text/javascript" src="js/H-ui.admin.js"></script> 
+<script type="text/javascript" src="/pwms/res/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="/pwms/res/lib/layer/1.9.3/layer.js"></script> 
+<script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
+<script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script> 
 <script type="text/javascript">
 /*资讯-添加*/
 function article_add(title,url){

@@ -11,47 +11,40 @@
 <script type="text/javascript" src="../lib/respond.min.js"></script>
 <script type="text/javascript" src="../lib/PIE_IE678.js"></script>
 <![endif]-->
-<link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/lib/icheck/icheck.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+<link href="../css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+<link href="../lib/icheck/icheck.css" rel="stylesheet" type="text/css" />
+<link href="../lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
 <!--[if IE 6]>
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>添加支部</title>
+<title>添加支部成员</title>
 </head>
 <body>
 <div class="pd-20">
-  <form action="addbranch"  method="post" class="form form-horizontal" id="form-branch-add">
+  <form action="addBranchMember"  method="post" class="form form-horizontal" id="form-branch-add">
     <div class="row cl">
-      <label class="form-label col-3"><span class="c-red">*</span>支部负责人学号：</label>
+      <label class="form-label col-3"><span class="c-red">*</span>学号：</label>
       <div class="formControls col-5">
         <input type="text" class="input-text" value="" placeholder="" id="stuid" name="stuid"  datatype="stuid" nullmsg="学号不能为空">
       </div>
       <div class="col-4"> </div>
     </div>
     <div class="row cl">
-      <label class="form-label col-3"><span class="c-red">*</span>支部名称：</label>
-      <div class="formControls col-5">
-        <input type="text" class="input-text" name="branchName" id="branchName" datatype="*" nullmsg="请输入奖惩名称！">
-      </div>
-      <div class="col-4"> </div>
-    </div>
-    <div class="row cl">
       <div class="col-9 col-offset-3">
-        <input id="submit" class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+        <input id="submit" class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;确认添加&nbsp;&nbsp;">
       </div>
     </div>
   </form>
 </div>
 </div>
-<script type="text/javascript" src="/pwms/res/lib/jquery/1.9.1/jquery.min.js"></script> 
-<script type="text/javascript" src="/pwms/res/lib/icheck/jquery.icheck.min.js"></script> 
-<script type="text/javascript" src="/pwms/res/lib/Validform/5.3.2/Validform.min.js"></script>
-<script type="text/javascript" src="/pwms/res/lib/layer/1.9.3/layer.js"></script>
-<script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
-<script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="../lib/icheck/jquery.icheck.min.js"></script> 
+<script type="text/javascript" src="../lib/Validform/5.3.2/Validform.min.js"></script>
+<script type="text/javascript" src="../lib/layer/1.9.3/layer.js"></script>
+<script type="text/javascript" src="../js/H-ui.js"></script> 
+<script type="text/javascript" src="../js/H-ui.admin.js"></script>
 <script type="text/javascript">
 $(function(){
 	$('.skin-minimal input').iCheck({
