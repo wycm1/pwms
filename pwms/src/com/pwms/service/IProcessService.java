@@ -21,4 +21,9 @@ public interface IProcessService {
 	public List<ProcessRecord> getUserProcessRecord(User user);
 	//查看是否完成某个进度
 	public boolean isComplete(User user, Process process);
+	/**
+	 * 获取所有的进度，按编号排列
+	 * @return
+	 */
+	public List<Process> getProcessList();
 }

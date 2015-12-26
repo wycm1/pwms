@@ -4,10 +4,12 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.stereotype.Service;
+
 import com.pwms.dao.NoticeTheroyContructionMapper;
 import com.pwms.pojo.NoticeTheroyContruction;
 import com.pwms.service.INoticeService;
-
+@Service("noticeService")
 public class NoticeServiceImpl implements INoticeService {
 	@Resource
 	private NoticeTheroyContructionMapper noticeTheroyDao;

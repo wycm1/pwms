@@ -1,0 +1,6 @@
+
+/*example*/
+.example{}
+.example ol{position:relative;width: 80px;height: 20px;top:10px;left:70%;}
+.example ol li{float:left;width: 10px;height: 10px;margin: 5px;background: #fff;}
+.example ol li.seleted{background: #CC0000;}

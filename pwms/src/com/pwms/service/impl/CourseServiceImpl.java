@@ -1,6 +1,11 @@
 package com.pwms.service.impl;
 
+import java.util.Collections;
+import java.util.List;
+
 import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
 
 import com.pwms.dao.CourseMapper;
 import com.pwms.dao.UserCourseRecordMapper;
@@ -8,7 +13,7 @@ import com.pwms.pojo.CoureseGroup;
 import com.pwms.pojo.Course;
 import com.pwms.pojo.UserCourseRecord;
 import com.pwms.service.ICourseService;
-
+@Service("courseService")
 public class CourseServiceImpl implements ICourseService {
 	@Resource
 	private CourseMapper courseDao;
@@ -60,6 +65,16 @@ public class CourseServiceImpl implements ICourseService {
 		// TODO Auto-generated method stub
 		record.setCourseId(course.getId());
 		userCourseRecordDao.insertSelective(record);
+	}
+
+	@Override
+	public List<Course> getCourseByDate() {
+		// TODO Auto-generated method stub
+		List<Course> courseList = this.courseDao.selectByDate();
+		if(courseList==null){
+			return Collections.emptyList();
+		}
+		return courseList;
 	}
 
 }

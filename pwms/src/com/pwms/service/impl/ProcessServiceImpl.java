@@ -4,13 +4,15 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.stereotype.Service;
+
 import com.pwms.dao.ProcessMapper;
 import com.pwms.dao.ProcessRecordMapper;
 import com.pwms.pojo.Process;
 import com.pwms.pojo.ProcessRecord;
 import com.pwms.pojo.User;
 import com.pwms.service.IProcessService;
-
+@Service("processService")
 public class ProcessServiceImpl implements IProcessService {
 	@Resource
 	private ProcessMapper processDao;
@@ -81,6 +83,12 @@ public class ProcessServiceImpl implements IProcessService {
 		    return false;
 		}
 		return true;
+	}
+
+	@Override
+	public List<Process> getProcessList() {
+		// TODO Auto-generated method stub
+		return this.processDao.selectByNum();
 	}
 
 }

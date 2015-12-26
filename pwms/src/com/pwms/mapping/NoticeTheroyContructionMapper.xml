@@ -32,7 +32,7 @@
     ,
     <include refid="Blob_Column_List" />
     from notice_theory_construction
-    where type = #{type,jdbcType=INTEGER} order by dateline desc
+    where type = #{type,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from notice_theory_construction

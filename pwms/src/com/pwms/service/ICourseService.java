@@ -1,5 +1,7 @@
 package com.pwms.service;
 
+import java.util.List;
+
 import com.pwms.pojo.CoureseGroup;
 import com.pwms.pojo.Course;
 import com.pwms.pojo.UserCourseRecord;
@@ -19,4 +21,6 @@ public interface ICourseService {
 	public void addGroup(CoureseGroup group, Course course);
 	//上课记录,如果有这个记录，那么久更新记录，始终保存最新的上课记录
 	public void addRecord(Course course, UserCourseRecord record);
+	
+	public List<Course> getCourseByDate();
 }

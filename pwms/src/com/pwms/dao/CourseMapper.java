@@ -1,5 +1,7 @@
 package com.pwms.dao;
 
+import java.util.List;
+
 import com.pwms.pojo.Course;
 
 public interface CourseMapper {
@@ -16,4 +18,6 @@ public interface CourseMapper {
     int updateByPrimaryKeyWithBLOBs(Course record);
 
     int updateByPrimaryKey(Course record);
+    
+    List<Course> selectByDate();
 }

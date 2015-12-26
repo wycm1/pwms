@@ -18,7 +18,7 @@ public interface INoticeService {
 	public NoticeTheroyContruction getNoticeById(Integer id);
 	/**
 	 * 通过类型来查找对象
-	 * @param type
+	 * @param type 1:通知公告  2：理论  4：党建专项  （1，2，4方便做位运算）
 	 * @return
 	 */
 	public List<NoticeTheroyContruction> getNoticeByType(Integer type);
