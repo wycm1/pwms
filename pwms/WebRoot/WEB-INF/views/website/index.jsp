@@ -195,7 +195,7 @@ padding-bottom:10px;
 <div class="news">
   <div class="news1">
     <div class="news1_title">
-      <div class="news1_title_text">党建工作</div>
+      <div class="news1_title_text">通知公告</div>
       <div  class="news_more"><a href="#"><img src="images/more.gif" border="0" /></a></div>
     </div>
     <div class="news_pic"><img src="images/pic1.png" /></div>
@@ -203,8 +203,7 @@ padding-bottom:10px;
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
       	<c:forEach items="${noticeList}" var="item"> 
         <tr>
-          <td width="20"><a href="#"></a><img src="images/1.png" /> <a href="#"></a></td>
-          <td align="left" class="index_table_size"><a href="#">媒体聚焦媒体三问&quot;22人公考零分&quot;：如此恶劣违何</a></td>
+          <td align="left" class="index_table_size"><a href="#">${item.title}</a></td>
         </tr>
         </c:forEach>
       </table>
@@ -212,63 +211,34 @@ padding-bottom:10px;
   </div>
   <div class="news2">
     <div class="news1_title">
-      <div class="news1_title_text">教学工作</div>
+      <div class="news1_title_text">课程列表</div>
       <div  class="news_more"><a href="#"><img src="images/more.gif" border="0" /></a></div>
     </div>
     <div class="news_pic"><img src="images/pic2.png" width="290" height="99" /></div>
     <div class="news_list">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      	<c:forEach items="${courseList}" var="item"> 
         <tr>
-          <td width="20"><a href="#"></a><img src="images/1.png" /> <a href="#"></a></td>
-          <td align="left" class="index_table_size"><a href="#">媒体聚焦媒体三问&quot;22人公考零分&quot;：如此恶劣违何</a></td>
+          <td align="left" class="index_table_size"><a href="#">${item.title}</a></td>
         </tr>
-        <tr>
-          <td width="20"><img src="images/2.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">三部门解读普通高等学校毕业生就业创业工作通知</a></td>
-        </tr>
-        <tr>
-          <td width="20"><img src="images/3.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">党报评论君：国家级“科技粉”习近平的“科技经”</a></td>
-        </tr>
-        <tr>
-          <td width="20"><img src="images/4.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">用改革之手点燃创新引擎（人民时评）</a></td>
-        </tr>
-        <tr>
-          <td width="20"><img src="images/5.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">顾国彪院士：自缚手脚何以弯道超车</a></td>
-        </tr>
+       </c:forEach>
       </table>
     </div>
   </div>
   <div class="news3">
     <div class="news1_title">
-      <div class="news1_title_text">学生工作</div>
+      <div class="news1_title_text">理论学习</div>
       <div  class="news_more"><a href="#"><img src="images/more.gif" border="0" /></a></div>
     </div>
     <div class="news_pic"><img src="images/pic3.png" width="290" height="99" /></div>
     <div class="news_list">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      	<c:forEach items="${courseList}" var="item"> 
         <tr>
           <td width="20"><a href="#"></a><img src="images/1.png" /> <a href="#"></a></td>
-          <td align="left" class="index_table_size"><a href="#">媒体聚焦媒体三问&quot;22人公考零分&quot;：如此恶劣违何</a></td>
+          <td align="left" class="index_table_size"><a href="#">${item.title}</a></td>
         </tr>
-        <tr>
-          <td width="20"><img src="images/2.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">三部门解读普通高等学校毕业生就业创业工作通知</a></td>
-        </tr>
-        <tr>
-          <td width="20"><img src="images/3.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">党报评论君：国家级“科技粉”习近平的“科技经”</a></td>
-        </tr>
-        <tr>
-          <td width="20"><img src="images/4.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">用改革之手点燃创新引擎（人民时评）</a></td>
-        </tr>
-        <tr>
-          <td width="20"><img src="images/5.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">顾国彪院士：自缚手脚何以弯道超车</a></td>
-        </tr>
+       </c:forEach>
       </table>
     </div>
   </div>
@@ -276,63 +246,35 @@ padding-bottom:10px;
   <div class="news">
   <div class="news1">
     <div class="news1_title">
-      <div class="news1_title_text">党建工作</div>
+      <div class="news1_title_text"> 重要文件列表</div>
       <div  class="news_more"><a href="#"><img src="images/more.gif" border="0" /></a></div>
     </div>
     <div class="news_pic"><img src="images/pic1.png" /></div>
     <div class="news_list">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
+      	<c:forEach items="${importdocList}" var="item">
+        <tr> 
           <td width="20"><a href="#"></a><img src="images/1.png" /> <a href="#"></a></td>
-          <td align="left" class="index_table_size"><a href="#">媒体聚焦媒体三问&quot;2..</a></td>
+          <td align="left" class="index_table_size"><a href="#">${item.title}</a></td>
         </tr>
-        <tr>
-          <td width="20"><img src="images/2.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">三部门解读普通高等学校..</a></td>
-        </tr>
-        <tr>
-          <td width="20"><img src="images/3.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">党报评论君：国家级“科技粉”..</a></td>
-        </tr>
-        <tr>
-          <td width="20"><img src="images/4.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">用改革之手点燃创新引擎（人民时评）</a></td>
-        </tr>
-        <tr>
-          <td width="20"><img src="images/5.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">顾国彪院士：自缚手脚何以弯道超车</a></td>
-        </tr>
+        </c:forEach>
       </table>
     </div>
   </div>
   <div class="news2">
     <div class="news1_title">
-      <div class="news1_title_text">教学工作</div>
+      <div class="news1_title_text">进度</div>
       <div  class="news_more"><a href="#"><img src="images/more.gif" border="0" /></a></div>
     </div>
     <div class="news_pic"><img src="images/pic2.png" width="290" height="99" /></div>
     <div class="news_list">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      	<c:forEach items="${processList}" var="item">
         <tr>
           <td width="20"><a href="#"></a><img src="images/1.png" /> <a href="#"></a></td>
-          <td align="left" class="index_table_size"><a href="#">媒体聚焦媒体三问&quot;22人公考零分&quot;：如此恶劣违何</a></td>
+          <td align="left" class="index_table_size"><a href="#">${item.title}</a></td>
         </tr>
-        <tr>
-          <td width="20"><img src="images/2.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">三部门解读普通高等学校毕业生就业创业工作通知</a></td>
-        </tr>
-        <tr>
-          <td width="20"><img src="images/3.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">党报评论君：国家级“科技粉”习近平的“科技经”</a></td>
-        </tr>
-        <tr>
-          <td width="20"><img src="images/4.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">用改革之手点燃创新引擎（人民时评）</a></td>
-        </tr>
-        <tr>
-          <td width="20"><img src="images/5.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">顾国彪院士：自缚手脚何以弯道超车</a></td>
-        </tr>
+        </c:forEach>
       </table>
     </div>
   </div>

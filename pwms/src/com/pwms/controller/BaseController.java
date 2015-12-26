@@ -2,6 +2,7 @@ package com.pwms.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -49,6 +50,25 @@ public class BaseController {
 		    resultStr.substring(0,resultStr.length()-1);
 		}
 		return resultStr+"}";
+	}
+	/**
+	 * 通过key，和List返回一个 "key" : [ "val", "val"]
+	 * @param key
+	 * @param list
+	 * @return "key" : [ "val", "val"]
+	 */
+	public String listToJson(String key, List list){
+		String json ="\""+key+"\": [";
+		for(int i=0; i<list.size(); i++){
+			Object object = list.get(i);
+			if(i!=list.size()-1){
+			    json = json + object + ", ";
+			}
+			else{
+				json = json + object;
+			}
+		}
+		return json;
 	}
 	public void outJson(String json){
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();

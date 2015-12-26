@@ -61,7 +61,7 @@ public class IndexController extends BaseController{
     	theoryList(model);
     	importDocList(model);
     	processList(model);
-    	return "index";
+    	return "website/index";
     }
     //按时间列出最近的公告
     public void noticeListByTime(Model model){
@@ -84,7 +84,7 @@ public class IndexController extends BaseController{
     	for(int i=0;i<courseList.size()&&i<6; i++){
     		courseListTmp.add(courseList.get(i));
     	}
-    	model.addAttribute("courses", courseListTmp);
+    	model.addAttribute("courseList", courseListTmp);
 //    	return null;
     }
     //按时间排序获取党建的最新的党建
@@ -94,7 +94,7 @@ public class IndexController extends BaseController{
     	for(int i=0; i< theoryList.size()&&i<6; i++){
     		theoryListTmp.add(theoryList.get(i));
     	}
-    	model.addAttribute("theory", theoryListTmp);
+    	model.addAttribute("theoryList", theoryListTmp);
     }
     //重要文章列表
     public void importDocList(Model model){
@@ -103,7 +103,7 @@ public class IndexController extends BaseController{
     	for(int i=0; i< importDocList.size()&&i<6; i++){
     		importDocListTmp.add(importDocList.get(i));
     	}
-    	model.addAttribute("importdoc", importDocListTmp);
+    	model.addAttribute("importdocList", importDocListTmp);
     }
     //入党流程
     public void processList(Model model){
@@ -112,6 +112,6 @@ public class IndexController extends BaseController{
     	for(int i=0; i< processList.size()&&i<6; i++){
     		processListTmp.add(processList.get(i));
     	}
-    	model.addAttribute("process", processListTmp);
+    	model.addAttribute("processList", processListTmp);
     }
 }

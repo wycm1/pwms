@@ -72,4 +72,14 @@ public class NoticeTheroyContruction {
     public void setContents(String contents) {
         this.contents = contents == null ? null : contents.trim();
     }
+    public String toString(){
+    	String json = "{"+"\"id\":"+ id + ","+
+    		"\"title\": \""+ title +"\" ,"+
+    		"\"summary\": \""+ summary +"\" ,"+
+    		"\"dateline\": \""+ dateline +"\" ,"+
+    		"\"userId\": \""+ userId +"\" ,"+
+    		"\"type\": \""+ type +"\" ,"+
+    		"\"contents\": \""+ contents +"\"}";
+    	return json;
+    }
 }

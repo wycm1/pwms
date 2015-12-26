@@ -1,20 +1,48 @@
 package com.pwms.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.pwms.pojo.NoticeTheroyContruction;
+import com.pwms.service.INoticeService;
+
 @Controller
 @RequestMapping("/theory")
 public class TheoryController extends BaseController {
-	//查看推荐列表，以及一些详细的内容推荐
+	// 查看推荐列表，以及一些详细的内容推荐
+	@Resource
+	private INoticeService theoryService;
+
 	@RequestMapping("/")
-	public String index(Model model){
-		return null;
+	public String index(HttpServletRequest request, Model model) {
+		List<NoticeTheroyContruction> theoryList = this.theoryService
+				.getNoticeByType(4);
+		if (verifyClient(request)) {
+			outJson("{" + listToJson("theoryList", theoryList) + "}");
+			return null;
+		} else {
+			model.addAttribute("theoryList", theoryList);
+			return null;
+		}
 	}
-	//获取详细信息, 根据传入的id来具体显示
+
+	// 获取详细信息, 根据传入的id来具体显示
 	@RequestMapping("/getinfo")
-	public String getInfo(int id, Model model){
-		return null;
+	public String getInfo(HttpServletRequest request, int id, Model model) {
+		NoticeTheroyContruction theory = this.theoryService.getNoticeById(id);
+		if (verifyClient(request)) {
+			outJson(theory + "");
+			return null;
+		} else {
+			model.addAttribute("theory", theory);
+			return null;
+		}
 	}
 }
