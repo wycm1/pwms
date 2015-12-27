@@ -18,7 +18,7 @@ import com.pwms.service.IImportDocService;
 import com.pwms.service.INoticeService;
 import com.pwms.service.IProcessService;
 @Controller
-@RequestMapping("/index")
+@RequestMapping("")
 public class IndexController extends BaseController{
 	@Resource
 	private INoticeService noticeService;
@@ -53,7 +53,7 @@ public class IndexController extends BaseController{
 	@Resource
 	private IProcessService processService;
     //首页信息，
-    @RequestMapping("/")
+    @RequestMapping("/index")
     public String index(Model model){
     	System.out.println("called!");
     	noticeListByTime(model);
@@ -62,6 +62,22 @@ public class IndexController extends BaseController{
     	importDocList(model);
     	processList(model);
     	return "website/index";
+    }
+    @RequestMapping("/news")
+    public String news(Model model){
+    	return "website/news";
+    }
+    @RequestMapping("/news_1")
+    public String news1(Model model){
+    	return "website/news_1";
+    }
+    @RequestMapping("/notis")
+    public String notis(Model model){
+    	return "website/notis";
+    }
+    @RequestMapping("/notis_1")
+    public String notis1(Model model){
+    	return "website/notis_1";
     }
     //按时间列出最近的公告
     public void noticeListByTime(Model model){

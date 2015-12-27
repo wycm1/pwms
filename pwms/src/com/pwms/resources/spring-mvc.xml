@@ -19,6 +19,7 @@
     <mvc:resources mapping="/admin/**" location="/WEB-INF/views/admin/" />
     <mvc:resources mapping="/res/**" location="/res/" />
     <mvc:resources mapping="/upload/**" location="/upload/" />
+    <mvc:resources mapping="/**" location="/WEB-INF/views/website/" />
     <!-- 视图解释类 -->
     <bean
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">
