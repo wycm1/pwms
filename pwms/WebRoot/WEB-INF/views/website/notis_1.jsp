@@ -1,12 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
-<link href="style/base.css" rel="stylesheet" type="text/css" />
-<link href="style/style1.css" rel="stylesheet" type="text/css" />
-<script language="javascript" src="js/jquery.js"></script>
-<script language="javascript" src="js/js.js"></script>
+<link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
+<link href="/pwms/res/website/style/style1.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="/pwms/res/website/js/jquery.js"></script>
+<script language="javascript" src="/pwms/res/website/js/js.js"></script>
 </head>
 <body>
 <div class="head_all">
@@ -14,13 +16,13 @@
     <div class="head_left"></div>
     <div class="head_right">
       <div class="head_sear">
-        <div class="head_sear_top"><a href="#"><img src="images/ico1.png" /> 设为首页 </a> <a href="#"><img src="images/ico2.png" /> 收藏</a><a href="#"><img src="images/ico4.png" /> 院长信箱</a> <a href="#"><img src="images/ico5.png" /> 书记信箱</a> <a href="#"><img src="images/ico6.png" />登录后台</a> </div>
+        <div class="head_sear_top"><a href="#"><img src="/pwms/res/website/images/ico1.png" /> 设为首页 </a> <a href="#"><img src="/pwms/res/website/images/ico2.png" /> 收藏</a><a href="#"><img src="/pwms/res/website/images/ico4.png" /> 院长信箱</a> <a href="#"><img src="/pwms/res/website/images/ico5.png" /> 书记信箱</a> <a href="#"><img src="/pwms/res/website/images/ico6.png" />登录后台</a> </div>
         <div class="head_sear_bot">
           <div class="head_sear_con">
             <input name="" type="text" class="head_sear1" />
             &nbsp;
-            <input type="image" src="images/search1.png" />
-            <!--<input type="image" src="images/search2.png" />-->
+            <input type="image" src="/pwms/res/website/images/search1.png" />
+            <!--<input type="image" src="/pwms/res/website/images/search2.png" />-->
           </div>
         </div>
       </div>
@@ -65,7 +67,7 @@
 </div>
 <div class="main_all">
   <div class="detail">
-   <div class="detail_title"> <img src="images/next_ico.png" width="2" height="10" /> 当前位置 ：首页 &gt;    新闻动态 &gt;    通知公告</div>
+   <div class="detail_title"> <img src="/pwms/res/website/images/next_ico.png" width="2" height="10" /> 当前位置 ：首页 &gt;    新闻动态 &gt;    通知公告</div>
    <div class="detail_h1">我校庄铭星校长获厦门市“荣动模号”称号</div>
    <div class="detail_time">发布时间：2014年05月06日  衩访问 <span class="public_color2">21</span> 次</div>
    <div class="detail_text">职业危机感，这个以往多为夕阳行业、中年群体拥有的“焦虑体验”，如今正在不同领域、不同年龄段的人群中蔓延。实际上，不是你“慢”了，而是这社会变得更“快”了。
@@ -102,7 +104,7 @@
  
 　　无论<br />
 国企、外企还是民企，无论传媒业、金融业，还是教育行业、房地产业……从业者普遍存在着职业危机感。这种危机感有的来自收入、岗位升迁方面的预期迟迟不能兑现，有的则是担心行业衰落、企业解体、自己被解聘。就连一向手捧“铁饭碗”的公务员们，也因体制改革、末位淘汰而危机感重重……<br />
-   <img src="images/pic5.png" width="811" height="542" /></div>
+   <img src="/pwms/res/website/images/pic5.png" width="811" height="542" /></div>
   </div>
             
             </div>

@@ -1,12 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
-<link href="style/base.css" rel="stylesheet" type="text/css" />
-<link href="style/style1.css" rel="stylesheet" type="text/css" />
-<script language="javascript" src="js/jquery.js"></script>
-<script language="javascript" src="js/js.js"></script>
+<link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
+<link href="/pwms/res/website/style/style1.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="/pwms/res/website/js/jquery.js"></script>
+<script language="javascript" src="/pwms/res/website/js/js.js"></script>
 </head>
 <body>
 <div class="head_all">
@@ -14,12 +16,12 @@
     <div class="head_left"></div>
     <div class="head_right">
       <div class="head_sear">
-        <div class="head_sear_top"><a href="#"><img src="images/ico1.png" /> 设为首页 </a> <a href="#"><img src="images/ico2.png" /> 收藏</a> <a href="#"><img src="images/ico4.png" /> 院长信箱</a> <a href="#"><img src="images/ico5.png" />书记信箱</a> <a href="#"><img src="images/ico6.png" />登录后台</a> </div>
+        <div class="head_sear_top"><a href="#"><img src="/pwms/res/website/images/ico1.png" /> 设为首页 </a> <a href="#"><img src="/pwms/res/website/images/ico2.png" /> 收藏</a> <a href="#"><img src="/pwms/res/website/images/ico4.png" /> 院长信箱</a> <a href="#"><img src="/pwms/res/website/images/ico5.png" /> 书记信箱</a> <a href="#"><img src="/pwms/res/website/images/ico6.png" />登录后台</a> </div>
         <div class="head_sear_bot">
           <div class="head_sear_con">
-            <input name="" type="text" class="head_sear1"  placeholder="请输入搜索关键字"/>
+            <input name="" type="text" class="head_sear1" />
             &nbsp;
-            <input type="image" src="images/search1.png" />
+            <input type="image" src="/pwms/res/website/images/search1.png" />
             
           </div>
         </div>
@@ -29,7 +31,7 @@
   <table border="0" align="center" cellpadding="0" cellspacing="0">
     <tr>
       <td>
-       <div class="menu">
+   <div class="menu">
 <ul>
 <li><a class="hide" href="#">首页</a>
 
@@ -77,55 +79,55 @@
                   </ul></td>
               </tr>
               <tr>
-                <td><img src="images/two_bottom.png" width="221" height="37" /></td>
+                <td><img src="/pwms/res/website/images/two_bottom.png" width="221" height="37" /></td>
               </tr>
             </table>
           </div></td>
         <td valign="top">
 		<div class="two_right">
             <div class="two_right_title">
-              <div class="two_right_title_h1"> 通知通告</div>
-              <div class="two_right_title_next"> <img src="images/next_ico.png" width="2" height="10" /> 当前位置 ：首页 &gt;    新闻动态 &gt;    通知通告</div></div>
-              <div class="two_img"><img src="images/notice.jpg" /></div>
+              <div class="two_right_title_h1"> 学院新闻</div>
+              <div class="two_right_title_next"> <img src="/pwms/res/website/images/next_ico.png" width="2" height="10" /> 当前位置 ：首页 &gt;    新闻动态 &gt;     学院新闻</div></div>
+              <div class="two_img"><img src="/pwms/res/website/images/two_pic1.png" /></div>
               <div class="two_news_list">
                 <table width="98%" border="0" align="left" cellpadding="0" cellspacing="0">
                   <tr>
-                    <td width="20"><a href="#"></a><img src="images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
-                    <td align="left" class="index_table_size"><a href="notis_1.html">媒体聚焦媒体三问&quot;22人公考零分&quot;：恶劣违</a></td>
+                    <td width="20"><a href="#"></a><img src="/pwms/res/website/images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
+                    <td align="left" class="index_table_size"><a href="news_1.html">媒体聚焦媒体三问&quot;22人公考零分&quot;：恶劣违</a></td>
                     <td width="24" align="center" class="public_color1">10:11</td>
                   </tr>
                   <tr>
-                    <td width="20"><img src="images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
+                    <td width="20"><img src="/pwms/res/website/images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
                     <td align="left" class="index_table_size"><a href="#">三部门解读普通高等学校毕业生就业创业工</a></td>
                     <td width="24" align="center" class="public_color1">10:11</td>
                   </tr>
                   <tr>
-                    <td width="20"><img src="images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
+                    <td width="20"><img src="/pwms/res/website/images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
                     <td align="left" class="index_table_size"><a href="#">党报评论君：国家级“科技粉”习近平的“科技</a></td>
                     <td width="24" align="center" class="public_color1">10:11</td>
                   </tr>
                   <tr>
-                    <td width="20"><img src="images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
+                    <td width="20"><img src="/pwms/res/website/images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
                     <td align="left" class="index_table_size"><a href="#">用改革之手点燃创新引擎（人民时评）</a></td>
                     <td width="24" align="center" class="public_color1">10:11</td>
                   </tr>
                   <tr>
-                    <td width="20"><img src="images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
+                    <td width="20"><img src="/pwms/res/website/images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
                     <td align="left" class="index_table_size"><a href="#">顾国彪院士：自缚手脚何以弯道超车</a></td>
                     <td width="24" align="center" class="public_color1">10:11</td>
                   </tr>
                   <tr>
-                    <td width="20"><img src="images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
+                    <td width="20"><img src="/pwms/res/website/images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
                     <td align="left" class="index_table_size"><a href="#">光明日报评论员：科技工作者要勇于担当时</a></td>
                     <td width="24" align="center" class="public_color1">10:11</td>
                   </tr>
                   <tr>
-                    <td width="20"><img src="images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
+                    <td width="20"><img src="/pwms/res/website/images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
                     <td align="left" class="index_table_size"><a href="#">媒体聚焦媒体三问&quot;22人公考零分&quot;：如此恶</a></td>
                     <td width="24" align="center" class="public_color1">10:11</td>
                   </tr>
                   <tr>
-                    <td width="20"><img src="images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
+                    <td width="20"><img src="/pwms/res/website/images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
                     <td align="left" class="index_table_size"><a href="#">评论：残疾人就业没有尊重何来权益</a></td>
                     <td width="24" align="center" class="public_color1">10:11</td>
                   </tr>

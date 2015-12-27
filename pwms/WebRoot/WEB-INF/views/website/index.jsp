@@ -5,19 +5,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>党务管理系统</title>
-<link href="style/base.css" rel="stylesheet" type="text/css" />
-<link href="style/style1.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="style/normalize.css" />
-<link rel="stylesheet" type="text/css" href="style/set2.css" />
-<script src="js/jquery.js" type="text/javascript"></script>
-<script src="js/js.js" type="text/javascript"></script>
-<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
-<script src="js/jquery.cycle.js" type="text/javascript"></script>
+<link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
+<link href="/pwms/res/website/style/style1.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/pwms/res/website/style/normalize.css" />
+<link rel="stylesheet" type="text/css" href="/pwms/res/website/style/set2.css" />
+<script src="/pwms/res/website/js/jquery.js" type="text/javascript"></script>
+<script src="/pwms/res/website/js/js.js" type="text/javascript"></script>
+<script src="/pwms/res/website/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="/pwms/res/website/js/jquery.cycle.js" type="text/javascript"></script>
      <script src="js/jquery.luara.0.0.1.min.js"></script>
-	<link rel="stylesheet" href="style/style3.css"/>
+	<link rel="stylesheet" href="/pwms/res/website/style/style3.css"/>
     <!--Luara样式文件-->
     <!--渐隐样式-->
-    <link rel="stylesheet" href="style/luara.css"/>
+    <link rel="stylesheet" href="/pwms/res/website/style/luara.css"/>
 <script type="text/javascript">
 	$(function(){
 		$('#banner1').cycle({ 
@@ -47,13 +47,13 @@ padding-bottom:10px;
     <div class="head_left"></div>
     <div class="head_right">
       <div class="head_sear">
-        <div class="head_sear_top"><a href="#"><img src="images/ico1.png" /> 设为首页 </a> <a href="#"><img src="images/ico2.png" /> 收藏</a> <a href="#"><img src="images/ico4.png" /> 院长信箱</a> <a href="#"><img src="images/ico5.png" /> 书记信箱</a> <a href="#"><img src="images/ico6.png" />登录后台</a> </div>
+        <div class="head_sear_top"><a href="#"><img src="/pwms/res/website/images/ico1.png" /> 设为首页 </a> <a href="#"><img src="/pwms/res/website/images/ico2.png" /> 收藏</a> <a href="#"><img src="/pwms/res/website/images/ico4.png" /> 院长信箱</a> <a href="#"><img src="/pwms/res/website/images/ico5.png" /> 书记信箱</a> <a href="#"><img src="/pwms/res/website/images/ico6.png" />登录后台</a> </div>
         <div class="head_sear_bot">
           <div class="head_sear_con">
             <input name="" type="text" class="head_sear1" placeholder="请输入搜索关键字" />
             &nbsp;
-            <input type="image" src="images/search1.png" />
-            <!--<input type="image" src="images/search2.png" />-->
+            <input type="image" src="/pwms/res/website/images/search1.png" />
+            <!--<input type="image" src="/pwms/res/website/images/search2.png" />-->
           </div>
         </div>
       </div>
@@ -100,25 +100,25 @@ padding-bottom:10px;
  <!--滚动图片start
         <div id="adsFla1">
           <div id="banner1"> 
-		  <img onClick="diao();" src="images/ad1.png" width="1000" /> 
-		  <img onClick="diao();" src="images/ad2.png" width="1000" /> 
-		  <img onClick="diao();" src="images/ad3.png" width="1000"  /> 
-		  <img onClick="diao();" src="images/ad4.png" width="1000" /> 
+		  <img onClick="diao();" src="/pwms/res/website/images/ad1.png" width="1000" /> 
+		  <img onClick="diao();" src="/pwms/res/website/images/ad2.png" width="1000" /> 
+		  <img onClick="diao();" src="/pwms/res/website/images/ad3.png" width="1000"  /> 
+		  <img onClick="diao();" src="/pwms/res/website/images/ad4.png" width="1000" /> 
 		</div>
           <div id="btn1"></div>
         </div>
         <!--滚动图片end-->
-<!--<div class="banner"> <img src="images/banner1.png" /></div>-->
+<!--<div class="banner"> <img src="/pwms/res/website/images/banner1.png" /></div>-->
 <div class="news">
   <div class="news_left">
     <div class="news_move">
 		
 				 <div class="example">
 					<ul>
-						<li><img src="images/news_1.jpg" alt="news_1"/></li>
-						<li><img src="images/news_2.jpg" alt="news_2"/></li>
-						<li><img src="images/news_5.jpg" alt="news_5"/></li>
-						<li><img src="images/news_4.jpg" alt="news_4"/></li>
+						<li><img src="/pwms/res/website/images/news_1.jpg" alt="news_1"/></li>
+						<li><img src="/pwms/res/website/images/news_2.jpg" alt="news_2"/></li>
+						<li><img src="/pwms/res/website/images/news_5.jpg" alt="news_5"/></li>
+						<li><img src="/pwms/res/website/images/news_4.jpg" alt="news_4"/></li>
 					</ul>
 					<ol>
 						<li></li>
@@ -141,25 +141,25 @@ padding-bottom:10px;
     	<div class="news_left_title">
    <div class="index_tab_top">
         <ul class="index_tab_list">
-          <li class="press"><a href="#"><img src="images/icon.gif" /> 新闻</a></li>
+          <li class="press"><a href="#"><img src="/pwms/res/website/images/icon.gif" /> 新闻</a></li>
         </ul>
-        <div class="news_more"><a href="news.html"><img src="images/more.gif" border="0" /></a></div>
+        <div class="news_more"><a href="news.html"><img src="/pwms/res/website/images/more.gif" border="0" /></a></div>
       </div>
  </div>
     	
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td width="20"><a href="#"></a><img src="images/dot1.png" width="20" height="23" /> <a href="#"></a></td>
+          <td width="20"><a href="#"></a><img src="/pwms/res/website/images/dot1.png" width="20" height="23" /> <a href="#"></a></td>
           <td align="left" class="index_table_size"><a href="detail.html">媒体聚焦媒体三问&quot;..</a></td>
           <td width="24" align="center" class="public_color1">2015-10:11</td>
         </tr>
         <tr>
-          <td width="20"><img src="images/dot1.png" width="20" height="23" /></td>
+          <td width="20"><img src="/pwms/res/website/images/dot1.png" width="20" height="23" /></td>
           <td align="left" class="index_table_size"><a href="#">用改革之手点燃创新..</a></td>
           <td width="24" align="center" class="public_color1">2016-10:11</td>
         </tr>
         <tr>
-          <td width="20"><img src="images/dot1.png" width="20" height="23" /></td>
+          <td width="20"><img src="/pwms/res/website/images/dot1.png" width="20" height="23" /></td>
           <td align="left" class="index_table_size"><a href="#">顾国彪院士：自缚手脚..</a></td>
           <td width="24" align="center" class="public_color1">2015-10:11</td>
         </tr>
@@ -167,18 +167,18 @@ padding-bottom:10px;
     </div>
   </div>
   <div class="notify">
-     <a href="#" class="nb"><img src="images/icon.gif" />公告</a>
-	 <div class="notify_more"><a href="index2.html"><img src="images/more.gif" border="0" /></a></div>
+     <a href="#" class="nb"><img src="/pwms/res/website/images/icon.gif" />公告</a>
+	 <div class="notify_more"><a href="index2.html"><img src="/pwms/res/website/images/more.gif" border="0" /></a></div>
 	 <div class="notify_list">
       <marquee onmouseout="this.start();" onmouseover="this.stop();" direction="up" scrolldelay="50" scrollamount="3">
 	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td width="20"><img src="images/dot1.png" width="20" height="23" /></td>
+          <td width="20"><img src="/pwms/res/website/images/dot1.png" width="20" height="23" /></td>
           <td align="left" class="index_table_size"><a href="#">评论：残疾人就业没...</a></td>
           <td width="24" align="center" class="public_color1">10:11</td>
         </tr>
 		<tr>
-          <td width="20"><img src="images/dot1.png" width="20" height="23" /></td>
+          <td width="20"><img src="/pwms/res/website/images/dot1.png" width="20" height="23" /></td>
           <td align="left" class="index_table_size"><a href="#">评论：残疾人就业...</a></td>
           <td width="24" align="center" class="public_color1">10:11</td>
         </tr>
@@ -186,7 +186,7 @@ padding-bottom:10px;
 	  </marquee>
     </div>
     </div>
-    <!--<div class="login_xxrl"><img src="images/xiaoli.png" /></div>-->
+    <!--<div class="login_xxrl"><img src="/pwms/res/website/images/xiaoli.png" /></div>-->
   </div>
 
 
@@ -196,9 +196,9 @@ padding-bottom:10px;
   <div class="news1">
     <div class="news1_title">
       <div class="news1_title_text">通知公告</div>
-      <div  class="news_more"><a href="#"><img src="images/more.gif" border="0" /></a></div>
+      <div  class="news_more"><a href="#"><img src="/pwms/res/website/images/more.gif" border="0" /></a></div>
     </div>
-    <div class="news_pic"><img src="images/pic1.png" /></div>
+    <div class="news_pic"><img src="/pwms/res/website/images/pic1.png" /></div>
     <div class="news_list">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
       	<c:forEach items="${noticeList}" var="item"> 
@@ -212,9 +212,9 @@ padding-bottom:10px;
   <div class="news2">
     <div class="news1_title">
       <div class="news1_title_text">课程列表</div>
-      <div  class="news_more"><a href="#"><img src="images/more.gif" border="0" /></a></div>
+      <div  class="news_more"><a href="#"><img src="/pwms/res/website/images/more.gif" border="0" /></a></div>
     </div>
-    <div class="news_pic"><img src="images/pic2.png" width="290" height="99" /></div>
+    <div class="news_pic"><img src="/pwms/res/website/images/pic2.png" width="290" height="99" /></div>
     <div class="news_list">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
       	<c:forEach items="${courseList}" var="item"> 
@@ -228,14 +228,14 @@ padding-bottom:10px;
   <div class="news3">
     <div class="news1_title">
       <div class="news1_title_text">理论学习</div>
-      <div  class="news_more"><a href="#"><img src="images/more.gif" border="0" /></a></div>
+      <div  class="news_more"><a href="#"><img src="/pwms/res/website/images/more.gif" border="0" /></a></div>
     </div>
-    <div class="news_pic"><img src="images/pic3.png" width="290" height="99" /></div>
+    <div class="news_pic"><img src="/pwms/res/website/images/pic3.png" width="290" height="99" /></div>
     <div class="news_list">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
       	<c:forEach items="${courseList}" var="item"> 
         <tr>
-          <td width="20"><a href="#"></a><img src="images/1.png" /> <a href="#"></a></td>
+          <td width="20"><a href="#"></a><img src="/pwms/res/website/images/1.png" /> <a href="#"></a></td>
           <td align="left" class="index_table_size"><a href="#">${item.title}</a></td>
         </tr>
        </c:forEach>
@@ -247,14 +247,14 @@ padding-bottom:10px;
   <div class="news1">
     <div class="news1_title">
       <div class="news1_title_text"> 重要文件列表</div>
-      <div  class="news_more"><a href="#"><img src="images/more.gif" border="0" /></a></div>
+      <div  class="news_more"><a href="#"><img src="/pwms/res/website/images/more.gif" border="0" /></a></div>
     </div>
-    <div class="news_pic"><img src="images/pic1.png" /></div>
+    <div class="news_pic"><img src="/pwms/res/website/images/pic1.png" /></div>
     <div class="news_list">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
       	<c:forEach items="${importdocList}" var="item">
         <tr> 
-          <td width="20"><a href="#"></a><img src="images/1.png" /> <a href="#"></a></td>
+          <td width="20"><a href="#"></a><img src="/pwms/res/website/images/1.png" /> <a href="#"></a></td>
           <td align="left" class="index_table_size"><a href="#">${item.title}</a></td>
         </tr>
         </c:forEach>
@@ -264,14 +264,14 @@ padding-bottom:10px;
   <div class="news2">
     <div class="news1_title">
       <div class="news1_title_text">进度</div>
-      <div  class="news_more"><a href="#"><img src="images/more.gif" border="0" /></a></div>
+      <div  class="news_more"><a href="#"><img src="/pwms/res/website/images/more.gif" border="0" /></a></div>
     </div>
-    <div class="news_pic"><img src="images/pic2.png" width="290" height="99" /></div>
+    <div class="news_pic"><img src="/pwms/res/website/images/pic2.png" width="290" height="99" /></div>
     <div class="news_list">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
       	<c:forEach items="${processList}" var="item">
         <tr>
-          <td width="20"><a href="#"></a><img src="images/1.png" /> <a href="#"></a></td>
+          <td width="20"><a href="#"></a><img src="/pwms/res/website/images/1.png" /> <a href="#"></a></td>
           <td align="left" class="index_table_size"><a href="#">${item.title}</a></td>
         </tr>
         </c:forEach>
@@ -281,29 +281,29 @@ padding-bottom:10px;
   <div class="news3">
     <div class="news1_title">
       <div class="news1_title_text">学生工作</div>
-      <div  class="news_more"><a href="#"><img src="images/more.gif" border="0" /></a></div>
+      <div  class="news_more"><a href="#"><img src="/pwms/res/website/images/more.gif" border="0" /></a></div>
     </div>
-    <div class="news_pic"><img src="images/pic3.png" width="290" height="99" /></div>
+    <div class="news_pic"><img src="/pwms/res/website/images/pic3.png" width="290" height="99" /></div>
     <div class="news_list">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td width="20"><a href="#"></a><img src="images/1.png" /> <a href="#"></a></td>
+          <td width="20"><a href="#"></a><img src="/pwms/res/website/images/1.png" /> <a href="#"></a></td>
           <td align="left" class="index_table_size"><a href="#">媒体聚焦媒体三问&quot;22人公考零分&quot;：如此恶劣违何</a></td>
         </tr>
         <tr>
-          <td width="20"><img src="images/2.png" width="11" height="11" /></td>
+          <td width="20"><img src="/pwms/res/website/images/2.png" width="11" height="11" /></td>
           <td align="left" class="index_table_size"><a href="#">三部门解读普通高等学校毕业生就业创业工作通知</a></td>
         </tr>
         <tr>
-          <td width="20"><img src="images/3.png" width="11" height="11" /></td>
+          <td width="20"><img src="/pwms/res/website/images/3.png" width="11" height="11" /></td>
           <td align="left" class="index_table_size"><a href="#">党报评论君：国家级“科技粉”习近平的“科技经”</a></td>
         </tr>
         <tr>
-          <td width="20"><img src="images/4.png" width="11" height="11" /></td>
+          <td width="20"><img src="/pwms/res/website/images/4.png" width="11" height="11" /></td>
           <td align="left" class="index_table_size"><a href="#">用改革之手点燃创新引擎（人民时评）</a></td>
         </tr>
         <tr>
-          <td width="20"><img src="images/5.png" width="11" height="11" /></td>
+          <td width="20"><img src="/pwms/res/website/images/5.png" width="11" height="11" /></td>
           <td align="left" class="index_table_size"><a href="#">顾国彪院士：自缚手脚何以弯道超车</a></td>
         </tr>
       </table>
