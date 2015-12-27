@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
@@ -25,9 +26,11 @@ public class ImportDocController extends BaseController {
 	private IImportDocService importDocService;
 	//重要文件列表
 	@RequestMapping("/")
-	public String index(Model model){
+	public String index(HttpServletRequest request, Model model){
 		List<ImportDoc> importDocList = importDocService.getImportDocList();
-		
+		if(verifyClient(request)){
+			
+		}
 		model.addAttribute("importDocList", importDocList);
 		return null;
 	}

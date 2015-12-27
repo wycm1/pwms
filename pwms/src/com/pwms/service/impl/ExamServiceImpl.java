@@ -4,13 +4,15 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.stereotype.Service;
+
 import com.pwms.dao.ExamMapper;
 import com.pwms.dao.ExamRecordMapper;
 import com.pwms.pojo.Exam;
 import com.pwms.pojo.ExamRecord;
 import com.pwms.pojo.User;
 import com.pwms.service.IExamService;
-
+@Service("examService")
 public class ExamServiceImpl implements IExamService {
 	@Resource
 	private ExamMapper examDao;
