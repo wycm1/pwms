@@ -1,5 +1,7 @@
 package com.pwms.dao;
 
+import java.util.List;
+
 import com.pwms.pojo.Exam;
 
 public interface ExamMapper {
@@ -10,6 +12,8 @@ public interface ExamMapper {
     int insertSelective(Exam record);
 
     Exam selectByPrimaryKey(Integer id);
+    
+    List<Exam> selectDesc();
 
     int updateByPrimaryKeySelective(Exam record);
 

@@ -72,4 +72,14 @@ public class ImportDoc {
     public void setExplain(String explain) {
         this.explain = explain == null ? null : explain.trim();
     }
+    public String toString(){
+    	String json ="{ \"id\" :"+id+","+
+    			"\"filepath\" : \""+filepath+"\","+
+    			"\"title\" : \""+title+"\","+
+    			"\"summary\" : \""+summary+"\","+
+    			"\"dateline\" : \""+dateline+"\","+
+    			"\"userId\" : \""+dateline+"\","+
+    			"\"explain\" : \""+explain+"\"";
+    	return json;
+    }
 }

@@ -16,6 +16,11 @@
     from exam
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectDesc" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from exam order by id desc
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from exam
     where id = #{id,jdbcType=INTEGER}

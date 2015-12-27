@@ -32,10 +32,32 @@ public class BaseController {
 			return false;     
 		}
 	}
+	/**
+	 * 包含了客户端验证
+	 * @param request
+	 * @param msg 需要返回的消息
+	 * @param returnView 返回的视图
+	 * @return
+	 */
 	public String publishmsg(HttpServletRequest request, String msg, String returnView){
 		if(verifyClient(request))
     	{
 			outJson("{\"msg\":\""+msg+"\"}");
+    		return null;
+    	}
+		return returnView;
+	}
+	/**
+	 * 返回json字符串
+	 * @param request
+	 * @param json json格式的字符串
+	 * @param returnView 返回的视图
+	 * @return
+	 */
+	public String publishJson(HttpServletRequest request, String json, String returnView){
+		if(verifyClient(request))
+    	{
+			outJson(json);
     		return null;
     	}
 		return returnView;
@@ -69,6 +91,9 @@ public class BaseController {
 			}
 		}
 		return json;
+	}
+	public String objectToJson(String key, Object object){
+		return "{\""+key+"\": \""+object+"\"}";
 	}
 	public void outJson(String json){
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
