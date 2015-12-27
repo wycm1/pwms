@@ -1,15 +1,26 @@
 package com.pwms.controller;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.pwms.service.IExamService;
+
 @Controller
 @RequestMapping("/exam")
 public class ExamController extends BaseController {
 	//获取考试题目
+	@Resource
+	private IExamService examService;
+	public IExamService getExamService() {
+		return examService;
+	}
+	public void setExamService(IExamService examService) {
+		this.examService = examService;
+	}
 	@RequestMapping("/getquestion")
 	public String getExamQuestion(int examId, HttpSession session, Model model){
 		return null;

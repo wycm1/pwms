@@ -18,7 +18,7 @@ import com.pwms.service.IImportDocService;
 import com.pwms.service.INoticeService;
 import com.pwms.service.IProcessService;
 @Controller
-@RequestMapping("/index")
+@RequestMapping("")
 public class IndexController extends BaseController{
 	@Resource
 	private INoticeService noticeService;
@@ -53,7 +53,7 @@ public class IndexController extends BaseController{
 	@Resource
 	private IProcessService processService;
     //Ê×Ò³ÐÅÏ¢£¬
-    @RequestMapping("/")
+    @RequestMapping("/index")
     public String index(Model model){
     	System.out.println("called!");
     	noticeListByTime(model);
