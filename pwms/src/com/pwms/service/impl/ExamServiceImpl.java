@@ -41,7 +41,7 @@ public class ExamServiceImpl implements IExamService {
 	public int getGrade(User user, Exam exam) {
 		// TODO Auto-generated method stub
 		List<ExamRecord> examRecordList = this.examRecordDao.selectByExamidUserid(exam.getId(), user.getId());
-		if(examRecordList == null){
+		if(examRecordList != null){
 			return examRecordList.get(0).getScore();
 		}
 		else{
@@ -66,6 +66,12 @@ public class ExamServiceImpl implements IExamService {
 		// TODO Auto-generated method stub
 //		return examRecordDao.selectByExamidUserid(exam.getId(), user.getId());
 		return this.examRecordDao.selectByExamidUserid(exam.getId(), user.getId());
+	}
+
+	@Override
+	public List<Exam> getExamDesc() {
+		// TODO Auto-generated method stub
+		return this.examDao.selectDesc();
 	}
 
 }

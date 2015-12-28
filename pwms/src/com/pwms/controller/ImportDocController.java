@@ -29,7 +29,8 @@ public class ImportDocController extends BaseController {
 	public String index(HttpServletRequest request, Model model){
 		List<ImportDoc> importDocList = importDocService.getImportDocList();
 		if(verifyClient(request)){
-			
+			outJson("{"+listToJson("importDocList",importDocList)+"}");
+			return null;
 		}
 		model.addAttribute("importDocList", importDocList);
 		return null;

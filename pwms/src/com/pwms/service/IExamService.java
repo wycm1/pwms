@@ -38,4 +38,10 @@ public interface IExamService {
 	 * @return
 	 */
 	public List<ExamRecord> getRecordByUserExam(User user, Exam exam);
+	//按时间获取考试列表
+	public List<Exam> getExamDesc();
+	//计算考试的成绩
+//	public int getGrade();
+	//返回具体某个题的题的成绩
+//	public int getQuestionGrade(ExamQuestion question , String question);
 }

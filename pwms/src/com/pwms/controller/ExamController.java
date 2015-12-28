@@ -23,6 +23,7 @@ public class ExamController extends BaseController {
 	}
 	@RequestMapping("/getquestion")
 	public String getExamQuestion(int examId, HttpSession session, Model model){
+//		examService.
 		return null;
 	}
 	//接受用户答案,保存并处理用户答案

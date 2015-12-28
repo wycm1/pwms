@@ -203,6 +203,7 @@ padding-bottom:10px;
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
       	<c:forEach items="${noticeList}" var="item"> 
         <tr>
+          <td width="20"><img src="/pwms/res/website/images/5.png" width="11" height="11" /></td>
           <td align="left" class="index_table_size"><a href="#">${item.title}</a></td>
         </tr>
         </c:forEach>
@@ -219,6 +220,7 @@ padding-bottom:10px;
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
       	<c:forEach items="${courseList}" var="item"> 
         <tr>
+          <td width="20"><img src="/pwms/res/website/images/5.png" width="11" height="11" /></td>
           <td align="left" class="index_table_size"><a href="#">${item.title}</a></td>
         </tr>
        </c:forEach>
