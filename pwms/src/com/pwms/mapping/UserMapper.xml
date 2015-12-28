@@ -41,6 +41,17 @@
     delete from pw_user
     where id = #{id,jdbcType=INTEGER}
   </delete>
+  <update id="updateByUserid" parameterType="com.pwms.pojo.User">
+    update pw_user set
+    <trim suffixOverrides="," suffix="" prefix="">
+		<if test="name != null">name = #{name,jdbcType=VARCHAR}, </if>
+		<if test="password != null">password = #{password,jdbcType=VARCHAR}, </if>
+		<if test="processId != null">process_id = #{processId,jdbcType=INTEGER}, </if>
+		<if test="type != null">type = #{type,jdbcType=INTEGER}, </if>
+		<if test="registerTime != null">register_time = #{registerTime,jdbcType=DATE}, </if>
+	</trim>
+	where id = #{id,jdbcType=INTEGER}
+  </update>
   <insert id="insert" parameterType="com.pwms.pojo.User" >
     insert into pw_user (f_id, name, password, process_id, type, register_time)
     values (#{StuOrJobid, jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 

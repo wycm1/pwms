@@ -18,4 +18,6 @@ public interface BranchMapper {
     int updateByPrimaryKey(Branch record);
     
     List<Branch> findAll();
+    
+    List<Branch> findByName(String name);
 }

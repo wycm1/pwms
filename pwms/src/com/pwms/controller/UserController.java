@@ -19,6 +19,7 @@ import com.pwms.pojo.User;
 import com.pwms.pojo.Userinfo;
 import com.pwms.service.IUserService;
 import com.pwms.service.IUserinfoService;
+import com.pwms.tools.Md5Util;
 import com.pwms.tools.Validate;
 @Controller
 @RequestMapping("/user")
@@ -99,7 +100,20 @@ public class UserController extends BaseController{
     }
     //修改密码
     @RequestMapping("/modifypasswd")
-    public String modifypasswd(HttpSession session, Model model) {
-    	return null;
+    public String modifypasswd(String oldpasswd, String passwd, String repasswd, HttpServletRequest request, HttpSession session, Model model) {
+    	User userOld = (User) session.getAttribute("user");
+    	oldpasswd = Md5Util.Convert2Md5(oldpasswd);
+    	if(!userOld.getPassword().equals(oldpasswd)){
+    		return publishmsg(request,"旧密码错误",null);
+    	}
+    	else if(!passwd.equals(repasswd)){
+    		return publishmsg(request,"两次密码不相同",null);
+//    		userService.
+    	}
+    	else{
+    		userOld.setPassword( Md5Util.Convert2Md5(passwd));
+    		userService.updateById(userOld);
+    		return null;
+    	}
     }
 }

@@ -125,4 +125,11 @@ public class BranchServiceImpl implements IBranchService {
 		return branchDao.findAll();
 	}
 
+	@Override
+	public List<Branch> findByName(String name) {
+		// TODO Auto-generated method stub
+		List<Branch> branchList = this.branchDao.findByName(name);
+		return branchList;
+	}
+
 }
