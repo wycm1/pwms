@@ -25,4 +25,6 @@ public interface IBranchService {
 	public Branch getUserBranch(User user);
 
 	public List<Branch> findAll();
+	
+	public List<Branch> findByName(String name);
 }

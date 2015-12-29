@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pwms.pojo.Course;
 import com.pwms.pojo.Exam;
+import com.pwms.pojo.ExamRecord;
+import com.pwms.pojo.User;
 import com.pwms.service.ICourseService;
 import com.pwms.service.IExamService;
 
@@ -46,8 +48,15 @@ public class SchoolController extends BaseController {
     }
 	//查看历史成绩
 	@RequestMapping("/getgrade")
-	public String getGrade(HttpSession session, Model model)
+	public String getGrade(HttpServletRequest request, HttpSession session, Model model)
 	{
+		User user = (User) session.getAttribute("user");
+		List<ExamRecord> examRecordList = this.examService.getRecord(user);
+		if(verifyClient(request)){
+			outJson("{"+listToJson("examRecordList",examRecordList)+"}");
+			return null;
+		} 
+		model.addAttribute("examRecordList", examRecordList);
 		return null;
 	}
 }

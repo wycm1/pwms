@@ -79,9 +79,13 @@ public class BranchController extends BaseController {
 
 	// 搜索支部，根据支部的名称
 	@RequestMapping("/searchbranch")
-	public String searchBranch(HttpSession session, String branchName,
+	public String searchBranch(HttpServletRequest request, HttpSession session, String branchName,
 			Model model) {
-		
+		List<Branch> branchList = this.branchService.findByName(branchName);
+		if(verifyClient(request)){
+			outJson("{"+listToJson("branchList",branchList)+"}");
+			return null;
+		}
 		return null;
 	}
 	// test

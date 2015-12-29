@@ -15,6 +15,12 @@
     from branch
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="findByName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from branch
+    where branch_name = #{name,jdbcType=INTEGER}
+  </select>
   <select id="findAll" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -22,7 +28,7 @@
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from branch
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.pwms.pojo.Branch" >
     insert into branch (id, leader_id, branch_name

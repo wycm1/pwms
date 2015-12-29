@@ -136,5 +136,10 @@ public class UserServiceImpl implements IUserService {
 		// TODO Auto-generated method stub
 		return this.userDao.selectdByStuid(stuid).getId();
 	}
+	@Override
+	public void updateById(User user) {
+		// TODO Auto-generated method stub
+		this.userDao.updateByUserid(user);
+	}
 
 }
