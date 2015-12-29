@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pwms.pojo.ImportDoc;
@@ -24,6 +25,12 @@ import com.pwms.service.IImportDocService;
 public class ImportDocController extends BaseController {
 	@Resource
 	private IImportDocService importDocService;
+	public IImportDocService getImportDocService() {
+		return importDocService;
+	}
+	public void setImportDocService(IImportDocService importDocService) {
+		this.importDocService = importDocService;
+	}
 	//重要文件列表
 	@RequestMapping("/")
 	public String index(HttpServletRequest request, Model model){
@@ -33,11 +40,25 @@ public class ImportDocController extends BaseController {
 			return null;
 		}
 		model.addAttribute("importDocList", importDocList);
-		return null;
+		return "website/doc";
+	}
+	@RequestMapping("")
+	public String doc(HttpServletRequest request, Model model){
+		return index(request, model);
+	}
+	@RequestMapping("/detail/{id}")
+	public String detail(HttpServletRequest request, @PathVariable int id, Model model){
+		ImportDoc importDoc = this.importDocService.getImportDocById(id);
+		if(verifyClient(request)){
+			outJson(objectToJson("importDoc", importDoc));
+			return null;
+		}
+		model.addAttribute("importDoc", importDoc);
+		return "website/docdetail";
 	}
 	//查看具体的重要文件
-	@RequestMapping("/download")
-	public String index(int id,HttpServletResponse response, Model model){
+	@RequestMapping("/download/{id}")
+	public String dowmload(@PathVariable int id,HttpServletResponse response, Model model){
 		ImportDoc importDoc = this.importDocService.getImportDocById(id);
 		response.setContentType("application/x-download");
 		File file = new File(importDoc.getFilepath());

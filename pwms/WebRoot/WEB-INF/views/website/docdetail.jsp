@@ -69,9 +69,10 @@
   <div class="detail">
    <div class="detail_title"> <img src="/pwms/res/website/images/next_ico.png" width="2" height="10" /> 当前位置 ：首页 &gt;    新闻动态 &gt;     学院新闻</div>
    <div class="detail_h1">${party.title}</div>
-   <div class="detail_time">发布时间：${party.dateline}</div>
+   <div class="detail_time">发布时间：${importDoc.dateline}</div>
    <div class="detail_text"></div>
-            ${party.contents}
+            ${importDoc.explain}<br>
+     <a href="../download/${importDoc.id}">点击下载</a>
    </div>
     </td>
    </tr>
