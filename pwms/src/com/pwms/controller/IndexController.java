@@ -63,22 +63,22 @@ public class IndexController extends BaseController{
     	processList(model);
     	return "website/index";
     }
-    @RequestMapping("/news")
-    public String news(Model model){
-    	return "website/news";
-    }
-    @RequestMapping("/news_1")
-    public String news1(Model model){
-    	return "website/news_1";
-    }
-    @RequestMapping("/notis")
-    public String notis(Model model){
-    	return "website/notis";
-    }
-    @RequestMapping("/notis_1")
-    public String notis1(Model model){
-    	return "website/notis_1";
-    }
+//    @RequestMapping("/news")
+//    public String news(Model model){
+//    	return "website/news";
+//    }
+//    @RequestMapping("/news_1")
+//    public String news1(Model model){
+//    	return "website/news_1";
+//    }
+//    @RequestMapping("/notis")
+//    public String notis(Model model){
+//    	return "website/notis";
+//    }
+//    @RequestMapping("/notis_1")
+//    public String notis1(Model model){
+//    	return "website/notis_1";
+//    }
     //按时间列出最近的公告
     public void noticeListByTime(Model model){
     	List<NoticeTheroyContruction> noticeList = this.noticeService.getNoticeByType(1);

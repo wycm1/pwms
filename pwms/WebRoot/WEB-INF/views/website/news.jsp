@@ -91,46 +91,13 @@
               <div class="two_img"><img src="/pwms/res/website/images/two_pic1.png" /></div>
               <div class="two_news_list">
                 <table width="98%" border="0" align="left" cellpadding="0" cellspacing="0">
+                <c:forEach items="${noticeList}" var="item"> 
                   <tr>
                     <td width="20"><a href="#"></a><img src="/pwms/res/website/images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
-                    <td align="left" class="index_table_size"><a href="news_1.html">媒体聚焦媒体三问&quot;22人公考零分&quot;：恶劣违</a></td>
+                    <td align="left" class="index_table_size"><a href="./notice/detail?id=${item.id}">${item.title}</a></td>
                     <td width="24" align="center" class="public_color1">10:11</td>
                   </tr>
-                  <tr>
-                    <td width="20"><img src="/pwms/res/website/images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
-                    <td align="left" class="index_table_size"><a href="#">三部门解读普通高等学校毕业生就业创业工</a></td>
-                    <td width="24" align="center" class="public_color1">10:11</td>
-                  </tr>
-                  <tr>
-                    <td width="20"><img src="/pwms/res/website/images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
-                    <td align="left" class="index_table_size"><a href="#">党报评论君：国家级“科技粉”习近平的“科技</a></td>
-                    <td width="24" align="center" class="public_color1">10:11</td>
-                  </tr>
-                  <tr>
-                    <td width="20"><img src="/pwms/res/website/images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
-                    <td align="left" class="index_table_size"><a href="#">用改革之手点燃创新引擎（人民时评）</a></td>
-                    <td width="24" align="center" class="public_color1">10:11</td>
-                  </tr>
-                  <tr>
-                    <td width="20"><img src="/pwms/res/website/images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
-                    <td align="left" class="index_table_size"><a href="#">顾国彪院士：自缚手脚何以弯道超车</a></td>
-                    <td width="24" align="center" class="public_color1">10:11</td>
-                  </tr>
-                  <tr>
-                    <td width="20"><img src="/pwms/res/website/images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
-                    <td align="left" class="index_table_size"><a href="#">光明日报评论员：科技工作者要勇于担当时</a></td>
-                    <td width="24" align="center" class="public_color1">10:11</td>
-                  </tr>
-                  <tr>
-                    <td width="20"><img src="/pwms/res/website/images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
-                    <td align="left" class="index_table_size"><a href="#">媒体聚焦媒体三问&quot;22人公考零分&quot;：如此恶</a></td>
-                    <td width="24" align="center" class="public_color1">10:11</td>
-                  </tr>
-                  <tr>
-                    <td width="20"><img src="/pwms/res/website/images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
-                    <td align="left" class="index_table_size"><a href="#">评论：残疾人就业没有尊重何来权益</a></td>
-                    <td width="24" align="center" class="public_color1">10:11</td>
-                  </tr>
+                </c:forEach>
                 </table>
 				 
               </div>

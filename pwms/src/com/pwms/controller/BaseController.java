@@ -23,13 +23,13 @@ public class BaseController {
 	public boolean verifyClient(HttpServletRequest request)
 	{
 		String is_app=(String) request.getAttribute("is_app");
-		if(is_app.equals("1"))
+		if(is_app==null||!is_app.equals("1"))
 		{
-			return true;
+			return false;
 		}
 		else
 		{
-			return false;     
+			return true;     
 		}
 	}
 	/**

@@ -3,6 +3,7 @@ package com.pwms.controller;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,10 +19,14 @@ public class PartyController extends BaseController {
 	@Resource
 	private INoticeService partyServer;
 	@RequestMapping("/")
-	public String party(Model model){
+	public String party(HttpServletRequest request, Model model){
 		List<NoticeTheroyContruction> partyList = this.partyServer.getNoticeByType(4);
 		model.addAttribute("partyList", partyList);
-		return null;
+		if(verifyClient(request)){
+			outJson("{"+listToJson("partyList",partyList)+"}");
+			return null;
+		}
+		return "website/party";
 	}
 	
 	@RequestMapping("/article")
