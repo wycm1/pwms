@@ -36,19 +36,19 @@
 <li><a class="hide" href="#">首页</a>
 
 </li>
-<li><a class="hide" href="#">通知公告</a>
+<li><a class="hide" href="notice">通知公告</a>
 
 </li>
-<li><a class="hide" href="#">网上党校</a>
+<li><a class="hide" href="school">网上党校</a>
 
 </li>
-<li><a class="hide" href="#">党建专项</a>
+<li><a class="hide" href="party">党建专项</a>
 
 </li>
-<li><a class="hide" href="#">理论学习</a>
+<li><a class="hide" href="theory">理论学习</a>
 
 </li>
-<li><a class="hide" href="#">重要文件</a>
+<li><a class="hide" href="importantdoc">重要文件</a>
 
 </li>
 <li><a class="hide" href="#">入党流程</a>
@@ -86,15 +86,15 @@
         <td valign="top">
 		<div class="two_right">
             <div class="two_right_title">
-              <div class="two_right_title_h1"> 通知通告</div>
+              <div class="two_right_title_h1">重要文件</div>
               <div class="two_right_title_next"> <img src="/pwms/res/website/images/next_ico.png" width="2" height="10" /> 当前位置 ：首页 &gt;    新闻动态 &gt;    通知通告</div></div>
               <div class="two_img"><img src="/pwms/res/website/images/notice.jpg" /></div>
               <div class="two_news_list">
                 <table width="98%" border="0" align="left" cellpadding="0" cellspacing="0">
-                  <c:forEach items="${noticeList}" var="item"> 
+                  <c:forEach items="${importDocList}" var="item"> 
                   <tr>
                     <td width="20"><a href="#"></a><img src="/pwms/res/website/images/dot2.png" width="4" height="6" /> <a href="#"></a></td>
-                    <td align="left" class="index_table_size"><a href="./party/detail/${item.id}">${item.title}</a></td>
+                    <td align="left" class="index_table_size"><a href="./doc/detail/${item.id}">${item.title}</a></td>
                     <td width="24" align="center" class="public_color1">10:11</td>
                   </tr>
                  </c:forEach>
