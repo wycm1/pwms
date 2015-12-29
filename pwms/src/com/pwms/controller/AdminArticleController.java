@@ -55,10 +55,30 @@ public class AdminArticleController extends BaseController {
 	public String modifyview(int id, Model model){
 		return null;
 	}
-	//根据id来修改文章内容
-	@RequestMapping("/modify")
+	/**
+	 * 显示要修改的文章
+	 * @param id
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/article-modify")
 	public String modify(int id, Model model){
-		return null;
+		//System.out.println(id);
+		model.addAttribute("article", articleService.getNoticeById(id));
+		return "admin/article/article-modify";
+	}
+	/**
+	 * 修改文章
+	 * @param article
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/updatearticle")
+	public String updateArticle(NoticeTheroyContruction article,Model model){
+		article.setDateline(new Date());
+		articleService.modifyNotice(article);
+		model.addAttribute("msg", "文章修改成功！");
+		return "admin/notice-msg";
 	}
 	/**
 	 * 删除文章

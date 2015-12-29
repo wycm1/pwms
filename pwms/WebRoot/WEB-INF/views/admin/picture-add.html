@@ -7,17 +7,17 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <!--[if lt IE 9]>
-<script type="text/javascript" src="lib/html5.js"></script>
-<script type="text/javascript" src="lib/respond.min.js"></script>
-<script type="text/javascript" src="lib/PIE_IE678.js"></script>
+<script type="text/javascript" src="/pwms/res/lib/html5.js"></script>
+<script type="text/javascript" src="/pwms/res/lib/respond.min.js"></script>
+<script type="text/javascript" src="/pwms/res/lib/PIE_IE678.js"></script>
 <![endif]-->
-<link href="css/H-ui.min.css" rel="stylesheet" type="text/css" />
-<link href="css/H-ui.admin.css" rel="stylesheet" type="text/css" />
-<link href="lib/icheck/icheck.css" rel="stylesheet" type="text/css" />
-<link href="lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
-<link href="lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+<link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="/pwms/res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+<link href="/pwms/res/lib/icheck/icheck.css" rel="stylesheet" type="text/css" />
+<link href="/pwms/res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+<link href="/pwms/res/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
 <!--[if IE 6]>
-<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript" src="/pwms/res/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
 <title>新增图片</title>
@@ -134,14 +134,14 @@
 	</form>
 </div>
 </div>
-<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
-<script type="text/javascript" src="lib/layer/1.9.3/layer.js"></script> 
-<script type="text/javascript" src="lib/My97DatePicker/WdatePicker.js"></script> 
-<script type="text/javascript" src="lib/icheck/jquery.icheck.min.js"></script> 
-<script type="text/javascript" src="lib/Validform/5.3.2/Validform.min.js"></script> 
-<script type="text/javascript" src="lib/webuploader/0.1.5/webuploader.min.js"></script> 
-<script type="text/javascript" src="js/H-ui.js"></script> 
-<script type="text/javascript" src="js/H-ui.admin.js"></script> 
+<script type="text/javascript" src="/pwms/res/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="/pwms/res/lib/layer/1.9.3/layer.js"></script> 
+<script type="text/javascript" src="/pwms/res/lib/My97DatePicker/WdatePicker.js"></script> 
+<script type="text/javascript" src="/pwms/res/lib/icheck/jquery.icheck.min.js"></script> 
+<script type="text/javascript" src="/pwms/res/lib/Validform/5.3.2/Validform.min.js"></script> 
+<script type="text/javascript" src="/pwms/res/lib/webuploader/0.1.5/webuploader.min.js"></script> 
+<script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
+<script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script> 
 <script type="text/javascript">
 $(function(){
 	$('.skin-minimal input').iCheck({
@@ -157,7 +157,7 @@ $(function(){
 
 	var uploader = WebUploader.create({
 		auto: true,
-		swf: 'lib/webuploader/0.1.5/Uploader.swf',
+		swf: '/pwms/res/lib/webuploader/0.1.5/Uploader.swf',
 	
 		// 文件接收服务端。
 		server: 'http://lib.h-ui.net/webuploader/0.1.5/server/fileupload.php',
@@ -401,7 +401,7 @@ $(function(){
             },
             dnd: '#dndArea',
             paste: '#uploader',
-            swf: 'lib/webuploader/0.1.5/Uploader.swf',
+            swf: '/pwms/res/lib/webuploader/0.1.5/Uploader.swf',
             chunked: false,
             chunkSize: 512 * 1024,
             server: 'http://lib.h-ui.net/webuploader/0.1.5/server/fileupload.php',
@@ -514,7 +514,7 @@ $(function(){
                         img = $('<img src="'+src+'">');
                         $wrap.empty().append( img );
                     } else {
-                        $.ajax('lib/webuploader/0.1.5/server/preview.php', {
+                        $.ajax('/pwms/res/lib/webuploader/0.1.5/server/preview.php', {
                             method: 'POST',
                             data: src,
                             dataType:'json'
