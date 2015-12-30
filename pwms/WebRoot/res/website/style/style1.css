@@ -1291,6 +1291,7 @@ margin-left: 6%;
 	position: relative;
 	border: 1px solid #DBDBDB;
 	border-radius: 4px;
+	font-size:14px;
 }
 .nav .breadcrumb {
     background-color: #F5F5F5;
@@ -1305,7 +1306,7 @@ margin-left: 6%;
 
 .nav a:hover,.nav a:focus,.nav .maincolor,.nav .maincolor a {
     color: #06c;
-    float:;
+    float:none;
 }
 .filling{
 	width:100%;
