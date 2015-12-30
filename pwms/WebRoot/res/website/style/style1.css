@@ -1276,3 +1276,49 @@ margin-left: 6%;
 	padding-bottom: 20px;
 	
 }
+.login-main,.register-main{
+	width:1100px;
+	height:auto;
+	margin:0 auto;
+	background: #fff;
+	position: relative;
+	border: 1px solid #DBDBDB;
+}
+.nav{
+	width:1060px;
+	margin:20px auto 0px;
+	background: #fff;
+	position: relative;
+	border: 1px solid #DBDBDB;
+	border-radius: 4px;
+}
+.nav .breadcrumb {
+    background-color: #F5F5F5;
+}
+.nav .breadcrumb {
+    border-bottom: 1px solid #e5e5e5;
+    line-height: 39px;
+    height: 39px;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+.nav a:hover,.nav a:focus,.nav .maincolor,.nav .maincolor a {
+    color: #06c;
+    float:;
+}
+.filling{
+	width:100%;
+	height:20px;
+	display:block;
+}
+.login-wrapper,.register-wrapper{
+	width:1060px;
+	height:auto;
+	background: #fff;
+	margin:10px auto 20px;
+	padding:50px 0 50px 0;
+	position: relative;
+	border: 1px solid #DBDBDB;
+	border-radius: 4px;
+}
