@@ -16,7 +16,7 @@
     <div class="head_left"></div>
     <div class="head_right">
       <div class="head_sear">
-        <div class="head_sear_top"><a href="#"><img src="/pwms/res/website/images/ico1.png" /> 设为首页 </a> <a href="#"><img src="/pwms/res/website/images/ico2.png" /> 收藏</a> <a href="#"><img src="/pwms/res/website/images/ico4.png" /> 院长信箱</a> <a href="#"><img src="/pwms/res/website/images/ico5.png" />书记信箱</a> <a href="#"><img src="/pwms/res/website/images/ico6.png" />登录后台</a> </div>
+        <div class="head_sear_top"><a href="#"><img src="/pwms/res/website/images/ico1.png" /> 设为首页 </a> <a href="#"><img src="/pwms/res/website/images/ico2.png" /> 收藏</a> <a href="#"><img src="/pwms/res/website/images/ico4.png" /> 院长信箱</a> <a href="#"><img src="/pwms/res/website/images/ico5.png" />书记信箱</a> <a href="admin/index.html"><img src="/pwms/res/website/images/ico6.png" />登录后台</a> </div>
         <div class="head_sear_bot">
           <div class="head_sear_con">
             <input name="" type="text" class="head_sear1"  placeholder="请输入搜索关键字"/>

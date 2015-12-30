@@ -16,7 +16,7 @@
     <div class="head_left"></div>
     <div class="head_right">
       <div class="head_sear">
-        <div class="head_sear_top"><a href="#"><img src="/pwms/res/website/images/ico1.png" /> 设为首页 </a> <a href="#"><img src="/pwms/res/website/images/ico2.png" /> 收藏</a><a href="#"><img src="/pwms/res/website/images/ico4.png" /> 院长信箱</a> <a href="#"><img src="/pwms/res/website/images/ico5.png" /> 书记信箱</a> <a href="#"><img src="/pwms/res/website/images/ico6.png" />登录后台</a> </div>
+        <div class="head_sear_top"><a href="#"><img src="/pwms/res/website/images/ico1.png" /> 设为首页 </a> <a href="#"><img src="/pwms/res/website/images/ico2.png" /> 收藏</a><a href="#"><img src="/pwms/res/website/images/ico4.png" /> 院长信箱</a> <a href="#"><img src="/pwms/res/website/images/ico5.png" /> 书记信箱</a> <a href="admin/index.html"><img src="/pwms/res/website/images/ico6.png" />登录后台</a> </div>
         <div class="head_sear_bot">
           <div class="head_sear_con">
             <input name="" type="text" class="head_sear1" />
@@ -36,19 +36,19 @@
 <li><a class="hide" href="#">首页</a>
 
 </li>
-<li><a class="hide" href="#">通知公告</a>
+<li><a class="hide" href="notice">通知公告</a>
 
 </li>
-<li><a class="hide" href="#">网上党校</a>
+<li><a class="hide" href="school">网上党校</a>
 
 </li>
-<li><a class="hide" href="#">党建专项</a>
+<li><a class="hide" href="party">党建专项</a>
 
 </li>
-<li><a class="hide" href="#">理论学习</a>
+<li><a class="hide" href="theory">理论学习</a>
 
 </li>
-<li><a class="hide" href="#">重要文件</a>
+<li><a class="hide" href="doc">重要文件</a>
 
 </li>
 <li><a class="hide" href="#">入党流程</a>

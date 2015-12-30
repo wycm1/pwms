@@ -48,7 +48,7 @@
 <li><a class="hide" href="theory">理论学习</a>
 
 </li>
-<li><a class="hide" href="importantdoc">重要文件</a>
+<li><a class="hide" href="doc">重要文件</a>
 
 </li>
 <li><a class="hide" href="#">入党流程</a>
@@ -57,7 +57,7 @@
 <li><a class="hide" href="#">我的支部</a>
 
 </li>
-
+</ul>
 <!-- clear the floats if required -->
 <div class="clear"> </div>
 </div>

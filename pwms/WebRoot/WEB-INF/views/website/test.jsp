@@ -42,28 +42,28 @@
 							<ul>
 								<li><a class="hide" href="#">首页</a>
 
-								</li>
-								<li><a class="hide" href="#">通知公告</a>
+</li>
+<li><a class="hide" href="notice">通知公告</a>
 
-								</li>
-								<li><a class="hide" href="#">网上党校</a>
+</li>
+<li><a class="hide" href="school">网上党校</a>
 
-								</li>
-								<li><a class="hide" href="#">党建专项</a>
+</li>
+<li><a class="hide" href="party">党建专项</a>
 
-								</li>
-								<li><a class="hide" href="#">理论学习</a>
+</li>
+<li><a class="hide" href="theory">理论学习</a>
 
-								</li>
-								<li><a class="hide" href="#">重要文件</a>
+</li>
+<li><a class="hide" href="doc">重要文件</a>
 
-								</li>
-								<li><a class="hide" href="#">入党流程</a>
+</li>
+<li><a class="hide" href="#">入党流程</a>
 
-								</li>
-								<li><a class="hide" href="#">我的支部</a>
+</li>
+<li><a class="hide" href="#">我的支部</a>
 
-								</li>
+</li>
 
 								<!-- clear the floats if required -->
 								<div class="clear"> </div>
