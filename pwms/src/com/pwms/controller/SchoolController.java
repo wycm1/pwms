@@ -25,6 +25,15 @@ public class SchoolController extends BaseController {
 	private ICourseService courseService;
 	@Resource
 	private IExamService examService;
+	//显示课程列表，显示考试列表
+	@RequestMapping("/")
+	private String school(HttpServletRequest request, Model model){
+		return null;
+	}
+	@RequestMapping("")
+	private String index(HttpServletRequest request, Model model){
+		return school(request, model);
+	}
 	@RequestMapping("/getcourses")
 	public String getAllCourses(HttpServletRequest request, Model model) {
 		List<Course> courseList = courseService.getCourseByDate();
