@@ -10,7 +10,7 @@ body a {
 body {
 	color: #505050;
 	background: url(../images/bg.PNG) repeat;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 25px;
 	overflow-x: hidden;
 }
@@ -1276,7 +1276,7 @@ margin-left: 6%;
 	padding-bottom: 20px;
 	
 }
-.login-main,.register-main{
+.page-main,.jpprocess-wrapper,.login-main,.register-main{
 	width:1100px;
 	height:auto;
 	margin:0 auto;
@@ -1293,16 +1293,6 @@ margin-left: 6%;
 	border-radius: 4px;
 	font-size:14px;
 }
-.nav .breadcrumb {
-    background-color: #F5F5F5;
-}
-.nav .breadcrumb {
-    border-bottom: 1px solid #e5e5e5;
-    line-height: 39px;
-    height: 39px;
-    padding-left: 20px;
-    overflow: hidden;
-}
 
 .nav a:hover,.nav a:focus,.nav .maincolor,.nav .maincolor a {
     color: #06c;
@@ -1313,7 +1303,7 @@ margin-left: 6%;
 	height:20px;
 	display:block;
 }
-.login-wrapper,.register-wrapper{
+.page-wrapper,.jpprocess-wrapper,.login-wrapper,.register-wrapper{
 	width:1060px;
 	height:auto;
 	background: #fff;
@@ -1323,3 +1313,20 @@ margin-left: 6%;
 	border: 1px solid #DBDBDB;
 	border-radius: 4px;
 }
+.branch{
+	width:1060px;
+	height:auto;
+	background: #fff;
+	margin:20px auto 20px;
+	position: relative;
+}
+.radius{
+	border: 1px solid #DBDBDB;
+	border-radius: 4px;
+}
+.font-bold{
+	font-size:20px;
+	font-weight:bold;
+	color:red;
+}
+.

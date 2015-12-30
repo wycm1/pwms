@@ -13,9 +13,9 @@
 <script type="text/javascript" src="lib/respond.min.js"></script>
 <script type="text/javascript" src="lib/PIE_IE678.js"></script>
 <![endif]-->
-<link href="/pwms/admin/css/H-ui.min.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/admin/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/admin/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+<link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="/pwms/res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+<link href="/pwms/res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
 <!--[if IE 6]>
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
@@ -23,7 +23,7 @@
 </head>
 <body>
 <div class="cl pd-20" style=" background-color:#5bacb6">
-  <img class="avatar size-XL l" src="/pwms/admin/images/user.png">
+  <img class="avatar size-XL l" src="/pwms/res/images/user.png">
   <dl style="margin-left:80px; color:#fff">
     <dt><span class="f-18">${userdetailModify.name}</span> <span class="pl-10 f-12">类型：
 	<c:choose>  
@@ -128,8 +128,8 @@
     </tbody>
   </table>
 </div>
-<script type="text/javascript" src="/pwms/admin/js/jquery.min.js"></script> 
-<script type="text/javascript" src="/pwms/admin/js/H-ui.js"></script>
-<script type="text/javascript" src="/pwms/admin/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="/pwms/res/js/jquery.min.js"></script> 
+<script type="text/javascript" src="/pwms/res/js/H-ui.js"></script>
+<script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
 </body>
 </html>

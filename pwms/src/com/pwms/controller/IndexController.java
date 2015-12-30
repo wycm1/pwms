@@ -87,6 +87,10 @@ public class IndexController extends BaseController{
     public String login(Model model){
     	return "website/login";
     }
+    @RequestMapping("/jpprocess")
+    public String jpprocess(Model model){
+    	return "website/jpprocess";
+    }
     //按时间列出最近的公告
     public void noticeListByTime(Model model){
     	List<NoticeTheroyContruction> noticeList = this.noticeService.getNoticeByType(1);

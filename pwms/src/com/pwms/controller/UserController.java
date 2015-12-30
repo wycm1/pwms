@@ -80,12 +80,29 @@ public class UserController extends BaseController{
     	return publishmsg(request,"success",null);
     }
     //查看个人信息
-    //待修改
     @RequestMapping("/userinfo")
     public String getuserinfo(HttpSession session, int userid, Model model) {
     	Userinfo userinfo = this.userinfoService.getUserinfoByUserid(userid);
     	model.addAttribute(userinfo);
     	return null;
+    }
+    /**
+     * 显示添加个人信息页面
+     * @param model
+     * @return
+     */
+    @RequestMapping("/userdetail-add")
+    public String userdetailShow(Model model) {
+    	return "website/user/userdetail-add";
+    }
+    /**
+     * 显示我的支部
+     * @param model
+     * @return
+     */
+    @RequestMapping("/mybranch")
+    public String mybranchShow(Model model) {
+    	return "website/user/mybranch";
     }
     /**
      * 用户注册
