@@ -21,7 +21,7 @@
       <td>
    <div class="menu">
 <ul>
-<li><a class="hide" href="#">首页</a>
+<li><a class="hide" href="index.html">首页</a>
 
 </li>
 <li><a class="hide" href="#">通知公告</a>

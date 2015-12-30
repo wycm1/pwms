@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>注册</title>
+<title>登录</title>
 <link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/website/style/style1.css" rel="stylesheet" type="text/css" />
@@ -13,28 +13,20 @@
 </head>
 <body>
 <%@ include file="header.jsp"%>
-<div class="register-main">
+<div class="login-main">
 <div class="nav">
 	<nav class="breadcrumb">
 	<a class="maincolor" href="/">首页</a>
-	<span class="c-999 en">&gt;</span>注册
+	<span class="c-999 en">&gt;</span>登录
 </nav>
 </div>
-<div class="register-wrapper">
+<div class="login-wrapper">
 	<div class="pd-20">
   <form action=""  method="post" class="form form-horizontal" id="form-reward-punish-add">
     <div class="row cl">
       <label class="form-label col-3"></label>
       <div class="formControls col-5">
-        <input type="text" class="input-text radius size-L" value="" placeholder="请输入身份证号码" id="idcard" name="idcard" datatype="idcard" nullmsg="身份证不能为空" errormsg="身份证格式不正确">
-      </div>
-      <div class="col-4"> </div>
-    </div>
-    <div class="filling"></div>
-    <div class="row cl">
-      <label class="form-label col-3 "></label>
-      <div class="formControls col-5">
-        <input type="text" class="input-text radius size-L" value="" placeholder="请输入学号" id="stuid" name="stuid"  datatype="stuid" nullmsg="学号不能为空" errormsg="学号格式不正确">
+        <input type="text" class="input-text radius size-L" value="" placeholder="身份证号或者学号" id="card" name="card" datatype="*11-16" nullmsg="不能为空" errormsg="格式不正确">
       </div>
       <div class="col-4"> </div>
     </div>
@@ -42,33 +34,16 @@
     <div class="row cl">
       <label class="form-label col-3"></label>
       <div class="formControls col-5">
-        <input type="text" class="input-text radius size-L" value="" placeholder="请输入姓名" id="name" name="name" datatype="*2-5" nullmsg="姓名不能为空" errormsg="姓名格式不正确">
-      </div>
-      <div class="col-4"> </div>
-    </div>
-    <div class="filling"></div>
-    <div class="row cl">
-      <label class="form-label col-3"></label>
-      <div class="formControls col-5">
-        <input type="text" class="input-text radius size-L" value="" placeholder="请输入6~16位密码" id="password" name="password" datatype="*6-16" nullmsg="密码不能为空" errormsg="密码在6~16位之间">
-      </div>
-      <div class="col-4"> </div>
-    </div>
-    <div class="filling"></div>
-    <div class="row cl">
-      <label class="form-label col-3"></label>
-      <div class="formControls col-5">
-        <input type="text" class="input-text radius size-L" value="" placeholder="请再输入一次密码" id="password" name="password" datatype="*6-16" recheck="password" nullmsg="请再输入一次密码" errormsg="您两次输入的密码不一致">
+        <input type="text" class="input-text radius size-L" value="" placeholder="密码" id="password" name="password" datatype="*6-16" nullmsg="密码不能为空" errormsg="密码在6~16位之间">
       </div>
       <div class="col-4"> </div>
     </div>
     <div class="filling"></div>
     <div class="row cl">
       <div class="formControls col-5 col-offset-3">
-        <input id="submit" class="btn btn-primary radius size-L btn-block" type="submit" value="&nbsp;&nbsp;注册&nbsp;&nbsp;">
+        <input id="submit" class="btn btn-primary radius size-L btn-block" type="submit" value="&nbsp;&nbsp;登录&nbsp;&nbsp;">
       </div>
     </div>
-    <div class="filling"></div>
   </form>
 </div>
 </div>

@@ -83,6 +83,10 @@ public class IndexController extends BaseController{
     public String register(Model model){
     	return "website/register";
     }
+    @RequestMapping("/login")
+    public String login(Model model){
+    	return "website/login";
+    }
     //按时间列出最近的公告
     public void noticeListByTime(Model model){
     	List<NoticeTheroyContruction> noticeList = this.noticeService.getNoticeByType(1);
