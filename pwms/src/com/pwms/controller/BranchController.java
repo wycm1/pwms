@@ -8,11 +8,13 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pwms.pojo.Branch;
 import com.pwms.pojo.User;
 import com.pwms.service.IBranchService;
+import com.pwms.service.IUserService;
 
 @Controller
 @RequestMapping("/branch")
@@ -20,6 +22,15 @@ public class BranchController extends BaseController {
 	// 显示我的支部信息
 	@Resource
 	private IBranchService branchService;
+	@Resource 
+	private IUserService userService;
+	public IUserService getUserService() {
+		return userService;
+	}
+
+	public void setUserService(IUserService userService) {
+		this.userService = userService;
+	}
 
 	public IBranchService getBranchService() {
 		return branchService;
@@ -32,10 +43,34 @@ public class BranchController extends BaseController {
 	@RequestMapping("/")
 	public String branchIndex(HttpServletRequest request, HttpSession session,
 			Model model) {
-
+		User user = (User) session.getAttribute("user");
+		Branch branch = this.branchService.getUserBranch(user);
+		if(branch == null){
+			return publishmsg(request,"用户还没有加入支部",null);
+		}
+		if(verifyClient(request)){
+			outJson(objectToJson("branch", branch));
+			return null;
+		}
+		branchInfo(branch,model);
+		model.addAttribute("branch", branch);
 		return null;
 	}
-
+	@RequestMapping("")
+	public String Index(HttpServletRequest request, HttpSession session,
+			Model model) {
+		return branchIndex(request,session,model);
+	}
+	//显示支部的成员
+	public void branchInfo(Branch branch, Model model){
+		if(branch==null||branch.getId()==null){
+			return;
+		}
+		List<User> userList = this.branchService.getBranchMember(branch);
+		User leader = userService.getUserById(branch.getLeaderId());
+		model.addAttribute("leader", leader);
+		model.addAttribute("userList", userList);
+	}
 	// 显示支部成员信息
 	@RequestMapping("/members")
 	public String getMembers(int branchid, HttpServletRequest request,
@@ -66,8 +101,8 @@ public class BranchController extends BaseController {
 	}
 
 	// 获取到所有的支部信息
-	@RequestMapping("/getailbranch")
-	public String getallBranch(HttpServletRequest request, HttpSession session, int branchId, Model model) {
+	@RequestMapping("/detail/{branchId}")
+	public String getallBranch(HttpServletRequest request, HttpSession session,@PathVariable int branchId, Model model) {
 		Branch branch = this.branchService.getBranch(branchId);
 		if(verifyClient(request)){
 			outJson(objectToJson("branch",branch));
