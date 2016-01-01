@@ -20,10 +20,16 @@ public class TheoryController extends BaseController {
 	@Resource
 	private INoticeService theoryService;
 
+	public INoticeService getTheoryService() {
+		return theoryService;
+	}
+	public void setTheoryService(INoticeService theoryService) {
+		this.theoryService = theoryService;
+	}
 	@RequestMapping("/")
 	public String index(HttpServletRequest request, Model model) {
 		List<NoticeTheroyContruction> theoryList = this.theoryService
-				.getNoticeByType(4);
+				.getNoticeByType(INoticeService.THEORY_TYPE);
 		if (verifyClient(request)) {
 			outJson("{" + listToJson("theoryList", theoryList) + "}");
 			return null;

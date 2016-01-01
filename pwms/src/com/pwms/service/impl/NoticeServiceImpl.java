@@ -13,6 +13,7 @@ import com.pwms.service.INoticeService;
 public class NoticeServiceImpl implements INoticeService {
 	@Resource
 	private NoticeTheroyContructionMapper noticeTheroyDao;
+
 	public NoticeTheroyContructionMapper getNoticeTheroyDao() {
 		return noticeTheroyDao;
 	}

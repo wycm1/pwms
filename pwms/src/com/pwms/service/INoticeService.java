@@ -5,6 +5,9 @@ import java.util.List;
 import com.pwms.pojo.NoticeTheroyContruction;
 
 public interface INoticeService {
+	final static int NOTICE_TYPE = 1;
+	final static int THEORY_TYPE = 2;
+	final static int PARTY_TYPE = 4;
 	/**
 	 * ±£¥Ê∂‘œÛ
 	 * @param notice

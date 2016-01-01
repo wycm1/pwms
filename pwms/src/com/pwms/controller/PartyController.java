@@ -27,7 +27,7 @@ public class PartyController extends BaseController {
 	}
 	@RequestMapping("/")
 	public String party(HttpServletRequest request, Model model){
-		List<NoticeTheroyContruction> partyList = this.partyServer.getNoticeByType(2);
+		List<NoticeTheroyContruction> partyList = this.partyServer.getNoticeByType(INoticeService.PARTY_TYPE);
 		model.addAttribute("partyList", partyList);
 		if(verifyClient(request)){
 			outJson("{"+listToJson("partyList",partyList)+"}");

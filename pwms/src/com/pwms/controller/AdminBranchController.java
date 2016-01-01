@@ -61,7 +61,7 @@ public class AdminBranchController extends BaseController {
 		String studentId = userService.getUserById(branch.getLeaderId()).getStuOrJobid();
 		model.addAttribute("studentId", studentId);
 		model.addAttribute("branch", branch);
-		return "admin/branch//branch-info-modify";
+		return "admin/branch/branch-info-modify";
 	}
 	/**
 	 * ÃÌº”÷ß≤ø

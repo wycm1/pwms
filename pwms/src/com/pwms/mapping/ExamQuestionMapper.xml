@@ -27,6 +27,14 @@
     from exam_question
     where id = #{id,jdbcType=INTEGER}
   </select>
+    <select id="selectByExamId" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from exam_question
+    where exam_id = #{examid,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from exam_question
     where id = #{id,jdbcType=INTEGER}
