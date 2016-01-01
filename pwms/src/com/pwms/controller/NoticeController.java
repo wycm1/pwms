@@ -36,7 +36,7 @@ public class NoticeController extends BaseController {
 	}
 	@RequestMapping("")
 	public String index(HttpServletRequest request, Model model){
-		List<NoticeTheroyContruction> noticeList = this.noticeService.getNoticeByType(1);
+		List<NoticeTheroyContruction> noticeList = this.noticeService.getNoticeByType(INoticeService.NOTICE_TYPE);
 		if(verifyClient(request)){
 			outJson("{"+listToJson("noticeList",noticeList)+"}");
 			return null;

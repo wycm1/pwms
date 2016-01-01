@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.pwms.pojo.ExamQuestion;
+import com.pwms.pojo.User;
 
 public interface IExamQuestionService {
 	/**按照examid获取question列表
@@ -21,7 +22,7 @@ public interface IExamQuestionService {
 	  * @param examid
 	  * @return
 	  */
-	 public ExamQuestion getExamQuestionByExamId(int examid);
+	 public ExamQuestion getExamQuestionById(int id);
 	 /**
 	  * 根据答案返回本题的成绩
 	  * @param questionId
@@ -35,5 +36,19 @@ public interface IExamQuestionService {
 	  * @param answer
 	  * @return
 	  */
-	 public int calcExamGrade(int examId, Map<Integer , String> answer );
+	 public int calcExamGrade(Map<Integer , String> answers );
+	 /**
+	  * 保存考试的记录
+	  * @param examId
+	  * @param score
+	  * @param user
+	  */
+	 public void save2Record(int examId, int score, User user);
+	 /**
+	  * 计算成绩并保存考试记录
+	  * @param examId
+	  * @param answers
+	  * @param user
+	  */
+	 public int calcGrade2Record(int examId, Map<Integer , String> answers, User user);
 }

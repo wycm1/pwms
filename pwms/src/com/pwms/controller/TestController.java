@@ -1,5 +1,7 @@
 package com.pwms.controller;
 
+import java.util.Enumeration;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -41,6 +43,17 @@ public class TestController {
 //    	user.setRegisterTime(new Date());
 //    	user.setType(0);
 //    	userService.register(user, identity);
+    	return "hello";
+    }
+    @RequestMapping("/testarr")
+    public String testarr(HttpServletRequest request, String exam ,Model model){
+    	Enumeration<String> arr = request.getParameterNames();
+    	while(arr.hasMoreElements()){
+    		System.out.println(arr.nextElement());
+    	}
+    	System.out.println(exam);
+    	String str = (String) request.getParameter(exam+"1");
+    	System.out.println(str);
     	return "hello";
     }
 }
