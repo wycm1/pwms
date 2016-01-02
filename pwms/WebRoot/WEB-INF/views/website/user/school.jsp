@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>课程</title>
+<title>课程，考试</title>
 <link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/website/style/style1.css" rel="stylesheet" type="text/css" />
@@ -18,7 +18,7 @@
 		<nav class="breadcrumb">
 		<i class="Hui-iconfont">&#xe67f;</i>
 		<a class="maincolor" href="../index.html">首页</a>
-		<span class="c-999 en">&gt;</span>课程
+		<span class="c-999 en">&gt;</span>课程考试
 		</nav>
 	</div>
 	<div class="course">
