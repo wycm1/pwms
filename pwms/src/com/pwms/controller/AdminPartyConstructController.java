@@ -21,9 +21,9 @@ public class AdminPartyConstructController extends BaseController {
 	private INoticeService theoryService;
 	@RequestMapping("/articlelist")
 	public String articlelist(Model model){
-		List<NoticeTheroyContruction> theoryList = this.theoryService
+		List<NoticeTheroyContruction> partyList = this.theoryService
 				.getNoticeByType(INoticeService.PARTY_TYPE);
-		model.addAttribute("theoryList", theoryList);
+		model.addAttribute("partyList", partyList);
 		return null;
 	}
 	//显示修改的文章表单
