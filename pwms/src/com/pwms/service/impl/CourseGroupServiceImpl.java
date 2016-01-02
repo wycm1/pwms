@@ -4,12 +4,14 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.stereotype.Service;
+
 import com.pwms.dao.CoureseGroupMapper;
 import com.pwms.dao.CourseMapper;
 import com.pwms.pojo.CoureseGroup;
 import com.pwms.pojo.Course;
 import com.pwms.service.ICourseGroupService;
-
+@Service("groupService")
 public class CourseGroupServiceImpl implements ICourseGroupService {
 	@Resource
 	private CoureseGroupMapper courseGroupDao;

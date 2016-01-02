@@ -26,7 +26,6 @@ public class UtilXls {
 		}
 		WritableSheet sheet = workbook.createSheet("sheet", 0);
 		List list1 = null;
-
 		for (Map.Entry<String, List> entry : map.entrySet()) {
 			// System.out.println(entry.getKey()+"--->"+entry.getValue());
 			list1 = entry.getValue();

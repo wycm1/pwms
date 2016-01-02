@@ -93,12 +93,13 @@ public class AdminSchoolController extends BaseController {
 	public String addQuestion(HttpServletRequest request, ExamQuestion question, int examid, Model model){
 		Exam exam = this.examService.getExam(examid);
 		this.questionService.saveQuestion(question);
-		return publishmsg(request, "修改失败", null );
+		return publishmsg(request, "添加成功", null );
 	}
 	//考试题目导入
-	@RequestMapping("/exam/importxls")
-	public String importXls(File exam, Model model){
-		return null;
+	@RequestMapping("/exam/importxls/{id}")
+	public String importXls(HttpServletRequest request, @PathVariable int id, File exam, Model model){
+		this.questionService.xls2ExamQuestion(exam, id);
+		return publishmsg(request, "导入成功", null );
 	}
 	//考试成绩导出
 	@RequestMapping("/exam/exportxls")

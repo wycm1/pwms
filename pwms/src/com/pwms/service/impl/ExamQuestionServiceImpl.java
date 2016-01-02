@@ -1,10 +1,15 @@
 package com.pwms.service.impl;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+
+import jxl.Workbook;
+import jxl.read.biff.BiffException;
 
 import org.springframework.stereotype.Service;
 
@@ -16,6 +21,7 @@ import com.pwms.pojo.ExamQuestion;
 import com.pwms.pojo.ExamRecord;
 import com.pwms.pojo.User;
 import com.pwms.service.IExamQuestionService;
+import com.pwms.tools.UtilXls;
 
 @Service("examQuestionService")
 public class ExamQuestionServiceImpl implements IExamQuestionService {
@@ -68,7 +74,7 @@ public class ExamQuestionServiceImpl implements IExamQuestionService {
 		ExamQuestion questionObj = this.examQuestionDao
 				.selectByPrimaryKey(questionId);
 		Exam exam = this.examDao.selectByPrimaryKey(questionObj.getExamId());
-		if(exam==null){
+		if (exam == null) {
 			return 0;
 		}
 		if (questionObj.getAnswer().equals(anwser)) {
@@ -110,11 +116,76 @@ public class ExamQuestionServiceImpl implements IExamQuestionService {
 	}
 
 	@Override
-	public int calcGrade2Record(int examId, Map<Integer, String> answers, User user) {
+	public int calcGrade2Record(int examId, Map<Integer, String> answers,
+			User user) {
 		// TODO Auto-generated method stub
 		int score = calcExamGrade(answers);
 		save2Record(examId, score, user);
 		return score;
 	}
 
+	@Override
+	public boolean xls2ExamQuestion(File file, int examid) {
+		// TODO Auto-generated method stub
+		ExamQuestion[] examQuestionArr = null;
+		if(file==null){
+			return false;
+		}
+		Workbook workbook = null;
+		try {
+			workbook = Workbook.getWorkbook(file);
+		} catch (BiffException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		Map<String, String[]> map = UtilXls.xlsToMap(workbook);
+		if(map==null){
+			return false;
+		}
+		String[] str = (String[]) map.values().toArray()[0];
+		examQuestionArr = new ExamQuestion[str.length];
+		for (Map.Entry<String, String[]> entry : map.entrySet()) {
+			String[] DataArr = entry.getValue();
+			if (entry.getKey().equals("A")) {
+				for(int i=0; i<DataArr.length&&i<examQuestionArr.length; i++){
+					examQuestionArr[i].setOptionA(DataArr[i]);
+				}
+			}
+			else if (entry.getKey().equals("B")) {
+				for(int i=0; i<DataArr.length&&i<examQuestionArr.length; i++){
+					examQuestionArr[i].setOptionB(DataArr[i]);
+				}
+			}
+			else if (entry.getKey().equals("C")) {
+				for(int i=0; i<DataArr.length&&i<examQuestionArr.length; i++){
+					examQuestionArr[i].setOptionC(DataArr[i]);
+				}
+			}
+			else if (entry.getKey().equals("D")) {
+				for(int i=0; i<DataArr.length&&i<examQuestionArr.length; i++){
+					examQuestionArr[i].setOptionD(DataArr[i]);
+				}
+			}
+			else if (entry.getKey().equals("正确答案")) {
+				for(int i=0; i<DataArr.length&&i<examQuestionArr.length; i++){
+					examQuestionArr[i].setAnswer(DataArr[i]);
+				}
+			}
+			else if (entry.getKey().equals("题目")) {
+				for(int i=0; i<DataArr.length&&i<examQuestionArr.length; i++){
+					examQuestionArr[i].setQuestion(DataArr[i]);
+				}
+			}
+		}
+		for(int i=0; i<examQuestionArr.length&&examQuestionArr[i]!=null; i++){
+			examQuestionArr[i].setExamId(examid);
+			this.saveQuestion(examQuestionArr[i]);
+		}
+		return true;
+	}
 }

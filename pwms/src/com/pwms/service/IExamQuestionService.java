@@ -1,5 +1,6 @@
 package com.pwms.service;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -51,4 +52,12 @@ public interface IExamQuestionService {
 	  * @param user
 	  */
 	 public int calcGrade2Record(int examId, Map<Integer , String> answers, User user);
+	 /**
+	  * µº»Îxls
+	  * @param file
+	  * @param examid
+	  * @return
+	  */
+	 public boolean xls2ExamQuestion(File file, int examid);
+	 
 }
