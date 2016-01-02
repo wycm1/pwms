@@ -6,6 +6,8 @@ import com.pwms.pojo.Course;
 
 public interface CourseMapper {
     int deleteByPrimaryKey(Integer id);
+    
+    int deleteByGroupId(Integer id);
 
     int insert(Course record);
 
@@ -20,4 +22,10 @@ public interface CourseMapper {
     int updateByPrimaryKey(Course record);
     
     List<Course> selectByDate();
+    /**
+     * 通过groupid来获得课程列表
+     * @param id group的id
+     * @return
+     */
+    List<Course> selectByGroupId(int id);
 }

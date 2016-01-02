@@ -77,4 +77,10 @@ public class CourseServiceImpl implements ICourseService {
 		return courseList;
 	}
 
+	@Override
+	public List<Course> getCourseByGroupId(int groupid) {
+		// TODO Auto-generated method stub
+		return this.courseDao.selectByGroupId(groupid);
+	}
+
 }

@@ -33,11 +33,22 @@
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
-    from course
+    from course order by dateline desc
+  </select>
+  <select id="selectByGroupId" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from course where group_id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from course
     where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByGroupId" parameterType="java.lang.Integer" >
+    delete from course
+    where group_id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.pwms.pojo.Course" >
     insert into course (id, title, summary, 

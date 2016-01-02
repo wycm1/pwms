@@ -1,5 +1,7 @@
 package com.pwms.dao;
 
+import java.util.List;
+
 import com.pwms.pojo.CoureseGroup;
 
 public interface CoureseGroupMapper {
@@ -10,6 +12,8 @@ public interface CoureseGroupMapper {
     int insertSelective(CoureseGroup record);
 
     CoureseGroup selectByPrimaryKey(Integer id);
+    
+    List<CoureseGroup> selectAll();
 
     int updateByPrimaryKeySelective(CoureseGroup record);
 

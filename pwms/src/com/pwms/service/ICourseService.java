@@ -23,4 +23,9 @@ public interface ICourseService {
 	public void addRecord(Course course, UserCourseRecord record);
 	
 	public List<Course> getCourseByDate();
+	/**
+	 * 通过组号id来获取课程
+	 * @return
+	 */
+	public List<Course> getCourseByGroupId(int groupid);
 }
