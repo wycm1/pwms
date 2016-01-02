@@ -105,6 +105,15 @@ public class UserController extends BaseController{
     	return "website/user/mybranch";
     }
     /**
+     * 显示我的课程
+     * @param model
+     * @return
+     */
+    @RequestMapping("/course")
+    public String mycourseShow(Model model) {
+    	return "website/user/course";
+    }
+    /**
      * 用户注册
      * @param session
      * @param user
