@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>课程</title>
+<title>影像课程</title>
 <link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/website/style/style1.css" rel="stylesheet" type="text/css" />
@@ -18,17 +18,24 @@
 		<nav class="breadcrumb">
 		<i class="Hui-iconfont">&#xe67f;</i>
 		<a class="maincolor" href="../index.html">首页</a>
-		<span class="c-999 en">&gt;</span>课程
+		<span class="c-999 en">&gt;</span><a class="maincolor" href="classtheroy-list.html">理论学习</a>
+		<span class="c-999 en">&gt;</span>影像课程
 		</nav>
 	</div>
-	<div class="course">
+	<div class="main-container">
+	<div class="left-side radius">
+		<ul class="upright-menu">
+			<li class="current"> <a href="/pwms/theory/classicaltheory-list.html">理论经典</a></li>
+			<li> <a href="/pwms/theory/videocourse-list.html"">摄影课程</a></li>
+		</ul>
+	</div>
+	<div class="main-box">
 		<div class="panel panel-danger radius">
 				<div class="panel-header">课程信息</div>
 				<div class="panel-body">
 					<div class="row cl font-bold">
-						<div class="col-1"></div>
-				      <label class="form-label col-1">课程名称：</label>
-				      <div class="formControls col-2">
+				      <label class="form-label col-1.5">课程名称：</label>
+				      <div class="formControls col-2.5">
 				      		马克思主义学习
 				      </div>
     					<div class="col-1"></div>
@@ -45,7 +52,7 @@
 				</div>
 		</div>
 	</div>
-	<div class="course">
+	<div class="main-box">
 		<div class="panel panel-danger radius">
 				<div class="panel-header">课程内容</div>
 				<div class="panel-body">
@@ -61,13 +68,11 @@
 				</div>
 		</div>
 	</div>
+	</div>
 </div>
 <script type="text/javascript" src="/pwms/res/lib/jquery/1.9.1/jquery.min.js"></script> 
-<script type="text/javascript" src="/pwms/res/lib/icheck/jquery.icheck.min.js"></script> 
-<script type="text/javascript" src="/pwms/res/lib/Validform/5.3.2/Validform.min.js"></script>
 <script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
 <script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
-<script type="text/javascript" src="/pwms/res/lib/My97DatePicker/WdatePicker.js"></script> 
 <script type="text/javascript" src="/pwms/res/website/js/js.js"></script>
 <script src="http://vjs.zencdn.net/5.0/video.min.js"></script>
 <script type="text/javascript">

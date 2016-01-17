@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>经典理论</title>
 <link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="/pwms/res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/website/style/style1.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
@@ -23,9 +24,9 @@
 	</div>
 	<div class="main-container">
 	<div class="left-side radius">
-		<ul>
-			<li>理论经典</li>
-			<li>摄影课程</li>
+		<ul class="upright-menu">
+			<li> <a href="/pwms/theory/classicaltheory-list.html">理论经典</a></li>
+			<li> <a href="/pwms/theory/videocourse-list.html"">摄影课程</a></li>
 		</ul>
 	</div>
 	<div class="main-box">

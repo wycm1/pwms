@@ -44,7 +44,7 @@ public class TheorystudyController extends BaseController {
 	}
 	@RequestMapping("")
 	public String theory(HttpServletRequest request, Model model) {
-		return getClassicaltheroyList();
+		return getClassicaltheoryList();
 	}
 	// 获取详细信息, 根据传入的id来具体显示
 	@RequestMapping("/detail/{id}")
@@ -63,8 +63,17 @@ public class TheorystudyController extends BaseController {
      * @param model
      * @return
      */
-	@RequestMapping("classicaltheroy-list")
-	public String getClassicaltheroyList(){
-		return "website/theroystudy/classicaltheroy-list";
+	@RequestMapping("classicaltheory-list")
+	public String getClassicaltheoryList(){
+		return "website/theroystudy/classicaltheory-list";
+	}
+	/**
+     * 显示影像课程列表
+     * @param model
+     * @return
+     */
+	@RequestMapping("videocourse-list")
+	public String getVideotheoryList(){
+		return "website/theroystudy/videocourse-list";
 	}
 }

@@ -14,8 +14,9 @@ body {
 	line-height: 25px;
 	overflow-x: hidden;
 }
-
-
+li {
+	overflow:hidden;
+}
 
 a:hover {
 	color: #0070B7;
@@ -1340,3 +1341,13 @@ margin-left: 6%;
 	font-weight:bold;
 	color:red;
 }
+.upright-menu li{
+	line-height: 32px;
+}
+.upright-menu li a {
+    line-height: 32px;
+    padding-left: 26px;
+    border-bottom: none;
+    font-weight: normal;
+}
+.dropDown.hover .dropDown_A,.dropDown.open .dropDown_A{text-decoration:none; background-color:#ffdd25}
