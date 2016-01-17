@@ -1284,16 +1284,14 @@ margin-left: 6%;
 	position: relative;
 	border: 1px solid #DBDBDB;
 }
-.nav{
+.nav,.main-container{
 	width:1060px;
 	margin:20px auto 0px;
 	background: #fff;
 	position: relative;
-	border: 1px solid #DBDBDB;
-	border-radius: 4px;
 	font-size:14px;
+	overflow:hidden;
 }
-
 .nav a:hover,.nav a:focus,.nav .maincolor,.nav .maincolor a {
     color: #06c;
     float:none;
@@ -1319,6 +1317,19 @@ margin-left: 6%;
 	background: #fff;
 	margin:20px auto 20px;
 	position: relative;
+}
+.main-box{
+	width:850px;
+	height:auto;
+	background: #fff;
+	margin:0px auto 20px;
+	position: relative;
+	float:right;
+}
+.left-side{
+	width:200px;
+	min-height:200px;
+	float:left;
 }
 .radius{
 	border: 1px solid #DBDBDB;

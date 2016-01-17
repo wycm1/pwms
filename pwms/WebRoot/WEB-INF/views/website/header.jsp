@@ -33,7 +33,7 @@
 <li><a class="hide" href="/pwms/notice">通知公告</a>
 
 </li>
-<li><a class="hide" href="/pwms/school">网上党校</a>
+<li><a class="hide" href="/pwms/user/school.html">网上党校</a>
 
 </li>
 <li><a class="hide" href="/pwms/party">党建专项</a>

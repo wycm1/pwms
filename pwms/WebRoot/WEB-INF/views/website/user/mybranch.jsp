@@ -152,11 +152,8 @@
 	</div>
 </div>
 <script type="text/javascript" src="/pwms/res/lib/jquery/1.9.1/jquery.min.js"></script> 
-<script type="text/javascript" src="/pwms/res/lib/icheck/jquery.icheck.min.js"></script> 
-<script type="text/javascript" src="/pwms/res/lib/Validform/5.3.2/Validform.min.js"></script>
 <script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
 <script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
-<script type="text/javascript" src="/pwms/res/lib/My97DatePicker/WdatePicker.js"></script> 
 <script type="text/javascript" src="/pwms/res/website/js/js.js"></script>
 <script type="text/javascript">
 $(function(){

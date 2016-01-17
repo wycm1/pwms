@@ -18,7 +18,7 @@
 		<nav class="breadcrumb">
 		<i class="Hui-iconfont">&#xe67f;</i>
 		<a class="maincolor" href="../index.html">首页</a>
-		<span class="c-999 en">&gt;</span>课程考试
+		<span class="c-999 en">&gt;</span>网上党校
 		</nav>
 	</div>
 	<div class="course">

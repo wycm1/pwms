@@ -105,6 +105,15 @@ public class UserController extends BaseController{
     	return "website/user/mybranch";
     }
     /**
+     * 显示网上党校
+     * @param model
+     * @return
+     */
+    @RequestMapping("/school")
+    public String partySchoolShow(Model model) {
+    	return "website/user/school";
+    }
+    /**
      * 显示我的课程
      * @param model
      * @return
