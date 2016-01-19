@@ -35,12 +35,9 @@
 				<div class="panel-body">
 					<div class="row cl">
 				    	<ul>
-				    	<li>2015年上半年经济形势分析与全年展望（文章）..</li>
-				    	<li>2015年上半年经济形势分析与全年展望（文章）..</li>
-				    	<li>2015年上半年经济形势分析与全年展望（文章）..</li>
-				    	<li>2015年上半年经济形势分析与全年展望（文章）..</li>
-				    	<li>2015年上半年经济形势分析与全年展望（文章）..</li>
-				    	<li>2015年上半年经济形势分析与全年展望（文章）..</li>
+				    		<c:forEach items="${articleList}" var="item">
+					    	<li><a href="#">${item.title}</a><span style="float:right">${item.dateline}</span></li>
+				    		</c:forEach>
 				    	</ul>
     				</div>
 				</div>

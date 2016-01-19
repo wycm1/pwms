@@ -35,7 +35,9 @@
 	</div>
 	<div class="col-xs-12 col-sm-10">
 		<div class="row c1 ml-10">
-			
+			<h5>这是标题哈</h5>
+			<h3>2015-06-09</h3>
+			<p>这是内容哈哈哈</p>
 		</div>
 	</div>
 	</div>

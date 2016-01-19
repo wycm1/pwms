@@ -22,16 +22,16 @@ import com.pwms.service.INoticeService;
 public class PartyController extends BaseController {
 	//查看党建专项，党的宣传信息,党建专项，宣传图片，文章 以及文章列表显示
 	@Resource
-	private INoticeService partyServer;
+	private INoticeService noticeService;
 	public INoticeService getPartyServer() {
-		return partyServer;
+		return noticeService;
 	}
 	public void setPartyServer(INoticeService partyServer) {
-		this.partyServer = partyServer;
+		this.noticeService = partyServer;
 	}
 	@RequestMapping("/")
 	public String party(HttpServletRequest request, Model model){
-		List<NoticeTheroyContruction> partyList = this.partyServer.getNoticeByType(INoticeService.PARTY_TYPE);
+		List<NoticeTheroyContruction> partyList = this.noticeService.getNoticeByType(INoticeService.PARTY_TYPE);
 		model.addAttribute("partyList", partyList);
 		if(verifyClient(request)){
 			outJson("{"+listToJson("partyList",partyList)+"}");
@@ -45,7 +45,7 @@ public class PartyController extends BaseController {
 	}
 	@RequestMapping("/article/{id}")
 	public String getArticle(HttpServletRequest request,@PathVariable  int id, Model model){
-		NoticeTheroyContruction party = this.partyServer.getNoticeById(id);
+		NoticeTheroyContruction party = this.noticeService.getNoticeById(id);
 		if(verifyClient(request)){
 			outJson(objectToJson("party",party));
 			return null;
@@ -62,11 +62,22 @@ public class PartyController extends BaseController {
 	@RequestMapping("/{type}/list")
 	public String getList(@PathVariable String type, Model model){
 		switch(type){
-			case "zyjs":model.addAttribute("type", "中央精神");break;
-			case "qzlx":model.addAttribute("type", "群众路线");break;
-			case "zgm":model.addAttribute("type", "中国梦");break;
-			default:model.addAttribute("type", "中央精神");break;
+			case "zyjs":getArticleByType(model, "中央精神");break;
+			case "qzlx":getArticleByType(model, "群众路线");break;
+			case "zgm":getArticleByType(model, "中国梦");break;
+			default:getArticleByType(model, "中央精神");break;
 		}
 		return "website/party/list";
+	}
+	/**
+	 * 该方法还要完善
+	 * 根据类型获取文章列表
+	 * @param model
+	 * @param typeValue 文章类型的参数
+	 */
+	public void getArticleByType(Model model,String typeValue){
+		List<NoticeTheroyContruction> noticeList = this.noticeService.getNoticeByType(1);
+		model.addAttribute("articleList", noticeList);
+		model.addAttribute("type", typeValue);
 	}
 }

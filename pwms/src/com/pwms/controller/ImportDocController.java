@@ -18,13 +18,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pwms.pojo.ImportDoc;
+import com.pwms.pojo.NoticeTheroyContruction;
 import com.pwms.service.IImportDocService;
+import com.pwms.service.INoticeService;
 
 @Controller
 @RequestMapping("/impdoc")
 public class ImportDocController extends BaseController {
 	@Resource
 	private IImportDocService importDocService;
+	@Resource
+	private INoticeService noticeService;
 	public IImportDocService getImportDocService() {
 		return importDocService;
 	}
@@ -96,14 +100,49 @@ public class ImportDocController extends BaseController {
 	@RequestMapping("/{type}/list")
 	public String getList(@PathVariable String type, Model model){
 		switch(type){
-			case "dswx":model.addAttribute("type", "党史文献");break;
-			case "gzzd":model.addAttribute("type", "规则制度");break;
-			case "jddd":model.addAttribute("type", "经典导读");break;
-			case "cyws":model.addAttribute("type", "常用文书");break;
-			case "rdbd":model.addAttribute("type", "入党必读");break;
-			case "xtsc":model.addAttribute("type", "系统手册");break;
-			default:model.addAttribute("type", "党史文献");break;
+			case "dswx":getArticleByType(model, "党史文献");break;
+			case "gzzd":getArticleByType(model, "规则制度");break;
+			case "jddd":getArticleByType(model, "经典导读");break;
+			case "cyws":getArticleByType(model, "常用文书");break;
+			case "rdbd":getArticleByType(model, "入党必读");break;
+			case "xtsc":getArticleByType(model, "系统手册");break;
+			default:getArticleByType(model, "党史文献");break;
 		}
 		return "website/impdoc/list";
+	}
+	/**
+	 * 该方法还要完善
+	 * 根据类型获取文章列表
+	 * @param model
+	 * @param typeValue 文章类型的参数
+	 */
+	public void getArticleByType(Model model,String typeValue){
+		List<NoticeTheroyContruction> noticeList = this.noticeService.getNoticeByType(1);
+		model.addAttribute("articleList", noticeList);
+		model.addAttribute("type", typeValue);
+	}
+	@RequestMapping("/{type}/{id}")
+	public String getArticle(@PathVariable String type, @PathVariable int id,Model model){
+		switch(type){
+			case "dswx":getArticleByType(model, id,"党史文献");break;
+			case "gzzd":getArticleByType(model, id,"规则制度");break;
+			case "jddd":getArticleByType(model, id,"经典导读");break;
+			case "cyws":getArticleByType(model, id,"常用文书");break;
+			case "rdbd":getArticleByType(model, id,"入党必读");break;
+			case "xtsc":getArticleByType(model, id,"系统手册");break;
+			default:getArticleByType(model, "党史文献");break;
+		}
+		return "website/impdoc/article";
+	}
+	/**
+	 * 该方法还要完善
+	 * 根据id获取文章
+	 * @param model
+	 * @param typeValue 文章类型的参数
+	 */
+	public void getArticleByType(Model model,int id,String typeValue){
+		NoticeTheroyContruction notice = this.noticeService.getNoticeById(id);
+		model.addAttribute("article", notice);
+		model.addAttribute("type", typeValue);
 	}
 }

@@ -23,7 +23,8 @@ public class TheorystudyController extends BaseController {
 	// 查看推荐列表，以及一些详细的内容推荐
 	@Resource
 	private INoticeService theoryService;
-
+	@Resource
+	private INoticeService noticeService;
 	public INoticeService getTheoryService() {
 		return theoryService;
 	}
@@ -44,7 +45,7 @@ public class TheorystudyController extends BaseController {
 	}
 	@RequestMapping("")
 	public String theory(HttpServletRequest request, Model model) {
-		return getClassicaltheoryList();
+		return getClassicaltheoryList(model);
 	}
 	// 获取详细信息, 根据传入的id来具体显示
 	@RequestMapping("/detail/{id}")
@@ -64,7 +65,8 @@ public class TheorystudyController extends BaseController {
      * @return
      */
 	@RequestMapping("classicaltheory-list")
-	public String getClassicaltheoryList(){
+	public String getClassicaltheoryList(Model model){
+		getArticleByType(model,"理论经典");
 		return "website/theroystudy/classicaltheory-list";
 	}
 	/**
@@ -73,7 +75,19 @@ public class TheorystudyController extends BaseController {
      * @return
      */
 	@RequestMapping("videocourse-list")
-	public String getVideotheoryList(){
+	public String getVideotheoryList(Model model){
+		getArticleByType(model,"摄影课程");
 		return "website/theroystudy/videocourse-list";
 	}
-}
+	/**
+	 * 该方法还要完善
+	 * 根据类型获取文章列表
+	 * @param model
+	 * @param typeValue 文章类型的参数
+	 */
+	public void getArticleByType(Model model,String typeValue){
+		List<NoticeTheroyContruction> noticeList = this.noticeService.getNoticeByType(1);
+		model.addAttribute("articleList", noticeList);
+		model.addAttribute("type", typeValue);
+	}
+} 

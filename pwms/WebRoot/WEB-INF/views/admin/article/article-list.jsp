@@ -65,10 +65,10 @@
 								文章类型
 							</c:if>
 							<c:if test="${item.type == 2}">
-								文章类型
+								通知公告
 							</c:if>
 							<c:if test="${item.type == 4}">
-								文章类型
+								理论学习
 							</c:if> 
 					</td>
 					<td>admin</td>

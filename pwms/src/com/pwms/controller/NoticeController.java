@@ -80,12 +80,23 @@ public class NoticeController extends BaseController {
 	@RequestMapping("/{type}/list")
 	public String getList(@PathVariable String type, Model model){
 		switch(type){
-			case "hdtz":model.addAttribute("type", "活动通知");break;
-			case "sqrdx":model.addAttribute("type", "申请人党校");break;
-			case "jjfzdx":model.addAttribute("type", "积极分子党校");break;
-			case "ybdydx":model.addAttribute("type", "预备党员党校");break;
-			default:model.addAttribute("type", "活动通知");break;
+			case "hdtz":getArticleByType(model, "活动通知");break;
+			case "sqrdx":getArticleByType(model, "申请人党校");break;
+			case "jjfzdx":getArticleByType(model, "积极分子党校");break;
+			case "ybdydx":getArticleByType(model, "预备党员党校");break;
+			default:getArticleByType(model, "活动通知");break;
 		}
 		return "website/notice/list";
+	}
+	/**
+	 * 该方法还要完善
+	 * 根据类型获取文章列表
+	 * @param model
+	 * @param typeValue 文章类型的参数
+	 */
+	public void getArticleByType(Model model,String typeValue){
+		List<NoticeTheroyContruction> noticeList = this.noticeService.getNoticeByType(1);
+		model.addAttribute("articleList", noticeList);
+		model.addAttribute("type", typeValue);
 	}
 }
