@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>经典理论</title>
+<title>党史文献</title>
 <link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
@@ -18,14 +18,14 @@
 		<nav class="breadcrumb">
 		<i class="Hui-iconfont">&#xe67f;</i>
 		<a class="maincolor" href="../index.html">首页</a>
-		<span class="c-999 en">&gt;</span><a class="maincolor" href="classtheroy-list.html">理论学习</a>
+		<span class="c-999 en">&gt;</span><a class="maincolor" href="classicaltheory-list.html">理论学习</a>
 		<span class="c-999 en">&gt;</span>理论经典
 		</nav>
 	</div>
 	<div class="main-container">
 	<div class="left-side radius">
 		<ul class="upright-menu">
-			<li> <a href="/pwms/theory/classicaltheory-list.html">理论经典</a></li>
+			<li class="current"> <a href="/pwms/theory/classicaltheory-list.html">理论经典</a></li>
 			<li> <a href="/pwms/theory/videocourse-list.html"">摄影课程</a></li>
 		</ul>
 	</div>

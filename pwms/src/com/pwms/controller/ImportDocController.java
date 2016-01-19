@@ -21,7 +21,7 @@ import com.pwms.pojo.ImportDoc;
 import com.pwms.service.IImportDocService;
 
 @Controller
-@RequestMapping("/doc")
+@RequestMapping("/impdoc")
 public class ImportDocController extends BaseController {
 	@Resource
 	private IImportDocService importDocService;
@@ -44,7 +44,8 @@ public class ImportDocController extends BaseController {
 	}
 	@RequestMapping("")
 	public String doc(HttpServletRequest request, Model model){
-		return index(request, model);
+//		return index(request, model);
+		return getList("dswx",model);
 	}
 	@RequestMapping("/detail/{id}")
 	public String detail(HttpServletRequest request, @PathVariable int id, Model model){
@@ -85,5 +86,24 @@ public class ImportDocController extends BaseController {
 		}
 		out.print(data);
 		return null;
+	}
+	/**
+	 * 访问重要文件下的列表
+	 * @param type
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/{type}/list")
+	public String getList(@PathVariable String type, Model model){
+		switch(type){
+			case "dswx":model.addAttribute("type", "党史文献");break;
+			case "gzzd":model.addAttribute("type", "规则制度");break;
+			case "jddd":model.addAttribute("type", "经典导读");break;
+			case "cyws":model.addAttribute("type", "常用文书");break;
+			case "rdbd":model.addAttribute("type", "入党必读");break;
+			case "xtsc":model.addAttribute("type", "系统手册");break;
+			default:model.addAttribute("type", "党史文献");break;
+		}
+		return "website/impdoc/list";
 	}
 }

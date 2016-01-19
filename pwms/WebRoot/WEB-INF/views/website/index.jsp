@@ -13,7 +13,7 @@
 <script src="/pwms/res/website/js/js.js" type="text/javascript"></script>
 <script src="/pwms/res/website/js/jquery-1.8.3.min.js" type="text/javascript"></script>
 <script src="/pwms/res/website/js/jquery.cycle.js" type="text/javascript"></script>
-     <script src="js/jquery.luara.0.0.1.min.js"></script>
+     <script src="/pwms/res/website/js/jquery.luara.0.0.1.min.js"></script>
 	<link rel="stylesheet" href="/pwms/res/website/style/style3.css"/>
     <!--Luara样式文件-->
     <!--渐隐样式-->

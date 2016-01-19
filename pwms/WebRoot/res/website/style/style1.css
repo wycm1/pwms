@@ -1284,6 +1284,7 @@ margin-left: 6%;
 	background: #fff;
 	position: relative;
 	border: 1px solid #DBDBDB;
+	overflow:hidden;
 }
 .nav,.main-container{
 	width:1060px;
@@ -1343,11 +1344,17 @@ margin-left: 6%;
 }
 .upright-menu li{
 	line-height: 32px;
+	font-size:16px;
 }
 .upright-menu li a {
     line-height: 32px;
     padding-left: 26px;
     border-bottom: none;
-    font-weight: normal;
+    font-weight: bold;
 }
-.dropDown.hover .dropDown_A,.dropDown.open .dropDown_A{text-decoration:none; background-color:#ffdd25}
+.current{
+	background-color: rgb(231, 30, 20);
+}
+.example li {
+    overflow: inherit;
+}

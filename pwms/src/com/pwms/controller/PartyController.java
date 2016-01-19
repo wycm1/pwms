@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pwms.pojo.NoticeTheroyContruction;
 import com.pwms.service.INoticeService;
-
+/**
+ * 党建专项
+ * @author wy
+ *
+ */
 @Controller
 @RequestMapping("/party")
 public class PartyController extends BaseController {
@@ -37,7 +41,7 @@ public class PartyController extends BaseController {
 	}
 	@RequestMapping("")
 	public String index(HttpServletRequest request, Model model){
-		return party(request,model);
+		return getList("zyjs",model);
 	}
 	@RequestMapping("/article/{id}")
 	public String getArticle(HttpServletRequest request,@PathVariable  int id, Model model){
@@ -48,5 +52,21 @@ public class PartyController extends BaseController {
 		}
 		model.addAttribute("party", party);
 		return "website/partydetail";
+	}
+	/**
+	 * 访问党建专项下的列表
+	 * @param type
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/{type}/list")
+	public String getList(@PathVariable String type, Model model){
+		switch(type){
+			case "zyjs":model.addAttribute("type", "中央精神");break;
+			case "qzlx":model.addAttribute("type", "群众路线");break;
+			case "zgm":model.addAttribute("type", "中国梦");break;
+			default:model.addAttribute("type", "中央精神");break;
+		}
+		return "website/party/list";
 	}
 }

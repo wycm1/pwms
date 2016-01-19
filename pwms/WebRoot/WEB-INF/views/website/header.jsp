@@ -27,35 +27,35 @@
       <td>
    <div class="menu">
 <ul>
-<li><a class="hide" href="/pwms/">首页</a>
+<li><a class="current" href="/pwms/">首页</a>
 
 </li>
-<li><a class="hide" href="/pwms/notice">通知公告</a>
+<li><a class="current" href="/pwms/notice">通知公告</a>
 
 </li>
-<li><a class="hide" href="/pwms/user/school.html">网上党校</a>
+<li><a class="current" href="/pwms/school">网上党校</a>
 
 </li>
-<li><a class="hide" href="/pwms/party">党建专项</a>
+<li><a class="current" href="/pwms/party">党建专项</a>
 
 </li>
-<li><a class="hide" href="/pwms/theory">理论学习</a>
+<li><a class="current" href="/pwms/theory">理论学习</a>
 
 </li>
-<li><a class="hide" href="/pwms/doc">重要文件</a>
+<li><a class="current" href="/pwms/impdoc">重要文件</a>
 
 </li>
-<li><a class="hide" href="/pwms/process">入党流程</a>
+<li><a class="current" href="/pwms/process">入党流程</a>
 
 </li>
-<li><a class="hide" href="/pwms/user/mybranch.html">我的支部</a>
+<li><a class="current" href="/pwms/user/mybranch.html">我的支部</a>
 
 </li>
 
-<!-- clear the floats if required -->
 <div class="clear"> </div>
 </div>
       </td>
     </tr>
   </table>
 </div>
+</script>

@@ -7,13 +7,18 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pwms.pojo.NoticeTheroyContruction;
 import com.pwms.pojo.User;
 import com.pwms.service.INoticeService;
 import com.pwms.service.IUserService;
-
+/**
+ * 通知公告
+ * @author Administrator
+ *
+ */
 @Controller
 @RequestMapping("/notice")
 public class NoticeController extends BaseController {
@@ -36,13 +41,13 @@ public class NoticeController extends BaseController {
 	}
 	@RequestMapping("")
 	public String index(HttpServletRequest request, Model model){
-		List<NoticeTheroyContruction> noticeList = this.noticeService.getNoticeByType(INoticeService.NOTICE_TYPE);
-		if(verifyClient(request)){
-			outJson("{"+listToJson("noticeList",noticeList)+"}");
-			return null;
-		}
-		model.addAttribute("noticeList", noticeList);
-		return "website/notis";
+//		List<NoticeTheroyContruction> noticeList = this.noticeService.getNoticeByType(INoticeService.NOTICE_TYPE);
+//		if(verifyClient(request)){
+//			outJson("{"+listToJson("noticeList",noticeList)+"}");
+//			return null;
+//		}
+//		model.addAttribute("noticeList", noticeList);
+		return getList("hdtz",model);
 	}
 	@RequestMapping("/")
 	public String index_o(HttpServletRequest request, Model model){
@@ -66,5 +71,21 @@ public class NoticeController extends BaseController {
 //		"website/noticedetail"
 		return "website/noticedetail";
 	}
-//	@RequestMapping("/")
+	/**
+	 * 访问党建专项下的列表
+	 * @param type
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/{type}/list")
+	public String getList(@PathVariable String type, Model model){
+		switch(type){
+			case "hdtz":model.addAttribute("type", "活动通知");break;
+			case "sqrdx":model.addAttribute("type", "申请人党校");break;
+			case "jjfzdx":model.addAttribute("type", "积极分子党校");break;
+			case "ybdydx":model.addAttribute("type", "预备党员党校");break;
+			default:model.addAttribute("type", "活动通知");break;
+		}
+		return "website/notice/list";
+	}
 }

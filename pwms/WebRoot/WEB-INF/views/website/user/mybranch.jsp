@@ -13,7 +13,7 @@
 <body>
 <%@ include file="../header.jsp"%>
 <div class="page-main">
-	<div class="nav">
+	<div class="nav radius">
 		<nav class="breadcrumb">
 		<i class="Hui-iconfont">&#xe67f;</i>
 		<a class="maincolor" href="../index.html">首页</a>

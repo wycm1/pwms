@@ -14,7 +14,7 @@
 <body>
 <%@ include file="../header.jsp"%>
 <div class="page-main">
-	<div class="nav">
+	<div class="nav radius">
 		<nav class="breadcrumb">
 		<i class="Hui-iconfont">&#xe67f;</i>
 		<a class="maincolor" href="../index.html">首页</a>
@@ -25,8 +25,8 @@
 	<div class="main-container">
 	<div class="left-side radius">
 		<ul class="upright-menu">
-			<li class="current"> <a href="/pwms/theory/classicaltheory-list.html">理论经典</a></li>
-			<li> <a href="/pwms/theory/videocourse-list.html"">摄影课程</a></li>
+			<li> <a href="/pwms/theory/classicaltheory-list.html">理论经典</a></li>
+			<li class="current"> <a href="/pwms/theory/videocourse-list.html"">摄影课程</a></li>
 		</ul>
 	</div>
 	<div class="main-box">
