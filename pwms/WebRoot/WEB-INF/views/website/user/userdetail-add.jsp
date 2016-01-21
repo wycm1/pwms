@@ -172,7 +172,6 @@
 <script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
 <script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
 <script type="text/javascript" src="/pwms/res/lib/My97DatePicker/WdatePicker.js"></script> 
-<script type="text/javascript" src="/pwms/res/website/js/js.js"></script>
 <script type="text/javascript">
 $(function(){
 	$("#form-reward-punish-add").Validform({

@@ -45,10 +45,8 @@
 	</div>
 	</div>
 </div>
-<script type="text/javascript" src="/pwms/res/lib/jquery/1.9.1/jquery.min.js"></script> 
 <script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
 <script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
-<script type="text/javascript" src="/pwms/res/website/js/js.js"></script>
 <script type="text/javascript">
 $(function(){
 	$("#form-reward-punish-add").Validform({

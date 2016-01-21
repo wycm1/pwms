@@ -515,7 +515,7 @@ a.public_color5 {
 	text-decoration: none;
 	width: 136px;
 	height: 44px;
-	color: #FFFFFF;
+	color: wheat;
 	border-right: 1px solid rgba(204, 204, 204, 0.47);
 	line-height: 44px;
 	font-size: 14px;
@@ -527,6 +527,15 @@ a.public_color5 {
 
 .menu ul li ul {
 	display: none;
+	background:black;
+	position: absolute;
+    top: 44px;
+    left: 0;
+    width: 136px;
+    background:red;
+}
+.menu ul li{
+	overflow:inherit;	
 }
 
 
@@ -534,29 +543,34 @@ a.public_color5 {
 
 
 /* set the background and foreground color of the main menu li on hover */
-
-.menu ul li:hover a {
-	color: #fff;
-	background: url(../images/menu_hover1.png) repeat-x left top;
+ .menu ul li:hover a {
+	color: white;
+	background: balck;
 	height: 44px;
 	line-height: 44px;
 }
+ .menu ul li ul li:hover a {
+	color: white;
+	background: url(../images/menu_hover1.png) repeat-x left top;
+	height: 44px;
+	line-height: 44px;
+} 
 
 
 /* make the sub menu ul visible and position it beneath the main menu list item */
 
-.menu ul li:hover ul {
+/* .menu ul li:hover ul {
 	display: block;
 	position: absolute;
 	top: 44px;
 	left: 0;
 	width: 105px;
-}
+} */
 
 
 /* style the background and foreground color of the submenu links */
 
-.menu ul li:hover ul li a {
+/* .menu ul li:hover ul li a {
 	display: block;
 	background: #55a7e8;
 	color: #FFFFFF;
@@ -565,12 +579,12 @@ a.public_color5 {
 	height: 30px;
 	line-height: 30px;
 	border-bottom: 1px solid #419ee7;
-}
+} */
 
 
 /* style the background and forground colors of the links on hover */
 
-.menu ul li:hover ul li a:hover {
+/* .menu ul li:hover ul li a:hover {
 	background: #ff8a00;
 	color: #FFFFFF;
 	font-size: 12px;
@@ -578,7 +592,7 @@ a.public_color5 {
 	height: 30px;
 	line-height: 30px;
 	border-bottom: 1px solid #419ee7;
-}
+} */
 
 
 /*******滚动广告******/
@@ -1357,4 +1371,34 @@ margin-left: 6%;
 }
 .example li {
     overflow: inherit;
+}
+/*调整流向图
+.step {
+	padding:1em 0em 1em 2em;
+}
+ .step {
+    display: inline-block;
+    position: relative;
+    padding: 1em 0em 1em 2em;
+    vertical-align: top;
+    background-color: #FFF;
+    color: #888;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*luara*/
+.luara-{position:relative;padding:0;}
+.luara- ul{padding: inherit;margin: 0;}
+.luara- ul li{display: none;padding: inherit;margin: inherit;list-style: none;}
+.luara- ul li:first-child{display:block;}
+.luara- ul li img{width: 560px; height:280px}
+/*example*/
+.example{}
+.example ol{position:relative;width: 80px;height: 20px;top:10px;left:70%;}
+.example ol li{float:left;width: 10px;height: 10px;margin: 5px;background: #fff;}
+.example ol li.seleted{background: #CC0000;}
+.text-right{
+	text-align:right;
 }

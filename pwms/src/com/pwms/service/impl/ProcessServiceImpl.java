@@ -16,6 +16,7 @@ import com.pwms.service.IProcessService;
 public class ProcessServiceImpl implements IProcessService {
 	@Resource
 	private ProcessMapper processDao;
+	@Resource
 	private ProcessRecordMapper pRecordDao;
 	public ProcessMapper getProcessDao() {
 		return processDao;

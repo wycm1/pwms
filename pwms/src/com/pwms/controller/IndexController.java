@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,7 @@ import com.pwms.service.ICourseService;
 import com.pwms.service.IImportDocService;
 import com.pwms.service.INoticeService;
 import com.pwms.service.IProcessService;
+import com.pwms.service.IUserService;
 @Controller
 @RequestMapping("")
 public class IndexController extends BaseController{
@@ -26,6 +28,10 @@ public class IndexController extends BaseController{
 	private ICourseService courseService;
 	@Resource
 	private IImportDocService importService;
+	@Resource
+	private IUserService userService;
+	@Resource
+	private IProcessService processService;
 	public INoticeService getNoticeService() {
 		return noticeService;
 	}
@@ -50,17 +56,24 @@ public class IndexController extends BaseController{
 	public void setProcessService(IProcessService processService) {
 		this.processService = processService;
 	}
-	@Resource
-	private IProcessService processService;
-    //首页信息，
+	
+    public IUserService getUserService() {
+		return userService;
+	}
+	public void setUserService(IUserService userService) {
+		this.userService = userService;
+	}
+	//首页信息，
     @RequestMapping("/index")
-    public String index(Model model){
+    public String index(Model model,HttpSession session){
     	System.out.println("called!");
     	noticeListByTime(model);
     	courseList(model);
     	theoryList(model);
     	importDocList(model);
     	processList(model);
+    	session.setAttribute("user", userService.getUserById(4));
+    	System.out.println("session设置成功");
     	return "website/index";
     }
     @RequestMapping("/news")

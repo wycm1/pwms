@@ -26,6 +26,7 @@ import com.pwms.tools.Validate;
 public class UserController extends BaseController{
     @Resource
     private IUserService userService;
+    @Resource
     private IUserinfoService userinfoService;
     public IUserService getUserService() {
 		return userService;

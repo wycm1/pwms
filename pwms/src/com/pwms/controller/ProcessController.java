@@ -33,16 +33,21 @@ public class ProcessController extends BaseController {
 		model.addAttribute("processList", processList);
 		return null;
 	}
+	@RequestMapping("")
+	public String index(){
+		return getProcess();
+	}
 	@RequestMapping("/myprocess")
 	public String getUserProcess(HttpServletRequest request, HttpSession session, Model model){
 		User user = (User) session.getAttribute("user");
+		System.out.println(user.getName());
 		List<ProcessRecord> userProcessList = this.processService.getUserProcessRecord(user);
 		if(verifyClient(request)){
 			outJson("{"+listToJson("userProcessList",userProcessList)+"}");
 			return null;
 		}
 		model.addAttribute("userProcessList", userProcessList);
-		return null;
+		return "website/process/myjpprocess";
 	}
 	//∏˘æ›idœ‘ æœÍœ∏ΩÈ…‹
 	@RequestMapping("/detail")
@@ -54,5 +59,9 @@ public class ProcessController extends BaseController {
 		}
 		model.addAttribute("process", process);
 		return null;
+	}
+	@RequestMapping("/jpprocess")
+	public String getProcess(){
+		return "website/process/jpprocess";
 	}
 }

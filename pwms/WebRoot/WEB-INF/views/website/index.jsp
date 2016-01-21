@@ -9,28 +9,6 @@
 <link href="/pwms/res/website/style/style1.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="/pwms/res/website/style/normalize.css" />
 <link rel="stylesheet" type="text/css" href="/pwms/res/website/style/set2.css" />
-<script src="/pwms/res/website/js/jquery.js" type="text/javascript"></script>
-<script src="/pwms/res/website/js/js.js" type="text/javascript"></script>
-<script src="/pwms/res/website/js/jquery-1.8.3.min.js" type="text/javascript"></script>
-<script src="/pwms/res/website/js/jquery.cycle.js" type="text/javascript"></script>
-     <script src="/pwms/res/website/js/jquery.luara.0.0.1.min.js"></script>
-	<link rel="stylesheet" href="/pwms/res/website/style/style3.css"/>
-    <!--Luara样式文件-->
-    <!--渐隐样式-->
-    <link rel="stylesheet" href="/pwms/res/website/style/luara.css"/>
-<script type="text/javascript">
-	$(function(){
-		$('#banner1').cycle({ 
-				fx:'scrollLeft',
-				pager:'#btn1'
-		});
-			$('#banner2').cycle({ 
-				fx:'scrollLeft',
-				pager:'#btn2'
-		});
-	})
-</script>
-
 <style type="text/css">
 #tableDiv{
 border:1px gray dashed;
@@ -43,23 +21,12 @@ padding-bottom:10px;
 </head>
 <body>
 <%@ include file="header.jsp"%>
+<script src="/pwms/res/website/js/jquery.cycle.js" type="text/javascript"></script>
+<script src="/pwms/res/website/js/jquery.luara.0.0.1.min.js"></script>
 <div class="main_all">
- <!--滚动图片start
-        <div id="adsFla1">
-          <div id="banner1"> 
-		  <img onClick="diao();" src="/pwms/res/website/images/ad1.png" width="1000" /> 
-		  <img onClick="diao();" src="/pwms/res/website/images/ad2.png" width="1000" /> 
-		  <img onClick="diao();" src="/pwms/res/website/images/ad3.png" width="1000"  /> 
-		  <img onClick="diao();" src="/pwms/res/website/images/ad4.png" width="1000" /> 
-		</div>
-          <div id="btn1"></div>
-        </div>
-        <!--滚动图片end-->
-<!--<div class="banner"> <img src="/pwms/res/website/images/banner1.png" /></div>-->
 <div class="news">
   <div class="news_left">
     <div class="news_move">
-		
 				 <div class="example">
 					<ul>
 						<li><img src="/pwms/res/website/images/news_1.jpg" alt="news_1"/></li>
@@ -221,7 +188,7 @@ padding-bottom:10px;
       	<c:forEach items="${processList}" var="item">
         <tr>
           <td width="20"><a href="#"></a><img src="/pwms/res/website/images/1.png" /> <a href="#"></a></td>
-          <td align="left" class="index_table_size"><a href="#">${item.title}</a></td>
+          <td align="left" class="index_table_size"><a href="#">${item.explian}</a></td>
         </tr>
         </c:forEach>
       </table>
@@ -315,6 +282,7 @@ padding-bottom:10px;
       四川理工学院艺术学院 闽ICP备 05020335 号<br />
     </div>
   </div>
+</div>
 </div>
 </body>
 </html>

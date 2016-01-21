@@ -30,9 +30,8 @@
         <!-- 拦截器 -->
     <mvc:interceptors>
         <mvc:interceptor>
-            <mvc:mapping path="/test1" />
+            <mvc:mapping path="/process/myprocess.html" />
             <bean class="com.pwms.interceptor.UserVerifyInterceptor">
-               
             </bean>
         </mvc:interceptor>
     </mvc:interceptors> 
