@@ -68,17 +68,17 @@ public class UserController extends BaseController{
 	        }  
 	        return map;  
 	}  
-    //登陆
+    //登录
     @RequestMapping("/login")
     public String login(HttpSession session, HttpServletRequest request, User user, Model model) {
     	this.userService.login(session, user.getName(), user.getPassword());
-    	return publishmsg(request,"success",null);
+    	return publishmsg(request,"success","web");
     }
     //注销
     @RequestMapping("/logout")
     public String logout(HttpSession session, HttpServletRequest request, Model model) {
     	this.userService.logout(session);
-    	return publishmsg(request,"success",null);
+    	return publishmsg(request,"success","website/index");
     }
     //查看个人信息
     @RequestMapping("/userinfo")

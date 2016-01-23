@@ -87,16 +87,14 @@ public class SchoolController extends BaseController {
 	public String getList(@PathVariable String type, Model model){
 		switch(type){
 			case "dxgg":getArticleByType(model, "党校公告");break;
-			case "kcxx":getArticleByType(model, "课程学习");break;
-			case "wybm":getArticleByType(model, "我要报名");break;
-			case "cjcx":getArticleByType(model, "成绩查询");break;
-			case "zscx":getArticleByType(model, "证书查询");break;
-			case "zhzt":getArticleByType(model, "账号状态");break;
+			case "kczx":getArticleByType(model, "课程中心");return "website/school/course-list";
+			case "xxjl":getArticleByType(model, "学习记录");return "website/school/study-record-list";
+			case "zxks":getArticleByType(model, "在线考试");return "website/school/online-exam-list";
+			case "cjcx":getArticleByType(model, "成绩查询");return "website/school/score-list";
 			default:getArticleByType(model, "党校公告");break;
 		}
 		return "website/school/list";
 	}
-	
 	/**
 	 * 该方法还要完善
 	 * 根据类型获取文章列表
@@ -107,5 +105,13 @@ public class SchoolController extends BaseController {
 		List<NoticeTheroyContruction> noticeList = this.noticeService.getNoticeByType(1);
 		model.addAttribute("articleList", noticeList);
 		model.addAttribute("type", typeValue);
+	}
+	/**
+	 * 课程学习
+	 * @return
+	 */
+	@RequestMapping("/kczx/{id}/course")
+	public String getCourse(){
+		return "website/school/video-course";
 	}
 }

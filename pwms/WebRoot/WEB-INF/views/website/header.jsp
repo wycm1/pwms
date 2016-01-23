@@ -1,15 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="head_all">
   <div class="head">
     <div class="head_left"></div>
     <div class="head_right">
       <div class="head_sear">
-        <div class="head_sear_top">
-        	<a href="#"><img src="/pwms/res/website/images/ico1.png" /> 设为首页 </a>
-        	<a href="/pwms/register.html"><img src="/pwms/res/website/images/ico2.png" /> 注册</a>
-        	<a href="/pwms/login.html"><img src="/pwms/res/website/images/ico4.png" /> 登录</a>
-        	<a href="/pwms/user/userdetail-add.html"><img src="/pwms/res/website/images/ico5.png" /> 用户详细信息添加</a>
-        	<a href="/pwms/admin/index.html"><img src="/pwms/res/website/images/ico6.png" />后台登录</a>
+       <div class="head_sear_top">
+       	<c:choose>
+       		<c:when test="${sessionScope.user == null}">
+	        	<a href="/pwms/register.html">注册</a>
+	        	<span>|</span>
+	        	<a href="/pwms/login.html">登录</a>
+        	</c:when>
+        	<c:otherwise>
+        		<font color="yellow">${sessionScope.user.name},欢迎登录</font>
+	        	<span>|</span>
+	        	<a href="/pwms/user/logout.html">注销</a>
+        	</c:otherwise>
+        </c:choose>
+        	<span>|</span>
+        	<a href="/pwms/user/userdetail-add.html"> 用户详细信息添加</a>
+        	<span>|</span>
+        	<a href="/pwms/admin/index.html">后台登录</a>
         </div>
         <div class="head_sear_bot">
           <div class="head_sear_con">
@@ -41,12 +53,10 @@
 <li><a class="current" href="/pwms/school">网上党校</a>
 		<ul>
 			<li> <a href="/pwms/school/dxgg/list.html">党校公告</a></li>
-			<li> <a href="/pwms/school/kcxx/list.html">课程学习</a></li>
-			<li> <a href="/pwms/school/wybm/list.html">我要报名</a></li>
-			<li> <a href="/pwms/school/bmjg/list.html">报名结果</a></li>
+			<li> <a href="/pwms/school/kczx/list.html">课程中心</a></li>
+			<li> <a href="/pwms/school/xxjl/list.html">学习记录</a></li>
+			<li> <a href="/pwms/school/zxks/list.html">在线考试</a></li>
 			<li> <a href="/pwms/school/cjcx/list.html">成绩查询</a></li>
-			<li> <a href="/pwms/school/zscx/list.html">证书查询</a></li>
-			<li> <a href="/pwms/school/zhzt/list.html">账号状态</a></li>
 		</ul>
 </li>
 <li><a class="current" href="/pwms/party">党建专项</a>
@@ -59,7 +69,6 @@
 <li><a class="current" href="/pwms/theory">理论学习</a>
 		<ul>
 			<li> <a href="/pwms/theory/classicaltheory-list.html">理论经典</a></li>
-			<li> <a href="/pwms/theory/videocourse-list.html"">摄影课程</a></li>
 		</ul>
 </li>
 <li><a class="current" href="/pwms/impdoc">重要文件</a>
@@ -79,7 +88,11 @@
 </ul>
 </li>
 <li><a class="current" href="/pwms/user/mybranch.html">我的支部</a>
-
+	<ul>
+		<li><a href="/pwms/user/mybranch.html">个人状态</a></li>  
+		<li><a href="/pwms/user/mybranch.html">支部情况</a></li>  
+		<li><a href="/pwms/user/mybranch.html">我的消息</a></li>  
+	</ul>
 </li>
 
 <div class="clear"> </div>

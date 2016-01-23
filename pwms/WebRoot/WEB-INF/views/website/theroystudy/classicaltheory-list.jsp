@@ -26,7 +26,6 @@
 	<div class="left-side radius">
 		<ul class="upright-menu">
 			<li class="current"> <a href="/pwms/theory/classicaltheory-list.html">理论经典</a></li>
-			<li> <a href="/pwms/theory/videocourse-list.html"">摄影课程</a></li>
 		</ul>
 	</div>
 	<div class="main-box">

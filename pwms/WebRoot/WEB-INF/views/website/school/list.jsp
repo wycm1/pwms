@@ -26,12 +26,10 @@
 	<div class="col-xs-12 col-sm-2 radius">
 		<ul class="upright-menu">
 			<li> <a href="/pwms/school/dxgg/list.html">党校公告</a></li>
-			<li> <a href="/pwms/school/kcxx/list.html">课程学习</a></li>
-			<li> <a href="/pwms/school/wybm/list.html">我要报名</a></li>
-			<li> <a href="/pwms/school/bmjg/list.html">报名结果</a></li>
+			<li> <a href="/pwms/school/kczx/list.html">课程中心</a></li>
+			<li> <a href="/pwms/school/xxjl/list.html">学习记录</a></li>
+			<li> <a href="/pwms/school/zxks/list.html">在线考试</a></li>
 			<li> <a href="/pwms/school/cjcx/list.html">成绩查询</a></li>
-			<li> <a href="/pwms/school/zscx/list.html">证书查询</a></li>
-			<li> <a href="/pwms/school/zhzt/list.html">账号状态</a></li>
 		</ul>
 	</div>
 	<div class="col-xs-12 col-sm-10">

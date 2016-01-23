@@ -19,9 +19,13 @@ import com.pwms.service.IExamQuestionService;
 import com.pwms.service.IExamService;
 
 @Controller
-@RequestMapping("/exam")
+@RequestMapping("/school/zxks")
+/**
+ * 考试
+ * @author wy
+ *
+ */
 public class ExamController extends BaseController {
-	// 获取考试题目
 	@Resource
 	private IExamService examService;
 	@Resource
@@ -91,5 +95,13 @@ public class ExamController extends BaseController {
 		}
 		model.addAttribute("questionList", questionList);
 		return null;
+	}
+	/**
+	 * 考试
+	 * @return
+	 */
+	@RequestMapping("/{id}/exam")
+	public String getExam(){
+		return "website/school/exam";
 	}
 }

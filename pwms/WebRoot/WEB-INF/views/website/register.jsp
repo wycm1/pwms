@@ -14,7 +14,7 @@
 <body>
 <%@ include file="header.jsp"%>
 <div class="register-main">
-<div class="nav">
+<div class="nav radius">
 	<nav class="breadcrumb">
 	<i class="Hui-iconfont">&#xe67f;</i>
 	<a class="maincolor" href="/">首页</a>
