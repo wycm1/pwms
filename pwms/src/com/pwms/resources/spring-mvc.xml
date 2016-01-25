@@ -30,8 +30,16 @@
         <!-- 拦截器 -->
     <mvc:interceptors>
         <mvc:interceptor>
-            <mvc:mapping path="/process/myprocess.html" />
+            <mvc:mapping path="/process/myprocess.html"/>
+            <mvc:mapping path="/user/**"/>
+            <mvc:mapping path="/school/**"/>
             <bean class="com.pwms.interceptor.UserVerifyInterceptor">
+            <property name="excludedUrls">
+                    <list>
+                        <value>/dxgg/list.html</value>
+                        <value>/login</value><!-- 不拦截登录请求 -->
+                    </list>
+            </property>
             </bean>
         </mvc:interceptor>
     </mvc:interceptors> 

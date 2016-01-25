@@ -141,6 +141,14 @@
 				</ul>
 			</dd>
 		</dl>
+		<dl id="menu-shcool">
+			<dt><i class="Hui-iconfont">&#xe616;</i> 党校管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a _href="school/course-list.html" href="javascript:void(0)">课程管理</a></li>
+				</ul>
+			</dd>
+		</dl>
 		<dl id="menu-admin">
 			<dt><i class="Hui-iconfont">&#xe62d;</i> 管理员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>

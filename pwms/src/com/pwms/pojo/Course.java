@@ -7,7 +7,7 @@ public class Course {
 
     private String title;
 
-    private String summary;
+    private String summary;//摘要，该字段用来存放课程视频地址
 
     private Integer groupId;
 
@@ -19,7 +19,7 @@ public class Course {
 
     private Integer type;
 
-    private String explian;
+    private String explian;//学习该课程所需时间（单位：分钟）
 
     public Integer getId() {
         return id;

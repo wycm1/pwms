@@ -87,7 +87,7 @@ public class SchoolController extends BaseController {
 	public String getList(@PathVariable String type, Model model){
 		switch(type){
 			case "dxgg":getArticleByType(model, "党校公告");break;
-			case "kczx":getArticleByType(model, "课程中心");return "website/school/course-list";
+			case "kczx":getKCZX(model, "课程中心");return "website/school/course-list";
 			case "xxjl":getArticleByType(model, "学习记录");return "website/school/study-record-list";
 			case "zxks":getArticleByType(model, "在线考试");return "website/school/online-exam-list";
 			case "cjcx":getArticleByType(model, "成绩查询");return "website/school/score-list";
@@ -107,11 +107,22 @@ public class SchoolController extends BaseController {
 		model.addAttribute("type", typeValue);
 	}
 	/**
+	 * 获取课程列表
+	 * @param type
+	 * @param model
+	 */
+	public void getKCZX(Model model,String typeValue){
+		model.addAttribute("type", typeValue);
+		model.addAttribute("courseList",courseService.getCourseByDate());
+	}
+	/**
 	 * 课程学习
 	 * @return
 	 */
 	@RequestMapping("/kczx/{id}/course")
-	public String getCourse(){
+	public String getCourse(@PathVariable int id,Model model){
+		Course course = courseService.getCourse(id);
+		model.addAttribute("course", course);
 		return "website/school/video-course";
 	}
 }

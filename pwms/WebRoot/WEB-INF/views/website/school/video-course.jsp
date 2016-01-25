@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>影像课程</title>
+<title>影像课程|${course.title}</title>
 <link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/website/style/style1.css" rel="stylesheet" type="text/css" />
@@ -60,7 +60,7 @@
 				      	<video id="video-test" class="video-js vjs-default-skin" controls preload="none" width="818" height="450"
 						      poster="/pwms/upload/img/gcd.jpg"
 						      data-setup="{}">
-						    <source src="/pwms/upload/video/詹姆斯.mp4" type='video/mp4' />
+						    <source src="/pwms/${course.summary}" type='video/mp4' />
 						</video>
 						<div class="row cl mt-20">
 						<div class="row radius text-c" style="border: 0px solid #DBDBDB;">
@@ -94,9 +94,9 @@ var stopCount = function(){//暂停时停止计时
 myPlayer.volume(0.5);//音量设置0.5
 myPlayer.on("play",timedCount);//绑定播放按钮
 myPlayer.on("pause",stopCount);//绑定暂停按钮
-myplayer.on('timeupdate', function () {  
+myPlayer.on('timeupdate', function () {  
     // 如果 currentTime() === duration()，则视频已播放完毕
-    if (player.duration() != 0 && player.currentTime() === player.duration()) {
+    if (myPlayer.duration() != 0 && myPlayer.currentTime() === myPlayer.duration()) {
             // 播放结束,停止计时
             stopCount();
         }

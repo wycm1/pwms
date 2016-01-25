@@ -19,8 +19,6 @@
         	</c:otherwise>
         </c:choose>
         	<span>|</span>
-        	<a href="/pwms/user/userdetail-add.html"> 用户详细信息添加</a>
-        	<span>|</span>
         	<a href="/pwms/admin/index.html">后台登录</a>
         </div>
         <div class="head_sear_bot">
@@ -87,11 +85,12 @@
 	<li><a href="/pwms/process/myprocess.html">我的流程</a></li>  
 </ul>
 </li>
-<li><a class="current" href="/pwms/user/mybranch.html">我的支部</a>
+<li><a class="current" href="/pwms/user/mybranch.html">个人中心</a>
 	<ul>
 		<li><a href="/pwms/user/mybranch.html">个人状态</a></li>  
 		<li><a href="/pwms/user/mybranch.html">支部情况</a></li>  
 		<li><a href="/pwms/user/mybranch.html">我的消息</a></li>  
+		<li><a href="/pwms/user/userdetail-add.html">添加详细信息</a></li>  
 	</ul>
 </li>
 

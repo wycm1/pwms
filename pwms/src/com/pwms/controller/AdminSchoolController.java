@@ -1,6 +1,7 @@
 package com.pwms.controller;
 
 import java.io.File;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -10,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.pwms.pojo.CoureseGroup;
 import com.pwms.pojo.Course;
@@ -34,7 +37,7 @@ public class AdminSchoolController extends BaseController {
 	@Resource
 	private ICourseGroupService groupService;
 	//查看课程
-	@RequestMapping("/showcourse")
+	@RequestMapping("/course-list")
 	public String showCourse(Model model){
 		List<Course> courseList = courseService.getCourseByDate();
 		model.addAttribute("courseList", courseList);
@@ -87,6 +90,59 @@ public class AdminSchoolController extends BaseController {
 		}else{
 		    return publishmsg(request, "修改失败", null );
 		}
+	}
+	/**
+	 * 添加课程
+	 * @param course
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping("/addCourse")
+	public String addCourse(@RequestParam(value = "file", required = false) MultipartFile file,Course course,HttpServletRequest request,Model model){
+		String path = request.getSession().getServletContext().getRealPath("") + "/upload/video/";//
+		String fileName = file.getOriginalFilename();
+		fileName = System.currentTimeMillis() + fileName.substring(fileName.indexOf("."));
+        File targetFile = new File(path, fileName);  
+        if(!targetFile.exists()){  
+            targetFile.mkdirs();  
+        }  
+        try {  
+            file.transferTo(targetFile);  
+        } catch (Exception e) {  
+            e.printStackTrace();  
+        } 
+        System.out.println("文件上传至\n" + path + fileName + "\n成功！");
+        course.setSummary("/upload/video/");
+        course.setUserId(4);
+        course.setDateline(new Date());
+        courseService.save(course);
+		model.addAttribute("msg", "课程添加成功！");
+		return "admin/notice-msg";
+	}
+	/**
+	 * 显示修改课程页面
+	 * @param id
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/course-modify/{id}")
+	public String showCourseModify(@PathVariable int id,Model model){
+		model.addAttribute("course", courseService.getCourse(id));
+		return "admin/school/course-modify";
+	}
+	/**
+	 * 修改课程
+	 * @param model
+	 * @param course
+	 * @return
+	 */
+	@RequestMapping("/modifyCourse")
+	public String modifyCourse(Model model,Course course){
+		course.setDateline(new Date());
+		course.setUserId(4);
+		courseService.updateById(course);
+		model.addAttribute("msg","课程修改成功！");
+		return "admin/notice-msg";
 	}
 	//考试题目添加
 	@RequestMapping("/exam/addquestion")

@@ -46,36 +46,14 @@
 			  <th class="text-c" width="10%">时长(分钟)</th>
 			  <th class="text-c" width="10%">播放</th>
 			</tr>
+			<c:forEach items="${courseList}" var="item">
 		    <tr class="text-c">
-		      <td class="splittd">关键在党，关键在人</td>
-			  <td><div class="row cl"><div class="col-xs-12 col-sm-10" style="border: 1px solid #B1D632;"><div class="row c1" style="background:#B1D632;width:6%;height:22px;"></div></div><span class="col-xs-12 col-sm-2 text-c">6%</span></div></td>
-			  <td align="center">7</td>
-			  <td class="text-c"><a href="javascript:void(0)" onclick="javascript:openMyPage('http://localhost:8080/pwms/school/kczx/1/course.html')"><font color="#FF0000">播放</font></a></td>
+		      <td class="splittd">${item.title}</td>
+			  <td><div class="row cl"><div class="col-xs-12 col-sm-10" style="border: 1px solid #B1D632;"><div class="row c1" style="background:#B1D632;width:0%;height:22px;"></div></div><span class="col-xs-12 col-sm-2 text-c">0%</span></div></td>
+			  <td align="center">${item.explian}</td>
+			  <td class="text-c"><a href="javascript:void(0)" onclick="javascript:openMyPage('http://localhost:8080/pwms/school/kczx/${item.id}/course.html')"><font color="#FF0000">播放</font></a></td>
 		    </tr>
-		    <tr class="text-c">
-		      <td class="splittd">关键在党，关键在人</td>
-			  <td><div class="row cl"><div class="col-xs-12 col-sm-10" style="border: 1px solid #B1D632;"><div class="row c1" style="background:#B1D632;width:6%;height:22px;"></div></div><span class="col-xs-12 col-sm-2 text-c">6%</span></div></td>
-			  <td align="center">7</td>
-			  <td class="text-c"><a href="javascript:void(0)" onclick="javascript:openMyPage('http://localhost:8080/pwms/school/kczx/1/course.html')"><font color="#FF0000">播放</font></a></td>
-		    </tr>
-		    <tr class="text-c">
-		      <td class="splittd">关键在党，关键在人</td>
-			  <td><div class="row cl"><div class="col-xs-12 col-sm-10" style="border: 1px solid #B1D632;"><div class="row c1" style="background:#B1D632;width:6%;height:22px;"></div></div><span class="col-xs-12 col-sm-2 text-c">6%</span></div></td>
-			  <td align="center">7</td>
-			  <td class="text-c"><a href="javascript:void(0)" onclick="javascript:openMyPage('http://localhost:8080/pwms/school/kczx/1/course.html')"><font color="#FF0000">播放</font></a></td>
-		    </tr>
-		    <tr class="text-c">
-		      <td class="splittd">关键在党，关键在人</td>
-			  <td><div class="row cl"><div class="col-xs-12 col-sm-10" style="border: 1px solid #B1D632;"><div class="row c1" style="background:#B1D632;width:6%;height:22px;"></div></div><span class="col-xs-12 col-sm-2 text-c">6%</span></div></td>
-			  <td align="center">7</td>
-			  <td class="text-c"><a href="javascript:void(0)" onclick="javascript:openMyPage('http://localhost:8080/pwms/school/kczx/1/course.html')"><font color="#FF0000">播放</font></a></td>
-		    </tr>
-		    <tr class="text-c">
-		      <td class="splittd">关键在党，关键在人</td>
-			  <td><div class="row cl"><div class="col-xs-12 col-sm-10" style="border: 1px solid #B1D632;"><div class="row c1" style="background:#B1D632;width:6%;height:22px;"></div></div><span class="col-xs-12 col-sm-2 text-c">6%</span></div></td>
-			  <td align="center">7</td>
-			  <td class="text-c"><a href="javascript:void(0)" onclick="javascript:openMyPage('http://localhost:8080/pwms/school/kczx/1/course.html')"><font color="#FF0000">播放</font></a></td>
-		    </tr>
+		    </c:forEach>
 			</tbody>
 	</table>
     				</div>

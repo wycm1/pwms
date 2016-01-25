@@ -68,13 +68,26 @@ public class UserController extends BaseController{
 	        }  
 	        return map;  
 	}  
-    //登录
+    /**
+     * 通过学号或者工号登录
+     * @param session
+     * @param request
+     * @param user
+     * @param model
+     * @return
+     */
     @RequestMapping("/login")
     public String login(HttpSession session, HttpServletRequest request, User user, Model model) {
-    	this.userService.login(session, user.getName(), user.getPassword());
-    	return publishmsg(request,"success","web");
+    	this.userService.login(session, user.getStuOrJobid(), user.getPassword());
+    	return publishmsg(request,"success","website/index");
     }
-    //注销
+    /**
+     * 注销登录
+     * @param session
+     * @param request
+     * @param model
+     * @return
+     */
     @RequestMapping("/logout")
     public String logout(HttpSession session, HttpServletRequest request, Model model) {
     	this.userService.logout(session);

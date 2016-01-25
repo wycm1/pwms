@@ -23,11 +23,11 @@
 </div>
 <div class="login-wrapper">
 	<div class="pd-20">
-  <form action=""  method="post" class="form form-horizontal" id="form-reward-punish-add">
+  <form action="user/login"  method="post" class="form form-horizontal" id="login">
     <div class="row cl">
       <label class="form-label col-3"></label>
       <div class="formControls col-5">
-        <input type="text" class="input-text radius size-L" value="" placeholder="身份证号或者学号" id="card" name="card" datatype="*11-16" nullmsg="不能为空" errormsg="格式不正确">
+        <input type="text" class="input-text radius size-L" value="13101020318" placeholder="学号或者工号" id="card" name="StuOrJobid" datatype="stuid" nullmsg="不能为空" errormsg="格式不正确">
       </div>
       <div class="col-4"> </div>
     </div>
@@ -35,7 +35,7 @@
     <div class="row cl">
       <label class="form-label col-3"></label>
       <div class="formControls col-5">
-        <input type="text" class="input-text radius size-L" value="" placeholder="密码" id="password" name="password" datatype="*6-16" nullmsg="密码不能为空" errormsg="密码在6~16位之间">
+        <input type="password" class="input-text radius size-L" value="123456" placeholder="密码" id="password" name="password" datatype="*6-16" nullmsg="密码不能为空" errormsg="密码在6~16位之间">
       </div>
       <div class="col-4"> </div>
     </div>
@@ -56,7 +56,7 @@
 <script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
 <script type="text/javascript">
 $(function(){
-	$("#form-reward-punish-add").Validform({
+	$("#login").Validform({
 		tiptype:2,
 		callback:function(form){
 			form[0].submit();
@@ -65,10 +65,9 @@ $(function(){
 			parent.layer.close(index);
 		}
 	});
-	$("#submit").click(function(){
-		$("#form-reward-punish-add").submit();
-		window.close();
-	});
+/* 	$("#submit").click(function(){
+		$("#login").submit();
+	}); */
 });
 </script>
 </body>
