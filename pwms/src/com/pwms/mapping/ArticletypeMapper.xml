@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pwms.dao.ArticletypeMapper" >
+  <resultMap id="BaseResultMap" type="com.pwms.pojo.Articletype" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="value" property="value" jdbcType="VARCHAR" />
+    <result column="pid" property="pid" jdbcType="INTEGER" />
+    <result column="linkname" property="linkname" jdbcType="VARCHAR" />
+    <collection property="articles" ofType="com.pwms.pojo.NoticeTheroyContruction">
+    	<!-- 表的字段如果有一样  查询出来一定要将字段重命名  否则赋值会出现问题-->
+    	<id column="id1" property="id" jdbcType="INTEGER" /> 
+    	<result column="title" property="title" jdbcType="VARCHAR" />
+	    <result column="summary" property="summary" jdbcType="VARCHAR" />
+	    <result column="dateline" property="dateline" jdbcType="DATE" javaType="java.sql.Date"/>
+	    <result column="user_id" property="userId" jdbcType="INTEGER" />
+	    <!-- <result column="contents" property="contents" jdbcType="LONGVARCHAR" /> -->
+    </collection> 
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, value, pid, linkname
+  </sql>
+  <sql id="All_Column_List">
+  	a.id,a.value,a.pid,a.linkname,n.id id1,n.title,n.summary,n.dateline,n.user_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    	<include refid="Base_Column_List"/>
+    from articletype a
+    where a.id = #{id,jdbcType=INTEGER}
+  </select>
+  <!-- <select id="selectByPrimaryKey1" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    	<include refid="All_Column_List"/>
+    from articletype a,notice_theory_construction n
+    where a.id = n.type and a.id = #{id,jdbcType=INTEGER}
+  </select>  -->
+  <select id="selectByLinkname" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    	<include refid="Base_Column_List"/>
+    from articletype a
+    where a.linkname = #{linkname,jdbcType=VARCHAR}
+  </select>
+  <!-- <select id="selectByLinkname1" resultMap="BaseResultMap" parameterType="java.lang.String">
+  	select 
+    	<include refid="All_Column_List"/>
+    from articletype a,notice_theory_construction n
+    where n.type = a.id and a.linkname = #{linkname,jdbcType=VARCHAR}
+  </select> -->
+  <select id="selectByPid" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from articletype
+    where pid = #{pid,jdbcType=INTEGER}
+  </select>
+  <select id="selectAllChildrenType" resultMap="BaseResultMap">
+  	select 
+    <include refid="Base_Column_List" />
+    from articletype
+    where pid is not null
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from articletype
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.pwms.pojo.Articletype" >
+    insert into articletype (id, value, pid, 
+      linkname)
+    values (#{id,jdbcType=INTEGER}, #{value,jdbcType=VARCHAR}, #{pid,jdbcType=INTEGER}, 
+      #{linkname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pwms.pojo.Articletype" >
+    insert into articletype
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="value != null" >
+        value,
+      </if>
+      <if test="pid != null" >
+        pid,
+      </if>
+      <if test="linkname != null" >
+        linkname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="value != null" >
+        #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null" >
+        #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="linkname != null" >
+        #{linkname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pwms.pojo.Articletype" >
+    update articletype
+    <set >
+      <if test="value != null" >
+        value = #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null" >
+        pid = #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="linkname != null" >
+        linkname = #{linkname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pwms.pojo.Articletype" >
+    update articletype
+    set value = #{value,jdbcType=VARCHAR},
+      pid = #{pid,jdbcType=INTEGER},
+      linkname = #{linkname,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -61,15 +61,7 @@
 					<td>${item.id}</td>
 					<td class="text-l"><u style="cursor:pointer" class="text-primary" onClick="article_edit('查看','article-zhang.html','10001')" title="查看">${item.title}</u></td>
 					<td>
-							<c:if test="${item.type == 1}">
-								文章类型
-							</c:if>
-							<c:if test="${item.type == 2}">
-								通知公告
-							</c:if>
-							<c:if test="${item.type == 4}">
-								理论学习
-							</c:if> 
+						${item.articletype.value}
 					</td>
 					<td>admin</td>
 					<td>${item.dateline}</td>

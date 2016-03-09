@@ -40,21 +40,21 @@
 <li><a class="current" href="/pwms/">首页</a>
 
 </li>
+<li><a class="current" href="/pwms/school">网上党校</a>
+		<ul>
+			<li> <a href="/pwms/school/kczx/list.html">课程中心</a></li>
+			<li> <a href="/pwms/school/xxjl/list.html">学习记录</a></li>
+			<li> <a href="/pwms/school/zxks/list.html">在线考试</a></li>
+			<li> <a href="/pwms/school/cjcx/list.html">成绩查询</a></li>
+		</ul>
+</li>
 <li><a class="current" href="/pwms/notice">通知公告</a>
 		<ul>
 			<li> <a href="/pwms/notice/hdtz/list.html">活动通知</a></li>
 			<li> <a href="/pwms/notice/sqrdx/list.html">申请人党校</a></li>
 			<li> <a href="/pwms/notice/jjfzdx/list.html">积极分子党校</a></li>
 			<li> <a href="/pwms/notice/ybdydx/list.html">预备党员党校</a></li>
-		</ul>
-</li>
-<li><a class="current" href="/pwms/school">网上党校</a>
-		<ul>
-			<li> <a href="/pwms/school/dxgg/list.html">党校公告</a></li>
-			<li> <a href="/pwms/school/kczx/list.html">课程中心</a></li>
-			<li> <a href="/pwms/school/xxjl/list.html">学习记录</a></li>
-			<li> <a href="/pwms/school/zxks/list.html">在线考试</a></li>
-			<li> <a href="/pwms/school/cjcx/list.html">成绩查询</a></li>
+			<li> <a href="/pwms/notice/dxgg/list.html">党校公告</a></li>
 		</ul>
 </li>
 <li><a class="current" href="/pwms/party">党建专项</a>
@@ -66,7 +66,7 @@
 </li>
 <li><a class="current" href="/pwms/theory">理论学习</a>
 		<ul>
-			<li> <a href="/pwms/theory/classicaltheory-list.html">理论经典</a></li>
+			<li> <a href="/pwms/theory/lljd/list.html">理论经典</a></li>
 		</ul>
 </li>
 <li><a class="current" href="/pwms/impdoc">重要文件</a>

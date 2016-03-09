@@ -13,10 +13,10 @@ public class NoticeTheroyContruction {
 
     private Integer userId;
 
-    private Integer type;
-
     private String contents;
-
+    
+    private Articletype articletype;
+    
     public Integer getId() {
         return id;
     }
@@ -57,14 +57,6 @@ public class NoticeTheroyContruction {
         this.userId = userId;
     }
 
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
-    }
-
     public String getContents() {
         return contents;
     }
@@ -72,13 +64,22 @@ public class NoticeTheroyContruction {
     public void setContents(String contents) {
         this.contents = contents == null ? null : contents.trim();
     }
-    public String toString(){
+    
+    public Articletype getArticletype() {
+		return articletype;
+	}
+
+	public void setArticletype(Articletype articletype) {
+		this.articletype = articletype;
+	}
+
+	public String toString(){
     	String json = "{"+"\"id\":"+ id + ","+
     		"\"title\": \""+ title +"\" ,"+
     		"\"summary\": \""+ summary +"\" ,"+
     		"\"dateline\": \""+ dateline +"\" ,"+
     		"\"userId\": \""+ userId +"\" ,"+
-    		"\"type\": \""+ type +"\" ,"+
+    		"\"type\": \""+ "" +"\" ,"+
     		"\"contents\": \""+ contents +"\"}";
     	return json;
     }

@@ -17,13 +17,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.pwms.pojo.Articletype;
 import com.pwms.pojo.ImportDoc;
 import com.pwms.pojo.NoticeTheroyContruction;
 import com.pwms.service.IImportDocService;
 import com.pwms.service.INoticeService;
-
-@Controller
-@RequestMapping("/impdoc")
+import com.pwms.tools.ArticleTools;
+/**
+ * 暂时不用
+ * @author Administrator
+ *
+ */
+//@Controller
+//@RequestMapping("/impdoc")
 public class ImportDocController extends BaseController {
 	@Resource
 	private IImportDocService importDocService;
@@ -99,16 +105,7 @@ public class ImportDocController extends BaseController {
 	 */
 	@RequestMapping("/{type}/list")
 	public String getList(@PathVariable String type, Model model){
-		switch(type){
-			case "dswx":getArticleByType(model, "党史文献");break;
-			case "gzzd":getArticleByType(model, "规则制度");break;
-			case "jddd":getArticleByType(model, "经典导读");break;
-			case "cyws":getArticleByType(model, "常用文书");break;
-			case "rdbd":getArticleByType(model, "入党必读");break;
-			case "xtsc":getArticleByType(model, "系统手册");break;
-			default:getArticleByType(model, "党史文献");break;
-		}
-		return "website/impdoc/list";
+		return ArticleTools.getArticleListByType(type, model, noticeService);
 	}
 	/**
 	 * 该方法还要完善
@@ -119,6 +116,9 @@ public class ImportDocController extends BaseController {
 	public void getArticleByType(Model model,String typeValue){
 		List<NoticeTheroyContruction> noticeList = this.noticeService.getNoticeByType(1);
 		model.addAttribute("articleList", noticeList);
+//		System.out.println(noticeList.get(0).getArticletype() == null);
+		Articletype at = noticeService.getArticletypeByid(1);
+//		System.out.println("总共有文章:" + at.getArticles().size());
 		model.addAttribute("type", typeValue);
 	}
 	@RequestMapping("/{type}/{id}")

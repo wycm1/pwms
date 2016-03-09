@@ -21,7 +21,7 @@ public class AdminTheoryController extends BaseController {
 	private INoticeService theoryService;
 	@RequestMapping("/alltheory")
 	public String getAllTheory(Model model){
-		List<NoticeTheroyContruction> theoryList = this.theoryService.getNoticeByType(INoticeService.THEORY_TYPE);
+		List<NoticeTheroyContruction> theoryList = this.theoryService.getNoticeByType(8);
 		model.addAttribute("theoryList", theoryList);
 		return null;
 	}

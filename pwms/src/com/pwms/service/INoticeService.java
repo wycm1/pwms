@@ -2,12 +2,10 @@ package com.pwms.service;
 
 import java.util.List;
 
+import com.pwms.pojo.Articletype;
 import com.pwms.pojo.NoticeTheroyContruction;
 
 public interface INoticeService {
-	final static int NOTICE_TYPE = 1;
-	final static int THEORY_TYPE = 2;
-	final static int PARTY_TYPE = 4;
 	/**
 	 * ±£¥Ê∂‘œÛ
 	 * @param notice
@@ -30,4 +28,19 @@ public interface INoticeService {
 	
 	public boolean deleteNotice(NoticeTheroyContruction notice);
 	
+	public List<Articletype> getChildrenAT(Integer pid);
+	
+	public Articletype getArticletypeByid(Integer id);
+	
+	List<NoticeTheroyContruction> selectAll();
+	
+	List<Articletype> getAllChildrenType();
+	
+	public Articletype selectByLinkname(String linkname);
+	
+//	public Articletype getArticletypeByid1(Integer id);
+	
+//	public Articletype selectByLinkname1(String linkname);
+	
+	List<Articletype> getByPid(Integer pid);
 }

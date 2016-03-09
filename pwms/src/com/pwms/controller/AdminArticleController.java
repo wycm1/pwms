@@ -28,9 +28,7 @@ public class AdminArticleController extends BaseController {
 	@RequestMapping("/article-list")
 	public String getAll(Model model){
 		List<NoticeTheroyContruction> article = new ArrayList<NoticeTheroyContruction>();
-		article.addAll(articleService.getNoticeByType(1));
-		article.addAll(articleService.getNoticeByType(2));
-		article.addAll(articleService.getNoticeByType(4));
+		article = articleService.selectAll();
 		model.addAttribute("aList", article);//此处应获取全部文章
 		return "admin/article/article-list";
 	}
@@ -65,6 +63,9 @@ public class AdminArticleController extends BaseController {
 	public String modify(int id, Model model){
 		//System.out.println(id);
 		model.addAttribute("article", articleService.getNoticeById(id));
+		System.out.println("文章类型id：" + articleService.getNoticeById(id).getArticletype().getId());
+		System.out.println("文章类型pid：" + articleService.getNoticeById(id).getArticletype().getPid());
+		model.addAttribute("articletypes",articleService.getAllChildrenType());
 		return "admin/article/article-modify";
 	}
 	/**

@@ -18,6 +18,8 @@ public interface NoticeTheroyContructionMapper {
      * @return
      */
     List<NoticeTheroyContruction> selectByType(Integer type);
+    
+    List<NoticeTheroyContruction> selectAll();
 
     int updateByPrimaryKeySelective(NoticeTheroyContruction record);
 

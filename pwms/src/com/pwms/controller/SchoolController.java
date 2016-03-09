@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.pwms.pojo.Articletype;
 import com.pwms.pojo.Course;
 import com.pwms.pojo.Exam;
 import com.pwms.pojo.ExamRecord;
@@ -19,6 +20,7 @@ import com.pwms.pojo.User;
 import com.pwms.service.ICourseService;
 import com.pwms.service.IExamService;
 import com.pwms.service.INoticeService;
+import com.pwms.tools.ArticleTools;
 /**
  * 网上党校
  * @author wy
@@ -86,12 +88,11 @@ public class SchoolController extends BaseController {
 	@RequestMapping("/{type}/list")
 	public String getList(@PathVariable String type, Model model){
 		switch(type){
-			case "dxgg":getArticleByType(model, "党校公告");break;
 			case "kczx":getKCZX(model, "课程中心");return "website/school/course-list";
 			case "xxjl":getArticleByType(model, "学习记录");return "website/school/study-record-list";
 			case "zxks":getArticleByType(model, "在线考试");return "website/school/online-exam-list";
 			case "cjcx":getArticleByType(model, "成绩查询");return "website/school/score-list";
-			default:getArticleByType(model, "党校公告");break;
+			default:getArticleByType(model, "课程中心");break;
 		}
 		return "website/school/list";
 	}

@@ -6,14 +6,17 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import com.pwms.dao.ArticletypeMapper;
 import com.pwms.dao.NoticeTheroyContructionMapper;
+import com.pwms.pojo.Articletype;
 import com.pwms.pojo.NoticeTheroyContruction;
 import com.pwms.service.INoticeService;
 @Service("noticeService")
 public class NoticeServiceImpl implements INoticeService {
 	@Resource
 	private NoticeTheroyContructionMapper noticeTheroyDao;
-
+	@Resource
+	private ArticletypeMapper articletypeDao;
 	public NoticeTheroyContructionMapper getNoticeTheroyDao() {
 		return noticeTheroyDao;
 	}
@@ -64,4 +67,50 @@ public class NoticeServiceImpl implements INoticeService {
 		}
 	}
 
+	@Override
+	public List<Articletype> getChildrenAT(Integer pid) {
+		// TODO Auto-generated method stub
+		return articletypeDao.selectByPid(pid);
+	}
+	@Override
+	public Articletype getArticletypeByid(Integer id){
+		return articletypeDao.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public List<NoticeTheroyContruction> selectAll() {
+		// TODO Auto-generated method stub
+		return noticeTheroyDao.selectAll();
+	}
+
+	@Override
+	public List<Articletype> getAllChildrenType() {
+		// TODO Auto-generated method stub
+		return articletypeDao.selectAllChildrenType();
+	}
+
+	@Override
+	public Articletype selectByLinkname(String linkname) {
+		// TODO Auto-generated method stub
+		return articletypeDao.selectByLinkname(linkname);
+	}
+
+	@Override
+	public List<Articletype> getByPid(Integer pid) {
+		// TODO Auto-generated method stub
+		return articletypeDao.selectByPid(pid);
+	}
+
+//	@Override
+//	public Articletype getArticletypeByid1(Integer id) {
+//		// TODO Auto-generated method stub
+//		return articletypeDao.selectByPrimaryKey1(id);
+//	}
+//
+//	@Override
+//	public Articletype selectByLinkname1(String linkname) {
+//		// TODO Auto-generated method stub
+//		return articletypeDao.selectByLinkname1(linkname);
+//	}
+	
 }

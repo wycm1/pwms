@@ -47,22 +47,22 @@
 			</tr>
 		    <tr class="text-c">
 		      <td class="splittd">关键在党，关键在人</td>
-			  <td align="center"><a href="#" onclick="javascript:openMyPage('http://localhost:8080/pwms/school/zxks/1/exam.html')" class="text-c"><font color="red">开始考试</font></a></td>
+			  <td align="center"><a href="#" onclick="javascript:openMyPage('http://120.27.36.59:8080/pwms/school/zxks/1/exam.html')" class="text-c"><font color="red">开始考试</font></a></td>
 			  <td>关键在党，关键在人</td>
 		    </tr>
 		    <tr class="text-c">
 		      <td class="splittd">关键在党，关键在人</td>
-			  <td align="center"><a href="#" onclick="javascript:openMyPage('http://localhost:8080/pwms/school/zxks/1/exam.html')" class="text-c"><font color="red">开始考试</font></a></td>
+			  <td align="center"><a href="#" onclick="javascript:openMyPage('http://120.27.36.59:8080/pwms/school/zxks/1/exam.html')" class="text-c"><font color="red">开始考试</font></a></td>
 			  <td>关键在党，关键在人</td>
 		    </tr>
 		    <tr class="text-c">
 		      <td class="splittd">关键在党，关键在人</td>
-			  <td align="center"><a href="#" onclick="javascript:openMyPage('http://localhost:8080/pwms/school/zxks/1/exam.html')" class="text-c"><font color="red">开始考试</font></a></td>
+			  <td align="center"><a href="#" onclick="javascript:openMyPage('http://120.27.36.59:8080/pwms/school/zxks/1/exam.html')" class="text-c"><font color="red">开始考试</font></a></td>
 			  <td>关键在党，关键在人</td>
 		    </tr>
 		    <tr class="text-c">
 		      <td class="splittd">关键在党，关键在人</td>
-			  <td align="center"><a href="#" onclick="javascript:openMyPage('http://localhost:8080/pwms/school/zxks/1/exam.html')" class="text-c"><font color="red">开始考试</font></a></td>
+			  <td align="center"><a href="#" onclick="javascript:openMyPage('http://120.27.36.59:8080/pwms/school/zxks/1/exam.html')" class="text-c"><font color="red">开始考试</font></a></td>
 			  <td>关键在党，关键在人</td>
 		    </tr>
 			</tbody>

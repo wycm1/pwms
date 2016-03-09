@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>党史文献</title>
+<title>${type}</title>
 <link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
@@ -13,33 +13,37 @@
 </head>
 <body>
 <%@ include file="../header.jsp"%>
-<div class="page-main">
+<div class="page-main pb-20">
 	<div class="nav radius">
 		<nav class="breadcrumb">
 		<i class="Hui-iconfont">&#xe67f;</i>
 		<a class="maincolor" href="../index.html">首页</a>
-		<span class="c-999 en">&gt;</span><a class="maincolor" href="classicaltheory-list.html">理论学习</a>
-		<span class="c-999 en">&gt;</span>理论经典
+		<span class="c-999 en">&gt;</span><a class="maincolor" href="/pwms/${pArticletype.linkname}">${pArticletype.value}</a>
+		<span class="c-999 en">&gt;</span>${type}
 		</nav>
 	</div>
-	<div class="main-container">
-	<div class="left-side radius">
+	<div class="row c1 ml-20 mt-10 mr-20">
+	<div class="col-xs-12 col-sm-2 radius">
 		<ul class="upright-menu">
-			<li class="current"> <a href="/pwms/theory/classicaltheory-list.html">理论经典</a></li>
+			<c:forEach items="${cArticletypeList}" var="item">
+				<li> <a href="/pwms/${pArticletype.linkname}/${item.linkname}/list.html">${item.value}</a></li>
+			</c:forEach>
 		</ul>
 	</div>
-	<div class="main-box">
-		<div class="panel panel-danger radius">
-				<div class="panel-header">理论经典</div>
+	<div class="col-xs-12 col-sm-10">
+		<div class="row c1 ml-10">
+			<div class="panel panel-danger radius">
+				<div class="panel-header">${type}</div>
 				<div class="panel-body">
 					<div class="row cl">
 				    	<ul>
 				    		<c:forEach items="${articleList}" var="item">
-					    	<li><a href="#">${item.title}</a><span style="float:right">${item.dateline}</span></li>
+					    	<li><a href="/pwms/${pArticletype.linkname}/${item.articletype.linkname}/${item.id}.html">${item.title}</a><span style="float:right">${item.dateline}</span></li>
 				    		</c:forEach>
 				    	</ul>
     				</div>
 				</div>
+		</div>
 		</div>
 	</div>
 	</div>
@@ -47,19 +51,11 @@
 <script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
 <script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
 <script type="text/javascript">
-$(function(){
-	$("#form-reward-punish-add").Validform({
-		tiptype:2,
-		callback:function(form){
-			form[0].submit();
-			var index = parent.layer.getFrameIndex(window.name);
-			parent.$('.btn-refresh').click();
-			parent.layer.close(index);
+$(document).ready(function() { 
+	$(".upright-menu li").each(function(){
+		if($(this).find("a").text() == $("title").text()){
+			$(this).attr("class","current");
 		}
-	});
-	$("#submit").click(function(){
-		$("#form-reward-punish-add").submit();
-		window.close();
 	});
 });
 </script>

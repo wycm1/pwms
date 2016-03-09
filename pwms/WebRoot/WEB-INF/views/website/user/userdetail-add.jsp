@@ -185,7 +185,6 @@ $(function(){
 	});
 	$("#submit").click(function(){
 		$("#form-reward-punish-add").submit();
-		window.close();
 	});
 });
 </script>

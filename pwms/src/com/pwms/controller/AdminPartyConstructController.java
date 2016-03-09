@@ -22,7 +22,7 @@ public class AdminPartyConstructController extends BaseController {
 	@RequestMapping("/articlelist")
 	public String articlelist(Model model){
 		List<NoticeTheroyContruction> partyList = this.theoryService
-				.getNoticeByType(INoticeService.PARTY_TYPE);
+				.getNoticeByType(8);
 		model.addAttribute("partyList", partyList);
 		return null;
 	}
