@@ -44,9 +44,9 @@
 <script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
 <script type="text/javascript">
 $(document).ready(function() { 
-	/* var articleTypeVal = "${article.articletype.value}"; */
+	var atVal = "${article.articletype.value}"; 
 	$(".upright-menu li").each(function(){
-		if($(this).find("a").text() == ${article.articletype.value}){ 
+		if($(this).find("a").text() == atVal){ 
 			$(this).attr("class","current");
 		}
 	});

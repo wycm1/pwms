@@ -52,8 +52,9 @@
 <script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
 <script type="text/javascript">
 $(document).ready(function() { 
+	var atVal = $("title").text();
 	$(".upright-menu li").each(function(){
-		if($(this).find("a").text() == $("title").text()){
+		if($(this).find("a").text() == atVal){
 			$(this).attr("class","current");
 		}
 	});
