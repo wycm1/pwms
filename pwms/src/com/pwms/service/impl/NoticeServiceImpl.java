@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import com.github.pagehelper.PageHelper;
 import com.pwms.dao.ArticletypeMapper;
 import com.pwms.dao.NoticeTheroyContructionMapper;
 import com.pwms.pojo.Articletype;
@@ -77,9 +78,9 @@ public class NoticeServiceImpl implements INoticeService {
 		return articletypeDao.selectByPrimaryKey(id);
 	}
 
-	@Override
 	public List<NoticeTheroyContruction> selectAll() {
 		// TODO Auto-generated method stub
+		PageHelper.startPage(1, 5);
 		return noticeTheroyDao.selectAll();
 	}
 
@@ -112,6 +113,7 @@ public class NoticeServiceImpl implements INoticeService {
 		// TODO Auto-generated method stub
 		return articletypeDao.selectByPrimaryKey2(id);
 	}
+
 
 //	@Override
 //	public Articletype getArticletypeByid1(Integer id) {

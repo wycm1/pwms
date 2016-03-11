@@ -19,7 +19,7 @@ public interface INoticeService {
 	public NoticeTheroyContruction getNoticeById(Integer id);
 	/**
 	 * 通过类型来查找对象
-	 * @param type 1:通知公告  2：理论  4：党建专项  （1，2，4方便做位运算）
+	 * @param 
 	 * @return
 	 */
 	public List<NoticeTheroyContruction> getNoticeByType(Integer type);
@@ -27,13 +27,20 @@ public interface INoticeService {
 	public boolean modifyNotice(NoticeTheroyContruction notice);
 	
 	public boolean deleteNotice(NoticeTheroyContruction notice);
-	
+	/**
+     * 通过pid查找Articletype
+     * @param pid
+     * @return Articletype列表
+     */
 	public List<Articletype> getChildrenAT(Integer pid);
 	
 	public Articletype getArticletypeByid(Integer id);
 	
 	List<NoticeTheroyContruction> selectAll();
-	
+	 /**
+     * 获取所有 chlidrenarticletype
+     * @return chlidrenarticletype列表
+     */
 	List<Articletype> getAllChildrenType();
 	
 	public Articletype selectByLinkname(String linkname);
@@ -43,6 +50,10 @@ public interface INoticeService {
 	public Articletype getArticletypeByid2(Integer id);
 	
 //	public Articletype selectByLinkname1(String linkname);
-	
+	/**
+     * 通过pid查找Articletype
+     * @param pid
+     * @return Articletype列表
+     */
 	List<Articletype> getByPid(Integer pid);
 }

@@ -57,7 +57,7 @@
     select 
     <include refid="article_articletype"/>
     from notice_theory_construction n,articletype a left join articletype a1
-    on a.pid = a1.id where n.type=a.id
+    on a.pid = a1.id where n.type=a.id order by n.id
   </select>
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >

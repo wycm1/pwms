@@ -18,7 +18,7 @@
 		<nav class="breadcrumb">
 		<i class="Hui-iconfont">&#xe67f;</i>
 		<a class="maincolor" href="../index.html">首页</a>
-		<span class="c-999 en">&gt;</span><a class="maincolor" href="/pwms/${pArticletype.linkname}">${pArticletype.value}</a>
+		<span class="c-999 en">&gt;</span><a class="maincolor" href="/pwms/${articletype.pArticletype.linkname}">${articletype.pArticletype.value}</a>
 		<span class="c-999 en">&gt;</span>${articletype.value}
 		</nav>
 	</div>
@@ -26,7 +26,7 @@
 	<div class="col-xs-12 col-sm-2 radius">
 		<ul class="upright-menu">
 			<c:forEach items="${cArticletypeList}" var="item">
-				<li> <a href="/pwms/${pArticletype.linkname}/${item.linkname}/list.html">${item.value}</a></li>
+				<li> <a href="/pwms/${articletype.pArticletype.linkname}/${item.linkname}/list.html">${item.value}</a></li>
 			</c:forEach>
 		</ul>
 	</div>
@@ -38,7 +38,7 @@
 					<div class="row cl">
 				    	<ul>
 				    		<c:forEach items="${articletype.articles}" var="item">
-					    	<li><a href="/pwms/${pArticletype.linkname}/${articletype.linkname}/${item.id}.html">${item.title}</a><span style="float:right">${item.dateline}</span></li>
+					    	<li><a href="/pwms/${articletype.pArticletype.linkname}/${articletype.linkname}/${item.id}.html">${item.title}</a><span style="float:right">${item.dateline}</span></li>
 				    		</c:forEach>
 				    	</ul>
     				</div>

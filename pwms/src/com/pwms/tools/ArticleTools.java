@@ -23,7 +23,6 @@ public class ArticleTools {
 		Articletype at = noticeService.selectByLinkname(type);
 //		System.out.println("test£º" + at.getId() + noticeService.getArticletypeByid(at.getId()).getArticles().size());
 		List<Articletype> atList = noticeService.getByPid(at.getpArticletype().getId());
-		model.addAttribute("pArticletype", at.getpArticletype());
 		model.addAttribute("cArticletypeList",atList);
 		model.addAttribute("articletype", at);
 		return "website/article/articlelist";

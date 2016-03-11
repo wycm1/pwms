@@ -44,6 +44,15 @@
    		</collection> 
   </resultMap>
   
+  <resultMap id="article" type="com.pwms.pojo.NoticeTheroyContruction">
+	    	<id column="id" property="id" jdbcType="INTEGER" /> 
+	    	<result column="title" property="title" jdbcType="VARCHAR" />
+		    <result column="summary" property="summary" jdbcType="VARCHAR" />
+		    <result column="dateline" property="dateline" jdbcType="DATE" javaType="java.sql.Date"/>
+		    <result column="user_id" property="userId" jdbcType="INTEGER" />
+		    <!-- <result column="contents" property="contents" jdbcType="LONGVARCHAR" /> -->
+  </resultMap>
+  
   <select id="selectByPrimaryKey1" resultMap="BaseResultMap1" parameterType="java.lang.Integer" >
     select 
     	<include refid="PArticletype_Column_List"/>
@@ -59,7 +68,7 @@
   </select>
   
   <!-- 查询该文章类型，并获取所有文章， -->
-  <select id="selectByLinkname" resultMap="BaseResultMap2" parameterType="java.lang.String" >
+  <!-- <select id="selectByLinkname" resultMap="BaseResultMap2" parameterType="java.lang.String" >
     select 
      a1.id,a1.value,a1.linkname,
      a2.id id1,a2.value value1,a2.linkname linkname1,
@@ -69,7 +78,7 @@
 	ON a1.id = n.type LEFT JOIN articletype a2
 	ON  a1.pid= a2.id
 	where a1.linkname = #{linkname,jdbcType=VARCHAR}
-  </select>
+  </select> -->
   
   <select id="selectByPid" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -98,7 +107,7 @@
   <resultMap id="NestSelect" type="com.pwms.pojo.Articletype" extends="BaseResultMap">
 	    <association property="pArticletype" column="pid"  select="selectPArticletype"/>
 	    <collection property="articles" column="id" ofType="com.pwms.pojo.NoticeTheroyContruction" 
-	    select="selectArticleByType"/>
+	    select="selectArticlesByType"/>
   </resultMap>
   
   <select id="selectPArticletype" resultType="com.pwms.pojo.Articletype" parameterType="java.lang.Integer" >
@@ -107,11 +116,21 @@
     from articletype a
     where a.id = #{id,jdbcType=INTEGER}
   </select>
-  <select id="selectArticleByType" resultType="com.pwms.pojo.NoticeTheroyContruction" parameterType="java.lang.Integer">
+  <select id="selectArticlesByType" resultMap="article" parameterType="java.lang.Integer">
   	select
-  		*
-  	from notice_theory_construction
+  		N.id,
+  		N.title,
+  		N.summary,
+  		N.dateline
+  	from notice_theory_construction N
   	where type = #{type,jdbcType=INTEGER}
+  </select>
+  
+  <select id="selectByLinkname" resultMap="NestSelect" parameterType="java.lang.String" >
+    select 
+    	<include refid="Base_Column_List"/>
+    from articletype a
+    where a.linkname = #{linkname,jdbcType=INTEGER}
   </select>
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >

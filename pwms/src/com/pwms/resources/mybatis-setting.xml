@@ -7,4 +7,9 @@
         <setting name="lazyLoadingEnabled" value="true"/>  
         <setting name="aggressiveLazyLoading" value="false"/>  
     </settings>  
-</configuration>
+    <plugins>  
+    	<plugin interceptor="com.github.pagehelper.PageHelper">  
+             <property name="dialect" value="sqlserver"/> 
+        </plugin>  
+	</plugins> 
+</configuration> 
