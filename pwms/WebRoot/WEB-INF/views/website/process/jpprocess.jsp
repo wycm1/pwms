@@ -12,8 +12,8 @@
 </head>
 <body>
 <%@ include file="../header.jsp"%>
-<div class="jpprocess-main">
-<div class="nav">
+<div class="page-main pb-20">
+<div class="nav radius">
 	<nav class="breadcrumb">
 	<i class="Hui-iconfont">&#xe67f;</i>
 	<a class="maincolor" href="/pwms">首页</a>
@@ -219,6 +219,8 @@
 		</div>
 </div>
 </div>
+</div>
+<%@ include file="../bottom.jsp" %>
 <script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
 <script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
 <script type="text/javascript">

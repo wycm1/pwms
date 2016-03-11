@@ -49,6 +49,7 @@
 </div>
 </div>
 </div>
+<%@ include file="bottom.jsp" %>
 <script type="text/javascript" src="/pwms/res/lib/jquery/1.9.1/jquery.min.js"></script> 
 <script type="text/javascript" src="/pwms/res/lib/icheck/jquery.icheck.min.js"></script> 
 <script type="text/javascript" src="/pwms/res/lib/Validform/5.3.2/Validform.min.js"></script>

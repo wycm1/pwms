@@ -45,6 +45,8 @@
 	</div>
 	</div>
 </div>
+</div>
+<%@ include file="../bottom.jsp" %>
 <script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
 <script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
 <script type="text/javascript">
