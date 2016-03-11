@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -34,10 +36,10 @@
 		<div class="row cl">
 			<label class="form-label col-2"><span class="c-red">*</span>文章类型：</label>
 			<div class="formControls col-2"> <span class="select-box">
-				<select name="type" class="select">
-					<option value="1">文章类型</option>
-					<option value="2">通知公告</option>
-					<option value="4">理论学习</option>
+				<select name="articletype.id" class="select">
+					<c:forEach items="${articletypes}" var="item">
+						<option value="${item.id}">${item.value}</option>
+					</c:forEach>
 				</select>
 				</span> </div>
 		</div>
@@ -181,7 +183,7 @@ $(function(){
             uploader.upload();
         }
     });
-
+    
 	
 	
 	var ue = UE.getEditor('editor');

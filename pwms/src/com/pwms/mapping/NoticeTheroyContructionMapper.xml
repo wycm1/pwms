@@ -7,18 +7,24 @@
     <result column="summary" property="summary" jdbcType="VARCHAR" />
     <result column="dateline" property="dateline" jdbcType="DATE" javaType="java.sql.Date"/>
     <result column="user_id" property="userId" jdbcType="INTEGER" />
-    <!-- <result column="type" property="type" jdbcType="INTEGER" /> -->
+    <!-- 文章类型 -->
     <association property="articletype" javaType="com.pwms.pojo.Articletype">
     	<!-- 两个表的字段如果有一样  查询出来一定要将字段重命名  否则赋值会出现问题-->
     	<id column="id1" property="id" jdbcType="INTEGER" />
-	    <result column="value" property="value" jdbcType="VARCHAR" />
-	    <result column="pid" property="pid" jdbcType="INTEGER" />
-	    <result column="linkname" property="linkname" jdbcType="VARCHAR" />
+	    <result column="value1" property="value" jdbcType="VARCHAR" />
+	    <result column="linkname1" property="linkname" jdbcType="VARCHAR" />
+	    <!-- 父文章类型 -->
+	    <association property="pArticletype" javaType="com.pwms.pojo.Articletype">
+	    	<id column="id2" property="id" jdbcType="INTEGER" />
+		    <result column="value2" property="value" jdbcType="VARCHAR" />
+		    <result column="linkname2" property="linkname" jdbcType="VARCHAR" />
+    	</association>
     </association> 
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.pwms.pojo.NoticeTheroyContruction" extends="BaseResultMap" >
     <result column="contents" property="contents" jdbcType="LONGVARCHAR" />
   </resultMap>
+  
   <sql id="Base_Column_List" >
     id, title, summary, dateline, user_id, type
   </sql>
@@ -26,38 +32,44 @@
     contents
   </sql>
   <sql id="article_articletype">
-  	n.id,n.title,n.summary,n.dateline,n.user_id,a.id id1,a.value,a.pid,a.linkname
+  	n.id,n.title,n.summary,n.dateline,n.user_id,
+  	a.id id1,a.value value1,a.linkname linkname1,
+  	a1.id id2,a1.value value2,a1.linkname linkname2
   </sql>
+  
   <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
     select 
     <include refid="article_articletype" />
     ,
     <include refid="Blob_Column_List" />
-    from notice_theory_construction n,articletype a
-    where n.type = a.id and n.id = #{id,jdbcType=INTEGER}
+    from notice_theory_construction n,articletype a left join articletype a1
+    on a.pid = a1.id where n.type = a.id and n.id = #{id,jdbcType=INTEGER}
   </select> 
-   <select id="selectByType" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+  
+   <select id="selectByType" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="article_articletype"/>
-    from notice_theory_construction n,articletype a
-    where n.type = a.id and type = #{type,jdbcType=INTEGER}
+    from notice_theory_construction n,articletype a left join articletype a1
+    on a.pid = a1.id where n.type = a.id and type = #{type,jdbcType=INTEGER}
   </select>
-  <select id="selectAll" resultMap="ResultMapWithBLOBs">
+  
+  <select id="selectAll" resultMap="BaseResultMap">
     select 
     <include refid="article_articletype"/>
-    from notice_theory_construction n,articletype a
-    where n.type=a.id
+    from notice_theory_construction n,articletype a left join articletype a1
+    on a.pid = a1.id where n.type=a.id
   </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from notice_theory_construction
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.pwms.pojo.NoticeTheroyContruction" >
     insert into notice_theory_construction (id, title, summary, 
-      dateline, user_id, type, 
+      dateline, user_id, article, 
       contents)
     values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{summary,jdbcType=VARCHAR}, 
-      #{dateline,jdbcType=DATE}, #{userId,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, 
+      #{dateline,jdbcType=DATE}, #{userId,jdbcType=INTEGER}, #{articletype.id,jdbcType=INTEGER}, 
       #{contents,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.pwms.pojo.NoticeTheroyContruction" >
@@ -78,7 +90,7 @@
       <if test="userId != null" >
         user_id,
       </if>
-      <if test="type != null" >
+      <if test="articletype.id != null" >
         type,
       </if>
       <if test="contents != null" >
@@ -101,8 +113,8 @@
       <if test="userId != null" >
         #{userId,jdbcType=INTEGER},
       </if>
-      <if test="type != null" >
-        #{type,jdbcType=INTEGER},
+      <if test="articletype.id != null" >
+        #{articletype.id,jdbcType=INTEGER},
       </if>
       <if test="contents != null" >
         #{contents,jdbcType=LONGVARCHAR},
@@ -124,8 +136,8 @@
       <if test="userId != null" >
         user_id = #{userId,jdbcType=INTEGER},
       </if>
-      <if test="type != null" >
-        type = #{type,jdbcType=INTEGER},
+      <if test="articletype.id != null" >
+        type = #{articletype.id,jdbcType=INTEGER},
       </if>
       <if test="contents != null" >
         contents = #{contents,jdbcType=LONGVARCHAR},
@@ -139,7 +151,7 @@
       summary = #{summary,jdbcType=VARCHAR},
       dateline = #{dateline,jdbcType=DATE},
       user_id = #{userId,jdbcType=INTEGER},
-      type = #{type,jdbcType=INTEGER},
+      type = #{articletype.id,jdbcType=INTEGER},
       contents = #{contents,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -149,7 +161,7 @@
       summary = #{summary,jdbcType=VARCHAR},
       dateline = #{dateline,jdbcType=DATE},
       user_id = #{userId,jdbcType=INTEGER},
-      type = #{type,jdbcType=INTEGER}
+      type = #{articletype.id,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

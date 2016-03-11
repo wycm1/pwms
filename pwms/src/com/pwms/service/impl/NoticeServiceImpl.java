@@ -101,6 +101,18 @@ public class NoticeServiceImpl implements INoticeService {
 		return articletypeDao.selectByPid(pid);
 	}
 
+	@Override
+	public Articletype getArticletypeByid1(Integer id) {
+		// TODO Auto-generated method stub
+		return articletypeDao.selectByPrimaryKey1(id);
+	}
+
+	@Override
+	public Articletype getArticletypeByid2(Integer id) {
+		// TODO Auto-generated method stub
+		return articletypeDao.selectByPrimaryKey2(id);
+	}
+
 //	@Override
 //	public Articletype getArticletypeByid1(Integer id) {
 //		// TODO Auto-generated method stub

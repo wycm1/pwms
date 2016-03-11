@@ -14,7 +14,9 @@ public interface ArticletypeMapper {
 
     Articletype selectByPrimaryKey(Integer id);
 
-//    Articletype selectByPrimaryKey1(Integer id);
+    Articletype selectByPrimaryKey1(Integer id);
+    
+    Articletype selectByPrimaryKey2(Integer id);
 
     int updateByPrimaryKeySelective(Articletype record);
 

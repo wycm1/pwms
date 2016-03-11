@@ -37,7 +37,7 @@
 			<label class="form-label col-2"><span class="c-red">*</span>文章类型：</label>
 			<div class="formControls col-2"> <span class="select-box">
 				<c:set var="atid" value="${article.articletype.id}"/>
-				<select name="type" class="select">
+				<select name="articletype.id" class="select">
 					<c:forEach items="${articletypes}" var="item">
 						<option value="${item.id}" <c:if test="${item.id == atid}">selected="selected"</c:if>>${item.value}</option>
 					</c:forEach>

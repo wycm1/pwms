@@ -8,11 +8,14 @@ public class Articletype {
 
     private String value;
 
-    private Integer pid;
-
+    private Articletype pArticletype;
+    
+    private List<Articletype> cArticletype;
+    
     private String linkname;
     
     private List<NoticeTheroyContruction> articles = new ArrayList<NoticeTheroyContruction>();
+    
     public Integer getId() {
         return id;
     }
@@ -29,15 +32,15 @@ public class Articletype {
         this.value = value == null ? null : value.trim();
     }
 
-    public Integer getPid() {
-        return pid;
-    }
+    public Articletype getpArticletype() {
+		return pArticletype;
+	}
 
-    public void setPid(Integer pid) {
-        this.pid = pid;
-    }
+	public void setpArticletype(Articletype pArticletype) {
+		this.pArticletype = pArticletype;
+	}
 
-    public String getLinkname() {
+	public String getLinkname() {
         return linkname;
     }
 
@@ -53,5 +56,11 @@ public class Articletype {
 		this.articles = articles;
 	}
 
-    
+	public List<Articletype> getcArticletype() {
+		return cArticletype;
+	}
+
+	public void setcArticletype(List<Articletype> cArticletype) {
+		this.cArticletype = cArticletype;
+	}
 }

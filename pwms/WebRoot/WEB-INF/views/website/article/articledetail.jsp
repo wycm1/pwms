@@ -18,8 +18,8 @@
 		<nav class="breadcrumb">
 		<i class="Hui-iconfont">&#xe67f;</i>
 		<a class="maincolor" href=".../index.html">首页</a>
-		<span class="c-999 en">&gt;</span><a class="maincolor" href="/pwms/${pArticletype.linkname}">${pArticletype.value}</a>
-		<span class="c-999 en">&gt;</span><a class="maincolor" href="/pwms/${pArticletype.linkname}/${type}/list.html">${article.articletype.value}</a>
+		<span class="c-999 en">&gt;</span><a class="maincolor" href="/pwms/${article.articletype.pArticletype.linkname}">${article.articletype.pArticletype.value}</a>
+		<span class="c-999 en">&gt;</span><a class="maincolor" href="/pwms/${article.articletype.pArticletype.linkname}/${article.articletype.linkname}/list.html">${article.articletype.value}</a>
 		<span class="c-999 en">&gt;</span>${article.title}
 		</nav>
 	</div>
@@ -27,15 +27,20 @@
 	<div class="col-xs-12 col-sm-2 radius">
 		<ul class="upright-menu">
 			<c:forEach items="${cArticletypeList}" var="item">
-				<li> <a href="/pwms/${pArticletype.linkname}/${item.linkname}/list.html">${item.value}</a></li>
+				<li> <a href="/pwms/${article.articletype.pArticletype.linkname}/${item.linkname}/list.html">${item.value}</a></li>
 			</c:forEach>
 		</ul>
 	</div>
 	<div class="col-xs-12 col-sm-10">
-		<div class="row c1 ml-10">
-			<h5>这是标题哈</h5>
-			<h3>2015-06-09</h3>
-			<p>这是内容哈哈哈</p>
+		<div class="row c1 ml-10 pl-20 pr-20 radius">
+			<div class="news-header">
+	 	    ${article.title}
+	 	    <p style="color:#444;font-weight:400;font-size:14px;padding-top:5px;">
+			发布时间:${article.dateline}
+			</p>
+			</div>
+			<div class="news-content">
+			<p>${article.contents}</p>
 		</div>
 	</div>
 	</div>

@@ -36,14 +36,9 @@ public class SchoolController extends BaseController {
 	private IExamService examService;
 	@Resource
 	private INoticeService noticeService;
-	//显示课程列表，显示考试列表
-	@RequestMapping("/")
-	private String school(HttpServletRequest request, Model model){
-		return null;
-	}
-	@RequestMapping("")
+	@RequestMapping({"","/"})
 	private String index(HttpServletRequest request, Model model){
-		return getList("dxgg", model);
+		return getList("kczx", model);
 	}
 	@RequestMapping("/getcourses")
 	public String getAllCourses(HttpServletRequest request, Model model) {

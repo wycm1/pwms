@@ -21,13 +21,11 @@ public class ArticleTools {
 			Model model, 
 			INoticeService noticeService){
 		Articletype at = noticeService.selectByLinkname(type);
-		List<NoticeTheroyContruction> noticeList = noticeService.getNoticeByType(at.getId());
-		Articletype pAt = noticeService.getArticletypeByid(at.getPid());//获取该文章一级类型
-		List<Articletype> atList = noticeService.getByPid(at.getPid());
-		model.addAttribute("pArticletype", pAt);
+//		System.out.println("test：" + at.getId() + noticeService.getArticletypeByid(at.getId()).getArticles().size());
+		List<Articletype> atList = noticeService.getByPid(at.getpArticletype().getId());
+		model.addAttribute("pArticletype", at.getpArticletype());
 		model.addAttribute("cArticletypeList",atList);
-		model.addAttribute("articleList", noticeList);
-		model.addAttribute("type", at.getValue());
+		model.addAttribute("articletype", at);
 		return "website/article/articlelist";
 	}
 	/**
@@ -39,12 +37,9 @@ public class ArticleTools {
 	public static String getArticleById(Model model,int id,String linkname,INoticeService noticeService){
 		NoticeTheroyContruction notice = noticeService.getNoticeById(id);
 		Articletype at = noticeService.selectByLinkname(linkname);
-		Articletype pAt = noticeService.getArticletypeByid(at.getPid());//获取该文章一级类型
-		List<Articletype> atList = noticeService.getByPid(at.getPid());
-		model.addAttribute("pArticletype", pAt);
+		List<Articletype> atList = noticeService.getByPid(at.getpArticletype().getId());
 		model.addAttribute("cArticletypeList",atList);
 		model.addAttribute("article", notice);
-		model.addAttribute("type", linkname);
 		return "website/article/articledetail";
 	}
 }

@@ -38,7 +38,9 @@ public interface INoticeService {
 	
 	public Articletype selectByLinkname(String linkname);
 	
-//	public Articletype getArticletypeByid1(Integer id);
+	public Articletype getArticletypeByid1(Integer id);
+	
+	public Articletype getArticletypeByid2(Integer id);
 	
 //	public Articletype selectByLinkname1(String linkname);
 	

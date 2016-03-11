@@ -26,7 +26,7 @@
 <title>党务管理系统</title>
 </head>
 <body>
-<header class="Hui-header cl"> <a class="Hui-logo l" title="党务管理系统" href="index.html">党务管理系统</a>
+<header class="Hui-header cl"> <a class="Hui-logo l" title="党务管理系统" href="../index.html">党务管理系统</a>
 	<nav class="mainnav cl" id="Hui-nav">
 		<ul>
 			<li class="dropDown dropDown_click"><a href="javascript:;" class="dropDown_A"><i class="Hui-iconfont">&#xe600;</i> 新增 <i class="Hui-iconfont">&#xe6d5;</i></a>
