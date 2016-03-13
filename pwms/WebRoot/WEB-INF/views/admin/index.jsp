@@ -145,7 +145,10 @@
 			<dt><i class="Hui-iconfont">&#xe616;</i> 党校管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a _href="school/course-list.html" href="javascript:void(0)">课程管理</a></li>
+					<li><a _href="school/video-course-list.html" href="javascript:void(0)">视频课程管理</a></li>
+					<li><a _href="school/theory-course-list.html" href="javascript:void(0)">理论课程管理</a></li>
+					<li><a _href="school/exam-list.html" href="javascript:void(0)">考试管理</a></li>
+					<li><a _href="school/exam-question-list.html" href="javascript:void(0)">考试题目管理</a></li>
 				</ul>
 			</dd>
 		</dl>

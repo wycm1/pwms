@@ -2,10 +2,10 @@ package com.pwms.pojo;
 
 import java.util.Date;
 
-public class ImportDoc {
+public class TheoryCourse {
     private Integer id;
 
-    private String filepath;
+    private Integer groupId;
 
     private String title;
 
@@ -15,7 +15,9 @@ public class ImportDoc {
 
     private Integer userId;
 
-    private String explain;
+    private Integer visits;
+
+    private String contents;
 
     public Integer getId() {
         return id;
@@ -25,12 +27,12 @@ public class ImportDoc {
         this.id = id;
     }
 
-    public String getFilepath() {
-        return filepath;
+    public Integer getGroupId() {
+        return groupId;
     }
 
-    public void setFilepath(String filepath) {
-        this.filepath = filepath == null ? null : filepath.trim();
+    public void setGroupId(Integer groupId) {
+        this.groupId = groupId;
     }
 
     public String getTitle() {
@@ -65,21 +67,19 @@ public class ImportDoc {
         this.userId = userId;
     }
 
-    public String getExplain() {
-        return explain;
+    public Integer getVisits() {
+        return visits;
     }
 
-    public void setExplain(String explain) {
-        this.explain = explain == null ? null : explain.trim();
+    public void setVisits(Integer visits) {
+        this.visits = visits;
     }
-    public String toString(){
-    	String json ="{ \"id\" :"+id+","+
-    			"\"filepath\" : \""+filepath+"\","+
-    			"\"title\" : \""+title+"\","+
-    			"\"summary\" : \""+summary+"\","+
-    			"\"dateline\" : \""+dateline+"\","+
-    			"\"userId\" : \""+dateline+"\","+
-    			"\"explain\" : \""+explain+"\"";
-    	return json;
+
+    public String getContents() {
+        return contents;
+    }
+
+    public void setContents(String contents) {
+        this.contents = contents == null ? null : contents.trim();
     }
 }

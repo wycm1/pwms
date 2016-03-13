@@ -40,18 +40,18 @@
 	<li><a>中国共青团 </a></li>
 	<li><a>中国共青团 </a></li>
 	
-</ul></p>
+</ul>
 </div>
 </div>
 
 <div class="foot_mat">
   <div class="foot">
-    <div class="foot_left">总访问量：4 5 6 8 <br />
+    <div class="foot_left">总访问量：1572 <br />
       日访问量： </div>
     <div class="foot_right">建议使用1024*768分辨率以上，16位色以上，IE6以上版本浏览本网站<br />
       Copyright@enducation School ALL Rights
       版权所有@<br />
-      四川理工学院艺术学院 闽ICP备 05020335 号<br />
+      四川理工学院经管学院党支部 闽ICP备 05020335 号<br />
     </div>
   </div>
 </div>

@@ -14,6 +14,11 @@ public interface IExamQuestionService {
 	 */
 	 public List<ExamQuestion> getQuestionsByExamId(int examid);
 	 /**
+	  * 获取全部考试题目
+	  * @return
+	  */
+	 public List<ExamQuestion> getAllQuestionsList();
+	 /**
 	  * 保存实体
 	  * @param examQuestion
 	  */
@@ -24,6 +29,11 @@ public interface IExamQuestionService {
 	  * @return
 	  */
 	 public ExamQuestion getExamQuestionById(int id);
+	 /**
+	  * 根据id删除题目
+	  * @param id
+	  */
+	 public void deleteQuestionById(Integer id);
 	 /**
 	  * 根据答案返回本题的成绩
 	  * @param questionId
@@ -59,5 +69,20 @@ public interface IExamQuestionService {
 	  * @return
 	  */
 	 public boolean xls2ExamQuestion(File file, int examid);
+	 /**
+	  * 根据id更新考试题目
+	  * @param record
+	  * @return
+	  */
+	 int updateByPrimaryKey(ExamQuestion record);
+	 
+	 /**
+	     * 根据考试id随机获取count条考试题
+	     * @param count 要查询的数量
+	     * @param examId 考试id
+	     * @return count条考试题目
+	     */
+	    List<ExamQuestion> randomSelectByExamId(Integer count,Integer examId);
+	 
 	 
 }

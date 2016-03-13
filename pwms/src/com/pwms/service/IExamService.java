@@ -13,6 +13,7 @@ public interface IExamService {
 	public void save(Exam exam);
 	//更新考试
 	public void updateById(Exam exam);
+	public void deleteExamById(Integer id);
 	/**
 	 * 查看考试的最新成绩  如果返回值是-1  则没有考试的记录
 	 * @param user

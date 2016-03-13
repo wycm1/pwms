@@ -74,4 +74,11 @@ public class ExamServiceImpl implements IExamService {
 		return this.examDao.selectDesc();
 	}
 
+	@Override
+	public void deleteExamById(Integer id) {
+		// TODO Auto-generated method stub
+		examDao.deleteByPrimaryKey(id);
+		
+	}
+
 }

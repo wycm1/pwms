@@ -19,7 +19,6 @@
 		<i class="Hui-iconfont">&#xe67f;</i>
 		<a class="maincolor" href="../index.html">首页</a>
 		<span class="c-999 en">&gt;</span><a class="maincolor" href="/pwms/school">网上党校</a>
-		<span class="c-999 en">&gt;</span><a class="maincolor" href="/pwms/school/kczx/list.html">课程中心</a>
 		<span class="c-999 en">&gt;</span>视频课程
 		</nav>
 	</div>

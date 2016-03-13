@@ -80,7 +80,7 @@ public class NoticeServiceImpl implements INoticeService {
 
 	public List<NoticeTheroyContruction> selectAll() {
 		// TODO Auto-generated method stub
-		PageHelper.startPage(1, 5);
+//		PageHelper.startPage(1, 5);∑÷“≥≤È—Ø
 		return noticeTheroyDao.selectAll();
 	}
 

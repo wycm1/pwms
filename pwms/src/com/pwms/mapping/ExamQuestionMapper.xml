@@ -35,6 +35,21 @@
     from exam_question
     where exam_id = #{examid,jdbcType=INTEGER}
   </select>
+  <select id="randomSelectByExamId" resultMap="ResultMapWithBLOBs">
+    select top ${count}
+    id, exam_id, option_A, option_B, option_C, option_D
+    ,
+    <include refid="Blob_Column_List" />
+    from exam_question
+    where exam_id = #{examid} ORDER BY NEWID()
+  </select>
+  <select id="selectAll" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from exam_question
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from exam_question
     where id = #{id,jdbcType=INTEGER}

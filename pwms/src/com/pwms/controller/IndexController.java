@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pwms.pojo.Course;
-import com.pwms.pojo.ImportDoc;
+import com.pwms.pojo.TheoryCourse;
 import com.pwms.pojo.NoticeTheroyContruction;
 import com.pwms.pojo.Process;
 import com.pwms.service.ICourseService;
-import com.pwms.service.IImportDocService;
+import com.pwms.service.ITheoryCourseService;
 import com.pwms.service.INoticeService;
 import com.pwms.service.IProcessService;
 import com.pwms.service.IUserService;
@@ -29,7 +29,7 @@ public class IndexController extends BaseController{
 	@Resource
 	private ICourseService courseService;
 	@Resource
-	private IImportDocService importService;
+	private ITheoryCourseService theoryCourseService;
 	@Resource
 	private IUserService userService;
 	@Resource
@@ -46,11 +46,12 @@ public class IndexController extends BaseController{
 	public void setCourseService(ICourseService courseService) {
 		this.courseService = courseService;
 	}
-	public IImportDocService getImportService() {
-		return importService;
+	
+	public ITheoryCourseService getTheoryCourseService() {
+		return theoryCourseService;
 	}
-	public void setImportService(IImportDocService importService) {
-		this.importService = importService;
+	public void setTheoryCourseService(ITheoryCourseService theoryCourseService) {
+		this.theoryCourseService = theoryCourseService;
 	}
 	public IProcessService getProcessService() {
 		return processService;
@@ -72,7 +73,7 @@ public class IndexController extends BaseController{
     	noticeListByTime(model);
     	courseList(model);
     	theoryList(model);
-    	importDocList(model);
+    	theoryCourseList(model);
     	processList(model);
     	session.setAttribute("user", userService.getUserById(4));
     	System.out.println("session设置成功");
@@ -139,14 +140,14 @@ public class IndexController extends BaseController{
     	}
     	model.addAttribute("theoryList", theoryListTmp);
     }
-    //重要文章列表
-    public void importDocList(Model model){
-    	List<ImportDoc> importDocList = this.importService.getImportDocList();
-    	List<ImportDoc> importDocListTmp = new ArrayList<ImportDoc>();
-    	for(int i=0; i< importDocList.size()&&i<6; i++){
-    		importDocListTmp.add(importDocList.get(i));
+    //理论课程列表
+    public void theoryCourseList(Model model){
+    	List<TheoryCourse> theoryCourseList = this.theoryCourseService.getTheoryCourseList();
+    	List<TheoryCourse> theoryCourseListTmp = new ArrayList<TheoryCourse>();
+    	for(int i=0; i< theoryCourseList.size()&&i<6; i++){
+    		theoryCourseListTmp.add(theoryCourseList.get(i));
     	}
-    	model.addAttribute("importdocList", importDocListTmp);
+    	model.addAttribute("theoryCourseList", theoryCourseListTmp);
     }
     //入党流程
     public void processList(Model model){

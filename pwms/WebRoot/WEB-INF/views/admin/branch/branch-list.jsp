@@ -51,7 +51,7 @@
 				<td><input type="checkbox" value="${item.id}" name=""></td>
 				<td>${item.id}</td>
 				<td>${item.branchName}</td>
-				<td><u style="cursor:pointer" class="text-primary" onclick="member_show('王洋','../user/user-show/${item.leaderId}','10001','360','400')">王洋</u></td>
+				<td><u style="cursor:pointer" class="text-primary" onclick="member_show('王洋','../user/user-show/${item.leaderId}','360','400')">王洋</u></td>
 				<td><u style="cursor:pointer" class="text-primary" onclick="member_add('','userdetail-modify-show/${item.id}','500','')">查看支部详细信息</u></td>
 				<td class="td-manage">
 					<a title="修改支部信息" href="javascript:;" onclick="member_edit('支部信息修改','branch-info-modify.html?branch=${item.id}','4','','510')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
@@ -71,15 +71,7 @@
 <script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script> 
 <script type="text/javascript">
 $(function(){
-	$('.table-sort').dataTable({
-		"aaSorting": [[ 1, "desc" ]],//默认第几个排序
-		"bStateSave": true,//状态保存
-		"aoColumnDefs": [
-		  {sDefaultContent: '',aTargets: [ '_all' ]},
-		  //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
-		  {"orderable":false,"aTargets":[0,8,9]}// 制定列不参与排序
-		]
-	});
+	$('.table-sort').dataTable();
 	$('.table-sort tbody').on( 'click', 'tr', function () {
 		if ( $(this).hasClass('selected') ) {
 			$(this).removeClass('selected');
@@ -95,7 +87,7 @@ function member_add(title,url,w,h){
 	layer_show(title,url,w,h);
 }
 /*用户-查看*/
-function member_show(title,url,id,w,h){
+function member_show(title,url,w,h){
 	layer_show(title,url,w,h);
 }
 /*用户-停用*/

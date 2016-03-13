@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>在线考试</title>
+<title>${type}</title>
 <link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
@@ -19,7 +19,7 @@
 		<i class="Hui-iconfont">&#xe67f;</i>
 		<a class="maincolor" href="../index.html">首页</a>
 		<span class="c-999 en">&gt;</span><a class="maincolor" href="/pwms/school">网上党校</a>
-		<span class="c-999 en">&gt;</span>在线考试
+		<span class="c-999 en">&gt;</span>${type}
 		</nav>
 	</div>
 	<div class="row c1 ml-20 mt-10 mr-20">
@@ -27,23 +27,24 @@
 	<div class="col-xs-12 col-sm-10">
 		<div class="row c1 ml-10">
 			<div class="panel panel-danger radius">
-				<div class="panel-header">在线考试</div>
+				<div class="panel-header">${type}</div>
 				<div class="panel-body">
 					<div class="row cl">
 		<table width="98%" align="center" class="col-xs-12 col-sm-12 table table-border table-bordered table-hover">
 			<tbody>
 			<tr class="title">
-			  <th class="text-c">考试项目</th>
-			  <th class="text-c" width="20%">进入考场</th>
-			  <th class="text-c" width="20%">所属课程</th>
+			  <th class="text-c">课程</th>
+			  <th class="text-c" width="30%">学习进度</th>
+			  <th class="text-c" width="10%">时长(分钟)</th>
+			  <th class="text-c" width="10%">播放</th>
 			</tr>
-		    
-		    <c:forEach items="${examList}" var="item">
-			    <tr class="text-c">
-			      <td class="splittd">${item.name}</td>
-				  <td align="center"><a href="#" onclick="javascript:openMyPage('${item.id}/exam.html')" class="text-c"><font color="red">开始考试</font></a></td>
-				  <td>关键在党，关键在人</td>
-			    </tr>
+			<c:forEach items="${courseList}" var="item">
+		    <tr class="text-c">
+		      <td class="splittd">${item.title}</td>
+			  <td><div class="row cl"><div class="col-xs-12 col-sm-10" style="border: 1px solid #B1D632;"><div class="row c1" style="background:#B1D632;width:0%;height:22px;"></div></div><span class="col-xs-12 col-sm-2 text-c">0%</span></div></td>
+			  <td align="center">${item.explian}</td>
+			  <td class="text-c"><a href="javascript:void(0)" onclick="javascript:openMyPage('http://localhost:8080/pwms/school/spkc/${item.id}/course.html')"><font color="#FF0000">播放</font></a></td>
+		    </tr>
 		    </c:forEach>
 			</tbody>
 	</table>
@@ -54,6 +55,7 @@
 	</div>
 	</div>
 </div>
+<%@ include file="../bottom.jsp" %>
 <script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
 <script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
 <script type="text/javascript">
@@ -62,7 +64,7 @@ function openMyPage(url){
 	 if (!openPage || openPage.closed){
 	 	openPage=window.open(url, "_blank");
 	 }else{
-	 	alert("每次只能参加一个考试");
+	 	alert("每次只能学习一个课程");
 	 }
 }
 $(document).ready(function() { 

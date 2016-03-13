@@ -80,4 +80,13 @@ public class ExamQuestion {
     public void setQuestion(String question) {
         this.question = question == null ? null : question.trim();
     }
+
+	@Override
+	public String toString() {
+		return "ExamQuestion [id=" + id + ", examId=" + examId + ", optionA="
+				+ optionA + ", optionB=" + optionB + ", optionC=" + optionC
+				+ ", optionD=" + optionD + ", answer=" + answer + ", question="
+				+ question + "]";
+	}
+    
 }

@@ -16,10 +16,12 @@ import com.pwms.pojo.Course;
 import com.pwms.pojo.Exam;
 import com.pwms.pojo.ExamRecord;
 import com.pwms.pojo.NoticeTheroyContruction;
+import com.pwms.pojo.TheoryCourse;
 import com.pwms.pojo.User;
 import com.pwms.service.ICourseService;
 import com.pwms.service.IExamService;
 import com.pwms.service.INoticeService;
+import com.pwms.service.ITheoryCourseService;
 import com.pwms.tools.ArticleTools;
 /**
  * 网上党校
@@ -36,9 +38,11 @@ public class SchoolController extends BaseController {
 	private IExamService examService;
 	@Resource
 	private INoticeService noticeService;
+	@Resource
+	private ITheoryCourseService tcService;
 	@RequestMapping({"","/"})
 	private String index(HttpServletRequest request, Model model){
-		return getList("kczx", model);
+		return getLLKCList(model);
 	}
 	@RequestMapping("/getcourses")
 	public String getAllCourses(HttpServletRequest request, Model model) {
@@ -50,8 +54,13 @@ public class SchoolController extends BaseController {
 		model.addAttribute("courseList", courseList);
     	return null;
     }
-	//查看所有的考试
-	@RequestMapping("/getexams")
+	/**
+	 * 获取所有考试
+	 * @param request
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/zxks/list")
 	public String getExams(HttpServletRequest request, Model model) {
 		List<Exam> examList = examService.getExamDesc();
 		if(verifyClient(request)){
@@ -59,7 +68,7 @@ public class SchoolController extends BaseController {
 			return null;
 		} 
 		model.addAttribute("examList", examList);
-    	return null;
+    	return "website/school/online-exam-list";
     }
 	//查看历史成绩
 	@RequestMapping("/getgrade")
@@ -74,6 +83,12 @@ public class SchoolController extends BaseController {
 		model.addAttribute("examRecordList", examRecordList);
 		return null;
 	}
+	@RequestMapping("/llkc/list")
+	public String getLLKCList(Model model){
+		List<TheoryCourse> tcList = tcService.getTheoryCourseList();
+		model.addAttribute("tcList", tcList);
+		return "website/school/theory-course-list";
+	}
 	/**
 	 * 访问网上党校下的列表
 	 * @param type
@@ -83,11 +98,10 @@ public class SchoolController extends BaseController {
 	@RequestMapping("/{type}/list")
 	public String getList(@PathVariable String type, Model model){
 		switch(type){
-			case "kczx":getKCZX(model, "课程中心");return "website/school/course-list";
+			case "spkc":getKCZX(model, "视频课程");return "website/school/video-course-list";
 			case "xxjl":getArticleByType(model, "学习记录");return "website/school/study-record-list";
-			case "zxks":getArticleByType(model, "在线考试");return "website/school/online-exam-list";
 			case "cjcx":getArticleByType(model, "成绩查询");return "website/school/score-list";
-			default:getArticleByType(model, "课程中心");break;
+			default:getArticleByType(model, "视频课程");break;
 		}
 		return "website/school/list";
 	}
@@ -112,13 +126,25 @@ public class SchoolController extends BaseController {
 		model.addAttribute("courseList",courseService.getCourseByDate());
 	}
 	/**
-	 * 课程学习
+	 * 查看具体的视频课程
 	 * @return
 	 */
-	@RequestMapping("/kczx/{id}/course")
-	public String getCourse(@PathVariable int id,Model model){
+	@RequestMapping("/spkc/{id}/course")
+	public String getVideoCourse(@PathVariable int id,Model model){
 		Course course = courseService.getCourse(id);
 		model.addAttribute("course", course);
-		return "website/school/video-course";
+		return "website/school/video-course-detail";
+	}
+	/**
+	 * 查看具体理论课程
+	 * @param id
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/llkc/{id}/course")
+	public String getTheoryCourse(@PathVariable int id,Model model){
+		TheoryCourse tCourse = tcService.getTheoryCourseById(id);
+		model.addAttribute("tCourse", tCourse);
+		return "website/school/theory-course-detail";
 	}
 }

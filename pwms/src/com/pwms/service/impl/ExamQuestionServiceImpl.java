@@ -188,4 +188,28 @@ public class ExamQuestionServiceImpl implements IExamQuestionService {
 		}
 		return true;
 	}
+
+	@Override
+	public List<ExamQuestion> getAllQuestionsList() {
+		// TODO Auto-generated method stub
+		return examQuestionDao.selectAll();
+	}
+
+	@Override
+	public void deleteQuestionById(Integer id) {
+		// TODO Auto-generated method stub
+		examQuestionDao.deleteByPrimaryKey(id);
+	}
+
+	@Override
+	public int updateByPrimaryKey(ExamQuestion record) {
+		// TODO Auto-generated method stub
+		return examQuestionDao.updateByPrimaryKey(record);
+	}
+
+	@Override
+	public List<ExamQuestion> randomSelectByExamId(Integer count, Integer examId) {
+		// TODO Auto-generated method stub
+		return examQuestionDao.randomSelectByExamId(count, examId);
+	}
 }

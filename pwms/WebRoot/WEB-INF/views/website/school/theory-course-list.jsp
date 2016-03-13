@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>${type}</title>
+<title>理论课程</title>
 <link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
@@ -19,7 +19,7 @@
 		<i class="Hui-iconfont">&#xe67f;</i>
 		<a class="maincolor" href="../index.html">首页</a>
 		<span class="c-999 en">&gt;</span><a class="maincolor" href="/pwms/school">网上党校</a>
-		<span class="c-999 en">&gt;</span>${type}
+		<span class="c-999 en">&gt;</span>理论课程
 		</nav>
 	</div>
 	<div class="row c1 ml-20 mt-10 mr-20">
@@ -27,27 +27,14 @@
 	<div class="col-xs-12 col-sm-10">
 		<div class="row c1 ml-10">
 			<div class="panel panel-danger radius">
-				<div class="panel-header">${type}</div>
+				<div class="panel-header">理论课程</div>
 				<div class="panel-body">
 					<div class="row cl">
-		<table width="98%" align="center" class="col-xs-12 col-sm-12 table table-border table-bordered table-hover">
-			<tbody>
-			<tr class="title">
-			  <th class="text-c">课程</th>
-			  <th class="text-c" width="30%">学习进度</th>
-			  <th class="text-c" width="10%">时长(分钟)</th>
-			  <th class="text-c" width="10%">播放</th>
-			</tr>
-			<c:forEach items="${courseList}" var="item">
-		    <tr class="text-c">
-		      <td class="splittd">${item.title}</td>
-			  <td><div class="row cl"><div class="col-xs-12 col-sm-10" style="border: 1px solid #B1D632;"><div class="row c1" style="background:#B1D632;width:0%;height:22px;"></div></div><span class="col-xs-12 col-sm-2 text-c">0%</span></div></td>
-			  <td align="center">${item.explian}</td>
-			  <td class="text-c"><a href="javascript:void(0)" onclick="javascript:openMyPage('http://120.27.36.59:8080/pwms/school/kczx/${item.id}/course.html')"><font color="#FF0000">播放</font></a></td>
-		    </tr>
-		    </c:forEach>
-			</tbody>
-	</table>
+				    	<ul>
+				    		<c:forEach items="${tcList}" var="item">
+					    	<li><a href="/pwms/school/llkc/${item.id}/course.html">${item.title}</a><span style="float:right">${item.dateline}</span></li>
+				    		</c:forEach>
+				    	</ul>
     				</div>
 				</div>
 		</div>
@@ -59,17 +46,10 @@
 <script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
 <script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
 <script type="text/javascript">
-var openPage;
-function openMyPage(url){
-	 if (!openPage || openPage.closed){
-	 	openPage=window.open(url, "_blank");
-	 }else{
-	 	alert("每次只能学习一个课程");
-	 }
-}
 $(document).ready(function() { 
+	var atVal = $("title").text();
 	$(".upright-menu li").each(function(){
-		if($(this).find("a").text() == $("title").text()){
+		if($(this).find("a").text() == atVal){
 			$(this).attr("class","current");
 		}
 	});

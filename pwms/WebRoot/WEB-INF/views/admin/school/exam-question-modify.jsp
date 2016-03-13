@@ -22,53 +22,66 @@
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>课程修改</title>
+<title>考试题目修改</title>
 </head>
 <body>
 <div class="pd-20">
-  <form action="../modifyCourse"  method="post" class="form form-horizontal" id="form-course-modify" enctype="multipart/form-data">
+  <form action="../modifyExamQuestion"  method="post" class="form form-horizontal" id="form-exam-question-modify" enctype="multipart/form-data">
     <div class="row cl">
-      <label class="form-label col-3"><span class="c-red">*</span>课程名称：</label>
-      <div class="formControls col-5">
-        <input type="text" class="input-text" value="${course.title}" name="title" id="title" datatype="*" nullmsg="请输入课程名称！">
-      </div>
-      <div class="col-4"> </div>
-    </div>
-    <div class="row cl">
-      <label class="form-label col-3"><span class="c-red">*</span>完成课程学时（单位：分钟）：</label>
-      <div class="formControls col-5">
-        <input type="text" class="input-text" placeholder="" id="explain" value="${course.explian}" name="explian"  datatype="*1-3" nullmsg="不能为空">
-      </div>
-      <div class="col-4"> </div>
-    </div>
-    <div class="row cl">
-			<label class="form-label col-3"><span class="c-red">*</span>所属流程：</label>
+			<label class="form-label col-3"><span class="c-red">*</span>所属考试：</label>
 			<div class="formControls col-5">
 			<span class="select-box">
-				<select name="processId" class="select">
-					<option value="1">提交入党流程</option>
-					<option value="2">提交入党流程</option>
-					<option value="3">入党积极分子</option>
-					<option value="4">参加党校学习</option>
-					<option value="5">成为发展对象</option>
-					<option value="6">成为预备党员</option>
-					<option value="7">转为正式党员</option>
+				<select name="examId" class="select">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
 				</select>
 				</span>
 			</div>
 	</div>
-	<div class="row cl">
-			<label class="form-label col-3"><span class="c-red">*</span>课程类型：</label>
-			<div class="formControls col-5"> <span class="select-box">
-				<select name="type" class="select">
-					<option value="1">积极分子</option>
-					<option value="2">党员</option>
-					<option value="3">都有</option>
-				</select>
-				</span>
-			</div>
-	</div>
-	<input type="hidden" name="id" value="${course.id}">
+    <div class="row cl">
+      <label class="form-label col-3"><span class="c-red">*</span>考试题目：</label>
+      <div class="formControls col-5">
+      	<textarea id="question" name="question" cols="" rows="" class="textarea" datatype="*1-200" dragonfly="true" nullmsg="问题不能为空！" onKeyUp="textarealength(this,200)"></textarea>
+      </div>
+      <div class="col-4"> </div>
+    </div>
+    <div class="row cl">
+      <label class="form-label col-3"><span class="c-red">*</span>选项A：</label>
+      <div class="formControls col-5">
+        <input type="text" class="input-text" placeholder="" id="optionA" value="${examQuestion.optionA}" name="optionA" datatype="*1-200" dragonfly="true" nullmsg="答案不能为空！">
+      </div>
+      <div class="col-4"> </div>
+    </div>
+    <div class="row cl">
+      <label class="form-label col-3"><span class="c-red">*</span>选项B：</label>
+      <div class="formControls col-5">
+        <input type="text" class="input-text" placeholder="" id="optionB" value="${examQuestion.optionB}" name="optionB" datatype="*1-200" dragonfly="true" nullmsg="答案不能为空！">
+      </div>
+      <div class="col-4"> </div>
+    </div>
+    <div class="row cl">
+      <label class="form-label col-3"><span class="c-red">*</span>选项C：</label>
+      <div class="formControls col-5">
+        <input type="text" class="input-text" placeholder="" id="optionC" value="${examQuestion.optionC}" name="optionC" datatype="*1-200" dragonfly="true" nullmsg="答案不能为空！">
+      </div>
+      <div class="col-4"> </div>
+    </div>
+    <div class="row cl">
+      <label class="form-label col-3"><span class="c-red">*</span>选项D：</label>
+      <div class="formControls col-5">
+        <input type="text" class="input-text" placeholder="" id="optionD" value="${examQuestion.optionD}" name="optionD">
+      </div>
+      <div class="col-4"> </div>
+    </div>
+    <div class="row cl">
+      <label class="form-label col-3"><span class="c-red">*</span>答案：</label>
+      <div class="formControls col-5">
+        <input type="text" class="input-text" placeholder="" id="answer" value="${examQuestion.answer}" name="answer">
+      </div>
+      <div class="col-4"> </div>
+    </div>
+	<input type="hidden" name="id" value="${examQuestion.id}">
     <div class="row cl">
       <div class="col-9 col-offset-3">
         <input id="submit" class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;确认修改&nbsp;&nbsp;">
@@ -79,18 +92,12 @@
 <script type="text/javascript" src="/pwms/res/lib/jquery/1.9.1/jquery.min.js"></script> 
 <script type="text/javascript" src="/pwms/res/lib/icheck/jquery.icheck.min.js"></script> 
 <script type="text/javascript" src="/pwms/res/lib/Validform/5.3.2/Validform.min.js"></script>
-<script type="text/javascript" src="/pwms/res/lib/layer/1.9.3/layer.js"></script>
-<script type="text/javascript" src="/pwms/res/lib/webuploader/0.1.5/webuploader.min.js"></script> 
 <script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
 <script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
 <script type="text/javascript">
 $(function(){
-	$('.skin-minimal input').iCheck({
-		checkboxClass: 'icheckbox-blue',
-		radioClass: 'iradio-blue',
-		increaseArea: '20%'
-	});
-	$("#form-course-modify").Validform({
+	$("#question").val('${examQuestion.question}');
+	$("#form-exam-question-modify").Validform({
 		tiptype:2,
 		callback:function(form){
 			form[0].submit();
@@ -100,12 +107,12 @@ $(function(){
 		}
 	});
 	$("#submit").click(function(){
-		$("#form-course-modify").submit();
+		$("#form-exam-question-modify").submit();
 		window.close();
 	});
 	/*设置select默认项*/
-	var processId = ${course.processId};
-	var type = ${course.type};
+	var processId = ${exam-question.processId};
+	var type = ${exam-question.type};
 	$("[name='processId'] [value='" + processId + "']").attr("selected",true);//设置所属流程
 	$("[name='type'] [value='" + type + "']").attr("selected",true);//设置课程类型
 });

@@ -42,7 +42,8 @@
 </li>
 <li><a class="current" href="/pwms/school">网上党校</a>
 		<ul>
-			<li> <a href="/pwms/school/kczx/list.html">课程中心</a></li>
+			<li> <a href="/pwms/school/llkc/list.html">理论课程</a></li>
+			<li> <a href="/pwms/school/spkc/list.html">视频课程</a></li>
 			<li> <a href="/pwms/school/xxjl/list.html">学习记录</a></li>
 			<li> <a href="/pwms/school/zxks/list.html">在线考试</a></li>
 			<li> <a href="/pwms/school/cjcx/list.html">成绩查询</a></li>
