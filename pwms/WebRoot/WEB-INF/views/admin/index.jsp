@@ -149,6 +149,7 @@
 					<li><a _href="school/theory-course-list.html" href="javascript:void(0)">理论课程管理</a></li>
 					<li><a _href="school/exam-list.html" href="javascript:void(0)">考试管理</a></li>
 					<li><a _href="school/exam-question-list.html" href="javascript:void(0)">考试题目管理</a></li>
+					<li><a _href="school/exam-record-list.html" href="javascript:void(0)">考试成绩管理</a></li>
 				</ul>
 			</dd>
 		</dl>

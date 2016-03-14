@@ -48,27 +48,39 @@ public class ExamController extends BaseController {
 	public void setExamService(IExamService examService) {
 		this.examService = examService;
 	}
-	// 接受用户答案,保存并处理用户答案
+	/**
+	 * 处理考试结果
+	 * @param examId 考试id
+	 * @param request
+	 * @param session
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("{examId}/postanswer")
 	public String execUserAnswer(@PathVariable int examId, HttpServletRequest request,
 			HttpSession session, Model model) {
 		User user = (User) session.getAttribute("user");
 		Enumeration<String> enumer = request.getParameterNames();
+		if(!enumer.hasMoreElements()){
+			model.addAttribute("msg", "请不要重复提交答案!");
+			return "website/notice";
+		}
 		Map<Integer, String> resultMap = new HashMap<Integer, String>();
 		while (enumer.hasMoreElements()) {
 			String questionId = enumer.nextElement();
 			System.out.println("问题id:" + questionId);
-//			int questionNum = 0;
-//			try {
-//				questionNum = Integer.parseInt(questionId);
-//			} catch (NumberFormatException e) {
-//				e.printStackTrace();
-//			}
-//			resultMap.put(questionNum, request.getParameter(questionId));
+			int questionNum = 0;
+			try {
+				questionNum = Integer.parseInt(questionId);
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+			}
+			resultMap.put(questionNum, request.getParameter(questionId));
 		}
-//		int grade = this.examQuestionService.calcGrade2Record(examId, resultMap, user);
-//		model.addAttribute("grade", grade);
-		return "website/index.jsp";
+		int grade = this.examQuestionService.calcGrade2Record(examId, resultMap, user);
+		model.addAttribute("grade", grade);
+		model.addAttribute("aqCount", grade/(100/(resultMap.size())));
+		return "website/school/exam-result";
 	}
 
 	// 查看答案

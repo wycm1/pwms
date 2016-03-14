@@ -19,6 +19,7 @@ import com.pwms.pojo.CoureseGroup;
 import com.pwms.pojo.Course;
 import com.pwms.pojo.Exam;
 import com.pwms.pojo.ExamQuestion;
+import com.pwms.pojo.ExamRecord;
 import com.pwms.pojo.TheoryCourse;
 import com.pwms.service.ICourseGroupService;
 import com.pwms.service.ICourseService;
@@ -294,12 +295,51 @@ public class AdminSchoolController extends BaseController {
 		examService.deleteExamById(id);
 		return "删除成功!";
 	}
-	//查看考试的详情
-	@RequestMapping("/exam/{id}")
-	public String exam(@PathVariable int id, Model model){
-		Exam exam = this.examService.getExam(id);
-		model.addAttribute("exam", exam);
-		return null;
+	/**
+	 * 查看所有考试记录
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/exam-record-list")
+	public String showExamRecord(Model model){
+		List<ExamRecord> examRecordList = this.examService.selectAll();
+		System.out.println(examRecordList.get(0).getUser().toString());
+		model.addAttribute("examRecordList", examRecordList);
+		return "admin/school/exam-record-list";
+	}
+	/**
+	 * 显示考试记录修改页面
+	 * @param id
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/exam-record-modify/{id}")
+	public String modifyER(@PathVariable int id,Model model){
+		model.addAttribute("examRecord", examService.getExamRecord(id));
+		return "admin/school/exam-record-modify";
+	}
+	/**
+	 * 修改考试记录
+	 * @param id
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/modifyExamRecord")
+	public String modifyER(Model model,ExamRecord examRecord){
+		examService.updateExamRecord(examRecord);
+		model.addAttribute("msg", "考试修改成功!");
+		return "admin/notice-msg";
+	}
+	/**
+	 * 根据id删除考试成绩记录
+	 * @param model
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping("/examRecordDelete")
+	public @ResponseBody String delER(Model model,int id){
+		examService.deleteExamRecordById(id);
+		return "删除成功!";
 	}
 	//查看课程组
 	@RequestMapping("/showgroup")

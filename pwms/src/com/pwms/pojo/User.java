@@ -5,7 +5,7 @@ import java.util.Date;
 public class User {
     private Integer id;
     private String name;
-    private String StuOrJobid;
+    private String stuOrJobid;
     private String password;
     private Date registerTime;
     public Integer getId() {
@@ -29,12 +29,15 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getStuOrJobid() {
-		return StuOrJobid;
+		return stuOrJobid;
 	}
+
 	public void setStuOrJobid(String stuOrJobid) {
-		StuOrJobid = stuOrJobid;
+		this.stuOrJobid = stuOrJobid;
 	}
+
 	public String getPassword() {
 		return password;
 	}
@@ -86,5 +89,13 @@ public class User {
 				return false;
 			}
 		}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", StuOrJobid="
+				+ stuOrJobid + ", password=" + password + ", registerTime="
+				+ registerTime + ", processId=" + processId + ", type=" + type
+				+ "]";
+	}
 		
 }

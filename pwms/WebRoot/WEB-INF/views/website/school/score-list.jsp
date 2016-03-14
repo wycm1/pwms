@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>${type}</title>
+<title>成绩查询</title>
 <link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
 <link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
@@ -19,7 +19,7 @@
 		<i class="Hui-iconfont">&#xe67f;</i>
 		<a class="maincolor" href="../index.html">首页</a>
 		<span class="c-999 en">&gt;</span><a class="maincolor" href="/pwms/school">网上党校</a>
-		<span class="c-999 en">&gt;</span>${type}
+		<span class="c-999 en">&gt;</span>成绩查询
 		</nav>
 	</div>
 	<div class="row c1 ml-20 mt-10 mr-20">
@@ -27,53 +27,25 @@
 	<div class="col-xs-12 col-sm-10">
 		<div class="row c1 ml-10">
 			<div class="panel panel-danger radius">
-				<div class="panel-header">${type}</div>
+				<div class="panel-header">成绩查询</div>
 				<div class="panel-body">
 					<div class="row cl">
 		<table width="98%" align="center" class="col-xs-12 col-sm-12 table table-border table-bordered table-hover">
 			<tbody>
 			<tr class="title">
 			  <th class="text-c">考试项目</th>
-			  <th class="text-c" width="20%">试卷编号</th>
+			  <th class="text-c" width="20%">试卷ID</th>
 			  <th class="text-c" width="10%">成绩</th>
-			  <th class="text-c" width="20%">答卷时间</th>
+			  <th class="text-c" width="20%">考试时间</th>
 			</tr>
+			<c:forEach items="${erList}" var="item">
 		    <tr class="text-c">
-		      <td class="splittd">关键在党，关键在人</td>
-			  <td>12</td>
-			  <td><font color="red">87</font></td>
-			  <td>2016-1-21 20:58:00</td>
+		      <td class="splittd">${item.exam.name}</td>
+			  <td>${item.exam.id}</td>
+			  <td><font color="red">${item.score}</font></td>
+			  <td>${item.time}</td>
 		    </tr>
-		    <tr class="text-c">
-		      <td class="splittd">关键在党，关键在人</td>
-			  <td>12</td>
-			  <td><font color="red">87</font></td>
-			  <td>2016-1-21 20:58:00</td>
-		    </tr>
-		    <tr class="text-c">
-		      <td class="splittd">关键在党，关键在人</td>
-			  <td>12</td>
-			  <td><font color="red">87</font></td>
-			  <td>2016-1-21 20:58:00</td>
-		    </tr>
-		    <tr class="text-c">
-		      <td class="splittd">关键在党，关键在人</td>
-			  <td>12</td>
-			  <td><font color="red">87</font></td>
-			  <td>2016-1-21 20:58:00</td>
-		    </tr>
-		    <tr class="text-c">
-		      <td class="splittd">关键在党，关键在人</td>
-			  <td>12</td>
-			  <td><font color="red">87</font></td>
-			  <td>2016-1-21 20:58:00</td>
-		    </tr>
-		    <tr class="text-c">
-		      <td class="splittd">关键在党，关键在人</td>
-			  <td>12</td>
-			  <td><font color="red">87</font></td>
-			  <td>2016-1-21 20:58:00</td>
-		    </tr>
+		    </c:forEach>
 			</tbody>
 	</table>
     				</div>

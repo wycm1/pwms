@@ -55,14 +55,15 @@ public class SchoolController extends BaseController {
     	return null;
     }
 	/**
-	 * 获取所有考试
+	 * 获取该用户还未参加的考试
 	 * @param request
 	 * @param model
 	 * @return
 	 */
 	@RequestMapping("/zxks/list")
-	public String getExams(HttpServletRequest request, Model model) {
-		List<Exam> examList = examService.getExamDesc();
+	public String getExams(HttpServletRequest request, Model model, HttpSession session) {
+		User user = (User) session.getAttribute("user");
+		List<Exam> examList = examService.getExamListByUserId(user.getId());
 		if(verifyClient(request)){
 			outJson("{"+listToJson("examList",examList)+"}");
 			return null;
@@ -89,6 +90,13 @@ public class SchoolController extends BaseController {
 		model.addAttribute("tcList", tcList);
 		return "website/school/theory-course-list";
 	}
+	@RequestMapping("/cjcx/list")
+	public String getCJCX(Model model,HttpSession session){
+		User user = (User)session.getAttribute("user");
+		List<ExamRecord> erList = examService.getRecordByUserId(user.getId());
+		model.addAttribute("erList", erList);
+		return "website/school/score-list";
+	}
 	/**
 	 * 访问网上党校下的列表
 	 * @param type
@@ -100,7 +108,6 @@ public class SchoolController extends BaseController {
 		switch(type){
 			case "spkc":getKCZX(model, "视频课程");return "website/school/video-course-list";
 			case "xxjl":getArticleByType(model, "学习记录");return "website/school/study-record-list";
-			case "cjcx":getArticleByType(model, "成绩查询");return "website/school/score-list";
 			default:getArticleByType(model, "视频课程");break;
 		}
 		return "website/school/list";

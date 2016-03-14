@@ -2,6 +2,8 @@ package com.pwms.service.impl;
 
 import java.util.List;
 
+
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -12,10 +14,16 @@ import com.pwms.pojo.Exam;
 import com.pwms.pojo.ExamRecord;
 import com.pwms.pojo.User;
 import com.pwms.service.IExamService;
+/**
+ * Exam和ExamRecord服务实现
+ * @author Administrator
+ *
+ */
 @Service("examService")
 public class ExamServiceImpl implements IExamService {
 	@Resource
 	private ExamMapper examDao;
+	@Resource
 	private ExamRecordMapper examRecordDao;
 //	private ExamRecordMapper examRecordDao;
 	@Override
@@ -79,6 +87,42 @@ public class ExamServiceImpl implements IExamService {
 		// TODO Auto-generated method stub
 		examDao.deleteByPrimaryKey(id);
 		
+	}
+
+	@Override
+	public List<Exam> getExamListByUserId(Integer userId) {
+		// TODO Auto-generated method stub
+		return examDao.getExamListByUserId(userId);
+	}
+
+	@Override
+	public List<ExamRecord> selectAll() {
+		// TODO Auto-generated method stub
+		return examRecordDao.selectAll();
+	}
+
+	@Override
+	public void deleteExamRecordById(Integer id) {
+		// TODO Auto-generated method stub
+		examRecordDao.deleteByPrimaryKey(id);
+	}
+
+	@Override
+	public void updateExamRecord(ExamRecord er) {
+		// TODO Auto-generated method stub
+		examRecordDao.updateByPrimaryKeySelective(er);
+	}
+
+	@Override
+	public ExamRecord getExamRecord(Integer id) {
+		// TODO Auto-generated method stub
+		return examRecordDao.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public List<ExamRecord> getRecordByUserId(Integer id) {
+		// TODO Auto-generated method stub
+		return examRecordDao.selectByUserid(id);
 	}
 
 }

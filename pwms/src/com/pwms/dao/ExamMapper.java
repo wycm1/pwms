@@ -15,7 +15,11 @@ public interface ExamMapper {
     
     List<Exam> selectDesc();
 
+    List<Exam> getExamListByUserId(Integer userId);
+
     int updateByPrimaryKeySelective(Exam record);
 
     int updateByPrimaryKey(Exam record);
+    
+    
 }

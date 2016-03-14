@@ -22,36 +22,21 @@
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>考试修改</title>
+<title>考试成绩修改</title>
 </head>
 <body>
 <div class="pd-20">
-  <form action="../modifyExam"  method="post" class="form form-horizontal" id="form-exam-modify" enctype="multipart/form-data">
+  <form action="../modifyExamRecord"  method="post" class="form form-horizontal" id="form-exam-modify" enctype="multipart/form-data">
     <div class="row cl">
-      <label class="form-label col-3"><span class="c-red">*</span>考试名称：</label>
+      <label class="form-label col-3"><span class="c-red"></span>成绩：</label>
       <div class="formControls col-5">
-        <input type="text" class="input-text" value="${exam.name}" name="title" id="title" datatype="*" nullmsg="请输入考试名称！">
+        <input type="text" class="input-text" value="${examRecord.score}" name="score" id="score" datatype="*" nullmsg="请输入考试成绩！">
       </div>
       <div class="col-4"> </div>
     </div>
-    <div class="row cl">
-      <label class="form-label col-3"><span class="c-red">*</span>单个题目分值：</label>
-      <div class="formControls col-5">
-      <span class="select-box">
-				<select name="singleScore" class="select">
-					<option value="1">1分</option>
-					<option value="2">2分</option>
-					<option value="4">4分</option>
-					<option value="5">5分</option>
-					<option value="10">10分</option>
-					<option value="20">20分</option>
-					<option value="50">50分</option>
-				</select>
-	 </span>
-      </div>
-      <div class="col-4"> </div>
-    </div>
-	<input type="hidden" name="id" value="${exam.id}">
+	<input type="hidden" name="id" value="${examRecord.id}">
+	<input type="hidden" name="id" value="${examRecord.examId}">
+	<input type="hidden" name="id" value="${examRecord.userId}">
     <div class="row cl">
       <div class="col-9 col-offset-3">
         <input id="submit" class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;确认修改&nbsp;&nbsp;">

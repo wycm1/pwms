@@ -21,7 +21,12 @@ public interface ExamRecordMapper {
      * @return
      */
     List<ExamRecord> selectByExamidUserid(Integer examId, Integer userId);
-
+    /**
+     * 获取所有考试记录列表
+     * @return
+     */
+    List<ExamRecord> selectAll();
+    
     int updateByPrimaryKeySelective(ExamRecord record);
 
     int updateByPrimaryKey(ExamRecord record);
