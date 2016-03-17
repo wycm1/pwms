@@ -11,6 +11,7 @@ import com.pwms.dao.ArticletypeMapper;
 import com.pwms.dao.NoticeTheroyContructionMapper;
 import com.pwms.pojo.Articletype;
 import com.pwms.pojo.NoticeTheroyContruction;
+import com.pwms.service.ICURD;
 import com.pwms.service.INoticeService;
 @Service("noticeService")
 public class NoticeServiceImpl implements INoticeService {
@@ -114,6 +115,18 @@ public class NoticeServiceImpl implements INoticeService {
 		return articletypeDao.selectByPrimaryKey2(id);
 	}
 
+	@Override
+	public List<NoticeTheroyContruction> selectTopArticleByAtid(
+			Integer [] atid) {
+		// TODO Auto-generated method stub
+		return noticeTheroyDao.selectTopArticleByAtid(atid);
+	}
+
+	@Override
+	public List<NoticeTheroyContruction> selectTopXWAndDXGG() {
+		// TODO Auto-generated method stub
+		return noticeTheroyDao.selectTopXWAndDXGG();
+	}
 
 //	@Override
 //	public Articletype getArticletypeByid1(Integer id) {

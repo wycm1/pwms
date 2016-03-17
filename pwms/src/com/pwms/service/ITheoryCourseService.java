@@ -19,5 +19,10 @@ public interface ITheoryCourseService {
 	 * @return
 	 */
 	public List<TheoryCourse> getTheoryCourseList();
+	/**
+	 * 获取最新top5理论课程
+	 * @return
+	 */
+	public List<TheoryCourse> selectTopCourse();
 
 }

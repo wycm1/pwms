@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pwms.pojo.NoticeTheroyContruction;
+import com.pwms.service.ICURD;
 import com.pwms.service.INoticeService;
+import com.pwms.service.impl.NoticeServiceImpl;
 
 @Controller
 @RequestMapping("/admin/article")

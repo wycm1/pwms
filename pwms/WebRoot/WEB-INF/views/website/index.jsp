@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:if test="${tzggList == null}">
+	<!--   -->
+	<c:redirect url="index.html"/>
+</c:if>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -29,10 +34,10 @@ padding-bottom:10px;
     <div class="news_move">
 				 <div class="example">
 					<ul>
-						<li><img src="/pwms/res/website/images/news_1.jpg" alt="news_1"/></li>
-						<li><img src="/pwms/res/website/images/news_2.jpg" alt="news_2"/></li>
-						<li><img src="/pwms/res/website/images/news_5.jpg" alt="news_5"/></li>
-						<li><img src="/pwms/res/website/images/news_4.jpg" alt="news_4"/></li>
+						<li><img src="/pwms/upload/img/1.jpg"/></li>
+						<li><img src="/pwms/upload/img/2.jpg"/></li>
+						<li><img src="/pwms/upload/img/3.jpg"/></li>
+						<li><img src="/pwms/upload/img/gcd.jpg"/></li>
 					</ul>
 					<ol>
 						<li></li>
@@ -41,10 +46,8 @@ padding-bottom:10px;
 						<li></li>
 					</ol>
 				</div>
-				<!--Luara图片切换骨架end-->
 				<script>
 				$(function(){
-					<!--调用Luara示例-->
 					$(".example").luara({width:"310",height:"245",interval:4000,selected:"seleted"});
 
 				});
@@ -62,50 +65,44 @@ padding-bottom:10px;
  </div>
     	
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <c:forEach items="${xwList}" var="item">
         <tr>
           <td width="20"><a href="#"></a><img src="/pwms/res/website/images/dot1.png" width="20" height="23" /> <a href="#"></a></td>
-          <td align="left" class="index_table_size"><a href="detail.html">媒体聚焦媒体三问&quot;..</a></td>
-          <td width="24" align="center" class="public_color1">2015-10:11</td>
+          <td align="left" class="index_table_size">
+			<a title="${item.title}" href="/pwms/${item.articletype.pArticletype.linkname}/${item.articletype.linkname}/${item.id}.html">${item.title}</a>
+			</td>
+          <td width="24" align="center" class="public_color1">${item.dateline}</td>
         </tr>
-        <tr>
-          <td width="20"><img src="/pwms/res/website/images/dot1.png" width="20" height="23" /></td>
-          <td align="left" class="index_table_size"><a href="#">用改革之手点燃创新..</a></td>
-          <td width="24" align="center" class="public_color1">2016-10:11</td>
-        </tr>
-        <tr>
-          <td width="20"><img src="/pwms/res/website/images/dot1.png" width="20" height="23" /></td>
-          <td align="left" class="index_table_size"><a href="#">顾国彪院士：自缚手脚..</a></td>
-          <td width="24" align="center" class="public_color1">2015-10:11</td>
-        </tr>
+        </c:forEach>
       </table>
     </div>
   </div>
-  <div class="notify">
-     <a href="#" class="nb"><img src="/pwms/res/website/images/icon.gif" />公告</a>
-	 <div class="notify_more"><a href="index2.html"><img src="/pwms/res/website/images/more.gif" border="0" /></a></div>
-	 <div class="notify_list">
-      <marquee onmouseout="this.start();" onmouseover="this.stop();" direction="up" scrolldelay="50" scrollamount="3">
-	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <div class="news_list_a">
+    	<div class="news_left_title">
+   <div class="index_tab_top">
+        <ul class="index_tab_list">
+          <li class="press"><a href="#"><img src="/pwms/res/website/images/icon.gif" />党校公告</a></li>
+        </ul>
+        <div class="news_more"><a href="news.html"><img src="/pwms/res/website/images/more.gif" border="0" /></a></div>
+      </div>
+ </div>
+    	
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <c:forEach items="${dxggList}" var="item">
         <tr>
-          <td width="20"><img src="/pwms/res/website/images/dot1.png" width="20" height="23" /></td>
-          <td align="left" class="index_table_size"><a href="#">评论：残疾人就业没...</a></td>
-          <td width="24" align="center" class="public_color1">10:11</td>
+          <td width="20"><a href="#"></a><img src="/pwms/res/website/images/dot1.png" width="20" height="23" /> <a href="#"></a></td>
+          <td align="left" class="index_table_size">
+			<a title="${item.title}" href="/pwms/${item.articletype.pArticletype.linkname}/${item.articletype.linkname}/${item.id}.html">${item.title}</a>
+			</td>
+          <td width="24" align="center" class="public_color1">${item.dateline}</td>
         </tr>
-		<tr>
-          <td width="20"><img src="/pwms/res/website/images/dot1.png" width="20" height="23" /></td>
-          <td align="left" class="index_table_size"><a href="#">评论：残疾人就业...</a></td>
-          <td width="24" align="center" class="public_color1">10:11</td>
-        </tr>
+        </c:forEach>
       </table>
-	  </marquee>
     </div>
-    </div>
-    <!--<div class="login_xxrl"><img src="/pwms/res/website/images/xiaoli.png" /></div>-->
   </div>
 
 
 
-	
 <div class="news">
   <div class="news1">
     <div class="news1_title">
@@ -115,10 +112,13 @@ padding-bottom:10px;
     <div class="news_pic"><img src="/pwms/res/website/images/pic1.png" /></div>
     <div class="news_list">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
-      	<c:forEach items="${noticeList}" var="item"> 
+      	<c:forEach items="${tzggList}" var="item"> 
         <tr>
           <td width="20"><img src="/pwms/res/website/images/5.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">${item.title}</a></td>
+          <td align="left" class="index_table_size">
+          <a title="${item.title}" href="/pwms/${item.articletype.pArticletype.linkname}/${item.articletype.linkname}/${item.id}.html">${item.title}</a>
+          </td>
+          <td width="24" align="center" class="public_color1">${item.dateline}</td>
         </tr>
         </c:forEach>
       </table>
@@ -126,16 +126,19 @@ padding-bottom:10px;
   </div>
   <div class="news2">
     <div class="news1_title">
-      <div class="news1_title_text">课程列表</div>
+      <div class="news1_title_text">党建专项</div>
       <div  class="news_more"><a href="#"><img src="/pwms/res/website/images/more.gif" border="0" /></a></div>
     </div>
     <div class="news_pic"><img src="/pwms/res/website/images/pic2.png" width="290" height="99" /></div>
     <div class="news_list">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
-      	<c:forEach items="${courseList}" var="item"> 
+      	<c:forEach items="${djzxList}" var="item"> 
         <tr>
           <td width="20"><img src="/pwms/res/website/images/5.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">${item.title}</a></td>
+          <td align="left" class="index_table_size">
+			<a title="${item.title}" href="/pwms/${item.articletype.pArticletype.linkname}/${item.articletype.linkname}/${item.id}.html">${item.title}</a>
+		  </td>
+		  <td width="24" align="center" class="public_color1">${item.dateline}</td>
         </tr>
        </c:forEach>
       </table>
@@ -149,10 +152,13 @@ padding-bottom:10px;
     <div class="news_pic"><img src="/pwms/res/website/images/pic3.png" width="290" height="99" /></div>
     <div class="news_list">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
-      	<c:forEach items="${courseList}" var="item"> 
+      	<c:forEach items="${llxxList}" var="item"> 
         <tr>
           <td width="20"><a href="#"></a><img src="/pwms/res/website/images/1.png" /> <a href="#"></a></td>
-          <td align="left" class="index_table_size"><a href="#">${item.title}</a></td>
+          <td align="left" class="index_table_size">
+			<a title="${item.title}" href="/pwms/${item.articletype.pArticletype.linkname}/${item.articletype.linkname}/${item.id}.html">${item.title}</a>
+		</td>
+		<td width="24" align="center" class="public_color1">${item.dateline}</td>
         </tr>
        </c:forEach>
       </table>
@@ -162,16 +168,19 @@ padding-bottom:10px;
   <div class="news">
   <div class="news1">
     <div class="news1_title">
-      <div class="news1_title_text"> 重要文件列表</div>
+      <div class="news1_title_text"> 重要文件</div>
       <div  class="news_more"><a href="#"><img src="/pwms/res/website/images/more.gif" border="0" /></a></div>
     </div>
     <div class="news_pic"><img src="/pwms/res/website/images/pic1.png" /></div>
     <div class="news_list">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
-      	<c:forEach items="${importdocList}" var="item">
+      	<c:forEach items="${zywjList}" var="item">
         <tr> 
           <td width="20"><a href="#"></a><img src="/pwms/res/website/images/1.png" /> <a href="#"></a></td>
-          <td align="left" class="index_table_size"><a href="#">${item.title}</a></td>
+          <td align="left" class="index_table_size">
+          	<a title="${item.title}" href="/pwms/${item.articletype.pArticletype.linkname}/${item.articletype.linkname}/${item.id}.html">${item.title}</a>
+          </td>
+          <td width="24" align="center" class="public_color1">${item.dateline}</td>
         </tr>
         </c:forEach>
       </table>
@@ -179,49 +188,35 @@ padding-bottom:10px;
   </div>
   <div class="news2">
     <div class="news1_title">
-      <div class="news1_title_text">进度</div>
+      <div class="news1_title_text">入党流程</div>
       <div  class="news_more"><a href="#"><img src="/pwms/res/website/images/more.gif" border="0" /></a></div>
     </div>
     <div class="news_pic"><img src="/pwms/res/website/images/pic2.png" width="290" height="99" /></div>
     <div class="news_list">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
-      	<c:forEach items="${processList}" var="item">
         <tr>
-          <td width="20"><a href="#"></a><img src="/pwms/res/website/images/1.png" /> <a href="#"></a></td>
-          <td align="left" class="index_table_size"><a href="#">${item.explian}</a></td>
+          <td width="20"><a href="#"></a><img src="/pwms/res/website/images/1.png" /></td>
+          <td align="left" class="index_table_size"><a href="/pwms/process/jpprocess.html" title="入党流程">入党流程</a></td>
+          <td width="24" align="center" class="public_color1">2016-03-09</td>
         </tr>
-        </c:forEach>
       </table>
     </div>
   </div>
   <div class="news3">
     <div class="news1_title">
-      <div class="news1_title_text">学生工作</div>
+      <div class="news1_title_text">理论课程</div>
       <div  class="news_more"><a href="#"><img src="/pwms/res/website/images/more.gif" border="0" /></a></div>
     </div>
     <div class="news_pic"><img src="/pwms/res/website/images/pic3.png" width="290" height="99" /></div>
     <div class="news_list">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <c:forEach items="${tcList}" var="item">
         <tr>
-          <td width="20"><a href="#"></a><img src="/pwms/res/website/images/1.png" /> <a href="#"></a></td>
-          <td align="left" class="index_table_size"><a href="#">媒体聚焦媒体三问&quot;22人公考零分&quot;：如此恶劣违何</a></td>
+          <td width="20"><a href="#"></a><img src="/pwms/res/website/images/1.png" /></td>
+          <td align="left" class="index_table_size"><a href="/pwms/school/llkc/${item.id}/course.html">${item.title}</a></td>
+          <td width="24" align="center" class="public_color1">${item.dateline}</td>
         </tr>
-        <tr>
-          <td width="20"><img src="/pwms/res/website/images/2.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">三部门解读普通高等学校毕业生就业创业工作通知</a></td>
-        </tr>
-        <tr>
-          <td width="20"><img src="/pwms/res/website/images/3.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">党报评论君：国家级“科技粉”习近平的“科技经”</a></td>
-        </tr>
-        <tr>
-          <td width="20"><img src="/pwms/res/website/images/4.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">用改革之手点燃创新引擎（人民时评）</a></td>
-        </tr>
-        <tr>
-          <td width="20"><img src="/pwms/res/website/images/5.png" width="11" height="11" /></td>
-          <td align="left" class="index_table_size"><a href="#">顾国彪院士：自缚手脚何以弯道超车</a></td>
-        </tr>
+        </c:forEach>
       </table>
     </div>
   </div>

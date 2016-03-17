@@ -17,7 +17,7 @@
 	<div class="nav radius">
 		<nav class="breadcrumb">
 		<i class="Hui-iconfont">&#xe67f;</i>
-		<a class="maincolor" href="../index.html">首页</a>
+		<a class="maincolor" href="/pwms/index.html">首页</a>
 		<span class="c-999 en">&gt;</span><a class="maincolor" href="/pwms/${articletype.pArticletype.linkname}">${articletype.pArticletype.value}</a>
 		<span class="c-999 en">&gt;</span>${articletype.value}
 		</nav>

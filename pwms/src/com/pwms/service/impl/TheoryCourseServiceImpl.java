@@ -57,6 +57,12 @@ public class TheoryCourseServiceImpl implements ITheoryCourseService {
 		return theoryCourseDao.selectAll();
 	}
 
+	@Override
+	public List<TheoryCourse> selectTopCourse() {
+		// TODO Auto-generated method stub
+		return theoryCourseDao.selectTopCourse();
+	}
+
 
 	
 

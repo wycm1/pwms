@@ -56,4 +56,8 @@ public interface INoticeService {
      * @return Articletype¡–±Ì
      */
 	List<Articletype> getByPid(Integer pid);
+	
+	List<NoticeTheroyContruction> selectTopArticleByAtid(Integer [] atid);
+	
+	List<NoticeTheroyContruction> selectTopXWAndDXGG();
 }

@@ -103,30 +103,12 @@
 <script type="text/javascript" src="/pwms/res/lib/jquery/1.9.1/jquery.min.js"></script> 
 <script type="text/javascript" src="/pwms/res/lib/layer/1.9.3/layer.js"></script>
 <script type="text/javascript" src="/pwms/res/lib/laypage/1.2/laypage.js"></script> 
-<script type="text/javascript" src="/pwms/res/lib/My97DatePicker/WdatePicker.js"></script> 
 <script type="text/javascript" src="/pwms/res/lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
 <script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
 <script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script> 
 <script type="text/javascript">
 $(function(){
-	$('.table-sort').dataTable({
-		"aaSorting": [[ 1, "desc" ]],//默认第几个排序
-		"bStateSave": true,//状态保存
-		"aoColumnDefs": [
-		  {sDefaultContent: '',aTargets: [ '_all' ]},
-		  //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
-		  {"orderable":false,"aTargets":[0,8,9]}// 制定列不参与排序
-		]
-	});
-	$('.table-sort tbody').on( 'click', 'tr', function () {
-		if ( $(this).hasClass('selected') ) {
-			$(this).removeClass('selected');
-		}
-		else {
-			table.$('tr.selected').removeClass('selected');
-			$(this).addClass('selected');
-		}
-	});
+	$('.table-sort').dataTable();
 });
 /*用户-添加*/
 function member_add(title,url,w,h){

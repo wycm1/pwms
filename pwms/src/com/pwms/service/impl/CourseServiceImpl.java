@@ -12,6 +12,7 @@ import com.pwms.dao.UserCourseRecordMapper;
 import com.pwms.pojo.CoureseGroup;
 import com.pwms.pojo.Course;
 import com.pwms.pojo.UserCourseRecord;
+import com.pwms.service.ICURD;
 import com.pwms.service.ICourseService;
 @Service("courseService")
 public class CourseServiceImpl implements ICourseService {

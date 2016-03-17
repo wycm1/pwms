@@ -19,6 +19,20 @@ public interface NoticeTheroyContructionMapper {
      */
     List<NoticeTheroyContruction> selectByType(Integer type);
     
+    /**
+     * 根据文章类型id
+     * 获取该文章下最新的5篇文章
+     * @param value
+     * @return
+     */
+    List<NoticeTheroyContruction> selectTopArticleByAtid(Integer [] atId);
+    /**
+     * 获取最新的党校公告和新闻各10篇
+     * @return
+     */
+    List<NoticeTheroyContruction> selectTopXWAndDXGG();
+    
+    
     List<NoticeTheroyContruction> selectAll();
 
     int updateByPrimaryKeySelective(NoticeTheroyContruction record);
@@ -26,4 +40,5 @@ public interface NoticeTheroyContructionMapper {
     int updateByPrimaryKeyWithBLOBs(NoticeTheroyContruction record);
 
     int updateByPrimaryKey(NoticeTheroyContruction record);
+    
 }

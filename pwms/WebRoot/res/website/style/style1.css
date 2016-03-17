@@ -94,7 +94,7 @@ a:hover.public_color {
 }
 
 .public_color1 {
-	color: #7f7f7f;
+	color: black;
 	font-size: 12px;
 	height: 30px;
 	line-height: 30px;
@@ -139,14 +139,28 @@ a.public_color5 {
 	font-weight: normal;
 }
 
-.index_table_size a {
-	color: #7f7f7f;
+.news .index_table_size a {
+	color: black;
 	text-decoration: none;
 	line-height: 30px;
 	font-size: 12px;
 	font-weight: normal;
+	overflow: hidden;
+    display: inline-block;
+    width: 240px;
+    height: 30px;
 }
-
+.news_list_a .index_table_size a{
+	color: black;
+	text-decoration: none;
+	line-height: 30px;
+	font-size: 12px;
+	font-weight: normal;
+	overflow: hidden;
+    display: inline-block;
+	width:130px;
+	height: 30px;
+}
 .index_table_size a:hover {
 	color: #ff9f40;
 	text-decoration: none;
@@ -788,7 +802,7 @@ a.public_color5 {
 .index_tab_list li a:hover,
 .index_tab_list li.press a {
 	/*background: url(../images/news_hover.png) no-repeat;*/
-	width: 85px;
+	width: 100px;
 	height: 39px;
 	line-height: 39px;
 	color: #c00;
@@ -812,9 +826,8 @@ a.public_color5 {
 
 .news_list_a{
 	float: right;
-width: 260px;
-overflow: hidden;
-padding-right: 5px;
+	width: 258px;
+	overflow: hidden;
 }
 
 .news_list {
@@ -835,7 +848,7 @@ padding-right: 5px;
 	background-color: #FFFFFF;
 	color: #FFFFFF;
 	font-size: 14px;
-	font-weight: bold;
+	font-weight: normal;
 	float: left;
 	border: 1px solid #cce3ee;
 	float: left;
@@ -869,7 +882,7 @@ padding-right: 5px;
 	background-color: #FFFFFF;
 	color: #FFFFFF;
 	font-size: 14px;
-	font-weight: bold;
+	font-weight: normal;
 	float: left;
 	border: 1px solid #cce3ee;
 	float: left;
@@ -882,7 +895,7 @@ padding-right: 5px;
 	background-color: #FFFFFF;
 	color: #FFFFFF;
 	font-size: 14px;
-	font-weight: bold;
+	font-weight: normal;
 	float: right;
 	border: 1px solid #cce3ee;
 }
@@ -893,7 +906,7 @@ padding-right: 5px;
 	background-color: #FFFFFF;
 	color: #FFFFFF;
 	font-size: 14px;
-	font-weight: bold;
+	font-weight: normal;
 	float: right;
 	border: 1px solid #cce3ee;
 }

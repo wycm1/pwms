@@ -27,6 +27,11 @@
     from theory_course
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectTopCourse" resultMap="BaseResultMap">
+  	select top 5
+  	<include refid="Base_Column_List" />
+  	from theory_course order by id desc
+  </select>
   <select id="selectAll" resultMap="BaseResultMap">
   	select
   	<include refid="Base_Column_List" />

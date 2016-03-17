@@ -23,4 +23,9 @@ public interface TheoryCourseMapper {
      * @return
      */
     List<TheoryCourse> selectAll();
+    /**
+     * 获取最新top5理论课程
+     * @return
+     */
+    List<TheoryCourse> selectTopCourse();
 }

@@ -50,7 +50,7 @@
     select 
     <include refid="article_articletype"/>
     from notice_theory_construction n,articletype a left join articletype a1
-    on a.pid = a1.id where n.type = a.id and type = #{type,jdbcType=INTEGER}
+    on a.pid = a1.id where (a.id = #{type} or a.pid = #{type}) and type = a.id
   </select>
   
   <select id="selectAll" resultMap="BaseResultMap">
@@ -59,7 +59,36 @@
     from notice_theory_construction n,articletype a left join articletype a1
     on a.pid = a1.id where n.type=a.id order by n.id
   </select>
-  
+  <!-- 根据文章类型下最新5篇文章，不包括新闻和党校公告-->
+  <select id="selectTopArticleByAtid" resultMap="BaseResultMap">
+    SELECT *
+	FROM
+	(	select 
+		<include refid="article_articletype"/>,
+	    ROW_NUMBER() OVER(partition by a1.id ORDER BY n.id) as rows
+	    from notice_theory_construction n,articletype a left join articletype a1
+	    on a.pid = a1.id where  n.type = a.id and a.id not in(12,23)
+	 ) as t
+	where t.[rows] &lt;= 5 and id2 in
+    <foreach collection="array" item="atId" index="index"
+            open="(" close=")" separator=",">
+            #{atId}
+    </foreach>
+    order by t.id desc;
+  </select>
+  <!--获取最新的党校公告和新闻各10篇-->
+  <select id="selectTopXWAndDXGG" resultMap="BaseResultMap">
+  	SELECT *
+	FROM
+	(	select 
+		<include refid="article_articletype"/>,
+	    ROW_NUMBER() OVER(partition by a1.id ORDER BY n.id) as rows
+	    from notice_theory_construction n,articletype a left join articletype a1
+	    on a.pid = a1.id where  n.type = a.id 
+	 ) as t
+	where t.[rows] &lt;= 10 and id1 in(12,23)
+    order by t.id desc;
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from notice_theory_construction
     where id = #{id,jdbcType=INTEGER}

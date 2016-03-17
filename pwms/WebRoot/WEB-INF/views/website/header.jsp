@@ -37,7 +37,7 @@
       <td>
    <div id="navmenu" class="menu">
 <ul>
-<li><a class="current" href="/pwms/">首页</a>
+<li><a class="current" href="/pwms/index.html">首页</a>
 
 </li>
 <li><a class="current" href="/pwms/school">网上党校</a>
@@ -56,6 +56,7 @@
 			<li> <a href="/pwms/notice/jjfzdx/list.html">积极分子党校</a></li>
 			<li> <a href="/pwms/notice/ybdydx/list.html">预备党员党校</a></li>
 			<li> <a href="/pwms/notice/dxgg/list.html">党校公告</a></li>
+			<li> <a href="/pwms/notice/xw/list.html">新闻</a></li>
 		</ul>
 </li>
 <li><a class="current" href="/pwms/party">党建专项</a>
