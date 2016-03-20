@@ -6,7 +6,7 @@
     <result column="process_id" property="processId" jdbcType="INTEGER" />
     <result column="filepath" property="filepath" jdbcType="VARCHAR" />
     <result column="grade" property="grade" jdbcType="INTEGER" />
-    <result column="dateline" property="dateline" jdbcType="DATE" />
+    <result column="dateline" property="dateline" jdbcType="DATE" javaType="java.sql.Date"/>
     <result column="user_id" property="userId" jdbcType="INTEGER" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.pwms.pojo.ProcessRecord" extends="BaseResultMap" >

@@ -42,7 +42,6 @@ public class UserController extends BaseController{
 	}
 	@RequestMapping("/showUser")
 	public String toIndex(HttpServletRequest request, Model model) {
-	    System.out.println("执行过来了");
 	    int userId = Integer.parseInt(request.getParameter("id"));
 	    User user = this.userService.getUserById(userId);
 	    model.addAttribute("user", user);
@@ -79,7 +78,7 @@ public class UserController extends BaseController{
     @RequestMapping("/login")
     public String login(HttpSession session, HttpServletRequest request, User user, Model model) {
     	this.userService.login(session, user.getStuOrJobid(), user.getPassword());
-    	return publishmsg(request,"success","website/index");
+    	return publishmsg(request,"success","redirect:../index.html");
     }
     /**
      * 注销登录
