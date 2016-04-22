@@ -58,6 +58,14 @@ public class AdminUserController extends BaseController {
 		return "admin/user/join-out-add";
 	}
 	/**
+	 * 验证信息导入
+	 * @return
+	 */
+	@RequestMapping("file-add")
+	public String vlidateInfoImport(){
+		return "admin/user/file-add";
+	}
+	/**
 	 * 获取所有奖惩记录
 	 * @param model
 	 * @return
@@ -108,7 +116,6 @@ public class AdminUserController extends BaseController {
 	 */
 	@RequestMapping("/user-show/{userId}")
 	public String getUserinfo(@PathVariable int userId,Model model){
-		//System.out.println("正在执行~");
 		model.addAttribute("userinfo", userinfoService.getUserinfoByUserid(userId));
 		return "admin/user/user-show";
 	}
@@ -120,8 +127,7 @@ public class AdminUserController extends BaseController {
 	 */
 	@RequestMapping("/userdetail-modify-show/{udmId}")
 	public String getUserdetailModify(@PathVariable int udmId,Model model){
-		//System.out.println("正在执行~");
-		model.addAttribute("userdetailModify", userinfoService.getUserinfoModifyByid(udmId));
+		model.addAttribute("userdetailModify", userinfoService.getUserinfoByUserid(udmId));
 		return "admin/user/userdetail-modify-show";
 	}
 	//页面显示介绍

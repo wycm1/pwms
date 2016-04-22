@@ -67,56 +67,26 @@ public class BranchServiceImpl implements IBranchService {
 	@Override
 	public void addMember(Branch branch, User user) {
 		// TODO Auto-generated method stub
-		BranchMember branchMember = new BranchMember(branch.getId(),user.getId());
-		BranchMember branchMemberTmp  =branchMemberDao.selectSelective(branchMember);
-		if(branchMemberTmp==null){
-		    branchMemberDao.insertSelective(branchMember);
-		}
+
 	}
 
-//	@Override
-//	public void publishNotice(Branch branch, NoticeTheroyContruction notice) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-
 	@Override
-	public List<User> getBranchMember(Branch branch) {
+	public List<BranchMember> getBranchMember(Branch branch) {
 		// TODO Auto-generated method stub
-		List<BranchMember> branchMemberList = this.branchMemberDao.selectByBranchId(branch);
-		if(branchMemberList == null||branchMemberList.size()==0){
-		    return null;
-		}
-		List<User> userList = new ArrayList<User>();
-		for(int i=0;i<branchMemberList.size();i++){
-			BranchMember bMember = branchMemberList.get(i);
-			int userId = bMember.getUserId();
-			User user = userDao.selectByPrimaryKey(userId);
-			if(user!=null){
-			    userList.add(user);
-			}
-		}
-		return userList;
+		return branchMemberDao.selectByBranchId(branch);
 	}
 
 	@Override
 	public boolean isMember(Branch branch, User user) {
 		// TODO Auto-generated method stub
-		BranchMember bMember = new BranchMember(branch.getId(), user.getId());
-		BranchMember bMemberTmp=branchMemberDao.selectSelective(bMember);
-		if(bMemberTmp==null){
-		    return false;
-		}
 		return true;
 	}
 
 	@Override
 	public Branch getUserBranch(User user) {
 		// TODO Auto-generated method stub
-		BranchMember bMember = this.branchMemberDao.selectByUserId(user);
-//		int branchid = bMember.getBranchId();
-		Branch branch = branchDao.selectByPrimaryKey(bMember.getBranchId());
-		return branch;
+		BranchMember bm = branchMemberDao.selectByUserId(user);
+		return bm.getBranch();
 	}
 
 	@Override

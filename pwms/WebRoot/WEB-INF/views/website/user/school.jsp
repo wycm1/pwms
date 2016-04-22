@@ -5,10 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>课程，考试</title>
-<link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/website/style/style1.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+<%@ include file="../path.jsp" %>
+<link href="res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="res/website/style/base.css" rel="stylesheet" type="text/css" />
+<link href="res/website/style/style1.css" rel="stylesheet" type="text/css" />
+<link href="res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
 <link href="http://vjs.zencdn.net/5.0/video-js.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -62,8 +63,8 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
-<script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="res/js/H-ui.js"></script> 
+<script type="text/javascript" src="res/js/H-ui.admin.js"></script>
 <script src="http://vjs.zencdn.net/5.0/video.min.js"></script>
 <script type="text/javascript">
 $(function(){

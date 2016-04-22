@@ -5,21 +5,43 @@
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="branch_id" property="branchId" jdbcType="INTEGER" />
     <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <!-- 支部 -->
+    <association property="branch" javaType="com.pwms.pojo.Branch">
+    	<id column="id1" property="id" jdbcType="INTEGER" />
+	    <result column="leader_id" property="leaderId" jdbcType="VARCHAR" />
+	    <result column="branch_name" property="branchName" jdbcType="VARCHAR" />
+    </association>
+    <!-- 用户 -->
+    <association property="user" javaType="com.pwms.pojo.User">
+    	<id column="id2" property="id" jdbcType="INTEGER" />
+	    <result column="name" property="name" jdbcType="VARCHAR" />
+    </association>
   </resultMap>
   <sql id="Base_Column_List" >
     id, branch_id, user_id
   </sql>
+  <sql id="BranchMember_Column_List" >
+    bm.id as id,bm.user_id as user_id
+  </sql>
+  <sql id="Branch_Column_list">
+  	b.id as id1,b.leader_id,b.branch_name
+  </sql>
+  <sql id="User_Column_list">
+  	u.id as id2,u.name as name
+  </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
-    <include refid="Base_Column_List" />
-    from branch_member
-    where id = #{id,jdbcType=INTEGER}
+    <include refid="BranchMember_Column_List" />,
+    <include refid="Branch_Column_list" />
+    from branch_member as bm,branch as b
+    where bm.branch_id = b.id and id = #{id,jdbcType=INTEGER}
   </select>
   <select id="selectByUserId" resultMap="BaseResultMap" parameterType="com.pwms.pojo.User" >
     select 
-    <include refid="Base_Column_List" />
-    from branch_member
-    where user_id = #{id,jdbcType=INTEGER}
+    <include refid="BranchMember_Column_List" />,
+    <include refid="Branch_Column_list" />
+    from branch_member as bm,branch as b
+    where bm.branch_id = b.id and user_id = #{id,jdbcType=INTEGER}
   </select>
    <select id="selectSelective" resultMap="BaseResultMap" parameterType="com.pwms.pojo.BranchMember" >
     select 
@@ -36,9 +58,10 @@
   </select>
   <select id="selectByBranchId" resultMap="BaseResultMap" parameterType="com.pwms.pojo.Branch" >
     select 
-    <include refid="Base_Column_List" />
-    from branch_member
-    where branch_id =  #{id,jdbcType=INTEGER}
+    <include refid="BranchMember_Column_List" />,
+    <include refid="User_Column_list" />
+    from branch_member as bm,pw_user as u
+    where bm.user_id = u.id and branch_id =  #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from branch_member

@@ -40,7 +40,7 @@ public class BranchController extends BaseController {
 		this.branchService = branchService;
 	}
 
-	@RequestMapping("/")
+	@RequestMapping({"/",""})
 	public String branchIndex(HttpServletRequest request, HttpSession session,
 			Model model) {
 		User user = (User) session.getAttribute("user");
@@ -52,40 +52,9 @@ public class BranchController extends BaseController {
 			outJson(objectToJson("branch", branch));
 			return null;
 		}
-		branchInfo(branch,model);
 		model.addAttribute("branch", branch);
 		return null;
 	}
-	@RequestMapping("")
-	public String Index(HttpServletRequest request, HttpSession session,
-			Model model) {
-		return branchIndex(request,session,model);
-	}
-	//显示支部的成员
-	public void branchInfo(Branch branch, Model model){
-		if(branch==null||branch.getId()==null){
-			return;
-		}
-		List<User> userList = this.branchService.getBranchMember(branch);
-		User leader = userService.getUserById(branch.getLeaderId());
-		model.addAttribute("leader", leader);
-		model.addAttribute("userList", userList);
-	}
-	// 显示支部成员信息
-	@RequestMapping("/members")
-	public String getMembers(int branchid, HttpServletRequest request,
-			HttpSession session, Model model) {
-		Branch branch = new Branch();
-		branch.setId(branchid);
-		List<User> memberList = this.branchService.getBranchMember(branch);
-		if (verifyClient(request)) {
-			outJson("{" + listToJson("memberList", memberList) + "}");
-			return null;
-		}
-		model.addAttribute("memberList", memberList);
-		return null;
-	}
-
 	// 根据支部id加入支部
 	@RequestMapping("/addbranch")
 	public String addBranch(HttpServletRequest request, HttpSession session,

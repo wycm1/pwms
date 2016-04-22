@@ -2,20 +2,21 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<%@ include file="../path.jsp" %>
 <meta charset="utf-8">
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,member-scalable=no" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <!--[if lt IE 9]>
-<script type="text/javascript" src="/pwms/res/lib/html5.js"></script>
-<script type="text/javascript" src="/pwms/res/lib/respond.min.js"></script>
-<script type="text/javascript" src="/pwms/res/lib/PIE_IE678.js"></script>
+<script type="text/javascript" src="res/lib/html5.js"></script>
+<script type="text/javascript" src="res/lib/respond.min.js"></script>
+<script type="text/javascript" src="res/lib/PIE_IE678.js"></script>
 <![endif]-->
-<link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/lib/icheck/icheck.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+<link href="res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+<link href="res/lib/icheck/icheck.css" rel="stylesheet" type="text/css" />
+<link href="res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
 <!--[if IE 6]>
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
@@ -24,7 +25,7 @@
 </head>
 <body>
 <div class="pd-20">
-  <form action="rewOrPun"  method="post" class="form form-horizontal" id="form-reward-punish-add">
+  <form action="admin/user/rewOrPun"  method="post" class="form form-horizontal" id="form-reward-punish-add">
     <div class="row cl">
       <label class="form-label col-3"><span class="c-red">*</span>姓名：</label>
       <div class="formControls col-5">
@@ -85,12 +86,12 @@
   </form>
 </div>
 </div>
-<script type="text/javascript" src="/pwms/res/lib/jquery/1.9.1/jquery.min.js"></script> 
-<script type="text/javascript" src="/pwms/res/lib/icheck/jquery.icheck.min.js"></script> 
-<script type="text/javascript" src="/pwms/res/lib/Validform/5.3.2/Validform.min.js"></script>
-<script type="text/javascript" src="/pwms/res/lib/layer/1.9.3/layer.js"></script>
-<script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
-<script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="res/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="res/lib/icheck/jquery.icheck.min.js"></script> 
+<script type="text/javascript" src="res/lib/Validform/5.3.2/Validform.min.js"></script>
+<script type="text/javascript" src="res/lib/layer/1.9.3/layer.js"></script>
+<script type="text/javascript" src="res/js/H-ui.js"></script> 
+<script type="text/javascript" src="res/js/H-ui.admin.js"></script>
 <script type="text/javascript">
 $(function(){
 	$('.skin-minimal input').iCheck({

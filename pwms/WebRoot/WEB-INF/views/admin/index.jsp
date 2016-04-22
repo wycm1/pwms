@@ -2,6 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<%@ include file="path.jsp" %>
 <meta charset="utf-8">
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -14,11 +15,11 @@
 <script type="text/javascript" src="lib/respond.min.js"></script>
 <script type="text/javascript" src="lib/PIE_IE678.js"></script>
 <![endif]-->
-<link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/skin/default/skin.css" rel="stylesheet" type="text/css" id="skin" />
-<link href="/pwms/res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/css/style.css" rel="stylesheet" type="text/css" />
+<link href="res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+<link href="res/skin/default/skin.css" rel="stylesheet" type="text/css" id="skin" />
+<link href="res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+<link href="res/css/style.css" rel="stylesheet" type="text/css" />
 <!--[if IE 6]>
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
@@ -26,15 +27,15 @@
 <title>党务管理系统</title>
 </head>
 <body>
-<header class="Hui-header cl"> <a class="Hui-logo l" title="党务管理系统" href="../index.html">党务管理系统</a>
+<header class="Hui-header cl"> <a class="Hui-logo l" title="党务管理系统" href="index.html">党务管理系统</a>
 	<nav class="mainnav cl" id="Hui-nav">
 		<ul>
 			<li class="dropDown dropDown_click"><a href="javascript:;" class="dropDown_A"><i class="Hui-iconfont">&#xe600;</i> 新增 <i class="Hui-iconfont">&#xe6d5;</i></a>
 				<ul class="dropDown-menu radius box-shadow">
-					<li><a href="javascript:;" onclick="article_add('添加资讯','article-add.html')"><i class="Hui-iconfont">&#xe616;</i> 资讯</a></li>
-					<li><a href="javascript:;" onclick="picture_add('添加资讯','picture-add.html')"><i class="Hui-iconfont">&#xe613;</i> 图片</a></li>
-					<li><a href="javascript:;" onclick="product_add('添加资讯','product-add.html')"><i class="Hui-iconfont">&#xe620;</i> 产品</a></li>
-					<li><a href="javascript:;" onclick="member_add('添加用户','member-add.html','','510')"><i class="Hui-iconfont">&#xe60d;</i> 用户</a></li>
+					<li><a href="javascript:;" onclick="article_add('添加资讯','admin/article-add.html')"><i class="Hui-iconfont">&#xe616;</i> 资讯</a></li>
+					<li><a href="javascript:;" onclick="picture_add('添加资讯','admin/picture-add.html')"><i class="Hui-iconfont">&#xe613;</i> 图片</a></li>
+					<li><a href="javascript:;" onclick="product_add('添加资讯','admin/product-add.html')"><i class="Hui-iconfont">&#xe620;</i> 产品</a></li>
+					<li><a href="javascript:;" onclick="member_add('添加用户','admin/member-add.html','','510')"><i class="Hui-iconfont">&#xe60d;</i> 用户</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -68,10 +69,10 @@
 			<dt><i class="Hui-iconfont">&#xe60d;</i> 用户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a href="javascript:;" onclick="member_add('验证信息导入','user/file-add.html','','510')">验证信息导入</a></li> 
-					<li><a _href="user/reward-punish-list.html" href="javascript:;">奖惩记录管理</a></li>
-					<li><a _href="user/join-out-list.html" href="javascript:;">转入转出记录管理</a></li>
-					<li><a _href="user/userdetail-modify-list.html" href="javascript:;">用户信息修改管理</a></li>
+					<li><a href="javascript:;" onclick="member_add('验证信息导入','admin/user/file-add.html','','510')">验证信息导入</a></li> 
+					<li><a _href="admin/user/reward-punish-list.html" href="javascript:;">奖惩记录管理</a></li>
+					<li><a _href="admin/user/join-out-list.html" href="javascript:;">转入转出记录管理</a></li>
+					<li><a _href="admin/user/userdetail-modify-list.html" href="javascript:;">用户信息修改管理</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -79,8 +80,8 @@
 			<dt><i class="Hui-iconfont">&#xe611;</i> 支部管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a _href="branch/branch-list.html" href="javascript:;">所有支部</a></li> 
-					<li><a _href="branch/branch-member-list.html?branch=${sessionScope.branch.id}" href="javascript:;">支部成员管理</a></li> 
+					<li><a _href="admin/branch/branch-list.html" href="javascript:;">所有支部</a></li> 
+					<li><a _href="admin/branch/branch-member-list.html?branch=${sessionScope.branch.id}" href="javascript:;">支部成员管理</a></li> 
 				</ul>
 			</dd>
 		</dl>
@@ -88,7 +89,7 @@
 			<dt><i class="Hui-iconfont">&#xe616;</i> 文章管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a _href="article/article-list.html" href="javascript:void(0)">文章管理</a></li>
+					<li><a _href="admin/article/article-list.html" href="javascript:void(0)">文章管理</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -96,11 +97,19 @@
 			<dt><i class="Hui-iconfont">&#xe616;</i> 党校管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a _href="school/video-course-list.html" href="javascript:void(0)">视频课程管理</a></li>
-					<li><a _href="school/theory-course-list.html" href="javascript:void(0)">理论课程管理</a></li>
-					<li><a _href="school/exam-list.html" href="javascript:void(0)">考试管理</a></li>
-					<li><a _href="school/exam-question-list.html" href="javascript:void(0)">考试题目管理</a></li>
-					<li><a _href="school/exam-record-list.html" href="javascript:void(0)">考试成绩管理</a></li>
+					<li><a _href="admin/school/video-course-list.html" href="javascript:void(0)">视频课程管理</a></li>
+					<li><a _href="admin/school/theory-course-list.html" href="javascript:void(0)">理论课程管理</a></li>
+					<li><a _href="admin/school/exam-list.html" href="javascript:void(0)">考试管理</a></li>
+					<li><a _href="admin/school/exam-question-list.html" href="javascript:void(0)">考试题目管理</a></li>
+					<li><a _href="admin/school/exam-record-list.html" href="javascript:void(0)">考试成绩管理</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-system">
+			<dt><i class="Hui-iconfont">&#xe62e;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a _href="http://mylog.vwycm.cn/pwmslog.html" data-title="系统日志" href="javascript:void(0)">系统日志</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -111,7 +120,7 @@
 	<div id="Hui-tabNav" class="Hui-tabNav">
 		<div class="Hui-tabNav-wp">
 			<ul id="min_title_list" class="acrossTab cl">
-				<li class="active"><span title="我的桌面" data-href="welcome.html">我的桌面</span><em></em></li>
+				<li class="active"><span title="我的桌面" data-href="admin/welcome.html">我的桌面</span><em></em></li>
 			</ul>
 		</div>
 		<div class="Hui-tabNav-more btn-group"><a id="js-tabNav-prev" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d4;</i></a><a id="js-tabNav-next" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d7;</i></a></div>
@@ -119,14 +128,14 @@
 	<div id="iframe_box" class="Hui-article">
 		<div class="show_iframe">
 			<div style="display:none" class="loading"></div>
-			<iframe scrolling="yes" frameborder="0" src="welcome.html"></iframe>
+			<iframe scrolling="yes" frameborder="0" src="admin/welcome.html"></iframe>
 		</div>
 	</div>
 </section>
-<script type="text/javascript" src="/pwms/res/lib/jquery/1.9.1/jquery.min.js"></script> 
-<script type="text/javascript" src="/pwms/res/lib/layer/1.9.3/layer.js"></script> 
-<script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
-<script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script> 
+<script type="text/javascript" src="res/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="res/lib/layer/1.9.3/layer.js"></script> 
+<script type="text/javascript" src="res/js/H-ui.js"></script> 
+<script type="text/javascript" src="res/js/H-ui.admin.js"></script> 
 <script type="text/javascript">
 /*资讯-添加*/
 function article_add(title,url){

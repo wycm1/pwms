@@ -16,7 +16,8 @@ import com.pwms.tools.ArticleTools;
  *
  */
 @Controller
-@RequestMapping({"/notice","/impdoc","party","theory"})
+//@RequestMapping({"/notice","/impdoc","/party","/theory"})
+@RequestMapping({"/{fType:notice|impdoc|party|theory}"})
 public class NoticeController extends BaseController {
 	@Resource
 	private INoticeService noticeService;
@@ -35,8 +36,15 @@ public class NoticeController extends BaseController {
 		this.noticeService = noticeService;
 	}
 	@RequestMapping({"","/"})
-	public String index(HttpServletRequest request, Model model){
-		return getList("hdtz",model);
+	public String index(@PathVariable("fType") String fType,HttpServletRequest request, Model model){
+		String s = null;
+		switch(fType){
+			case "impdoc":s = "dswx";break;
+			case "party":s = "zyjs";break;
+			case "theory":s = "lljd";break;
+			default:s = "hdtz";break;
+		}
+		return getList(s,model);
 	}
 	/**
 	 * 获取通知公告下的列表并返回

@@ -5,11 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>登录</title>
-<link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/website/style/style1.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
-<script language="javascript" src="/pwms/res/website/js/js.js"></script>
+<%@ include file="path.jsp" %>
+<link href="res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="res/website/style/base.css" rel="stylesheet" type="text/css" />
+<link href="res/website/style/style1.css" rel="stylesheet" type="text/css" />
+<link href="res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="res/website/js/js.js"></script>
 </head>
 <body>
 <%@ include file="header.jsp"%>
@@ -50,11 +51,11 @@
 </div>
 </div>
 <%@ include file="bottom.jsp" %>
-<script type="text/javascript" src="/pwms/res/lib/jquery/1.9.1/jquery.min.js"></script> 
-<script type="text/javascript" src="/pwms/res/lib/icheck/jquery.icheck.min.js"></script> 
-<script type="text/javascript" src="/pwms/res/lib/Validform/5.3.2/Validform.min.js"></script>
-<script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
-<script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="res/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="res/lib/icheck/jquery.icheck.min.js"></script> 
+<script type="text/javascript" src="res/lib/Validform/5.3.2/Validform.min.js"></script>
+<script type="text/javascript" src="res/js/H-ui.js"></script> 
+<script type="text/javascript" src="res/js/H-ui.admin.js"></script>
 <script type="text/javascript">
 $(function(){
 	$("#login").Validform({

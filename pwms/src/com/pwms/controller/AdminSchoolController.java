@@ -44,6 +44,14 @@ public class AdminSchoolController extends BaseController {
 	@Resource
 	private IExamQuestionService eqService;
 	/**
+	 * 显示添加视频课程页面
+	 * @return
+	 */
+	@RequestMapping("/video-course-add")
+	public String addVCShow(){
+		return "admin/school/video-course-add";
+	}
+	/**
 	 * 视频课程管理
 	 * @param model
 	 * @return
@@ -119,6 +127,14 @@ public class AdminSchoolController extends BaseController {
 		return "admin/school/theory-course-list";
 	}
 	/**
+	 * 显示添加理论课程页面
+	 * @return
+	 */
+	@RequestMapping("/theory-course-add")
+	public String addTCShow(){
+		return "admin/school/theory-course-add";
+	}
+	/**
 	 * 添加理论课程
 	 * @param model
 	 * @param tc
@@ -173,6 +189,14 @@ public class AdminSchoolController extends BaseController {
 		return "删除成功!";
 	}
 	/**
+	 * 显示添加考试题目页面
+	 * @return
+	 */
+	@RequestMapping("/exam-question-add")
+	public String addEQShow(){
+		return "admin/school/exam-question-add";
+	}
+	/**
 	 * 显示考试题目列表
 	 * @param model
 	 * @return
@@ -190,9 +214,9 @@ public class AdminSchoolController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping("/addExamQuestion")
-	public String addEQ(Model model,String parseQuestion,int exam_id){
+	public String addEQ(Model model,String parseQuestion,int examId){
 		System.out.println("源字符串:" + parseQuestion);
-		List<ExamQuestion> eqList = ParseQuestion.parse(parseQuestion, exam_id);
+		List<ExamQuestion> eqList = ParseQuestion.parse(parseQuestion, examId);
 		for(ExamQuestion ex:eqList){
 			System.out.println(ex.toString());
 			eqService.saveQuestion(ex);
@@ -236,6 +260,14 @@ public class AdminSchoolController extends BaseController {
 		eqService.updateByPrimaryKey(eq);
 		model.addAttribute("msg","理论课程修改成功！");
 		return "admin/notice-msg";
+	}
+	/**
+	 * 显示添加考试页面
+	 * @return
+	 */
+	@RequestMapping("/exam-add")
+	public String addEShow(){
+		return "admin/school/exam-add";
 	}
 	/**
 	 * 添加考试

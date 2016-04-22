@@ -37,6 +37,10 @@ public class AdminBranchController extends BaseController {
 		mav.addObject("branchList",branchService.findAll());
 		return mav;
 	}
+	@RequestMapping("/branch-add")
+	public String branchAddShow(){
+		return "admin/branch/branch-add";
+	}
 	/**
 	 * 显示支部内所有成员
 	 * @param branchid
@@ -112,5 +116,13 @@ public class AdminBranchController extends BaseController {
 	@RequestMapping("/mybranch")
 	public String myBranch(HttpSession session, Model model){
 		return null;
+	}
+	/**
+	 * 添加支部成员
+	 * @return
+	 */
+	@RequestMapping("/branch-member-add")
+	public String addBranchMemeber(){
+		return "admin/branch/branch-member-add";
 	}
 }

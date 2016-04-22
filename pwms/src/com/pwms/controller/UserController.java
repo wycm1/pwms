@@ -3,6 +3,7 @@ package com.pwms.controller;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -15,8 +16,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.pwms.pojo.Branch;
+import com.pwms.pojo.BranchMember;
 import com.pwms.pojo.User;
 import com.pwms.pojo.Userinfo;
+import com.pwms.service.IBranchService;
 import com.pwms.service.IUserService;
 import com.pwms.service.IUserinfoService;
 import com.pwms.tools.Md5Util;
@@ -28,6 +32,8 @@ public class UserController extends BaseController{
     private IUserService userService;
     @Resource
     private IUserinfoService userinfoService;
+    @Resource
+    private IBranchService branchService;
     public IUserService getUserService() {
 		return userService;
 	}
@@ -114,7 +120,12 @@ public class UserController extends BaseController{
      * @return
      */
     @RequestMapping("/mybranch")
-    public String mybranchShow(Model model) {
+    public String mybranchShow(HttpSession session,Model model) {
+    	User user = (User) session.getAttribute("user");
+		Branch branch = this.branchService.getUserBranch(user);
+		List<BranchMember> bmList = this.branchService.getBranchMember(branch);
+		model.addAttribute("branch",branch);
+		model.addAttribute("bmList", bmList);
     	return "website/user/mybranch";
     }
     /**

@@ -5,11 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>在线考试</title>
-<link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/website/style/style1.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+<%@ include file="../path.jsp" %>
+<link href="res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+<link href="res/website/style/base.css" rel="stylesheet" type="text/css" />
+<link href="res/website/style/style1.css" rel="stylesheet" type="text/css" />
+<link href="res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <%@ include file="../header.jsp"%>
@@ -18,7 +19,7 @@
 		<nav class="breadcrumb">
 		<i class="Hui-iconfont">&#xe67f;</i>
 		<a class="maincolor" href="../index.html">首页</a>
-		<span class="c-999 en">&gt;</span><a class="maincolor" href="/pwms/school">网上党校</a>
+		<span class="c-999 en">&gt;</span><a class="maincolor" href="school">网上党校</a>
 		<span class="c-999 en">&gt;</span>在线考试
 		</nav>
 	</div>
@@ -41,7 +42,7 @@
 		    <c:forEach items="${examList}" var="item">
 			    <tr class="text-c">
 			      <td class="splittd">${item.name}</td>
-				  <td align="center"><a href="#" onclick="javascript:openMyPage('${item.id}/exam.html')" class="text-c"><font color="red">开始考试</font></a></td>
+				  <td align="center"><a href="#" onclick="javascript:openMyPage('school/zxks/${item.id}/exam.html')" class="text-c"><font color="red">开始考试</font></a></td>
 				  <td>关键在党，关键在人</td>
 			    </tr>
 		    </c:forEach>
@@ -54,8 +55,8 @@
 	</div>
 	</div>
 </div>
-<script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
-<script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="res/js/H-ui.js"></script> 
+<script type="text/javascript" src="res/js/H-ui.admin.js"></script>
 <script type="text/javascript">
 var openPage;
 function openMyPage(url){

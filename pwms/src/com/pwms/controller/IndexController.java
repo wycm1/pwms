@@ -60,6 +60,10 @@ public class IndexController extends BaseController{
     public String jpprocess(Model model){
     	return "website/jpprocess";
     }
+    @RequestMapping("/admin/welcome")
+    public String welcome(){
+    	return "admin/welcome";
+    }
     /**
      * 将按照一级栏目进行分类
      * @param list

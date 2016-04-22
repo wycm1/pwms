@@ -4,6 +4,8 @@ public class Branch {
     private Integer id;
 
     private Integer leaderId;
+    
+    private String branchId;
 
     private String branchName;
 
@@ -22,8 +24,16 @@ public class Branch {
     public void setLeaderId(Integer leaderId) {
         this.leaderId = leaderId;
     }
+    
+    public String getBranchId() {
+		return branchId;
+	}
 
-    public String getBranchName() {
+	public void setBranchId(String branchId) {
+		this.branchId = branchId;
+	}
+
+	public String getBranchName() {
         return branchName;
     }
 

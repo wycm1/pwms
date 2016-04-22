@@ -3,30 +3,31 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<%@ include file="../path.jsp" %>
 <meta charset="utf-8">
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <!--[if lt IE 9]>
-<script type="text/javascript" src="/pwms/res/lib/html5.js"></script>
-<script type="text/javascript" src="/pwms/res/lib/respond.min.js"></script>
-<script type="text/javascript" src="/pwms/res/lib/PIE_IE678.js"></script>
+<script type="text/javascript" src="res/lib/html5.js"></script>
+<script type="text/javascript" src="res/lib/respond.min.js"></script>
+<script type="text/javascript" src="res/lib/PIE_IE678.js"></script>
 <![endif]-->
-<link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/lib/icheck/icheck.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+<link href="res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+<link href="res/lib/icheck/icheck.css" rel="stylesheet" type="text/css" />
+<link href="res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+<link href="res/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
 <!--[if IE 6]>
-<script type="text/javascript" src="/pwms/res/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript" src="res/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
 <title>新增文章</title>
 </head>
 <body>
 <div class="pd-20">
-	<form action="addarticle" method="post" class="form form-horizontal" id="form-article-add">
+	<form action="admin/article/addarticle" method="post" class="form form-horizontal" id="form-article-add">
 		<div class="row cl">
 			<label class="form-label col-2"><span class="c-red">*</span>文章标题：</label>
 			<div class="formControls col-8">
@@ -68,17 +69,17 @@
 		</div>
 	</form>
 </div>
-<script type="text/javascript" src="/pwms/res/lib/jquery/1.9.1/jquery.min.js"></script> 
-<script type="text/javascript" src="/pwms/res/lib/layer/1.9.3/layer.js"></script> 
-<script type="text/javascript" src="/pwms/res/lib/My97DatePicker/WdatePicker.js"></script> 
-<script type="text/javascript" src="/pwms/res/lib/icheck/jquery.icheck.min.js"></script> 
-<script type="text/javascript" src="/pwms/res/lib/Validform/5.3.2/Validform.min.js"></script> 
-<script type="text/javascript" src="/pwms/res/lib/webuploader/0.1.5/webuploader.min.js"></script> 
-<script type="text/javascript" src="/pwms/res/lib/ueditor/ueditor.config.js"></script> 
-<script type="text/javascript" src="/pwms/res/lib/ueditor/ueditor.all.min.js"> </script> 
-<script type="text/javascript" src="/pwms/res/lib/ueditor/lang/zh-cn/zh-cn.js"></script> 
-<script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
-<script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script> 
+<script type="text/javascript" src="res/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="res/lib/layer/1.9.3/layer.js"></script> 
+<script type="text/javascript" src="res/lib/My97DatePicker/WdatePicker.js"></script> 
+<script type="text/javascript" src="res/lib/icheck/jquery.icheck.min.js"></script> 
+<script type="text/javascript" src="res/lib/Validform/5.3.2/Validform.min.js"></script> 
+<script type="text/javascript" src="res/lib/webuploader/0.1.5/webuploader.min.js"></script> 
+<script type="text/javascript" src="res/lib/ueditor/ueditor.config.js"></script> 
+<script type="text/javascript" src="res/lib/ueditor/ueditor.all.min.js"> </script> 
+<script type="text/javascript" src="res/lib/ueditor/lang/zh-cn/zh-cn.js"></script> 
+<script type="text/javascript" src="res/js/H-ui.js"></script> 
+<script type="text/javascript" src="res/js/H-ui.admin.js"></script> 
 <script type="text/javascript">
 $(function(){
 	UE.getEditor('editor');

@@ -4,6 +4,11 @@
       <welcome-file>/WEB-INF/views/website/index.jsp</welcome-file>  
   </welcome-file-list> 
   <display-name>Archetype Created Web Application</display-name>
+  <!-- 防止使用多个项目使用log4j名称冲突时 -->
+  <context-param>  
+    <param-name>webAppRootKey</param-name>  
+    <param-value>pwms.root</param-value>  
+  </context-param>  
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:com/pwms/resources/spring-mybatis.xml</param-value>

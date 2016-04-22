@@ -1,5 +1,8 @@
 package com.pwms.test;
 
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+import org.springframework.web.client.RestTemplate;
+
 import com.pwms.tools.Md5Util;
 
 /**
@@ -9,6 +12,6 @@ import com.pwms.tools.Md5Util;
  */
 public class Test {
 	public static void main(String args []){
-		Md5Util.Convert2Md5("wangyang");
+		RestTemplate r = new RestTemplate(new HttpComponentsClientHttpRequestFactory());
 	}
 }

@@ -21,21 +21,9 @@ public class ProcessController extends BaseController {
 	//查看已经完成的进度，以一棵进度树的形式显示
 	@Resource
 	private IProcessService processService;
-	@RequestMapping("/")
+	@RequestMapping({"/","","/jpprocess"})
 	public String getProcess(HttpServletRequest request, HttpSession session, Model model){
-		List<Process> processList = this.processService.getProcessList();
-		User user = (User) session.getAttribute("user");
-		List<ProcessRecord> userProcessList = this.processService.getUserProcessRecord(user);
-		if(verifyClient(request)){
-			outJson("{"+listToJson("processList",processList)+"}");
-			return null;
-		}
-		model.addAttribute("processList", processList);
-		return null;
-	}
-	@RequestMapping("")
-	public String index(){
-		return getProcess();
+		return "website/process/jpprocess";
 	}
 	@RequestMapping("/myprocess")
 	public String getUserProcess(HttpServletRequest request, HttpSession session, Model model){
@@ -59,9 +47,5 @@ public class ProcessController extends BaseController {
 		}
 		model.addAttribute("process", process);
 		return null;
-	}
-	@RequestMapping("/jpprocess")
-	public String getProcess(){
-		return "website/process/jpprocess";
 	}
 }

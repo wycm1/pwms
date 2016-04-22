@@ -5,11 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>理论课程</title>
-<link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/website/style/style1.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+<%@ include file="../path.jsp" %>
+<link href="res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+<link href="res/website/style/base.css" rel="stylesheet" type="text/css" />
+<link href="res/website/style/style1.css" rel="stylesheet" type="text/css" />
+<link href="res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <%@ include file="../header.jsp"%>
@@ -18,7 +19,7 @@
 		<nav class="breadcrumb">
 		<i class="Hui-iconfont">&#xe67f;</i>
 		<a class="maincolor" href="../index.html">首页</a>
-		<span class="c-999 en">&gt;</span><a class="maincolor" href="/pwms/school">网上党校</a>
+		<span class="c-999 en">&gt;</span><a class="maincolor" href="school">网上党校</a>
 		<span class="c-999 en">&gt;</span>理论课程
 		</nav>
 	</div>
@@ -32,7 +33,7 @@
 					<div class="row cl">
 				    	<ul>
 				    		<c:forEach items="${tcList}" var="item">
-					    	<li><a href="/pwms/school/llkc/${item.id}/course.html">${item.title}</a><span style="float:right">${item.dateline}</span></li>
+					    	<li><a href="school/llkc/${item.id}/course.html">${item.title}</a><span style="float:right">${item.dateline}</span></li>
 				    		</c:forEach>
 				    	</ul>
     				</div>
@@ -43,8 +44,8 @@
 	</div>
 </div>
 <%@ include file="../bottom.jsp" %>
-<script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
-<script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="res/js/H-ui.js"></script> 
+<script type="text/javascript" src="res/js/H-ui.admin.js"></script>
 <script type="text/javascript">
 $(document).ready(function() { 
 	var atVal = $("title").text();

@@ -4,16 +4,17 @@
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>网上党校-考试结束</title>
-<link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/website/style/style1.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+<%@ include file="../path.jsp" %>
+<link href="res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="res/css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+<link href="res/website/style/base.css" rel="stylesheet" type="text/css" />
+<link href="res/website/style/style1.css" rel="stylesheet" type="text/css" />
+<link href="res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 *{margin:0;padding:0;word-wrap:break-word;}
 body{
 	font:12px/1.75 "瀹嬩綋", arial, sans-serif,'DejaVu Sans','Lucida Grande',Tahoma,'Hiragino Sans GB',STHeiti,SimSun,sans-serif;
-	background:url(/pwms/res/website/images/bg_a1.jpg) repeat-x center top;
+	background:url(res/website/images/bg_a1.jpg) repeat-x center top;
 }
 a{color:#333;text-decoration:none;float:none;}
 a:hover{text-decoration:underline;}
@@ -48,7 +49,7 @@ h3,h4{padding:0px; font-size:14px; font-weight:bold;}
 .line{margin:8px;height:1px;font-size:0;border-top:1px solid #E5E5E5;margin-top:8px;}
 
 * html, * html body {
-background:url(/pwms/res/website/images/bg_a1.jpg) repeat-x center top;
+background:url(res/website/images/bg_a1.jpg) repeat-x center top;
 background-attachment:fixed;
 height:100%;
 }
@@ -77,7 +78,7 @@ height:expression(eval(document.documentElement.clientHeight));
 	_height:500px;
 }
 .grapa{
-	background:url(/pwms/res/website/images/loadingbg.jpg) no-repeat top;
+	background:url(res/website/images/loadingbg.jpg) no-repeat top;
 	width: 337px;
 	height:97px;
 	margin:100px auto 0px auto;
@@ -88,7 +89,7 @@ height:expression(eval(document.documentElement.clientHeight));
 	margin-right:18px;
 	margin-top:36px;
 	height:46px;
-	background-image: url(/pwms/res/website/images/loading.jpg);
+	background-image: url(res/website/images/loading.jpg);
 	background-repeat: no-repeat;
 	background-position: left bottom;
 }
@@ -119,7 +120,7 @@ height:expression(eval(document.documentElement.clientHeight));
 }
 .dbt{ margin-top:15px;
 	}
-.ztbg { margin:0;background:url(/pwms/res/website/images/bg_a2.jpg) repeat-x center bottom;}
+.ztbg { margin:0;background:url(res/website/images/bg_a2.jpg) repeat-x center bottom;}
 .ztbf1{
 	width:950px;
 	margin:0 auto;
@@ -203,12 +204,12 @@ height:expression(eval(document.documentElement.clientHeight));
 .cjbg { width:500px; height:500px; margin:20px auto;}
 .cjbg_t { margin-left:70px;}
 
-.exam_button{cursor:pointer;margin-top:3px;margin-bottom:2px;PADDING-RIGHT: 0px;PADDING-LEFT: 0px;FONT-SIZE: 18px;PADDING-BOTTOM: 0px;PADDING-TOP: 0px;FONT-FAMILY: "榛戜綋" color: #000;width:135px;border:0px;height:40px;background-image:url(/pwms/res/website/images/btn_2.gif)}
+.exam_button{cursor:pointer;margin-top:3px;margin-bottom:2px;PADDING-RIGHT: 0px;PADDING-LEFT: 0px;FONT-SIZE: 18px;PADDING-BOTTOM: 0px;PADDING-TOP: 0px;FONT-FAMILY: "榛戜綋" color: #000;width:135px;border:0px;height:40px;background-image:url(res/website/images/btn_2.gif)}
 
-.foot{background:url(/pwms/res/website/images/bg_a3.jpg) repeat-x center top;}
+.foot{background:url(res/website/images/bg_a3.jpg) repeat-x center top;}
 .copyright{width:950px;margin:0px auto; padding-top:10px;text-align:center;line-height:24px;}
 </style> 
-<script src="/pwms/res/lib/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script src="res/lib/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 </head>
 <body>
 <%@ include file="../header.jsp" %>
@@ -216,9 +217,9 @@ height:expression(eval(document.documentElement.clientHeight));
 <div class="clear"></div>
 <!--内容页主体开始-->
 <div class="ztbf1">
-	<div class="zts1"><img src="/pwms/res/website/images/d_11.jpg"></div>
+	<div class="zts1"><img src="res/website/images/d_11.jpg"></div>
 	<div class="zts2">&nbsp;</div>
-	<div class="zts3"><img src="/pwms/res/website/images/d_2.jpg"></div>
+	<div class="zts3"><img src="res/website/images/d_2.jpg"></div>
 </div>
 <div class="clear"></div>
 <div class="ztbg">

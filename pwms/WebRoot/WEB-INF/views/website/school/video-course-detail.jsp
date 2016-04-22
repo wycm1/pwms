@@ -5,10 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>影像课程|${course.title}</title>
-<link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/website/style/style1.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+<%@ include file="../path.jsp" %>
+<link href="res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="res/website/style/base.css" rel="stylesheet" type="text/css" />
+<link href="res/website/style/style1.css" rel="stylesheet" type="text/css" />
+<link href="res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
 <link href="http://vjs.zencdn.net/5.0/video-js.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -18,14 +19,14 @@
 		<nav class="breadcrumb">
 		<i class="Hui-iconfont">&#xe67f;</i>
 		<a class="maincolor" href="../index.html">首页</a>
-		<span class="c-999 en">&gt;</span><a class="maincolor" href="/pwms/school">网上党校</a>
+		<span class="c-999 en">&gt;</span><a class="maincolor" href="school">网上党校</a>
 		<span class="c-999 en">&gt;</span>视频课程
 		</nav>
 	</div>
 	<div class="main-container">
 	<div class="left-side radius">
 		<ul class="upright-menu">
-			<li class="current"> <a href="/pwms/theory/videocourse-list.html"">视频课程</a></li>
+			<li class="current"> <a href="theory/videocourse-list.html"">视频课程</a></li>
 		</ul>
 	</div>
 	<div class="main-box">
@@ -57,9 +58,9 @@
 				<div class="panel-body">
 					<div class="row cl">
 				      	<video id="video-test" class="video-js vjs-default-skin" controls preload="none" width="818" height="450"
-						      poster="/pwms/upload/img/gcd.jpg"
+						      poster="upload/img/gcd.jpg"
 						      data-setup="{}">
-						    <source src="/pwms/${course.summary}" type='video/mp4' />
+						    <source src="${course.summary}" type='video/mp4' />
 						</video>
 						<div class="row cl mt-20">
 						<div class="row radius text-c" style="border: 0px solid #DBDBDB;">
@@ -73,8 +74,8 @@
 	</div>
 </div>
 <%@ include file="../bottom.jsp" %>
-<script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
-<script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="res/js/H-ui.js"></script> 
+<script type="text/javascript" src="res/js/H-ui.admin.js"></script>
 <script src="http://vjs.zencdn.net/5.0/video.min.js"></script>
 <script type="text/javascript">
 var seconds = 0;

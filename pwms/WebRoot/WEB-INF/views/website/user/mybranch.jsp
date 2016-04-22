@@ -5,10 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>用户详细信息</title>
-<link href="/pwms/res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/website/style/base.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/website/style/style1.css" rel="stylesheet" type="text/css" />
-<link href="/pwms/res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+<%@ include file="../path.jsp" %>
+<link href="res/css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="res/website/style/base.css" rel="stylesheet" type="text/css" />
+<link href="res/website/style/style1.css" rel="stylesheet" type="text/css" />
+<link href="res/lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <%@ include file="../header.jsp"%>
@@ -28,7 +29,7 @@
 						<div class="col-1"></div>
 				      <label class="form-label col-1">支部名称：</label>
 				      <div class="formControls col-2">
-				      		王洋的支部
+				      		${branch.branchName}
 				      </div>
     					<div class="col-1"></div>
 				      <label class="form-label col-1" >支部负责人：</label>
@@ -36,7 +37,7 @@
 				      		王洋
 				      </div>
     					<div class="col-1"></div>
-				      <label class="form-label col-1" >人联系电话：</label>
+				      <label class="form-label col-1" >联系电话：</label>
 				      <div class="formControls col-2">
 				      		13088280860
 				      </div>
@@ -46,114 +47,20 @@
 	</div>
 	<div class="branch">
 		<div class="panel panel-danger radius">
-				<div class="panel-header">党员</div>
+				<div class="panel-header">支部成员</div>
 				<div class="panel-body">
 					<div class="row cl">
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-    				</div>
-				</div>
-		</div>
-	</div>
-	<div class="branch">
-		<div class="panel panel-danger radius">
-				<div class="panel-header">预备党员</div>
-				<div class="panel-body">
-					<div class="row cl">
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
-				      <label class="form-label col-2">王洋</label>
+					<c:forEach items="${bmList}" var="item">
+				      <label class="form-label col-2">${item.user.name}</label>
+				    </c:forEach>
     				</div>
 				</div>
 		</div>
 	</div>
 </div>
 <%@ include file="../bottom.jsp" %>
-<script type="text/javascript" src="/pwms/res/js/H-ui.js"></script> 
-<script type="text/javascript" src="/pwms/res/js/H-ui.admin.js"></script>
+<script type="text/javascript" src="res/js/H-ui.js"></script> 
+<script type="text/javascript" src="res/js/H-ui.admin.js"></script>
 <script type="text/javascript">
 $(function(){
 	$("#form-reward-punish-add").Validform({
