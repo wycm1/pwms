@@ -106,10 +106,10 @@
 			</dd>
 		</dl>
 		<dl id="menu-system">
-			<dt><i class="Hui-iconfont">&#xe62e;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe62e;</i> 流程管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a _href="http://mylog.vwycm.cn/pwmslog.html" data-title="系统日志" href="javascript:void(0)">系统日志</a></li>
+					<li><a _href="#" data-title="系统日志" href="javascript:void(0)">入党流程管理</a></li>
 				</ul>
 			</dd>
 		</dl>

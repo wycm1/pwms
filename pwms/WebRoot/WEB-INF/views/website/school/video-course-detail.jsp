@@ -26,7 +26,7 @@
 	<div class="main-container">
 	<div class="left-side radius">
 		<ul class="upright-menu">
-			<li class="current"> <a href="theory/videocourse-list.html"">视频课程</a></li>
+			<li class="current"> <a href="school/spkc/list.html"">视频课程</a></li>
 		</ul>
 	</div>
 	<div class="main-box">

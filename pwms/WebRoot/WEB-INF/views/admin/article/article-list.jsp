@@ -54,7 +54,7 @@
 					<td>admin</td>
 					<td>${item.dateline}</td>
 					<td>21212</td>
-					<td class="f-14 td-manage"><a style="text-decoration:none" class="ml-5" onClick="article_edit('文章修改','article-modify?id=${item.id}','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="article_del(this,${item.id})" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+					<td class="f-14 td-manage"><a style="text-decoration:none" class="ml-5" onClick="article_edit('文章修改','admin/article/article-modify?id=${item.id}','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="article_del(this,${item.id})" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
 			</c:forEach>
 			</tbody>

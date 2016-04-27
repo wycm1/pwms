@@ -15,7 +15,7 @@
     <mvc:annotation-driven />
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean" /> 
     <!-- 直接访问 -->
-    <mvc:resources mapping="/skin/default/**" location="/res/skin/default/" /><!-- 管理员首页更换皮肤 -->
+    <mvc:resources mapping="/skin/**" location="/res/skin/" /><!-- 管理员首页更换皮肤 -->
     <mvc:resources mapping="/admin/**" location="/WEB-INF/views/admin/" />
     <mvc:resources mapping="/res/**" location="/res/" />
     <mvc:resources mapping="/upload/**" location="/upload/" />
