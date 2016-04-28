@@ -45,4 +45,5 @@
 
 # Code Recommenders
 .recommenders/
+.settings/
 jdbc.properties
