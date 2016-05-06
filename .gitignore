@@ -47,3 +47,4 @@
 .recommenders/
 .settings/
 jdbc.properties
+generatorConfig.xml
